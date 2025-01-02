@@ -1,9 +1,8 @@
 ---
-{"dg-publish":true,"permalink":"/blog/writing-tips/writing-tips-for-students/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T00:12:28.721+01:00"}
+{"dg-publish":true,"permalink":"/blog/writing-tips/writing-tips-for-students/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T00:57:48.625+01:00"}
 ---
 
 
-# Writing Tips for Students
 
 Below you find a suggested structure of your technical work (for project lab reports, theses, and research papers) with some hints and general writing guidelines. It is not intended to be a complete guide, nor a universal structure that fits for all works. Some works may require a different structure (e.g., surveys or literature reviews). This guideline does not replace your advisor; you can only learn writing by practice, and you will definitely need the feedback on your writing. (Feedback _should_ be a sign of caring, even if it is negative. Only worry if you have not received any feedback.)
 
