@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/blog/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T00:35:15.702+01:00"}
+{"dg-publish":true,"permalink":"/blog/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T00:37:39.651+01:00"}
 ---
 
 # Database Reconstruction - Part 1
@@ -428,16 +428,7 @@ SUM and AVG are linear queries can be efficiently audited using tools from linea
  Let $x_p$ be the projection of $x^{(i)}$ onto hyperplane $A_j\mathbf{x} = b_j$ and  $x'$  be any reference point that lies on this hyperplane.  Since vector $A_j$ is orthogonal to this hyperplane, $x_p$ can be described as the result of shifting $x^{(i)}$ by the projection of vector  $(x^{(i)} - x')$ to vector $A_j$. The vector  $(x^{(i)} - x')$  represents the displacement from a reference point  $x'$ to the point $x^{(i)}$. The [projection](https://en.wikipedia.org/wiki/Vector_projection)of this displacement vector onto $A_j$ is given by
 $$
 \left\langle \frac{A_j}{||A_j||_2}, x^{(i)} - x' \right\rangle \frac{A_j^{\mathsf{T}}}{||A_j||_2}
-$$and hence
 $$
-\begin{align}
-x_p &= x^{(i)} - \left\langle \frac{A_j}{||A_j||_2}, x^{(i)} - x' \right\rangle \frac{A_j^{\mathsf{T}}}{||A_j||_2}\\
-&= x^{(i)} -  \left\langle A_j, x^{(i)} - x' \right\rangle \frac{A_j^{\mathsf{T}}}{||A_j||_2^2} \\
-&= x^{(i)} - \left(\langle A_j, x^{(i)}\rangle - \langle A_j, x'\rangle  \right) \frac{A_j^{\mathsf{T}}}{||A_j||_2^2}  \\
-&=
-x^{(i)} + \left(b_j - \langle A_j, x^{(i)}\rangle\right) \frac{A_j^{\mathsf{T}}}{||A_j||_2^2} 
-\end{align}
-$$ for any $x'$ such that $\langle A_j, x'\rangle = b$.
 
 ---
 [^1]: Seemingly, solving this linear system for any unknown, without associating it with a specific individual (e.g., Jeremy Doe), should not imply a privacy breach under GDPR. For example, according to GDPR, information is considered personal only if it can be linked to an identified or identifiable person. If the attacker only has access to public attributes (marked in blue), they likely cannot link the value of  $x_2$  to Jeremy Doe. However, the attacker may have additional background knowledge that could help identify Jeremy, even without access to the “Name” attribute. For example, they could know from another source (such as Facebook) that Jeremy visited a hospital and that his ZIP code starts with `438**` If this additional information is readily accessible, it could enable the attacker to single out Jeremy’s record. This post aims to demonstrate that query results themselves - such as the outcomes from Query 1, 2, and  3 - can be considered personal or sensitive data under GDPR, especially when combined with background knowledge that makes it possible to identify an individual.
