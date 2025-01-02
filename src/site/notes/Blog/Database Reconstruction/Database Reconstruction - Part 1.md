@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/blog/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T00:42:18.455+01:00"}
+{"dg-publish":true,"permalink":"/blog/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T00:45:06.023+01:00"}
 ---
 
 # Database Reconstruction - Part 1
@@ -431,8 +431,9 @@ $$
 $$
 and hence
 $$
-x_p = x^{(i)} - \left\langle \frac{A_j}{||A_j||_2}, x^{(i)} - x' \right\rangle \frac{A_j^{\mathsf{T}}}{||A_j||_2}
+\left\langle \frac{A_j}{||A_j||_2}, x^{(i)} - x' \right\rangle \frac{A_j^{\mathsf{T}}}{||A_j||_2}
 $$for any $x'$ such that $\langle A_j, x'\rangle = b$.
+
 ---
 [^1]: Seemingly, solving this linear system for any unknown, without associating it with a specific individual (e.g., Jeremy Doe), should not imply a privacy breach under GDPR. For example, according to GDPR, information is considered personal only if it can be linked to an identified or identifiable person. If the attacker only has access to public attributes (marked in blue), they likely cannot link the value of  $x_2$  to Jeremy Doe. However, the attacker may have additional background knowledge that could help identify Jeremy, even without access to the “Name” attribute. For example, they could know from another source (such as Facebook) that Jeremy visited a hospital and that his ZIP code starts with `438**` If this additional information is readily accessible, it could enable the attacker to single out Jeremy’s record. This post aims to demonstrate that query results themselves - such as the outcomes from Query 1, 2, and  3 - can be considered personal or sensitive data under GDPR, especially when combined with background knowledge that makes it possible to identify an individual.
 
