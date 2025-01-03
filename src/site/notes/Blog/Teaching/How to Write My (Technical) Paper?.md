@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/How to Write My (Technical) Paper?.md","permalink":"/teaching/how-to-write-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T11:47:52.722+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/How to Write My (Technical) Paper?.md","permalink":"/teaching/how-to-write-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T11:51:42.855+01:00"}
 ---
 
 
@@ -93,7 +93,7 @@ Start writing when you have shown that your solution works and obtained the firs
 
 Keep your explanations short and simple. Tighten your arguments, cut unnecessary words, and get straight to the point! If you start doubting your work’s worth because it seems so straightforward that anyone could have done it, you’re likely on the right track—especially if you’ve provided every detail of your solution. 
  
-_"The easier something is to read, the more deeply readers will engage with it. The less energy they expend on your prose, the more they'll have left for your ideas. ... fancy writing doesn't just conceal ideas. It can also conceal the lack of them. That's why some people write that way, to conceal the fact that they have nothing to say. Whereas writing simply keeps you honest. If you say nothing simply, it will be obvious to everyone, including you." by [P. Graham](http://www.paulgraham.com/simply.html)  
+*"The easier something is to read, the more deeply readers will engage with it. The less energy they expend on your prose, the more they'll have left for your ideas. ... fancy writing doesn't just conceal ideas. It can also conceal the lack of them. That's why some people write that way, to conceal the fact that they have nothing to say. Whereas writing simply keeps you honest. If you say nothing simply, it will be obvious to everyone, including you." by [P. Graham](http://www.paulgraham.com/simply.html)*  
   
 Writing clearly and concisely is an art and a highly valuable skill! In a world full of papers, blogs, and books, no one wants to spend extra time reading something that could be explained in one page instead of ten. Time is precious—respect others by being brief!
 
