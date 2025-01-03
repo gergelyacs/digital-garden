@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/blog/teaching/how-to-write-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T12:33:11.395+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/How to Write My (Technical) Paper?.md","permalink":"/teaching/how-to-write-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T12:33:11.395+01:00"}
 ---
 
 
