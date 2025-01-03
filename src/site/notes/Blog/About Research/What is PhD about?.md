@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-03T09:57:44.344+01:00"}
+{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-03T10:00:33.761+01:00"}
 ---
 
 
@@ -44,7 +44,7 @@ However, focusing only on internal rewards that are detached from others is not 
   
 In summary, akin to other desires, overwhelming frustration may suggest passion for what research provides, rather than a love for research for its own sake. While perseverance is crucial to overcome frustration, too much of it can delay understanding your true concerns and self-integration. Therefore, it's always good to scrutinize your passion and honestly reveal what you truly love, even though practicing self-honesty can be quite challenging.   
   
-
+---
 # References
 
 - [Advice for the budding theorist](https://windowsontheory.org/2015/11/03/advice-for-the-budding-theorist/) _by Boaz Barak_
@@ -56,8 +56,6 @@ In summary, akin to other desires, overwhelming frustration may suggest passion 
 - [The Mundanity of Excellence](https://fermatslibrary.com/s/the-mundanity-of-excellence-an-ethnographic-report-on-stratification-and-olympic-swimmers)  _by Daniel F. Chambliss_
 - [Creativity: Flow and the Psychology of Discovery and Invention](https://www.amazon.com/Creativity-Flow-Psychology-Discovery-Invention/dp/0062283251) _by Mihaly Csikszentmihalyi_
 - A book about passion, talent, and perseverance: [Grit](https://angeladuckworth.com/grit-book/) _by Angela Duckworth_ 
-
----
 
 [^1]: You need luck for the right social context and environment with good peers, bosses, timing, supportive family, etc. Everything that you may not always be able to influence. But, just like in the case of talent, this can also serve as an alibi not to try things, or explain our failure, as Hamming said.
 
