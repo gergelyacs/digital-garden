@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T12:23:16.605+01:00"}
+{"dg-publish":true,"dg-path":"Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T12:26:15.961+01:00"}
 ---
 
 
@@ -352,7 +352,7 @@ $$
 &= \arg\min_{\mathbf{x}} \mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]
 \end{align}
 $$
-where $\mathcal{U}(1,m)$ represents the uniform distribution over integers in $[1, m]$. To minimize $\mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]$, we can use stochastic gradient descent: in each iteration $i$,  we randomly select a row/query $j$ and update the current estimate $\mathbf{x}^{(i)}$ as follows:
+where $\mathcal{U}(1,m)$ represents the uniform distribution over integers in $[1, m]$. To minimize $\mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]$, we can use stochastic gradient descent, which approximates the expected value through sampling: in each iteration $i$, a row/query $j$ is randomly selected and the current estimate $\mathbf{x}^{(i)}$ is updated as follows:
 $$
 x^{(i+1)} = x^{(i)} - \eta \nabla_\mathbf{x} r_j(\mathbf{x})
 $$
