@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T12:11:50.546+01:00"}
+{"dg-publish":true,"dg-path":"Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T12:16:46.919+01:00"}
 ---
 
 
@@ -439,7 +439,7 @@ This is close to the exact solution computed by cvxpy [[Blog/Database Reconstruc
 
 # Beyond linear queries
 
-SUM and AVG are linear queries can be efficiently audited using tools from linear algebra. However, auditing non-linear queries such as MEDIAN,π MAX, and MIN is much more challenging. In fact, [checking disclosure](https://theory.stanford.edu/~nmishra/Papers/surveyQueryAuditingTechniquesDataPrivacy.pdf) for such queries may not even be feasible in polynomial time of the dataset size $n$. In these cases, we can resort to [heuristics such as SAT solvers](https://dl.acm.org/doi/10.1145/3287287).
+SUM and AVG are linear queries can be efficiently audited using tools from linear algebra. However, auditing non-linear queries such as MEDIAN, MAX, and MIN is much more challenging. In fact, [checking disclosure](https://theory.stanford.edu/~nmishra/Papers/surveyQueryAuditingTechniquesDataPrivacy.pdf) for such queries may not even be feasible in polynomial time of the dataset size $n$. In these cases, we can resort to [heuristics such as SAT solvers](https://dl.acm.org/doi/10.1145/3287287).
 
 
 
