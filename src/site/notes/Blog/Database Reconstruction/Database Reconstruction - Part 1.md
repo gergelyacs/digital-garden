@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T09:58:13.427+01:00"}
+{"dg-publish":true,"dg-path":"Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T12:11:50.546+01:00"}
 ---
 
 
@@ -57,7 +57,9 @@ $$
 \mathbf{b} = (32.1, 15.5, 11.4)^\mathsf{T}
 $$
 
-The task is to check if *any* $x_i$ can be unambiguously determined, or, in the worst case, whether the entire [system of equations](https://en.wikipedia.org/wiki/System_of_linear_equations) has a unique solution (i.e., all $x_i$ can be uniquely identified). If that is the case, the queries specified by matrix $\mathbf{A}$ cannot be answered without revealing individual private attribute values[^1].
+The task is to check if *any* $x_i$ can be unambiguously determined, or, in the worst case, whether the entire [system of equations](https://en.wikipedia.org/wiki/System_of_linear_equations) has a unique solution (i.e., all $x_i$ can be uniquely identified). If that is the case, the queries specified by matrix $\mathbf{A}$ cannot be answered without revealing individual private attribute values.
+> [!FAQ]- Why?
+> Seemingly, solving this linear system for any unknown, without associating it with a specific individual (e.g., Jeremy Doe), should not imply a privacy breach under GDPR. For example, according to GDPR, information is considered personal only if it can be linked to an identified or identifiable person. If the attacker only has access to public attributes (marked in blue), they likely cannot link the value of  $x_2$  to Jeremy Doe. However, the attacker may have additional background knowledge that could help identify Jeremy, even without access to the “Name” attribute. For example, they could know from another source (such as Facebook) that Jeremy visited a hospital and that his ZIP code starts with `438**` If this additional information is readily accessible, it could enable the attacker to single out Jeremy’s record. This post aims to demonstrate that query results themselves - such as the outcomes from Query 1, 2, and  3 - can be considered personal or sensitive data under GDPR, especially when combined with background knowledge that makes it possible to identify an individual.
 ## Which records are exposed?
 
 Given a linear system of equations $\mathbf{A}\mathbf{x} = \mathbf{b}$, where $\mathbf{b} = \{b_1, \ldots, b_m\}$, $\mathbf{A} \in \mathbb{R}^{m,n}$, and row $i$ of $\mathbf{A}$ corresponds to query $q_i$. In general, an unknown $x_i$ can be unambiguously determined if the following conditions are met:
@@ -364,7 +366,26 @@ $$
 x^{(i+1)} = x^{(i)} + \frac{(b_j - A_j x^{(i)})A_j^{\mathsf{T}}}{||A_j||_2^2}
 $$
 
-Kaczmarz’s method has an intuitive geometric interpretation: starting from a random location $x^{(0)}$, a better solution $x^{(i+1)}$ is found by projecting $x^{(i)}$ onto the hyperplane defined by the $j$th equation, $\langle A_j,x \rangle = b_j$ (see [[Blog/Database Reconstruction/Database Reconstruction - Part 1#Appendix\|#Appendix]]). The steps of the process in 2D are shown in the figure below, where each equation is a line, and their single intersection point in the center is the unique solution to the whole system of equations. For consistent systems, $x^{(i)}$ gradually converges to this unique solution.
+Kaczmarz’s method has an intuitive geometric interpretation: starting from a random location $x^{(0)}$, a better solution $x^{(i+1)}$ is found by projecting $x^{(i)}$ onto the hyperplane defined by the $j$th equation, $\langle A_j,x \rangle = b_j$. 
+
+> [!FAQ]- Why?
+> Let $x_p$ be the projection of $x^{(i)}$ onto hyperplane $A_j\mathbf{x} = b_j$ and  $x'$  be any reference point that lies on this hyperplane.  Since vector $A_j$ is orthogonal to this hyperplane, $x_p$ can be described as the result of shifting $x^{(i)}$ by the projection of vector  $(x^{(i)} - x')$ to vector $A_j$. The vector  $(x^{(i)} - x')$  represents the displacement from a reference point  $x'$ to the point $x^{(i)}$. The [projection](https://en.wikipedia.org/wiki/Vector_projection)of this displacement vector onto $A_j$ is given by
+>  $$
+>  \left\langle \frac{A_j}{||A_j||_2}, x^{(i)} - x' \right\rangle 
+>  \frac{A_j^{\mathsf{T}}}{||A_j||_2}
+> $$
+>  and hence
+>  $$
+>  \begin{align}
+>  x_p &= x^{(i)} - \left\langle \frac{A_j}{||A_j||_2}, x^{(i)} - x' \right\rangle \frac{A_j^{\mathsf{T}}}{||A_j||_2} \\
+>  &= x^{(i)} -  \left\langle A_j, x^{(i)} - x' \right\rangle \frac{A_j^{\mathsf{T}}}{||A_j||_2^2} \\
+>  &= x^{(i)} - \left(\langle A_j, x^{(i)}\rangle - \langle A_j, x'\rangle  \right) \frac{A_j^{\mathsf{T}}}{||A_j||_2^2}  \\
+>  &=
+>  x^{(i)} + \left(b_j - \langle A_j, x^{(i)}\rangle\right) \frac{A_j^{\mathsf{T}}}{||A_j||_2^2} 
+>  \end{align}$$
+>  for any $x'$ such that $\langle A_j, x' \rangle = b$.
+
+The steps of the process in 2D are shown in the figure below, where each equation is a line, and their single intersection point in the center is the unique solution to the whole system of equations. For consistent systems, $x^{(i)}$ gradually converges to this unique solution.
 
 ![Pasted image 20250102094456.png](/img/user/Blog/Database%20Reconstruction/Pasted%20image%2020250102094456.png)
 
@@ -414,34 +435,13 @@ that gives:
 ``` python
 Solution: [4.0698786 5.2092214 5.165333 5.165333 7.3272643 5.165333 ]
 ```
-This is close to the exact solution computed by cvxpy above!
+This is close to the exact solution computed by cvxpy [[Blog/Database Reconstruction/Database Reconstruction - Part 1#Incorporating background knowledge as constraints\|above]]!
 
 # Beyond linear queries
 
-SUM and AVG are linear queries can be efficiently audited using tools from linear algebra. However, auditing non-linear queries such as MEDIAN, MAX, and MIN is much more challenging. In fact, [checking disclosure](https://theory.stanford.edu/~nmishra/Papers/surveyQueryAuditingTechniquesDataPrivacy.pdf) for such queries may not even be feasible in polynomial time of the dataset size $n$. In these cases, we can resort to [heuristics such as SAT solvers](https://dl.acm.org/doi/10.1145/3287287).
+SUM and AVG are linear queries can be efficiently audited using tools from linear algebra. However, auditing non-linear queries such as MEDIAN,π MAX, and MIN is much more challenging. In fact, [checking disclosure](https://theory.stanford.edu/~nmishra/Papers/surveyQueryAuditingTechniquesDataPrivacy.pdf) for such queries may not even be feasible in polynomial time of the dataset size $n$. In these cases, we can resort to [heuristics such as SAT solvers](https://dl.acm.org/doi/10.1145/3287287).
 
----
-# Appendix
 
-### Projecting onto Hyperplane
-
- Let $x_p$ be the projection of $x^{(i)}$ onto hyperplane $A_j\mathbf{x} = b_j$ and  $x'$  be any reference point that lies on this hyperplane.  Since vector $A_j$ is orthogonal to this hyperplane, $x_p$ can be described as the result of shifting $x^{(i)}$ by the projection of vector  $(x^{(i)} - x')$ to vector $A_j$. The vector  $(x^{(i)} - x')$  represents the displacement from a reference point  $x'$ to the point $x^{(i)}$. The [projection](https://en.wikipedia.org/wiki/Vector_projection)of this displacement vector onto $A_j$ is given by
-$$
-\left\langle \frac{A_j}{||A_j||_2}, x^{(i)} - x' \right\rangle \frac{A_j^{\mathsf{T}}}{||A_j||_2}
-$$
-and hence
-$$
-\begin{align}
-x_p &= x^{(i)} - \left\langle \frac{A_j}{||A_j||_2}, x^{(i)} - x' \right\rangle \frac{A_j^{\mathsf{T}}}{||A_j||_2} \\
-&= x^{(i)} -  \left\langle A_j, x^{(i)} - x' \right\rangle \frac{A_j^{\mathsf{T}}}{||A_j||_2^2} \\
-&= x^{(i)} - \left(\langle A_j, x^{(i)}\rangle - \langle A_j, x'\rangle  \right) \frac{A_j^{\mathsf{T}}}{||A_j||_2^2}  \\
-&=
-x^{(i)} + \left(b_j - \langle A_j, x^{(i)}\rangle\right) \frac{A_j^{\mathsf{T}}}{||A_j||_2^2} 
-\end{align}$$
-
-for any $x'$ such that $\langle A_j, x' \rangle = b$.
-
-[^1]: Seemingly, solving this linear system for any unknown, without associating it with a specific individual (e.g., Jeremy Doe), should not imply a privacy breach under GDPR. For example, according to GDPR, information is considered personal only if it can be linked to an identified or identifiable person. If the attacker only has access to public attributes (marked in blue), they likely cannot link the value of  $x_2$  to Jeremy Doe. However, the attacker may have additional background knowledge that could help identify Jeremy, even without access to the “Name” attribute. For example, they could know from another source (such as Facebook) that Jeremy visited a hospital and that his ZIP code starts with `438**` If this additional information is readily accessible, it could enable the attacker to single out Jeremy’s record. This post aims to demonstrate that query results themselves - such as the outcomes from Query 1, 2, and  3 - can be considered personal or sensitive data under GDPR, especially when combined with background knowledge that makes it possible to identify an individual.
 
 
 

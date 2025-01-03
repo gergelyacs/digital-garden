@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/How to Write My (Technical) Paper?.md","permalink":"/teaching/how-to-write-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T11:51:42.855+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/How to Write My (Technical) Paper?.md","permalink":"/teaching/how-to-write-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T11:57:40.330+01:00"}
 ---
 
 
@@ -88,7 +88,7 @@ It also [improves critical thinking](http://www.paulgraham.com/words.html): whe
 
 ## When to start writing?
  
-Start writing when you have shown that your solution works and obtained the first positive results. If you have negative results or get stuck, don't panic! Step back and start summarizing what you are trying to solve (focus on Sections 4 and 5 above). You can also put your problem aside for a while, which can help discover totally new approaches when you return to it later. If your results eventually turn out to be negative and you don't have time to try another approach (or you believe that your problem can't be solved), then write this and recalibrate your work! Your negative findings may save precious time for others only if you publish them.  
+Start writing when you have shown that your solution works and obtained the first positive results. If you have negative results or get stuck, don't panic! Step back and start summarizing what you are trying to solve (focus on [[Blog/Teaching/How to Write My (Technical) Paper?#4. Model\|Model]] and [[Blog/Teaching/How to Write My (Technical) Paper?#5. Solution\|Solution]] above). You can also put your problem aside for a while, which can help discover totally new approaches when you return to it later. If your results eventually turn out to be negative and you don't have time to try another approach (or you believe that your problem can't be solved), then write this and recalibrate your work! Your negative findings may save precious time for others only if you publish them.  
 ## Keep it simple!
 
 Keep your explanations short and simple. Tighten your arguments, cut unnecessary words, and get straight to the point! If you start doubting your work’s worth because it seems so straightforward that anyone could have done it, you’re likely on the right track—especially if you’ve provided every detail of your solution. 
