@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/How to Write My (Technical) Paper?.md","permalink":"/teaching/how-to-write-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T11:57:40.330+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/How to Write My (Technical) Paper?.md","permalink":"/teaching/how-to-write-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T12:31:54.181+01:00"}
 ---
 
 
@@ -138,7 +138,7 @@ Committees (reviewers) do not accept results. They accept papers.
 
 ## The final push
 
-_The final push before the submission deadline: Don’t focus on what you don’t have, focus on what you do have.._ there will be another day, another dance, and another paper deadline. Be realistic and figure out the nugget in what you have, then tell that story. You may be surprised that a smaller story is actually a better story.
+*Don’t focus on what you don’t have; focus on what you do have.* There will always be another day, another chance, and another paper deadline. Be realistic and find the key insight in what you have, then tell that story. You might be surprised to find that a smaller, more focused story could actually be a better one.
 
 ---
 # References
