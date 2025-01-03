@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T21:49:14.621+01:00"}
+{"dg-publish":true,"dg-path":"Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T22:44:47.141+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information can still qualify as personal data under the GDPR. By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
