@@ -1,12 +1,12 @@
 ---
-{"dg-publish":true,"dg-path":"Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T00:57:42.238+01:00"}
+{"dg-publish":true,"dg-path":"Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T09:58:13.427+01:00"}
 ---
 
 
 
 One common challenge is convincing people that aggregate information can still qualify as personal data under the GDPR. By “aggregate information,” we refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
 
-In this post, we start with the simplest case: demonstrating how sensitive personal data can be reconstructed from the results of a series of SUM queries performed on a confidential dataset. In a follow-up post, we’ll explore how an attacker can strategically minimize the number of queries needed to reconstruct every record in the dataset.
+In this post, I start with the simplest case: demonstrating how sensitive personal data can be reconstructed from the results of a series of SUM queries performed on a confidential dataset. In a follow-up post, I’ll explore how an attacker can strategically minimize the number of queries needed to reconstruct every record in the dataset.
 
 For the sake of illustration, consider the following hospital dataset.
 
