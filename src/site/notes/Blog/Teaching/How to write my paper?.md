@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/How to write my paper?.md","permalink":"/teaching/how-to-write-my-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T11:39:41.795+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/How to write my paper?.md","permalink":"/teaching/how-to-write-my-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T11:47:52.722+01:00"}
 ---
 
 
@@ -79,6 +79,8 @@ Below you find a suggested structure of your technical work (for project lab rep
 ---
 
 # Writing Hints
+
+Below some general writing hints (see [[Blog/Teaching/How to write my paper?#References\|#References]] for more)
 
 ## Writing is not only a soft skill!
 
