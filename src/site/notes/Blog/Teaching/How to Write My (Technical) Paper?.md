@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/How to Write My (Technical) Paper?.md","permalink":"/teaching/how-to-write-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T12:31:54.181+01:00"}
+{"dg-publish":true,"permalink":"/blog/teaching/how-to-write-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T12:33:11.395+01:00"}
 ---
 
 
@@ -133,8 +133,7 @@ A paper is not an advertisement—you’re not trying to sell something. Overcla
 
 ## Use your time wisely!
 
-Allocate enough time for writing! The best way to get your paper rejected is to wait until the day of the deadline to write it. Students often focus on the code and results while ignoring the text.
-Committees (reviewers) do not accept results. They accept papers.
+Allocate enough time for writing! The best way to get your paper rejected is to wait until the day of the deadline to write it. Students often focus on the code and results while ignoring the text. Committees (reviewers) do not accept results. They accept papers.
 
 ## The final push
 
