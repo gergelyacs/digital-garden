@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/blog/about-research/for-ph-d-students/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-03T00:58:33.990+01:00"}
+{"dg-publish":true,"dg-path":"About Research/For PhD Students.md","permalink":"/about-research/for-ph-d-students/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-03T00:58:33.990+01:00"}
 ---
 
 # What is PhD about?
