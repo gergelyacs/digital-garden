@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/blog/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T14:13:21.323+01:00"}
+{"dg-publish":true,"permalink":"/blog/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-03T14:15:22.810+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information can still qualify as personal data under the GDPR. By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -389,7 +389,7 @@ Kaczmarz’s method has an intuitive geometric interpretation: starting from a r
 
 The steps of the process in 2D are shown in the figure below, where each equation is a line, and their single intersection point in the center is the unique solution to the whole system of equations. For consistent systems, $x^{(i)}$ gradually converges to this unique solution.
 
-![Pasted image 20250102094456.png](/img/user/Blog/Database%20Reconstruction/Pasted%20image%2020250102094456.png)
+![Kaczmarz.png](/img/user/Blog/Database%20Reconstruction/Kaczmarz.png)
 
 This convergence can be accelerated by selecting row $j$ with probability proportional to its squared norm $||A_j||_2^2$. There are other [variants](https://link.springer.com/article/10.1007/s11075-024-01945-2) of Kaczmarz's method that have been adapted even for inconsistent systems.
 

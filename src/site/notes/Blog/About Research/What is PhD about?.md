@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-03T10:00:33.761+01:00"}
+{"dg-publish":true,"permalink":"/blog/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-03T10:00:33.761+01:00"}
 ---
 
 
