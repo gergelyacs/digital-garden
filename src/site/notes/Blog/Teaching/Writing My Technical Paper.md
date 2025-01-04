@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Writing My Technical Paper.md","permalink":"/teaching/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-04T16:40:33.000+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Writing My Technical Paper.md","permalink":"/teaching/writing-my-technical-paper/","created":"2025-01-03T00:09:10.000+01:00","updated":"2025-01-04T16:40:33.111+01:00"}
 ---
 
 Below are some general writing guidelines and a suggested structure for technical documentation, including project lab reports, theses, and research papers. This guideline is not comprehensive and does not replace your advisor’s guidance. Writing is a skill you learn through practice, and feedback is essential for improvement. (Feedback _should_ be seen as a sign of caring, even if it is critical. Only worry if you don't receive any feedback at all.)
