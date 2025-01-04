@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-03T18:37:27.557+01:00"}
+{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-04T15:20:07.449+01:00"}
 ---
-
 
 PhD is more about discovering than solving problems. Problems, which are intriguing and novel. Top researchers often say they're not necessarily smarter than many other scientists, but they think more about the problems (or the origins of the problems) instead of their solutions. Discovering problems requires creativity, experience, but most importantly, motivation. While elaboration is undoubtedly crucial and makes up the bulk of the actual work, there are more or less well-defined methodologies for it. In contrast, creativity is much less understood and, therefore, more challenging to teach. Creativity often emerges through observation and implicit learning, with your advisor serving as a model. Initially, your advisor provides the first set of problems, and as you progress, you collaboratively define problems. Ideally, by the end, you should be capable of defining problems independently - a main goal of your PhD.   
   
