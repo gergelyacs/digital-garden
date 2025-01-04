@@ -1,12 +1,12 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Writing My Technical Paper.md","permalink":"/teaching/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-03T21:34:04.495+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Writing My Technical Paper.md","permalink":"/teaching/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-04T16:40:33.000+01:00"}
 ---
 
 Below are some general writing guidelines and a suggested structure for technical documentation, including project lab reports, theses, and research papers. This guideline is not comprehensive and does not replace your advisor’s guidance. Writing is a skill you learn through practice, and feedback is essential for improvement. (Feedback _should_ be seen as a sign of caring, even if it is critical. Only worry if you don't receive any feedback at all.)
 
 # Why is writing important?
 
-Writing is not only a soft skill, it also [improves critical thinking](http://www.paulgraham.com/words.html): when you write, you may find fallacies in your solution. Writing is an iterative process and takes time; you may re-write some parts of your work several times until you find its most accessible form. Because of that, use AI-assisted writing tools wisely! While tools like ChatGPT and can help with language and clarity (and as a non-native English speaker, I also use them) they will not improve your critical thinking. As Feynman famously said: *"What I cannot create, I do not understand!* 
+Writing is not only a soft skill, it also [improves critical thinking](http://www.paulgraham.com/words.html): when you write, you may find fallacies in your solution. Writing is an iterative process and takes time; you may re-write some parts of your work several times until you find its most accessible form. Because of that, use AI-assisted writing tools wisely! While tools like ChatGPT and can help with language and clarity (and as a non-native English speaker, I also use them) they will not improve your critical thinking. As Feynman famously said: *"What I cannot create, I do not understand!”* 
 
 # What happens if I get negative results? 
 
@@ -19,10 +19,10 @@ Start writing once you've demonstrated that your solution works and obtained the
 
 # How to write?
 
-There are no strict rules, but here are 10 self-curated hints to guide you. Refer to some [[Blog/Teaching/Writing My Technical Paper#References\|references]] the end for more details.
+There are no strict rules, but here are 10 self-curated hints to guide you. Refer to some [[Blog/Teaching/Writing My Technical Paper#References\|references]] at the end for more details.
 ## #1 Keep it simple!
 
-Keep your explanations short and simple. Tighten your arguments, cut unnecessary words, and get straight to the point! If you start doubting your work’s worth because it seems so straightforward that anyone could have done it, you’re likely on the right track—especially if you’ve provided every detail of your solution. 
+Keep your explanations short and simple. Tighten your arguments, cut unnecessary words, and get straight to the point! If you start doubting your work’s worth because it seems so straightforward that anyone could have done it, you’re likely on the right track.
  
 *"The easier something is to read, the more deeply readers will engage with it. The less energy they expend on your prose, the more they'll have left for your ideas. ... fancy writing doesn't just conceal ideas. It can also conceal the lack of them. That's why some people write that way, to conceal the fact that they have nothing to say. Whereas writing simply keeps you honest. If you say nothing simply, it will be obvious to everyone, including you." by [P. Graham](http://www.paulgraham.com/simply.html)*  
 
