@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-04T11:17:43.121+01:00"}
+{"dg-publish":true,"dg-path":"Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-04T11:23:08.979+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information can still qualify as personal data under the GDPR. By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -357,7 +357,7 @@ x^{(i+1)} &= x^{(i)} - \eta \cdot \nabla_\mathbf{x} \mathbb{E}_{j\sim \mathcal{U
 &= x^{(i)} - \eta \cdot \mathbb{E}_{j\sim \mathcal{U}(1,m)}[ \nabla_\mathbf{x} r_j(\mathbf{x})]
 \end{align}
 $$
-where $\eta$ is the learning rate. This approach converges to the global minimum of $R(\mathbf{x})$, as $r_j(\mathbf{x})$ is convex. However, this approach still requires iterating over all queries in each iteration. To overcome this, we apply *stochastic gradient descent* to approximate the expected value through sampling. In each iteration $i$, a query (or equation) $j$ is randomly selected, and the gradient's expected value over all queries is estimated using the gradient of this single query. This is gradient is given by:
+where $\eta$ is the learning rate. This approach converges to the global minimum of $R(\mathbf{x})$, as $r_j(\mathbf{x})$ is convex. However, this approach still requires iterating over all queries in each iteration. To overcome this, we apply [stochastic gradient descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) to approximate the expected value through sampling. In each iteration $i$, a query (or equation) $j$ is randomly selected, and the gradient's expected value over all queries is estimated using the gradient of this single query. This is gradient is given by:
 $$
 \nabla_\mathbf{x} r_j(\mathbf{x})=-2(b_j - A_j x^{(i)}) A_j^{\mathsf{T}} 
 $$
