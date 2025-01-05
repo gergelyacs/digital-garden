@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"About Research/Writing My Technical Paper.md","permalink":"/about-research/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-05T14:58:00.539+01:00"}
+{"dg-publish":true,"dg-path":"About Research/Writing My Technical Paper.md","permalink":"/about-research/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-05T17:42:46.600+01:00"}
 ---
 
 Below are some general writing guidelines and a suggested structure for technical documentation, including project lab reports, theses, and research papers. This guideline is not comprehensive and does not replace your advisor’s guidance. Writing is a skill you learn through practice, and feedback is essential for improvement. (Feedback _should_ be seen as a sign of caring, even if it is critical. Only worry if you don't receive any feedback at all.)
@@ -30,11 +30,11 @@ Keep your explanations short and simple. Tighten your arguments, cut unnecessary
 
 ## #2 Make your talk first!
 
-The best way to write a clear paper is to start by preparing a talk. This helps you focus on keeping your message simple and clear. Once the core idea is clear, writing becomes easier because you can work from the top-down rather than bottom-up. If you don’t have a talk ready, explain your work to a friend instead—it works just as well!
+The best way to write a clear paper is to [start by preparing a talk](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper). This helps you focus on keeping your message simple and clear. Once the core idea is clear, writing becomes easier because you can work from the top-down rather than bottom-up. If you don’t have a talk ready, explain your work to a friend instead—it works just as well!
 
 ## #3 First impressions matter! 
 
-By the time a reviewer finishes your introduction, they’ve likely already formed an opinion about your paper - often even deciding whether to accept it. The rest of their reading typically focuses on gathering arguments to support that initial judgment. Most readers focus on the Abstract, Introduction, and Conclusion, with only a few reading the rest. That’s why it’s essential to put extra effort into these sections, especially the Introduction - it’s your chance to make a strong and positive first impression!
+By the time a reviewer finishes your introduction, they’ve likely already formed an opinion about your paper - often even deciding whether to accept it. The rest of their reading typically focuses on gathering arguments to support that initial judgment. [Most readers](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper) focus on the Abstract, Introduction, and Conclusion, with only a few reading the rest. That’s why it’s essential to put extra effort into these sections, especially the Introduction - it’s your chance to make a strong and positive first impression!
 
 Because of that, it's often better not to start with writing the Introduction! You can only sell your work if you already know its limitations and strong points, that is, you have finished other parts of your work. Some people start with the abstract or conclusion which helps with clarifying the goals before writing, others start describing their work directly.  
 
@@ -46,14 +46,13 @@ The goal is *not* to show that you’ve read or understood something but to *exp
 
 People are naturally drawn to stories, and the rhythm of [problem-solution-problem-solution](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper) is a powerful way to present scientific ideas. This structure helps guide the reader through layers of understanding, from identifying the problem to revealing insights.
 
-A compelling [metaphor](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper) by [Michael J. Black](https://en.wikipedia.org/wiki/Michael_J._Black) likens scientific writing to creating a “drama.”
-Start with a significant challenge (the villain) - a problem no one has solved, either because it hasn’t been recognized or because earlier approaches have fallen short. Then introduce your solution (the hero) - something novel, surprising, and effective that defeats the villain and resolves the problem. 
+A compelling [metaphor](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper) by [Michael J. Black](https://en.wikipedia.org/wiki/Michael_J._Black) likens scientific writing to creating a “drama.” Start with a great challenge (the villain) - a problem no one has solved, either because it hasn’t been recognized or because earlier approaches have fallen short. Then introduce your solution (the hero) - something novel, surprising, and effective that defeats the villain and resolves the problem. 
 
 Describe the shortest and most straightforward path to your solution, step-by-step, even if this path may differ from the actual, potentially messy process you followed.
 
 ## #6 Use text, equations, and figures for important concepts!
 
-People grasp ideas in diverse ways, so it’s helpful to present important concepts in three forms: text, equations, and figures. This approach isn’t redundant - it provides multiple entry points for understanding. A paper flows effectively when it alternates between these elements in a clear and consistent pattern.
+People grasp ideas in diverse ways, so it’s helpful to present important concepts [in three forms](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper): text, equations, and figures. This approach isn’t redundant - it provides multiple entry points for understanding. A paper flows effectively when it alternates between these elements in a clear and consistent pattern.
 
 ## #7 Make your plots!
 
@@ -61,11 +60,11 @@ Avoid using copy-pasted plots or text - create them yourself, especially the ove
 
 ## #8 Do not oversell!
 
-A paper is not an advertisement - you’re not trying to sell something. Overclaiming can frustrate reviewers. Be sure to clearly state what’s new and unique about your work.
+A paper is not an advertisement - you’re not trying to sell something. [Overclaiming can frustrate reviewers](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper). Be sure to clearly state what’s new and unique about your work.
 
 ## #9 Stop in time!
 
-When you are close to the deadline, *don’t focus on what you don’t have; focus on what you do have.* There will always be another day, another chance, and another deadline. Be realistic and find the key insight in what you have, then tell that story. You might be surprised to find that a smaller, more focused story could actually be a better one.
+When you are close to the deadline, *[don’t focus on what you don’t have; focus on what you do have.](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper)* There will always be another day, another chance, and another deadline. Be realistic and find the key insight in what you have, then tell that story. You might be surprised to find that a smaller, more focused story could actually be a better one.
 
 ## #10 Don't care about the minimum size limits! 
 

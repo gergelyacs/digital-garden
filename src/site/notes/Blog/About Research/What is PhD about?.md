@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-05T12:47:04.532+01:00"}
+{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-05T17:36:46.246+01:00"}
 ---
 
 The two most important goals of a PhD are to develop *problem discovery* and *effective communication skills*. While elaboration is undoubtedly crucial and makes up the bulk of the actual research work, it is more about solving problems than discovering them. As Freeman Dyson said: *"It is characteristic of scientific life that it is easy when you have a problem to work on. The hard part is finding your problem.”*
