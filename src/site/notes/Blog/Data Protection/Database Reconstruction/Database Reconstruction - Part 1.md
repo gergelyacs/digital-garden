@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/data-protection/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-04T12:49:13.324+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/data-protection/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-05T15:23:36.493+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information can still qualify as personal data under the GDPR. By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -443,9 +443,10 @@ This is close to the exact solution computed by cvxpy [[Blog/Data Protection/Dat
 
 # Beyond linear queries
 
-SUM and AVG are linear queries can be efficiently audited using tools from linear algebra. However, auditing non-linear queries such as MEDIAN, MAX, and MIN is much more challenging. In fact, [checking disclosure](https://theory.stanford.edu/~nmishra/Papers/surveyQueryAuditingTechniquesDataPrivacy.pdf) for such queries may not even be feasible in polynomial time of the dataset size $n$. In these cases, we can resort to [heuristics such as SAT solvers](https://dl.acm.org/doi/10.1145/3287287).
+SUM and AVG are linear queries that can be efficiently audited using tools from linear algebra. However, auditing non-linear queries like MEDIAN, MAX, and MIN is significantly more challenging. In fact, [verifying exact disclosure](https://theory.stanford.edu/~nmishra/Papers/surveyQueryAuditingTechniquesDataPrivacy.pdf) for such queries may not even be feasible in polynomial time with respect to the dataset size $n$  or the number of queries $m$.
 
+One approach is to approximate the missing attribute values using [heuristics like SAT solvers](https://dl.acm.org/doi/10.1145/3287287). Another is to apply stochastic gradient descent (SGD), as discussed above, if the queries are "approximately" differentiable functions of the attribute values. From a machine learning perspective, queries can be thought of as training samples, while the confidential attribute values act as model parameters that we want to determine. The task then becomes finding the parameters that best fit the given query results (training labels).
 
-
+Apart from the potentially non-differentiable queries, another issue arises when queries are non-convex functions of the records. In such cases, SGD does not guarantee convergence to the global optimum, meaning we cannot be sure that the solution it finds corresponds to the actual attribute values. Nevertheless, as in machine learning, we can hope that the solutions found are reasonably close to the actual solution.
 
 

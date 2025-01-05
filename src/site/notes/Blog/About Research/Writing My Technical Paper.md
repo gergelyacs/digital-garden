@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"About Research/Writing My Technical Paper.md","permalink":"/about-research/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-04T16:40:33.000+01:00"}
+{"dg-publish":true,"dg-path":"About Research/Writing My Technical Paper.md","permalink":"/about-research/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-05T14:58:00.539+01:00"}
 ---
 
 Below are some general writing guidelines and a suggested structure for technical documentation, including project lab reports, theses, and research papers. This guideline is not comprehensive and does not replace your advisor’s guidance. Writing is a skill you learn through practice, and feedback is essential for improvement. (Feedback _should_ be seen as a sign of caring, even if it is critical. Only worry if you don't receive any feedback at all.)
@@ -44,19 +44,24 @@ The goal is *not* to show that you’ve read or understood something but to *exp
 
 ## #5 Make a story!
 
-People are naturally drawn to stories, and the rhythm of [problem-solution-problem-solution](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper) is an effective way to present scientific ideas. This structure guides the reader through layers of understanding gradually, from identifying the problem to uncovering insights. This also resonates with timeless storytelling patterns humans instinctively recognize and connect with. 
+People are naturally drawn to stories, and the rhythm of [problem-solution-problem-solution](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper) is a powerful way to present scientific ideas. This structure helps guide the reader through layers of understanding, from identifying the problem to revealing insights.
+
+A compelling [metaphor](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper) by [Michael J. Black](https://en.wikipedia.org/wiki/Michael_J._Black) likens scientific writing to creating a “drama.”
+Start with a significant challenge (the villain) - a problem no one has solved, either because it hasn’t been recognized or because earlier approaches have fallen short. Then introduce your solution (the hero) - something novel, surprising, and effective that defeats the villain and resolves the problem. 
+
+Describe the shortest and most straightforward path to your solution, step-by-step, even if this path may differ from the actual, potentially messy process you followed.
 
 ## #6 Use text, equations, and figures for important concepts!
 
-People grasp ideas in diverse ways, so it’s helpful to present important concepts in three forms: text, equations, and figures. This approach isn’t redundant—it provides multiple entry points for understanding. A paper flows effectively when it alternates between these elements in a clear and consistent pattern.
+People grasp ideas in diverse ways, so it’s helpful to present important concepts in three forms: text, equations, and figures. This approach isn’t redundant - it provides multiple entry points for understanding. A paper flows effectively when it alternates between these elements in a clear and consistent pattern.
 
 ## #7 Make your plots!
 
-Avoid using copy-pasted plots or text—create them yourself, especially the overview plot in the introduction. Ownership brings confidence and enthusiasm, making you more comfortable and engaging when presenting your work. Everyone has a unique background and way of thinking, so follow your own approach but always tailor your presentation to the audience!   
+Avoid using copy-pasted plots or text - create them yourself, especially the overview plot in the introduction. Ownership brings confidence and enthusiasm, making you more comfortable and engaging when presenting your work. Everyone has a unique background and way of thinking, so follow your own approach but always tailor your presentation to the audience!   
 
 ## #8 Do not oversell!
 
-A paper is not an advertisement—you’re not trying to sell something. Overclaiming can frustrate reviewers. Be sure to clearly state what’s new and unique about your work.
+A paper is not an advertisement - you’re not trying to sell something. Overclaiming can frustrate reviewers. Be sure to clearly state what’s new and unique about your work.
 
 ## #9 Stop in time!
 
