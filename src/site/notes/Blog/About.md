@@ -1,10 +1,10 @@
 ---
-{"dg-publish":true,"dg-path":"About.md","permalink":"/about/","tags":["gardenEntry"],"created":"2025-01-02T22:42:23.627+01:00","updated":"2025-01-05T18:48:46.294+01:00"}
+{"dg-publish":true,"dg-path":"About.md","permalink":"/about/","tags":["gardenEntry"],"created":"2025-01-02T22:42:23.627+01:00","updated":"2025-01-05T18:55:54.795+01:00"}
 ---
 
 ## What is meadow?
 
-A meadow /ˈmɛdəʊ/ is piece of grassland, especially one used for hay, or a piece of low ground near a river. Whatever you like. Here is one:
+A meadow /ˈmɛdəʊ/ is piece of grassland, especially one used for hay, or a piece of low ground near a river. 
 
 ## What is a meadow of thoughts? 
 
