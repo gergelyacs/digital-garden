@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-05T12:43:44.944+01:00"}
+{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-05T12:44:50.261+01:00"}
 ---
 
 The two most important goals of a PhD are to develop *problem discovery* and *effective communication skills*. While elaboration is undoubtedly crucial and makes up the bulk of the actual research work, it is more about solving problems than discovering them. As Freeman Dyson said: *"It is characteristic of scientific life that it is easy when you have a problem to work on. The hard part is finding your problem.”*
@@ -42,7 +42,7 @@ Yes, if you are *[passionate and persistent](https://en.wikipedia.org/wiki/Grit_
 
 While passion provides the necessary direction and emotional momentum, it alone is probably not enough to complete your PhD. Your passion should also persist over time. Research is usually filled with frustration, and learning to handle it over the long term is necessary. *Perseverance*, therefore, becomes crucial, demanding that you remain purposeful, don't give up, and always find a way to work things out. However, too much perseverance can also be counterproductive. Rather than persisting simply to finish what we start, we must learn to recognize when it’s time to step back or change direction to create new opportunities.  
   
-Fortunately, we can also [develop passion and perseverance](https://angeladuckworth.com/grit-book/) to some degree[^2]. One way is through others: if you want to be more passionate and persevere, consider joining a research group with that culture. When you collaborate with passionate people, their enthusiasm can boost yours. If everybody is working hard around you, that becomes your habit too. 
+Fortunately, we can also [develop passion and perseverance](https://angeladuckworth.com/grit-book/) to some degree[^2]. One way is through others: if you want to be more passionate and persevering, consider joining a research group with that culture. When you collaborate with passionate people, their enthusiasm can boost yours. If everybody is working hard around you, that becomes your habit too. 
 
 You can also grow perseverance and passion from within. Although it is always more self-assuring to do things that we are good at and always stick to what we know, it will not necessarily enhance our perseverance. If you focus on what you cannot do or don't know rather than what you know, and deliberately practice/learn to improve, then your perseverance also strengthens[^3]. 
   
@@ -60,8 +60,7 @@ Your concerns can also bring *internal rewards* such as doing something out of p
   
 ## Why is control so important? 
 
-Naturally, your brain tends to make less certain predictions when the reward of your actions is up to external factors because you have less control over it. What drives people crazy is not the failure to get the reward but the uncertainty about getting it. If you value your achievement (or "success") based on what others think or do, then you are externally motivated and your happiness is beyond your control. However, if your valuation does not depend on external conditions, then you are internally motivated and your happiness is more within your control. 
-If there are no externally centered values tied to your motivation, you don't question your abilities or compare yourself to others. 
+Naturally, your brain tends to make less certain predictions when the reward of your actions is up to external factors because you have less control over it. What drives people crazy is not the failure to get the reward but the uncertainty about getting it. If you value your achievement (or "success") based on what others think or do, then you are externally motivated and your happiness is beyond your control. However, if your valuation does not depend on external conditions, then you are internally motivated and your happiness is more within your control. If there are no externally centered values tied to your motivation, you don't question your abilities or compare yourself to others. 
 
 Consider solving a challenging problem just for the fun of it; you might experience frustration if you fail, similar to a child frustrated over a puzzle, but crucially, this frustration is within your control. You can adaptively change your conditions, such as the problem you are working on, to overcome frustration while still enjoying the internal reward of pure curiosity.   
 
