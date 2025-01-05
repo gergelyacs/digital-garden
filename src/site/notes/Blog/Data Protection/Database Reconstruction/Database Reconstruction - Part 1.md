@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/data-protection/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-05T17:33:51.021+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/data-protection/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-05T18:15:16.026+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information can still qualify as personal data under the GDPR. By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -384,7 +384,7 @@ Kaczmarz’s method has an intuitive geometric interpretation: starting from a r
 >  &=
 >  x^{(i)} + \left(b_j - \langle A_j, x^{(i)}\rangle\right) \frac{A_j^{\mathsf{T}}}{||A_j||_2^2} 
 >  \end{align}$$
->  for any $x'$ such that $\langle A_j, x' \rangle = b$.
+>  for any $x'$ such that $\langle A_j, x' \rangle = b_j$.
 
 The steps of the process in 2D are shown in the figure below, where each equation is a line, and their single intersection point in the center is the unique solution to the whole system of equations. For consistent systems, $x^{(i)}$ gradually converges to this unique solution.
 
