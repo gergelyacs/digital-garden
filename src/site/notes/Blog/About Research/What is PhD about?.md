@@ -1,8 +1,8 @@
 ---
-{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-05T12:36:31.582+01:00"}
+{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-05T12:39:58.614+01:00"}
 ---
 
-The two most important goals of a PhD are to develop *problem discovery* and *effective communication skills*. While elaboration is undoubtedly crucial and makes up the bulk of the actual research work, it is more about solving problems than discovering them. In contrast, problem discovery is about identifying problems that are intriguing and novel. As Freeman Dyson said: *"It is characteristic of scientific life that it is easy when you have a problem to work on. The hard part is finding your problem.”*
+The two most important goals of a PhD are to develop *problem discovery* and *effective communication skills*. While elaboration is undoubtedly crucial and makes up the bulk of the actual research work, it is more about solving problems than discovering them. As Freeman Dyson said: *"It is characteristic of scientific life that it is easy when you have a problem to work on. The hard part is finding your problem.”*
 
 Problem discovery is more than just having good ideas; it also requires the ability to [recognize them](https://www.amazon.com/Creativity-Flow-Psychology-Discovery-Invention/dp/0062283251). Everyone has both bad and good ideas, but some people can't tell them apart until they've already spent a lot of time on the not-so-good ones. One thing that sets very good researchers apart is their ability to distinguish good and bad ideas faster, so they avoid wasting too much time exploring dead ends. They think more about the problems (or the origins of the problems) instead of their solutions.
 
