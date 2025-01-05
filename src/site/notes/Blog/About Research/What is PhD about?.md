@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-05T12:39:58.614+01:00"}
+{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-05T12:43:44.944+01:00"}
 ---
 
 The two most important goals of a PhD are to develop *problem discovery* and *effective communication skills*. While elaboration is undoubtedly crucial and makes up the bulk of the actual research work, it is more about solving problems than discovering them. As Freeman Dyson said: *"It is characteristic of scientific life that it is easy when you have a problem to work on. The hard part is finding your problem.”*
@@ -40,8 +40,7 @@ Yes, if you are *[passionate and persistent](https://en.wikipedia.org/wiki/Grit_
 - Your questions and problems linger in your thoughts even under the shower, on the weekends, and before falling asleep or upon waking up. 
 - You find joy in discovering insights, understanding something that was previously unclear. This can happen when reading a paper, preparing for an exam, or even solving daily life problems. You don’t just seek solutions—you enjoy analyzing the problems themselves. 
 
-While passion provides the necessary direction and emotional momentum, it alone is probably not enough to complete your PhD. Your passion should also persist over time. Research is usually filled with frustration, and learning to handle it over the long term is necessary. 
-*Perseverance*, therefore, becomes crucial, demanding that you remain purposeful, don't give up, and always find a way to work things out. However, too much perseverance can also be counterproductive. Rather than persisting simply to finish what we start, we must learn to recognize when it’s time to step back or change direction to create new opportunities.  
+While passion provides the necessary direction and emotional momentum, it alone is probably not enough to complete your PhD. Your passion should also persist over time. Research is usually filled with frustration, and learning to handle it over the long term is necessary. *Perseverance*, therefore, becomes crucial, demanding that you remain purposeful, don't give up, and always find a way to work things out. However, too much perseverance can also be counterproductive. Rather than persisting simply to finish what we start, we must learn to recognize when it’s time to step back or change direction to create new opportunities.  
   
 Fortunately, we can also [develop passion and perseverance](https://angeladuckworth.com/grit-book/) to some degree[^2]. One way is through others: if you want to be more passionate and persevere, consider joining a research group with that culture. When you collaborate with passionate people, their enthusiasm can boost yours. If everybody is working hard around you, that becomes your habit too. 
 
