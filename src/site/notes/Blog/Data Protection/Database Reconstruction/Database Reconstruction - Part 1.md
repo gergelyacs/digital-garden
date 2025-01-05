@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/data-protection/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-05T15:23:36.493+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/data-protection/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-05T17:14:31.021+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information can still qualify as personal data under the GDPR. By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -269,11 +269,9 @@ If $\text{rank}([\mathbf{A}|\mathbf{b}]) = \text{rank}(\mathbf{A}) = n$, meaning
 ## Solving the equations
 
 There are a couple of techniques to solve (or approximate) a linear system; any matrix decomposition technique (e.g., QR or LU decomposition) can be applied on the augmented matrix $\mathbf{A}^*$. Here, we rather use a more versatile optimization technique which provides an approximation of $\mathbf{x}$ irrespective of the rank of $[\mathbf{A}|\mathbf{b}]$:
-
 $$
 \mathbf{x}' = \arg\min_{\mathbf{x} \in \mathbb{R}^n}  ||\mathbf{A}\mathbf{x} - \mathbf{b}||_2
 $$
-
 where $||\cdot ||_2$ denotes the Euclidean distance ($L_2$-norm).
 
 The solution of this optimization problem has a closed form $\mathbf{x}' = \mathbf{\hat{A}} \mathbf{b}$, where $\mathbf{\hat{A}}$ is the pseudo-inverse (or [Moore-Penrose inverse](https://en.wikipedia.org/wiki/Moore–Penrose_inverse)) of $\mathbf{A}$. If $\mathbf{A}$ is invertible, then $\mathbf{A}^{-1} = \mathbf{\hat{A}}$. The reconstruction error $||\mathbf{x}' - \mathbf{x}||_2$ depends on $\text{rank}(\mathbf{A})$ (the number of linearly independent  rows/columns). Exact reconstruction $(\mathbf{x}' = \mathbf{x})$ is only guaranteed if $\mathbf{A}$ has full rank and $\text{rank}(\mathbf{A}) = \text{rank}([\mathbf{A}|\mathbf{b}])$, as discussed earlier. This optimization technique is widely known as [Ordinary Least Squares (OLS)](https://en.wikipedia.org/wiki/Ordinary_least_squares#:~:text=In%20statistics%2C%20ordinary%20least%20squares,of%20the%20squares%20of%20the) or linear regression in machine learning terminology. OLS and pseudo-inverse computations are supported by many linear algebra libraries and machine learning frameworks, including [scikit-learn](hhttps://scikit-learn.org/1.5/modules/generated/sklearn.linear_model.LinearRegression.html), [torch](https://pytorch.org/docs/stable/generated/torch.linalg.lstsq.html), [numpy](https://numpy.org/doc/2.1/reference/generated/numpy.linalg.lstsq.html).
@@ -335,7 +333,7 @@ Solution: [4.06728662 5.20000018 5.1666669 5.1666669 7.3327138 5.1666669 ]
 ```
 This looks much more realistic! This approximation is closer to the true solution $\mathbf{x}$ and suggests that Joseph Sky may have hyperglycemia.
 
-The private attribute $\mathbf{x}$ may sometimes be binary in practice, such as indicating whether a patient has AIDS or not. Such an *integer constraint* turns the problem into an instance of Integer Linear Programming (ILP) which is NP-complete in general. While [cvxpy](https://www.cvxpy.org/tutorial/solvers/index.html) supports mixed integer linear programming (MILP) solvers, a more practical  and efficient approach is to round each element of $\mathbf{x}'$ (the OLS solution) to the nearest integer, obtaining a final approximation of the original vector $\mathbf{x}$. 
+The private attribute $\mathbf{x}$ may sometimes be binary in practice, such as indicating whether a patient has AIDS or not. More generally, a counting query using the aggregate function COUNT returns the number of records that satisfy a given predicate. Introducing such an *integer constraint* turns the problem into an instance of Integer Linear Programming (ILP) which is NP-complete in general. While [cvxpy](https://www.cvxpy.org/tutorial/solvers/index.html) supports mixed integer linear programming (MILP) solvers, a more practical  and efficient approach is to round each element of $\mathbf{x}'$ (the OLS solution) to the nearest integer, obtaining a final approximation of the original vector $\mathbf{x}$. 
 
 ### Handling Many Queries and Records
 
@@ -365,7 +363,6 @@ If we set the step size  $\eta = \frac{1}{2||A_j||_2^2}$, this iterative approac
 $$
 x^{(i+1)} = x^{(i)} + \frac{(b_j - A_j x^{(i)})A_j^{\mathsf{T}}}{||A_j||_2^2}
 $$
-
 Kaczmarz’s method has an intuitive geometric interpretation: starting from a random location $x^{(0)}$, a better solution $x^{(i+1)}$ is found by projecting $x^{(i)}$ onto the hyperplane defined by the $j$th equation, $\langle A_j,x \rangle = b_j$. 
 
 > [!FAQ]- Why?
@@ -443,10 +440,8 @@ This is close to the exact solution computed by cvxpy [[Blog/Data Protection/Dat
 
 # Beyond linear queries
 
-SUM and AVG are linear queries that can be efficiently audited using tools from linear algebra. However, auditing non-linear queries like MEDIAN, MAX, and MIN is significantly more challenging. In fact, [verifying exact disclosure](https://theory.stanford.edu/~nmishra/Papers/surveyQueryAuditingTechniquesDataPrivacy.pdf) for such queries may not even be feasible in polynomial time with respect to the dataset size $n$  or the number of queries $m$.
+SUM, AVG, and COUNT are linear queries that can be audited using tools from linear algebra. However, auditing non-linear queries like MEDIAN, MAX, and MIN is more challenging. In fact, [verifying exact disclosure](https://theory.stanford.edu/~nmishra/Papers/surveyQueryAuditingTechniquesDataPrivacy.pdf) for such queries may not even be feasible in polynomial time with respect to the dataset size $n$ or the number of queries $m$.
 
-One approach is to approximate the missing attribute values using [heuristics like SAT solvers](https://dl.acm.org/doi/10.1145/3287287). Another is to apply stochastic gradient descent (SGD), as discussed above, if the queries are "approximately" differentiable functions of the attribute values. From a machine learning perspective, queries can be thought of as training samples, while the confidential attribute values act as model parameters that we want to determine. The task then becomes finding the parameters that best fit the given query results (training labels).
-
-Apart from the potentially non-differentiable queries, another issue arises when queries are non-convex functions of the records. In such cases, SGD does not guarantee convergence to the global optimum, meaning we cannot be sure that the solution it finds corresponds to the actual attribute values. Nevertheless, as in machine learning, we can hope that the solutions found are reasonably close to the actual solution.
+One approach is to approximate the missing attribute values using [heuristics like SAT solvers](https://dl.acm.org/doi/10.1145/3287287). Another is to apply stochastic gradient descent (SGD), as discussed above, if the queries are "approximately" differentiable functions of the attribute values. However, if the queries are non-convex functions of the records, then SGD does not guarantee convergence to the global optimum, meaning we cannot be sure that the solution it finds corresponds to the actual attribute values. Nevertheless, as in machine learning, we can hope that the solutions found are reasonably close to the actual solution.
 
 
