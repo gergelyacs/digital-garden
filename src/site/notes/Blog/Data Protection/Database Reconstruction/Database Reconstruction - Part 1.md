@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/data-protection/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-05T17:14:31.021+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Database Reconstruction/Database Reconstruction - Part 1.md","permalink":"/data-protection/database-reconstruction/database-reconstruction-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-05T17:33:51.021+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information can still qualify as personal data under the GDPR. By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -348,14 +348,14 @@ $$
 &= \arg\min_{\mathbf{x}} \mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]
 \end{align}
 $$
-where $\mathcal{U}(1,m)$ represents the uniform distribution over integers in $[1, m]$. To minimize $\mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]$, we can use gradient descent with the following update rule:
+where $\mathcal{U}(1,m)$ represents the uniform distribution over integers in $[1, m]$. To minimize $\mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]$, we can use gradient descent (GD) with the following update rule:
 $$
 \begin{align}
 x^{(i+1)} &= x^{(i)} - \eta \cdot \nabla_\mathbf{x} \mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]\\
 &= x^{(i)} - \eta \cdot \mathbb{E}_{j\sim \mathcal{U}(1,m)}[ \nabla_\mathbf{x} r_j(\mathbf{x})]
 \end{align}
 $$
-where $\eta$ is the learning rate. This approach converges to the global minimum of $R(\mathbf{x})$, as $r_j(\mathbf{x})$ is convex. However, this approach still requires iterating over all queries in each iteration. To overcome this, we apply [stochastic gradient descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) to approximate the expected value through sampling. In each iteration $i$, a query (or equation) $j$ is randomly selected, and the gradient's expected value over all queries is estimated using the gradient of this single query. This gradient is given by:
+where $\eta$ is the learning rate. In this case, gradient descent converges to the global minimum of $R(\mathbf{x})$, as $r_j(\mathbf{x})$ is convex. However, we are still iterating over all queries in each descent step. To overcome this, we apply [stochastic gradient descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) to approximate the expected value through sampling. In each iteration $i$, a query (or equation) $j$ is randomly selected, and the gradient's expected value over all queries is estimated using the gradient of this single query. This gradient is given by:
 $$
 \nabla_\mathbf{x} r_j(\mathbf{x})=-2(b_j - A_j x^{(i)}) A_j^{\mathsf{T}} 
 $$
