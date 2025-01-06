@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-06T15:01:14.431+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-06T21:08:43.574+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information can still qualify as personal data under the GDPR. By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -27,8 +27,7 @@ It is not hard to see that answering the following queries reveal the blood suga
 2. Query 2: `SELECT SUM("Blood sugar") FROM Dataset WHERE Gender = "Female"`; Result: 15.5
 3. Query 3: `SELECT SUM("Blood sugar") FROM Dataset WHERE ZIP > 32000 and ZIP < 35000 AND Gender = "Male"`; Result: 11.4
 
-To see why, notice that Query 1 and 2 reveal the total blood sugar level of all males (subtract the result of Query 2 from that of Query 1), and Query 3 selects only Record 1 and 5. Therefore, taking the difference of the result of Query 3 and the total blood sugar of all males, we obtain
-the exact blood sugar level of Record 2.
+To see why, notice that Query 1 and 2 reveal the total blood sugar level of all males (subtract the result of Query 2 from that of Query 1), and Query 3 selects only Record 1 and 5. Therefore, taking the difference of the result of Query 3 and the total blood sugar of all males, we obtain the exact blood sugar level of Record 2.
 
 To make it more formal, let $x_i$ denote the unknown (private) Blood sugar value of record $i$. Each query along with its result can be represented by a linear equation as follows:
 
@@ -57,7 +56,7 @@ $$
 
 The task is to check if *any* $x_i$ can be unambiguously determined, or, in the worst case, whether the entire [system of equations](https://en.wikipedia.org/wiki/System_of_linear_equations) has a unique solution (i.e., all $x_i$ can be uniquely identified). If that is the case, the queries specified by matrix $\mathbf{A}$ cannot be answered without revealing individual private attribute values.
 > [!FAQ]- Why?
-> Seemingly, solving this linear system for any unknown, without associating it with a specific individual (e.g., Jeremy Doe), should not imply a privacy breach under GDPR. For example, according to GDPR, information is considered personal only if it can be linked to an identified or identifiable person. If the attacker only has access to public attributes (marked in blue), they likely cannot link the value of  $x_2$  to Jeremy Doe. However, the attacker may have additional background knowledge that could help identify Jeremy, even without access to the “Name” attribute. For example, they could know from another source (such as Facebook) that Jeremy visited a hospital and that his ZIP code starts with `438**` If this additional information is readily accessible, it could enable the attacker to single out Jeremy’s record. This post aims to demonstrate that query results themselves - such as the outcomes from Query 1, 2, and  3 - can be considered personal or sensitive data under GDPR, especially when combined with background knowledge that makes it possible to identify an individual.
+> Seemingly, solving this linear system for any unknown, without associating it with a specific individual (e.g., Jeremy Doe), should not imply a privacy breach under GDPR. According to GDPR, information is considered personal only if it can be linked to an identified or identifiable person. If the attacker only has access to public attributes (marked in blue), they likely cannot link the value of  $x_2$  to Jeremy Doe. However, the attacker may have additional background knowledge that could help identify Jeremy, even without access to the “Name” attribute. For example, they could know from another source (such as Facebook) that Jeremy visited a hospital and that his ZIP code starts with `438**` If this additional information is readily accessible, it could enable the attacker to single out Jeremy’s record. This post aims to demonstrate that query results themselves - such as the outcomes from Query 1, 2, and  3 - can be considered personal or sensitive data under GDPR, especially when combined with background knowledge that makes it possible to identify an individual.
 ## Which records are exposed?
 
 Given a linear system of equations $\mathbf{A}\mathbf{x} = \mathbf{b}$, where $\mathbf{b} = \{b_1, \ldots, b_m\}$, $\mathbf{A} \in \mathbb{R}^{m,n}$, and row $i$ of $\mathbf{A}$ corresponds to query $q_i$. In general, an unknown $x_i$ can be unambiguously determined if the following conditions are met:
@@ -314,7 +313,7 @@ and the output is:
 Solution: [1.15961346e-04 5.20000027e+00 5.16666694e+00 5.16666694e+00 1.13998846e+01 5.16666694e+00]
 ```
 
-This is quite dummy as no one has a blood sugar level of less than 0.01. Let's add another constraint that all values should be larger than 3:
+This is quite dummy as no one has a blood sugar level of less than 0.01. Let's add another constraint that all values must be larger than 3:
 
 ``` python
 objective = cvx.Minimize(cvx.sum_squares(A @ x - b))
