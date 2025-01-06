@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"About Research/Writing My Technical Paper.md","permalink":"/about-research/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-05T17:42:46.600+01:00"}
+{"dg-publish":true,"dg-path":"About Research/Writing My Technical Paper.md","permalink":"/about-research/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-06T11:55:45.893+01:00"}
 ---
 
 Below are some general writing guidelines and a suggested structure for technical documentation, including project lab reports, theses, and research papers. This guideline is not comprehensive and does not replace your advisor’s guidance. Writing is a skill you learn through practice, and feedback is essential for improvement. (Feedback _should_ be seen as a sign of caring, even if it is critical. Only worry if you don't receive any feedback at all.)
@@ -70,7 +70,7 @@ When you are close to the deadline, *[don’t focus on what you don’t have; fo
 
 This is quite obvious if you've read everything above: **Don’t worry about any recommended minimum size limits**—they are meaningless! Instead, set a (reasonably small) maximum for yourself. This will help you focus on the main points and keep your work concise and clear. Explaining something shortly but also clearly is challenging and has a positive impact on [[Blog/About Research/Writing My Technical Paper#1 Keep it simple!\|thinking]] and communication: you learn to be more direct and intelligible.
 
-I don’t like giving exact numbers because it depends on the topic and purpose of the thesis. But in my experience, a master’s or bachelor’s thesis should fit into **less than 35 pages**[^1], not counting the appendix and references.
+I don’t like giving exact numbers because it depends on the topic and purpose of the thesis. But in my experience, a master’s or bachelor’s thesis should fit into **less than 30-35 pages**[^1], not counting the appendix and references.
 
 # A recommended structure
 
@@ -106,7 +106,7 @@ This is not meant to be a one-size-fits-all structure. Some works, like surveys 
 **Goal:** Describe all material needed to understand your solution (e.g., convnets, LSTM, etc.)!
 
 - The description of every related work and background material should be tailored to your work. For example, most people know what convnet is but they may not know why you use it. Highlight those properties of the tool, which make it appealing to solve your problem, and ignore the rest. Fit the description to your work and don't stick to the original text! Provide your own interpretation: This will give a new (your) viewpoint of the background material and hence bring value for the reader!
-- Keep it focused, and don't write too much about textbook material if the target audience is likely to know that! Rather cite them! This is not the place where you should “inflate” your work. Shorter summaries are generally preferred over copy-pasted literature reviews. Surveys can be cited.
+- Keep it focused, and don't write too much about textbook material if the target audience is likely to know that! Rather cite them! This is not the place where you should “inflate” your work. Shorter summaries are generally preferred over copied literature reviews. Surveys can be cited.
 
 ## 4. Model
 
