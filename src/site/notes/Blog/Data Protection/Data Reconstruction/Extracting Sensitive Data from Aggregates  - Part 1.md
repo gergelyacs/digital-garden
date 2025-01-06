@@ -1,11 +1,10 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Data Reconstruction/Extracting Sensitive Data from Aggregates  - Part 1.md","permalink":"/data-protection/data-reconstruction/extracting-sensitive-data-from-aggregates-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-06T11:36:38.649+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Data Reconstruction/Extracting Sensitive Data from Aggregates  - Part 1.md","permalink":"/data-protection/data-reconstruction/extracting-sensitive-data-from-aggregates-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-06T15:01:14.431+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information can still qualify as personal data under the GDPR. By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
 
-In this post, I start with the simplest case: demonstrating how sensitive personal data can be reconstructed from the results of a series of SUM queries performed on a confidential dataset.
-I also demonstrate how machine learning can be used to extract sensitive data from any aggregate information. In a follow-up post, I’ll explore how an attacker can strategically minimize the number of queries needed to reconstruct every record in the dataset.
+In this post, I start with the simplest case: demonstrating how sensitive personal data can be reconstructed from the results of a series of SUM queries performed on a confidential dataset. I also demonstrate how machine learning can be used to extract sensitive data from any aggregate information. In a follow-up post, I’ll explore how an attacker can strategically minimize the number of queries needed to reconstruct every record in the dataset.
 
 For the sake of illustration, consider the following hospital dataset.
 
@@ -445,7 +444,7 @@ SUM, AVG, and COUNT are linear queries that can be audited using tools from line
 
 One approach is to approximate the missing attribute values using [heuristics like SAT solvers](https://dl.acm.org/doi/10.1145/3287287). Another is to apply stochastic gradient descent (SGD), as discussed above, if the queries are "approximately" differentiable functions of the attribute values. However, if the queries are non-convex functions of the records, then SGD does not guarantee convergence to the global optimum, meaning we cannot be sure that the solution it finds corresponds to the actual attribute values. Nevertheless, as in machine learning, we can hope that the solutions found are reasonably close to the actual solution.
 
-# Everything Comes Down to Solving Equations
+# Reconstruction is Everywhere
 
 Extraction attacks have long existed in computer science, though they were known by different names. For instance, [error-correcting codes](https://en.wikipedia.org/wiki/Error_correction_code) reconstruct corrupted data by solving a system of equations where the unknowns are the corrupted bits, bytes, or blocks of bytes. Linear error-correcting codes, like [Reed-Solomon](https://en.wikipedia.org/wiki/Reed–Solomon_error_correction) or [BCH](https://en.wikipedia.org/wiki/BCH_code#:~:text=In%20coding%20theory%2C%20the%20Bose,also%20called%20a%20Galois%20field), operate in a [finite field](https://en.wikipedia.org/wiki/Finite_field) and are widely used in applications ranging from satellite communications to redundant data storage (like QR codes) where noise can corrupt information. A significant part of signal processing deals with the fast processing of naturally redundant data, such as images or voice. For example, [compressive sensing](https://en.wikipedia.org/wiki/Compressed_sensing) can reconstruct high-quality MRI images from just a few linear measurements, greatly [speeding up MRI acquisition](https://mrimaster.com/compressed-sensing-cs-mri/). 
 
