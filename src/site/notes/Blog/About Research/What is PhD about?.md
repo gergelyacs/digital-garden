@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-05T17:36:46.246+01:00"}
+{"dg-publish":true,"dg-path":"About Research/What is PhD about?.md","permalink":"/about-research/what-is-ph-d-about/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-01-05T23:52:46.000+01:00"}
 ---
 
 The two most important goals of a PhD are to develop *problem discovery* and *effective communication skills*. While elaboration is undoubtedly crucial and makes up the bulk of the actual research work, it is more about solving problems than discovering them. As Freeman Dyson said: *"It is characteristic of scientific life that it is easy when you have a problem to work on. The hard part is finding your problem.”*
@@ -12,7 +12,7 @@ The other objective of PhD is to develop effective communication skills. This me
 
 # What is a good problem?
 
-A good problem is *simple*, as simple as possible, and the [easiest one that you cannot solve](https://drive.google.com/file/d/15VaTSbMiTUleuEcDoMi-yS4RPVFcSAaB/view?pli=1). No one begins with brilliant ideas out of thin air, and you cannot think only of great contributions. These also require luck, which “happens when preparation meets opportunity,” as Seneca and many others have observed[^1]. 
+A good problem is *simple*, as simple as possible, and the [easiest one that you cannot solve](https://drive.google.com/file/d/15VaTSbMiTUleuEcDoMi-yS4RPVFcSAaB/view?pli=1). No one begins with brilliant ideas out of thin air, and you cannot think only of great contributions. These also require luck, which “happens when preparation meets opportunity” (Seneca)[^1]. 
 
 Good problems should also be [recognized by some other people](https://www.amazon.com/Creativity-Flow-Psychology-Discovery-Invention/dp/0062283251) to be novel/useful. That's why you should not only read but also review research papers, and do brainstorming with others! Sometimes, ideas that initially appear less promising turn out to be very brilliant from a different perspective or when applied to a different problem. 
 
@@ -27,7 +27,7 @@ Similar to talent, perseverance is partly innate and partly acquired, yet it is 
 
 Creativity is often overmystified and regarded as something that you either have or do not, just like innate talent. In fact, *creativity is learnable* if you are motivated. It is often emerges through observation and implicit learning, with somebody else (your advisor) serving as a model.
 
-Fundamentally, creativity is just [remixing](https://www.everythingisaremix.info/everything-is-a-remix-2023) of different knowledge pieces (e.g., techniques, theories, theorems, etc) to produce something new and meaningful that others recognize and value. As Mark Twain famously said:
+Fundamentally, creativity is just [remixing](https://www.everythingisaremix.info/everything-is-a-remix-2023) of different knowledge pieces (e.g., techniques, theories, theorems, etc) to produce something new and meaningful that others recognize and value. As Mark Twain beautifully said:
 
 *"There is no such thing as a new idea. It is impossible. We simply take a lot of old ideas and put them into a sort of mental kaleidoscope. We give them a turn and they make new and curious combinations. We keep on turning and making new combinations indefinitely; but they are the same old pieces of colored glass that have been in use through all the ages.”*
 
