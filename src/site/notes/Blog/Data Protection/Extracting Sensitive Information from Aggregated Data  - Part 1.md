@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-07T11:18:38.202+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-07T14:32:16.351+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information [can still qualify as personal data under the GDPR](https://gdprhub.eu/Article_89_GDPR#:~:text=Recital%20162%20GDPR%20specifies%20that,regarding%20any%20particular%20natural%20person”.). By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -340,7 +340,7 @@ Although convex optimization, including OLS, have polynomial time complexity in 
 
 To address this, we present a solution based on [stochastic gradient descent (SGD)](https://en.wikipedia.org/wiki/Gradient_descent), which uses only one row of the matrix $\mathbf{A}$ per iteration. This approach is particularly appealing in online scenarios where queries must be audited in real-time, or where storing the entire query set is impractical due to legal constraints or the sheer number of queries.
 
-Our objective function is $R(\mathbf{x}) = ||\mathbf{b}-\mathbf{A}\mathbf{x}||_2^2$, where the $j$th equation (query) is defined as  $r_i(\mathbf{x}) = ||b_j - A_j \mathbf{x} ||_2^2$, with $A_j$ being the $j$th row of matrix. Since $R(\mathbf{x}) = \sum_{j=1}^m r_j(\mathbf{x})$, we can write
+We still want to minimize $R(\mathbf{x}) = ||\mathbf{b}-\mathbf{A}\mathbf{x}||_2^2$, where the $j$th equation (query) is defined as  $r_i(\mathbf{x}) = ||b_j - A_j \mathbf{x} ||_2^2$, with $A_j$ being the $j$th row of matrix. Since $R(\mathbf{x}) = \sum_{j=1}^m r_j(\mathbf{x})$, we can write
 $$
 \begin{align}
 \arg\min_{\mathbf{x}} R(\mathbf{x}) &= \arg\min_{\mathbf{x}} \sum_{j=1}^m(1/m) \cdot r_j(\mathbf{x})\\
