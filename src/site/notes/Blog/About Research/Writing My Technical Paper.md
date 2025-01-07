@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"About Research/Writing My Technical Paper.md","permalink":"/about-research/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-06T11:55:45.893+01:00"}
+{"dg-publish":true,"dg-path":"About Research/Writing My Technical Paper.md","permalink":"/about-research/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-01-07T08:53:14.201+01:00"}
 ---
 
 Below are some general writing guidelines and a suggested structure for technical documentation, including project lab reports, theses, and research papers. This guideline is not comprehensive and does not replace your advisor’s guidance. Writing is a skill you learn through practice, and feedback is essential for improvement. (Feedback _should_ be seen as a sign of caring, even if it is critical. Only worry if you don't receive any feedback at all.)
@@ -15,7 +15,7 @@ Thesis reviewers (especially for master’s and bachelor’s levels) value the e
 
 # When to start writing?
  
-Start writing once you've demonstrated that your solution works and obtained the first valuable results. However, be sure to allocate enough time for writing! The best way to get your paper rejected or fail is to wait until the day of the deadline to write it. Students often focus on the code and results while ignoring the text. Committees (reviewers) do not accept results. They accept papers.
+Start writing once you've demonstrated that your solution works (or you know that it won't) and obtained the first results/proofs of that. However, be sure to allocate enough time for writing! The best way to get your paper rejected or fail is to start writing too late. Students often focus on the code and results while ignoring the text. Committees (reviewers) do not accept results. They accept papers.
 
 # How to write?
 
@@ -36,7 +36,7 @@ The best way to write a clear paper is to [start by preparing a talk](https://pe
 
 By the time a reviewer finishes your introduction, they’ve likely already formed an opinion about your paper - often even deciding whether to accept it. The rest of their reading typically focuses on gathering arguments to support that initial judgment. [Most readers](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper) focus on the Abstract, Introduction, and Conclusion, with only a few reading the rest. That’s why it’s essential to put extra effort into these sections, especially the Introduction - it’s your chance to make a strong and positive first impression!
 
-Because of that, it's often better not to start with writing the Introduction! You can only sell your work if you already know its limitations and strong points, that is, you have finished other parts of your work. Some people start with the abstract or conclusion which helps with clarifying the goals before writing, others start describing their work directly.  
+Because of that, it's often better not to start with writing the Introduction! You can only convince the reader if you already know your work's limitations and strong points, that is, you have finished other parts of your work. Some people start with the abstract or conclusion which helps with clarifying the goals before writing, others start describing their work directly.  
 
 ## #4 Think like a teacher, and not a student!
 
@@ -60,7 +60,7 @@ Avoid using copy-pasted plots or text - create them yourself, especially the ove
 
 ## #8 Do not oversell!
 
-A paper is not an advertisement - you’re not trying to sell something. [Overclaiming can frustrate reviewers](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper). Be sure to clearly state what’s new and unique about your work.
+A paper is not an advertisement. [Overclaiming can frustrate reviewers](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper). Be sure to clearly state what’s new and unique about your work. Be convincing!
 
 ## #9 Stop in time!
 
@@ -85,12 +85,12 @@ This is not meant to be a one-size-fits-all structure. Some works, like surveys 
 
 ## 1. Introduction
 
-**Goal:** “Sell (but not oversell) your work"! Engage the reader!
+**Goal:** Convince and engage the reader!
 
 - _Motivation:_ Why is the topic/problem important? Give pointers to real-world examples (non-scientific literature is also fine such as tech news). Convince the reader (and yourself) that your work is important/useful. Stay focused: don't start with common knowledge (such as importance of machine learning), start directly with the negative impact of its security problems if that's the (broader) topic.
 - _Problem definition:_ What do you want to solve exactly? Your description should be less formal and rather widely accessible. Avoid formulas here, if possible.
 - _Challenges_: Argue that the problem is challenging and focus on those challenges that you will address (and others have failed to solve). You can cite most related work if necessary. Provide the selling point (the gap in state-of-the-art that you are trying to fill with your work)!
-- _The idea of your solution:_ Describe how you solve the above challenges/problem. Focus on intuition that helps the reader grasp the concept of your proposal, and defer technical details to Section 5. You should provide intuitive insights and the thinking that went behind your solution.  [Keep it simple](http://www.paulgraham.com/simply.html): remember that the point is to reach as many people as possible here and you probably need to (over)simplify/generalize claims that you will make precise later. This may seem overselling, but it is [necessary for effective communication](https://www.youtube.com/watch?v=XFqn3uy238E). If your approach consists of several steps and seems complicated at first, make a single illustrative figure that is preferably self-contained and summarizes your method. For example, you can decompose your method into smaller steps and make a box per step with an illustrative graphic. It will guide the reader through the rest of the paper, and can also be recycled later in talks (even by others). You can detail each step in subsequent sections.  
+- _The idea of your solution:_ Describe how you solve the above challenges/problem. Focus on intuition that helps the reader grasp the concept of your proposal, and defer technical details to Section 5. You should provide intuitive insights and the thinking that went behind your solution. Follow a [[Blog/About Research/Writing My Technical Paper#5 Make a story!\|storytelling style]]. [[Blog/About Research/Writing My Technical Paper#1 Keep it simple!\|#1 Keep it simple!]]: remember that the point is to reach as many people as possible here and you probably need to (over)simplify/generalize claims that you will make precise later. This is [necessary for effective communication](https://www.youtube.com/watch?v=XFqn3uy238E). If your approach consists of several steps and seems complicated at first, make a single illustrative figure that is preferably self-contained and summarizes your method. For example, you can decompose your method into smaller steps and make a box per step with an illustrative graphic. It will guide the reader through the rest of the paper, and can also be recycled later in talks (even by others). You can detail each step in subsequent sections.  
 - _Specific contributions:_ List your contributions explicitly (2-3 bullet points, should not be more than 2-3 sentences per bullet point)
 - _Structure of your work:_ Optionally describe the structure of your work (very shortly), if your work is long (for a thesis).
 
