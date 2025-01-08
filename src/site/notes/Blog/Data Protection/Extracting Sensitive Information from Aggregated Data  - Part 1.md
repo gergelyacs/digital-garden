@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-07T14:47:25.584+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-08T20:25:24.004+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information [can still qualify as personal data under the GDPR](https://gdprhub.eu/Article_89_GDPR#:~:text=Recital%20162%20GDPR%20specifies%20that,regarding%20any%20particular%20natural%20person”.). By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -389,7 +389,7 @@ The steps of the process in 2D are shown in the figure below, where each equatio
 
 ![Kaczmarz.png](/img/user/Blog/Data%20Protection/Kaczmarz.png)
 
-This convergence can be accelerated by selecting row $j$ with probability proportional to its squared norm $||A_j||_2^2$. There are other [variants](https://link.springer.com/article/10.1007/s11075-024-01945-2) of Kaczmarz's method that have been adapted even for inconsistent systems.
+There are other [variants](https://link.springer.com/article/10.1007/s11075-024-01945-2) of Kaczmarz's method that have been adapted even for inconsistent systems.
 
 Adding constraints is also possible. For example, box constraints  $\mathbf{\ell} \leq \mathbf{x} \leq \mathbf{u}$ can be incorporated by introducing a change of variables as follows:
 $$
