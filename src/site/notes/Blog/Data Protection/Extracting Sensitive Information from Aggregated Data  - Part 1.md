@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-08T20:25:24.004+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-08T20:28:11.184+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information [can still qualify as personal data under the GDPR](https://gdprhub.eu/Article_89_GDPR#:~:text=Recital%20162%20GDPR%20specifies%20that,regarding%20any%20particular%20natural%20person”.). By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -334,7 +334,7 @@ This looks much more realistic! This approximation is closer to the true solutio
 
 The private attribute $\mathbf{x}$ may sometimes be binary in practice, such as indicating whether a patient has AIDS or not. More generally, a counting query using the aggregate function COUNT returns the number of records that satisfy a given predicate. Introducing such an *integer constraint* turns the problem into an instance of Integer Linear Programming (ILP) which is NP-complete in general. While [cvxpy](https://www.cvxpy.org/tutorial/solvers/index.html) supports mixed integer linear programming (MILP) solvers, a more practical  and efficient approach is to round each element of $\mathbf{x}'$ (the OLS solution) to the nearest integer, obtaining a final approximation of the original vector $\mathbf{x}$. 
 
-### Handling Many Queries and Records
+### Handling many queries and records
 
 Although convex optimization, including OLS, have polynomial time complexity in the record number $n$ and query number $m$, they can become quite slow and memory-intensive for large datasets with many queries as they operate on the entire matrix $\mathbf{A}$. Iterative methods, on the other hand, generate a sequence of approximate solutions that converge progressively closer to the exact solution with each iteration. These methods are typically less computationally demanding, though their convergence rate depends on the properties of matrix $\mathbf{A}$. Common iterative methods include the [Jacobi method](https://en.wikipedia.org/wiki/Jacobi_method), the [Conjugate Gradient method](https://en.wikipedia.org/wiki/Conjugate_gradient_method), or the [L-BFGS](https://en.wikipedia.org/wiki/Limited-memory_BFGS). However, these algorithms may still be inefficient when dealing with a large number of equations and not only unknowns.
 
@@ -443,7 +443,7 @@ SUM, AVG, and COUNT are linear queries that can be audited using tools from line
 
 One approach is to approximate the missing attribute values using [heuristics like SAT solvers](https://dl.acm.org/doi/10.1145/3287287). Another is to apply stochastic gradient descent (SGD), as discussed above, if the queries are "approximately" differentiable functions of the attribute values. However, if the queries are non-convex functions of the records, then SGD does not guarantee convergence to the global optimum, meaning we cannot be sure that the solution it finds corresponds to the actual attribute values. Nevertheless, as in machine learning, we can hope that the solutions found are reasonably close to the actual solution.
 
-# Reconstruction is Everywhere
+# Reconstruction is everywhere
 
 Extraction "attacks" have long existed in computer science, though they were known by different names. For instance, [error-correcting codes](https://en.wikipedia.org/wiki/Error_correction_code) reconstruct corrupted data by solving a system of equations where the unknowns are the corrupted bits, bytes, or blocks of bytes. Linear error-correcting codes, like [Reed-Solomon](https://en.wikipedia.org/wiki/Reed–Solomon_error_correction) or [BCH](https://en.wikipedia.org/wiki/BCH_code#:~:text=In%20coding%20theory%2C%20the%20Bose,also%20called%20a%20Galois%20field), operate in a [finite field](https://en.wikipedia.org/wiki/Finite_field) and are widely used in applications ranging from satellite communications to redundant data storage or QR codes where noise can corrupt information. A significant part of signal processing deals with the fast processing of naturally redundant data, such as images or voice. For example, [compressive sensing](https://en.wikipedia.org/wiki/Compressed_sensing) can reconstruct high-quality MRI images from just a few linear measurements, greatly [speeding up MRI acquisition](https://mrimaster.com/compressed-sensing-cs-mri/). 
 
