@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-08T20:28:11.184+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-12T16:31:20.597+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information [can still qualify as personal data under the GDPR](https://gdprhub.eu/Article_89_GDPR#:~:text=Recital%20162%20GDPR%20specifies%20that,regarding%20any%20particular%20natural%20person”.). By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -57,7 +57,7 @@ $$
 The task is to check if *any* $x_i$ can be unambiguously determined, or, in the worst case, whether the entire [system of equations](https://en.wikipedia.org/wiki/System_of_linear_equations) has a unique solution (i.e., all $x_i$ can be uniquely identified). If that is the case, the queries specified by matrix $\mathbf{A}$ cannot be answered without revealing individual private attribute values.
 > [!FAQ]- Why?
 > Seemingly, solving this linear system for any unknown, without associating it with a specific individual (e.g., Jeremy Doe), should not imply a privacy breach under GDPR. According to GDPR, information is considered personal only if it can be linked to an identified or identifiable person. If the attacker only has access to public attributes (marked in blue), they likely cannot link the value of  $x_2$  to Jeremy Doe. However, the attacker may have additional background knowledge that could help identify Jeremy, even without access to the “Name” attribute. For example, they could know from another source (such as social platforms, [voters registration data](https://epic.org/wp-content/uploads/privacy/reidentification/Sweeney_Article.pdf), [browsing data](https://www.theguardian.com/technology/2017/aug/01/data-browsing-habits-brokers), [AI chat bots](https://www.forbes.com/sites/kateoflahertyuk/2024/05/17/chatgpt-4o-is-wildly-capable-but-it-could-be-a-privacy-nightmare/)) that Jeremy visited a hospital and that his ZIP code starts with `438**`. If this additional information is easily accessible, it could allow the attacker to determine Jeremy’s blood sugar value using the reconstruction attack described in this post. As a result, the outcomes of Queries 1, 2, and 3 may qualify as personal or sensitive data under GDPR when the attacker has "reasonable" access to the necessary background knowledge.
-## Which records are exposed?
+## Which records can be reconstructed?
 
 Given a linear system of equations $\mathbf{A}\mathbf{x} = \mathbf{b}$, where $\mathbf{b} = \{b_1, \ldots, b_m\}$, $\mathbf{A} \in \mathbb{R}^{m,n}$, and row $i$ of $\mathbf{A}$ corresponds to query $q_i$. In general, an unknown $x_i$ can be unambiguously determined if the following conditions are met:
 
@@ -273,7 +273,7 @@ $$
 $$
 where $||\cdot ||_2$ denotes the Euclidean distance ($L_2$-norm).
 
-The solution of this optimization problem has a closed form $\mathbf{x}' = \mathbf{\hat{A}} \mathbf{b}$, where $\mathbf{\hat{A}}$ is the pseudo-inverse (or [Moore-Penrose inverse](https://en.wikipedia.org/wiki/Moore–Penrose_inverse)) of $\mathbf{A}$. If $\mathbf{A}$ is invertible, then $\mathbf{A}^{-1} = \mathbf{\hat{A}}$. The reconstruction error $||\mathbf{x}' - \mathbf{x}||_2$ depends on $\text{rank}(\mathbf{A})$ (the number of linearly independent  rows/columns). Exact reconstruction $(\mathbf{x}' = \mathbf{x})$ is only guaranteed if $\mathbf{A}$ has full rank and $\text{rank}(\mathbf{A}) = \text{rank}([\mathbf{A}|\mathbf{b}])$, as discussed earlier. This optimization technique is widely known as [Ordinary Least Squares (OLS)](https://en.wikipedia.org/wiki/Ordinary_least_squares#:~:text=In%20statistics%2C%20ordinary%20least%20squares,of%20the%20squares%20of%20the) or linear regression in machine learning terminology. OLS and pseudo-inverse computations are supported by many linear algebra libraries and machine learning frameworks, including [scikit-learn](hhttps://scikit-learn.org/1.5/modules/generated/sklearn.linear_model.LinearRegression.html), [torch](https://pytorch.org/docs/stable/generated/torch.linalg.lstsq.html), [numpy](https://numpy.org/doc/2.1/reference/generated/numpy.linalg.lstsq.html).
+The solution of this optimization problem has a closed form $\mathbf{x}' = \mathbf{\hat{A}} \mathbf{b}$, where $\mathbf{\hat{A}}$ is the pseudo-inverse (or [Moore-Penrose inverse](https://en.wikipedia.org/wiki/Moore–Penrose_inverse)) of $\mathbf{A}$. If $\mathbf{A}$ is invertible, then $\mathbf{A}^{-1} = \mathbf{\hat{A}}$. This optimization technique is widely known as [Ordinary Least Squares (OLS)](https://en.wikipedia.org/wiki/Ordinary_least_squares#:~:text=In%20statistics%2C%20ordinary%20least%20squares,of%20the%20squares%20of%20the) or linear regression in machine learning terminology. OLS and pseudo-inverse computations are supported by many linear algebra libraries and machine learning frameworks, including [scikit-learn](hhttps://scikit-learn.org/1.5/modules/generated/sklearn.linear_model.LinearRegression.html), [torch](https://pytorch.org/docs/stable/generated/torch.linalg.lstsq.html), [numpy](https://numpy.org/doc/2.1/reference/generated/numpy.linalg.lstsq.html).
 
 For example, in numpy:
 
@@ -336,7 +336,7 @@ The private attribute $\mathbf{x}$ may sometimes be binary in practice, such as 
 
 ### Handling many queries and records
 
-Although convex optimization, including OLS, have polynomial time complexity in the record number $n$ and query number $m$, they can become quite slow and memory-intensive for large datasets with many queries as they operate on the entire matrix $\mathbf{A}$. Iterative methods, on the other hand, generate a sequence of approximate solutions that converge progressively closer to the exact solution with each iteration. These methods are typically less computationally demanding, though their convergence rate depends on the properties of matrix $\mathbf{A}$. Common iterative methods include the [Jacobi method](https://en.wikipedia.org/wiki/Jacobi_method), the [Conjugate Gradient method](https://en.wikipedia.org/wiki/Conjugate_gradient_method), or the [L-BFGS](https://en.wikipedia.org/wiki/Limited-memory_BFGS). However, these algorithms may still be inefficient when dealing with a large number of equations and not only unknowns.
+Even convex optimization, including OLS, can become quite slow and memory-intensive for large datasets with many queries as they operate on the entire matrix $\mathbf{A}$. Iterative methods, on the other hand, generate a sequence of approximate solutions that converge progressively closer to the exact solution with each iteration. These methods are typically less computationally demanding, though their convergence rate depends on the properties of matrix $\mathbf{A}$. Common iterative methods include the [Jacobi method](https://en.wikipedia.org/wiki/Jacobi_method), the [Conjugate Gradient method](https://en.wikipedia.org/wiki/Conjugate_gradient_method), or the [L-BFGS](https://en.wikipedia.org/wiki/Limited-memory_BFGS). However, these algorithms may still be inefficient when dealing with a large number of equations (queries) and not only unknowns (records).
 
 To address this, we present a solution based on [stochastic gradient descent (SGD)](https://en.wikipedia.org/wiki/Gradient_descent), which uses only one row of the matrix $\mathbf{A}$ per iteration. This approach is particularly appealing in online scenarios where queries must be audited in real-time, or where storing the entire query set is impractical due to legal constraints or the sheer number of queries.
 
@@ -347,14 +347,14 @@ $$
 &= \arg\min_{\mathbf{x}} \mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]
 \end{align}
 $$
-where $\mathcal{U}(1,m)$ represents the uniform distribution over integers in $[1, m]$. To minimize $\mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]$, we can use gradient descent (GD) with the following update rule:
+where $\mathcal{U}(1,m)$ represents the uniform distribution over integers in $[1, m]$. To minimize $\mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]$, we can use [gradient descent (GD)](https://en.wikipedia.org/wiki/Gradient_descent) with the following update rule:
 $$
 \begin{align}
 x^{(i+1)} &= x^{(i)} - \eta \cdot \nabla_\mathbf{x} \mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]\\
 &= x^{(i)} - \eta \cdot \mathbb{E}_{j\sim \mathcal{U}(1,m)}[ \nabla_\mathbf{x} r_j(\mathbf{x})]
 \end{align}
 $$
-where $\eta$ is the learning rate. In this case, gradient descent converges to the global minimum of $R(\mathbf{x})$, as $r_j(\mathbf{x})$ is convex. However, we are still iterating over all queries in each descent step. To overcome this, we apply [stochastic gradient descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) to approximate the expected value through sampling. In each iteration $i$, a query (or equation) $j$ is randomly selected, and the gradient's expected value over all queries is estimated using the gradient of this single query. This gradient is given by:
+where $\eta$ is the learning rate. In this case, gradient descent converges to the global minimum of $R(\mathbf{x})$, as $r_j(\mathbf{x})$ is convex. However, we are still iterating over all queries in each descent step, making our approach not significantly better than other common iterative techniques. To overcome this, we apply [stochastic gradient descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent), where the expected value is approximated by sampling. In each iteration  $i$, a single query (or equation) $j$ is randomly selected, and the gradient’s expected value across all queries is estimated using the gradient of just this one query. This gradient is given by:
 $$
 \nabla_\mathbf{x} r_j(\mathbf{x})=-2(b_j - A_j x^{(i)}) A_j^{\mathsf{T}} 
 $$
@@ -362,7 +362,7 @@ If we set the step size  $\eta = \frac{1}{2||A_j||_2^2}$, this iterative approac
 $$
 x^{(i+1)} = x^{(i)} + \frac{(b_j - A_j x^{(i)})A_j^{\mathsf{T}}}{||A_j||_2^2}
 $$
-Kaczmarz’s method has an intuitive geometric interpretation: starting from a random location $x^{(0)}$, a better solution $x^{(i+1)}$ is found by projecting $x^{(i)}$ onto the hyperplane defined by the $j$th equation, $\langle A_j,x \rangle = b_j$. 
+Kaczmarz’s method has an intuitive geometric interpretation: starting from an initial candidate solution $x^{(0)}$, an improved solution $x^{(i+1)}$ is found by projecting $x^{(i)}$ onto the hyperplane defined by the randomly chosen $j$-th equation, $\langle A_j,x \rangle = b_j$. 
 
 > [!FAQ]- Why?
 > Let $x_p$ be the projection of $x^{(i)}$ onto hyperplane $A_j\mathbf{x} = b_j$ and  $x'$  be any reference point that lies on this hyperplane.  Since vector $A_j$ is orthogonal to this hyperplane, $x_p$ can be described as the result of shifting $x^{(i)}$ by the projection of vector  $(x^{(i)} - x')$ to vector $A_j$. The vector  $(x^{(i)} - x')$  represents the displacement from a reference point  $x'$ to the point $x^{(i)}$. 
