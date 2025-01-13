@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-12T16:31:20.597+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-13T11:32:41.452+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information [can still qualify as personal data under the GDPR](https://gdprhub.eu/Article_89_GDPR#:~:text=Recital%20162%20GDPR%20specifies%20that,regarding%20any%20particular%20natural%20person”.). By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -338,23 +338,28 @@ The private attribute $\mathbf{x}$ may sometimes be binary in practice, such as 
 
 Even convex optimization, including OLS, can become quite slow and memory-intensive for large datasets with many queries as they operate on the entire matrix $\mathbf{A}$. Iterative methods, on the other hand, generate a sequence of approximate solutions that converge progressively closer to the exact solution with each iteration. These methods are typically less computationally demanding, though their convergence rate depends on the properties of matrix $\mathbf{A}$. Common iterative methods include the [Jacobi method](https://en.wikipedia.org/wiki/Jacobi_method), the [Conjugate Gradient method](https://en.wikipedia.org/wiki/Conjugate_gradient_method), or the [L-BFGS](https://en.wikipedia.org/wiki/Limited-memory_BFGS). However, these algorithms may still be inefficient when dealing with a large number of equations (queries) and not only unknowns (records).
 
-To address this, we present a solution based on [stochastic gradient descent (SGD)](https://en.wikipedia.org/wiki/Gradient_descent), which uses only one row of the matrix $\mathbf{A}$ per iteration. This approach is particularly appealing in online scenarios where queries must be audited in real-time, or where storing the entire query set is impractical due to legal constraints or the sheer number of queries.
+To address this, we present a solution based on [stochastic gradient descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent), which uses only one row of the matrix $\mathbf{A}$ per iteration. This approach is particularly appealing in online scenarios where queries must be audited in real-time, or where storing the entire query set is impractical due to legal constraints or the sheer number of queries.
 
-We still want to minimize $R(\mathbf{x}) = ||\mathbf{b}-\mathbf{A}\mathbf{x}||_2^2$, where the $j$th equation (query) is defined as  $r_i(\mathbf{x}) = ||b_j - A_j \mathbf{x} ||_2^2$, with $A_j$ being the $j$th row of matrix. Since $R(\mathbf{x}) = \sum_{j=1}^m r_j(\mathbf{x})$, we can write
-$$
+We aim to minimize the function $R(\mathbf{x}) = ||\mathbf{b} - \mathbf{A}\mathbf{x}||_2^2 = \sum_{j=1}^m r_j(\mathbf{x})$, where the $j$th equation (query) is defined as $r_j(\mathbf{x}) = (b_j - A_j \mathbf{x})^2$, with $A_j$ being the $j$th row of matrix. [Gradient descent](https://en.wikipedia.org/wiki/Gradient_descent) is an iterative method that improves the solution step by step. In each iteration, it calculates the gradient $\nabla_\mathbf{x} R(\mathbf{x})$ and updates the current estimate $\mathbf{x}^{(i)}$ by moving in the opposite direction of the gradient:$$
 \begin{align}
-\arg\min_{\mathbf{x}} R(\mathbf{x}) &= \arg\min_{\mathbf{x}} \sum_{j=1}^m(1/m) \cdot r_j(\mathbf{x})\\
-&= \arg\min_{\mathbf{x}} \mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]
+x^{(i+1)} &= x^{(i)} - \eta \cdot \nabla_\mathbf{x} R(\mathbf{x})\\
+&= x^{(i)} - \eta \cdot \nabla_\mathbf{x} \sum_{j=1}^m r_j(\mathbf{x})
 \end{align}
-$$
-where $\mathcal{U}(1,m)$ represents the uniform distribution over integers in $[1, m]$. To minimize $\mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]$, we can use [gradient descent (GD)](https://en.wikipedia.org/wiki/Gradient_descent) with the following update rule:
+$$Since $r_j$ is convex, their sum $R(\mathbf{x})$ is also convex, which means that, if we set the step size $\eta$ well (just not too big and not too small), the above procedure will progressively get closer to the global minimum of $R(\mathbf{x})$.
+
+However, in each descent step, we still iterate over all queries, making this approach computationally expensive and not better than other iterative techniques. To improve efficiency, [stochastic gradient descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) exploits that minimizing $R(\mathbf{x})$ is equivalent to minimizing its mean $R(\mathbf{x}) / m$, which is the expected value of $R(\mathbf{x})$ if queries are chosen uniformly at random:
 $$
 \begin{align}
-x^{(i+1)} &= x^{(i)} - \eta \cdot \nabla_\mathbf{x} \mathbb{E}_{j\sim \mathcal{U}(1,m)}[ r_j(\mathbf{x})]\\
+x^{(i+1)} &= x^{(i)} - \eta \cdot \nabla_\mathbf{x} R(\mathbf{x})/m\\
+&= x^{(i)} - \eta \cdot  \frac{1}{m}\sum_{j=1}^m \nabla_\mathbf{x} r_j(\mathbf{x})\\
 &= x^{(i)} - \eta \cdot \mathbb{E}_{j\sim \mathcal{U}(1,m)}[ \nabla_\mathbf{x} r_j(\mathbf{x})]
 \end{align}
 $$
-where $\eta$ is the learning rate. In this case, gradient descent converges to the global minimum of $R(\mathbf{x})$, as $r_j(\mathbf{x})$ is convex. However, we are still iterating over all queries in each descent step, making our approach not significantly better than other common iterative techniques. To overcome this, we apply [stochastic gradient descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent), where the expected value is approximated by sampling. In each iteration  $i$, a single query (or equation) $j$ is randomly selected, and the gradient’s expected value across all queries is estimated using the gradient of just this one query. This gradient is given by:
+where $\mathcal{U}(1,m)$ represents the uniform distribution over integers in $[1, m]$. Instead of summing over all $m$ queries, we approximate the expected value by randomly sampling one query at each iteration: in each iteration $i$, a single query (or equation) $j$ is randomly selected, and the gradient’s expected value across all queries is estimated using the gradient of just this one query: 
+$$
+x^{(i+1)} \approx x^{(i)} - \eta \cdot\nabla_\mathbf{x} r_j(\mathbf{x})
+$$
+The gradient is given by:
 $$
 \nabla_\mathbf{x} r_j(\mathbf{x})=-2(b_j - A_j x^{(i)}) A_j^{\mathsf{T}} 
 $$
