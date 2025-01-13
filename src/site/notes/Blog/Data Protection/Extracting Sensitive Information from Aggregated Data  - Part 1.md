@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-13T11:32:41.452+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-13T11:35:35.391+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information [can still qualify as personal data under the GDPR](https://gdprhub.eu/Article_89_GDPR#:~:text=Recital%20162%20GDPR%20specifies%20that,regarding%20any%20particular%20natural%20person”.). By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -340,7 +340,8 @@ Even convex optimization, including OLS, can become quite slow and memory-intens
 
 To address this, we present a solution based on [stochastic gradient descent (SGD)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent), which uses only one row of the matrix $\mathbf{A}$ per iteration. This approach is particularly appealing in online scenarios where queries must be audited in real-time, or where storing the entire query set is impractical due to legal constraints or the sheer number of queries.
 
-We aim to minimize the function $R(\mathbf{x}) = ||\mathbf{b} - \mathbf{A}\mathbf{x}||_2^2 = \sum_{j=1}^m r_j(\mathbf{x})$, where the $j$th equation (query) is defined as $r_j(\mathbf{x}) = (b_j - A_j \mathbf{x})^2$, with $A_j$ being the $j$th row of matrix. [Gradient descent](https://en.wikipedia.org/wiki/Gradient_descent) is an iterative method that improves the solution step by step. In each iteration, it calculates the gradient $\nabla_\mathbf{x} R(\mathbf{x})$ and updates the current estimate $\mathbf{x}^{(i)}$ by moving in the opposite direction of the gradient:$$
+We aim to minimize the function $R(\mathbf{x}) = ||\mathbf{b} - \mathbf{A}\mathbf{x}||_2^2 = \sum_{j=1}^m r_j(\mathbf{x})$, where the $j$th equation (query) is defined as $r_j(\mathbf{x}) = (b_j - A_j \mathbf{x})^2$, with $A_j$ being the $j$th row of matrix. [Gradient descent](https://en.wikipedia.org/wiki/Gradient_descent) is an iterative method that improves the solution step by step. In each iteration, it calculates the gradient $\nabla_\mathbf{x} R(\mathbf{x})$ and updates the current estimate $\mathbf{x}^{(i)}$ by moving in the opposite direction of the gradient:
+$$
 \begin{align}
 x^{(i+1)} &= x^{(i)} - \eta \cdot \nabla_\mathbf{x} R(\mathbf{x})\\
 &= x^{(i)} - \eta \cdot \nabla_\mathbf{x} \sum_{j=1}^m r_j(\mathbf{x})
