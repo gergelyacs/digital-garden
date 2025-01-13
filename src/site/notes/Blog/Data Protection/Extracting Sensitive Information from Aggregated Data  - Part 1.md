@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-13T11:35:35.391+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-13T11:37:13.898+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information [can still qualify as personal data under the GDPR](https://gdprhub.eu/Article_89_GDPR#:~:text=Recital%20162%20GDPR%20specifies%20that,regarding%20any%20particular%20natural%20person”.). By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -346,7 +346,8 @@ $$
 x^{(i+1)} &= x^{(i)} - \eta \cdot \nabla_\mathbf{x} R(\mathbf{x})\\
 &= x^{(i)} - \eta \cdot \nabla_\mathbf{x} \sum_{j=1}^m r_j(\mathbf{x})
 \end{align}
-$$Since $r_j$ is convex, their sum $R(\mathbf{x})$ is also convex, which means that, if we set the step size $\eta$ well (just not too big and not too small), the above procedure will progressively get closer to the global minimum of $R(\mathbf{x})$.
+$$
+Since $r_j$ is convex, their sum $R(\mathbf{x})$ is also convex, which means that, if we set the step size $\eta$ well (just not too big and not too small), the above procedure will progressively get closer to the global minimum of $R(\mathbf{x})$.
 
 However, in each descent step, we still iterate over all queries, making this approach computationally expensive and not better than other iterative techniques. To improve efficiency, [stochastic gradient descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) exploits that minimizing $R(\mathbf{x})$ is equivalent to minimizing its mean $R(\mathbf{x}) / m$, which is the expected value of $R(\mathbf{x})$ if queries are chosen uniformly at random:
 $$
@@ -356,10 +357,12 @@ x^{(i+1)} &= x^{(i)} - \eta \cdot \nabla_\mathbf{x} R(\mathbf{x})/m\\
 &= x^{(i)} - \eta \cdot \mathbb{E}_{j\sim \mathcal{U}(1,m)}[ \nabla_\mathbf{x} r_j(\mathbf{x})]
 \end{align}
 $$
+
 where $\mathcal{U}(1,m)$ represents the uniform distribution over integers in $[1, m]$. Instead of summing over all $m$ queries, we approximate the expected value by randomly sampling one query at each iteration: in each iteration $i$, a single query (or equation) $j$ is randomly selected, and the gradient’s expected value across all queries is estimated using the gradient of just this one query: 
 $$
 x^{(i+1)} \approx x^{(i)} - \eta \cdot\nabla_\mathbf{x} r_j(\mathbf{x})
 $$
+
 The gradient is given by:
 $$
 \nabla_\mathbf{x} r_j(\mathbf{x})=-2(b_j - A_j x^{(i)}) A_j^{\mathsf{T}} 
