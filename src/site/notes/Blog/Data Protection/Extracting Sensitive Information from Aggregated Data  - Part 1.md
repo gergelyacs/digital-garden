@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-13T11:42:46.721+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-13T11:48:03.421+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information [can still qualify as personal data under the GDPR](https://gdprhub.eu/Article_89_GDPR#:~:text=Recital%20162%20GDPR%20specifies%20that,regarding%20any%20particular%20natural%20person”.). By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -358,7 +358,7 @@ x^{(i+1)} &= x^{(i)} - \eta \cdot \nabla_\mathbf{x} R(\mathbf{x})/m\\
 \end{align}
 $$
 
-where $\mathcal{U}(1,m)$ represents the uniform distribution over integers in $[1, m]$. Instead of summing over all $m$ queries, we approximate the expected value by randomly sampling one query at each iteration: in each iteration $i$, a single query (or equation) $j$ is randomly selected, and the gradient’s expected value across all queries is estimated using the gradient of just this one query: 
+where $\mathcal{U}(1,m)$ represents the uniform distribution over integers in $[1, m]$. Instead of summing over all $m$ queries, we approximate the expected value by randomly sampling one query at each iteration: in each iteration $i$, a single query (or equation) $j$ is randomly selected, and the gradient’s expected value across all queries is estimated with the gradient of just this one query: 
 $$
 x^{(i+1)} \approx x^{(i)} - \eta \cdot\nabla_\mathbf{x} r_j(\mathbf{x})
 $$
