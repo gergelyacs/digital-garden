@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-18T17:06:38.616+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-18T17:15:19.745+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information [can still qualify as personal data under the GDPR](https://gdprhub.eu/Article_89_GDPR#:~:text=Recital%20162%20GDPR%20specifies%20that,regarding%20any%20particular%20natural%20person”.). By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
@@ -448,7 +448,7 @@ This is close to the exact solution computed by cvxpy [[Blog/Data Protection/Ext
 
 # Beyond linear queries
 
-SUM, AVG, and COUNT are linear queries that can be audited using tools from linear algebra. However, auditing non-linear queries like MEDIAN, MAX, and MIN is more challenging. In fact, [verifying exact disclosure](https://theory.stanford.edu/~nmishra/Papers/surveyQueryAuditingTechniquesDataPrivacy.pdf) for such queries may not even be feasible in polynomial time with respect to the dataset size $n$ or the number of queries $m$.
+SUM, AVG, and COUNT are linear queries (i.e., linear functions of the attribute values) that can be audited using tools from linear algebra. However, auditing non-linear queries like MEDIAN, MAX, and MIN is more challenging. In fact, [verifying exact disclosure](https://theory.stanford.edu/~nmishra/Papers/surveyQueryAuditingTechniquesDataPrivacy.pdf) for such queries may not even be feasible in polynomial time with respect to the dataset size $n$ or the number of queries $m$.
 
 One approach is to approximate the missing attribute values using [heuristics like SAT solvers](https://dl.acm.org/doi/10.1145/3287287). Another is to apply stochastic gradient descent (SGD), as discussed above, if the queries are "approximately" differentiable functions of the attribute values. However, if the queries are non-convex functions of the records, then SGD does not guarantee convergence to the global optimum, meaning we cannot be sure that the solution it finds corresponds to the actual attribute values. Nevertheless, as in machine learning, we can hope that the solutions found are reasonably close to the actual solution.
 
