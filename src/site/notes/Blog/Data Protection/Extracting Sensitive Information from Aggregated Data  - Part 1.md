@@ -1,10 +1,10 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-01-18T17:15:19.745+01:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data  - Part 1.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-1/","created":"2024-12-29T08:42:00.368+01:00","updated":"2025-02-06T09:18:32.326+01:00"}
 ---
 
 One common challenge is convincing people that aggregate information [can still qualify as personal data under the GDPR](https://gdprhub.eu/Article_89_GDPR#:~:text=Recital%20162%20GDPR%20specifies%20that,regarding%20any%20particular%20natural%20person”.). By “aggregate information,” I refer to statistical summaries such as sums, medians, and means derived from a confidential dataset, or even the parameters of a trained machine learning model.
 
-In this post, I start with the simplest case: demonstrating how sensitive personal data can be reconstructed from the results of a series of SUM queries performed on a confidential dataset. I also demonstrate how machine learning can be used to extract sensitive data from any aggregate information. In a follow-up post, I’ll explore how an attacker can strategically minimize the number of queries needed to reconstruct every record in the dataset.
+In this post, I start with a simple example: showing how sensitive personal data can be reconstructed from a series of SUM queries on a confidential dataset. This technique is at the core of many advanced attacks on [database systems](https://en.wikipedia.org/wiki/Reconstruction_attack), [federated learning](https://arxiv.org/abs/2303.03908), or [training data reconstruction](https://owasp.org/www-project-machine-learning-security-top-10/docs/ML03_2023-Model_Inversion_Attack) in general. These attacks work for the same reason machine learning does—both rely on extracting patterns from data. I’ll show how the same techniques used to train a model can also be used to extract sensitive informatioπn from aggregate data. In a follow-up post, I’ll explore how an attacker can minimize the number of queries to reconstruct an entire dataset.
 
 For the sake of illustration, consider the following hospital dataset.
 
@@ -313,7 +313,7 @@ and the output is:
 Solution: [1.15961346e-04 5.20000027e+00 5.16666694e+00 5.16666694e+00 1.13998846e+01 5.16666694e+00]
 ```
 
-This is quite dummy as no one has a blood sugar level of less than 0.01. Let's add another constraint that all values must be larger than 3:
+This is quite silly as no one has a blood sugar level of less than 0.01. Let's add another constraint that all values must be larger than 3:
 
 ``` python
 objective = cvx.Minimize(cvx.sum_squares(A @ x - b))
