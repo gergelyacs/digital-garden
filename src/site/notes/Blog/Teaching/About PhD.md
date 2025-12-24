@@ -1,6 +1,11 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/About PhD.md","permalink":"/teaching/about-ph-d/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-12-23T11:43:53.836+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/About PhD.md","permalink":"/teaching/about-ph-d/","created":"2025-01-02T23:56:48.422+01:00","updated":"2025-12-24T10:12:47.556+01:00"}
 ---
+
+Over the years, I’ve read a couple of [[Blog/Teaching/About PhD#References\|blog posts and books]] about pursuing a PhD and doing research more broadly. Here, I’ve collected some suggestions and hints, those I’ve personally found the most helpful. While many of them focus on academic research, several are far more general.
+
+---
+# Goals
 
 The two most important goals of a PhD are to develop *problem discovery* and *effective communication skills*. While elaboration is undoubtedly crucial and makes up the bulk of the actual research work, it is more about solving problems than discovering them. As Freeman Dyson said: *"It is characteristic of scientific life that it is easy when you have a problem to work on. The hard part is finding your problem.”*
 
