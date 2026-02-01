@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T13:08:00.957+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T17:09:23.810+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -382,7 +382,7 @@ Ez a probléma is átfogalmazható veszteségfüggvénnyel az alábbi formában:
 $$
 \vec{x}_{adv} = \vec{x} + \arg\min_{\vec{r}:\|\vec{r}\|_p \leq \varepsilon} loss(f_{\theta}(\vec{x} + \vec{r}), C) 
 $$
-vagyis az $f_{\theta}$ modell hibázását akarjuk **minimalizálni** a támadó által választott $C$ cimkére nézve. A megoldás egyszerűen közelíthető gradiens süllyedéssel, ahol a gradienst $x$ input (és **nem** a modell paraméter $\theta$) szerint kell számolni, mivel itt is az input módosítását keressük.
+vagyis az $f_{\theta}$ modell hibázását akarjuk **minimalizálni** a támadó által választott $C$ cimkére nézve. A megoldás egyszerűen közelíthető gradiens süllyedéssel, ahol a gradienst $x$ input (és **nem** a modell paraméter $\theta$) szerint kell számolni, mivel itt is az input módosítását keressük. Erre egy példa a PGD (projected gradient descent), ami az egyik legerősebb és leggyakrabban használt white-box adversarial támadás, amely iteratív gradiens-alapú optimalizálással generál adversarial példákat; ahelyett, hogy egyetlen nagy lépést tennénk a gradiens irányába, sok kis lépést teszünk, és minden lépés után visszavetítjük (project) a perturbációt a $\varepsilon$-gömbbe, hogy biztosítsuk a megszorítás teljesülését. A PGD adja a később leírt adversarial training alapját is.
 
 #### Norma típusok
 
@@ -1146,7 +1146,60 @@ A célfüggvény, hogy a betanított modell $f_{\theta}$ a $D_{target}$ célmint
 2. Kiszámítjuk a célfüggvény (objective) $D_{poison}$ szerinti gradiensét
 3. Módosítjuk $D_{poison}$-t a gradiensének ellentétes irányába ($f_{\theta}$ hibázását akarjuk _minimalizálni_ $D_{target}$-n)
 
-Látható, hogy az $f$ modellt minden iterációban újra kell tanítani $D_{train}\cup D_{poison}$ adaton ("megoldjuk" a belső optimalizációt), és csak ezután értékelhetjük ki a célfüggvényt és számíthatjuk ki az $D_{poison}$ szerinti gradiensét ("megoldjuk" a külső optimalizáció). Ez rendkívül számításigényes, gyakorlatilag minden iteráció során egy teljes model újratanítás szükséges. A gyakorlatban approximációk és heurisztikák szükségesek, amelyek "elég jó" mérgezést eredményeznek, bár nem garantáltan optimálisat (pl. nem tanítjuk újra az $f_{\theta}$ modellt kihagyva a belső optimalizációt).
+Látható, hogy az $f$ modellt minden iterációban újra kell tanítani $D_{train}\cup D_{poison}$ adaton ("megoldjuk" a belső optimalizációt), és csak ezután értékelhetjük ki a célfüggvényt és számíthatjuk ki az $D_{poison}$ szerinti gradiensét ("megoldjuk" a külső optimalizáció). Ez rendkívül számításigényes, gyakorlatilag minden iteráció során egy teljes model újratanítás szükséges. A gyakorlatban approximációk és heurisztikák szükségesek, amelyek "elég jó" mérgezést eredményeznek, bár nem garantáltan optimálisat (pl. nem tanítjuk újra az $f_{\theta}$ modellt kihagyva a belső optimalizációt, ld. alább).
+
+#### Gradient alignment: A bilevel probléma közelítése
+
+A gradient alignment (gradiens illesztés) egy elegáns és hatékony megközelítés poisoning támadások tervezésére, amelyet a [Witches' Brew támadás](https://arxiv.org/abs/2009.02276) vezetett be. Ez egy **közelítő megoldás** a bilevel optimalizációs problémára, amely elkerüli a költséges belső optimalizálást.
+
+**Az ötlet:** Tegyük fel, hogy van egy célmintánk $(x_{target}, y_{target})$, amit téves $y_{malicious}$ osztályba akarunk soroltatni. Ahelyett, hogy az $(x_{target}, y_{malicious})$ mintát közvetlenül beszúrnánk a tanító adatba - ami könnyen detektálható lenne a félrecímkézés miatt -, olyan poison mintákat keresünk, amelyek a tanítás alatt nagyon hasonló $∇_\theta loss$ gradienst produkálnak mint a félrecímkézett $(x_{target}, y_{malicious})$ célminta $\implies$ A mérgezett minta gradiensének **hasonlítania kell** ahhoz a gradiens irányhoz, amely $x_{target}$-et $y_{malicious}$ irányba tolja.
+
+**Hogyan generáljunk ilyen poison mintákat?** 
+1. Keressünk olyan $\{ (x_{p_1}, y_{p_1}), (x_{p_2}, y_{p_2}), \ldots, (x_{p_k}, y_{p_k})\}$ clean mintákat, amelyek eleve hasonlóak a félrecímkézett $(x_{target}, y_{malicious})$ mintához (célszerű az $y_{malicious}$ osztályban keresni)
+2. Olyan poison mintákat keresünk, amely a modellt a kívánt $g_{target} = \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{target}), y_{malicious})$ irányba tolják. Ez az a gradiens, amely **növeli** annak valószínűségét, hogy $x_{target}$-et $y_{malicious}$-nak osztályozzuk. Ezért keressük azokat az $r_{p_i}$ perturbációkat, amelyre 
+   $$
+   \forall i: \qquad g_{target} = \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{t}), y_{m})\approx \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{p_i}+r_{p_i}), y_{p_i})
+$$
+	Ezt megkapjuk ha megoldjuk az alábbi optimalizációt:
+$$
+r_{p_i}^* = \arg\max_{r_{p_i} : ||r_{p_i}|| \leq \varepsilon} 
+\text{cosine\_similarity}\left(g_{target}, \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{p_i}+r_{p_i}), y_{p_i})\right)
+
+$$
+	ahol a koszínusz hasonlóság maximalizálásával elérjük, hogy a két gradiens által bezárt szög minél kisebb legyen, vagyis egy irányba mutassanak. Így fognak a modellre nagyon hasonló hatást kifejteni tanítás során: a training során $\theta$ olyan irányba fog mozogni, hogy $f_\theta(x_{target}) → y_{malicious}$.
+3. Hozzáadjuk az $\{ (x_{p_i}+r_{p_i}^*, y_{p_i})\}$ mintákat a tanítóadathoz
+
+**Gradient alignment approach**: 
+``` 
+0. Train model ONCE on clean data
+1. Compute target gradient ONCE → GYORS (seconds) 
+2. For each base sample: 
+   - Optimize perturbation (few gradient steps) → GYORS (seconds-minutes) 
+4. Inject poisons 
+   
+Total cost: Csak 1 darab teljes model training + k perturbáció optimalizálás
+```
+
+##### Miért működik?
+
+A gradient alignment tulajdonképpen a bilevel probléma egy elsőrendű (Taylor) közelítése, hiszen **csak** az első training iterációra optimalizáljuk a poisont: 
+$$
+\theta_{t+1} \approx \theta_t - \eta \cdot \sum_{(x,y) \in D_{train}}\nabla_{\theta} \mathcal{loss}(f_{\theta_t}(x), y)
+$$
+Ennek ellenére, ez a gyakorlatban meglepően jó, ami annak köszönhető, hogy a modell training trajectory-ja (pályája) rövid távon jól közelíthető gradiens információval (tehát a modell paraméterek frissítési iránya az első iterációhoz képest nem sokat változik később). Empirikus megfigyelések alapján a gradient alignment alapú poisoning gyakran közel ugyanolyan sikeres, mint a teljes bilevel optimalizáció.
+
+##### Előnyök
+- **Skálázható:** Nagy modellekre (ResNet, Transformer) a bilevel approach gyakorlatilag megvalósíthatatlan (túl költséges), a gradient alignment viszont még ekkor is működhet
+- **Több poison** mintára is jól skálázódik. A több poison minta növeli a támadás hatékonyságát. Ugyanakkor a gyakorlatban néhány minta már gyakran elég a félreklasszifikáláshoz
+- A poison hatás **szétosztható** a poison minták között, ha 
+  $$
+  g_{target}\approx \frac{1}{k}\sum_{i=1}^k \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{p_i}+r_{p_i}), y_{p_i})
+  $$
+	vagyis a poison minták **kumulált hatása** tolja el a kívánt irányba a modellt. A támadás így nehezebben detektálható, de a hatékonyság függ a batch mérettől, mivel minél több poison-nak kell egy batch-ben lennie az összhatás elérése végett.
+- **Rejtett:** Az $||r_{p_i}|| \leq \varepsilon$ miatt a módosítás nem feltétlen látható
+- A támadás **transzferálható** (elég egy hasonló modellt megtámadni, az működni fog a cél modellen is)
+##### Hátrányok
+- A bilevel optimalizációnál pontatlanabb, de általában nem számottevően. Ugyanakkor jóval olcsóbb támadás!
 
 ### Példák célzott adatmérgezésre
 
