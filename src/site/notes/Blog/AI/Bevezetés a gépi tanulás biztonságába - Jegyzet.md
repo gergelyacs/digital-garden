@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T17:17:04.724+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T17:18:36.388+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -1163,8 +1163,8 @@ $$
 	Ezt megkapjuk ha megoldjuk az alábbi optimalizációt:	
 	$$
 	r_{p_i}^* = \arg\max_{r_{p_i} : ||r_{p_i}|| \leq \varepsilon} 
-	\text{cosine\_similarity}\left(g_{target}, \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{p_i}+r_{p_i}), y_{p_i})\right)
-	$$
+\text{cosine\_similarity}\left(g_{target}, \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{p_i}+r_{p_i}), y_{p_i})\right)
+$$
 	ahol a koszínusz hasonlóság maximalizálásával elérjük, hogy a két gradiens által bezárt szög minél kisebb legyen, vagyis egy irányba mutassanak. Így fognak a modellre nagyon hasonló hatást kifejteni tanítás során: a training során $\theta$ olyan irányba fog mozogni, hogy $f_\theta(x_{target}) → y_{malicious}$.
 3. Hozzáadjuk az $\{ (x_{p_i}+r_{p_i}^*, y_{p_i})\}$ mintákat a tanítóadathoz
 
