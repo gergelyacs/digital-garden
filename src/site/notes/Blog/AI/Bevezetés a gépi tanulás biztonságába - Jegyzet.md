@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T17:36:19.091+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T17:54:21.135+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -548,7 +548,7 @@ Az alapötlet meglepően egyszerű: adjunk zajt az inputhoz, majd átlagoljuk a 
 1. Ne futtasd a modellt közvetlenül az inputon ($x$), hanem generálj sok zajos verziót $x$-ből: $x + \varepsilon_1$, $x + \varepsilon_2, ..., x + \varepsilon_n$, ahol $\varepsilon_i \sim N(0, \sigma^2I)$ (Gaussian zaj)
 2. Átlagold/szavazz a válaszokon: Az a címke lesz a válasz, amelyet a legtöbb zajos verzió választott
    
-A zajjal való átlagolás simítja (smooths) a döntési felületet, kevésbé érzékennyé teszi kis perturbációkra.
+A zajjal való átlagolás simítja (smoothing) a döntési felületet, kevésbé teszi érzékennyé kis perturbációkra.
 
 **Matematikai formalizálás**:
 
@@ -617,7 +617,7 @@ Garancia: Bármilyen adversarial perturbáció, ahol ||r||₂ ≤ 0.65,
 - Nem igényel speciális tanítást (használható pre-trained modellekkel is)
 - Minden input-hoz külön certificate → tudható, milyen mintákon lesz gyenge a smoothed modell
 
-## Hátrányok
+##### Hátrányok
 
 **1. Accuracy csökkenés**:
 - A zaj hozzáadása csökkenti a clean accuracy-t. 
@@ -658,7 +658,7 @@ Támadó: NEM tudja pontosan, hogy ε mi lesz
 
 Ebből kifolyólag **adaptív támadások** ellen mindig érdemes randomizálni a védekezést. Erre alapszik a kriptográfián túl a differential privacy is.  
 
-A randomitás fontosságát a biztonságban a játékelmélet is alátámasztja. A [minimax tétel](https://en.wikipedia.org/wiki/Minimax_theorem) (von Neumann, 1928) kimondja, hogy **kevert stratégiák** (mixed strategies) használata esetén a játékosok jobb eredményt érhetnek el, mint tiszta (determinisztikus) stratégiákkal.  Ez azt jelenti, hogy ha a védekező determinisztikusan mindig ugyanazt a védelmi mechanizmust alkalmazza, akkor egy adaptív támadó megtanulhatja és kihasználhatja ezt a mintázatot, optimalizálva rá a támadását. Ezzel szemben, ha a védekező randomizált védelmet alkalmaz (pl. véletlenszerűen választ különböző ellenőrzési módszerek között), akkor a támadó nem tud determinisztikus optimális stratégiát találni - csak várható érték alapján optimalizálhat, ami gyengébb eredményt ad neki. Ez magyarázza, hogy miért használnak randomizált audit schedule-okat a biztonsági ellenőrzésekben, miért kevernek véletlen időzítésű token refresh-eket autentikációs rendszerekben, és miért alapvető a randomness az ML security modern védekezési stratégiáiban.
+A randomitás fontosságát a biztonságban a játékelmélet is alátámasztja. A [minimax tétel](https://en.wikipedia.org/wiki/Minimax_theorem) (von Neumann, 1928) kimondja, hogy **kevert stratégiák** (mixed strategies) használata esetén a játékosok jobb eredményt érhetnek el, mint tiszta (determinisztikus) stratégiákkal.  Ez azt jelenti, hogy ha a védekező determinisztikusan mindig ugyanazt a védelmi mechanizmust alkalmazza, akkor egy adaptív támadó megtanulhatja és kihasználhatja ezt a mintázatot, optimalizálva rá a támadását. Ezzel szemben, ha a védekező randomizált védelmet alkalmaz (pl. véletlenszerűen választ különböző detektálási módszerek között), akkor a támadó nem tud determinisztikus optimális stratégiát találni - csak várható érték alapján optimalizálhat, ami gyengébb eredményt ad neki. Ez magyarázza, hogy miért használnak randomizált audit schedule-okat a biztonsági ellenőrzésekben, miért kevernek véletlen időzítésű token refresh-eket autentikációs rendszerekben, és miért alapvető a randomness az ML security modern védekezési stratégiáiban.
 
 **Take away: Security through randomness**, nem "security through obscurity"!
 
@@ -2580,7 +2580,10 @@ Mivel egyetlen védelmi mechanizmus nem nyújt teljes védelmet, és minden véd
 - Audit trails, compliance checking
 - Red team exercises
 
-A problémát nem elszigetelten, csak a modell szintjén kell megoldani például költséges robusztus/adversarial tanítással, hanem az **egész rendszer kontextusában** - beleértve az adatgyűjtési pipeline-t, deployment környezetet, felhasználói interakciókat, és downstream alkalmazásokat. Ez a **defense-in-depth filozófia**: Ha egy réteget megkerülnek, más rétegek még mindig védenek. A cél nem a támadás teljes megakadályozása (ami gyakran irreális), hanem a támadási költség növelése olyan szintre, hogy a támadó számára ne érje meg vagy ne legyen megvalósítható gyakorlatban. Kritikus alkalmazásokban (önvezető autók, hadipar, egészségügy) pedig **fall-back mechanizmusok** szükségesek: ha az ML komponens kompromittálódik, hagyományos rule-based rendszerek, emberi felügyelet vagy fizikai biztonsági intézkedések még mindig védik a kritikus funkciókat.
+A problémát nem elszigetelten, csak a modell szintjén kell megoldani például költséges robusztus/adversarial tanítással, hanem az **egész rendszer kontextusában** - beleértve az adatgyűjtési pipeline-t, deployment környezetet, felhasználói interakciókat, és downstream alkalmazásokat. Ez a **defense-in-depth filozófia**: Ha egy réteget megkerülnek, más rétegek még mindig védenek. A cél nem a támadás teljes megakadályozása (ami gyakran irreális), hanem a támadási költség növelése olyan szintre, hogy a támadó számára ne érje meg vagy ne legyen megvalósítható gyakorlatban. A támadás költségeinek növelésének egy hatékony módja a védelem [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#A véletlenszerűség fontossága - Security through randomness\|randomizálása]] (pl. véletlen alkalmazunk elemeket az egyes rétegekből), ezért egy adaptív támadó nem tud determinisztikus optimális stratégiát találni - csak várható érték alapján optimalizálhat, ami gyengébb eredményt ad neki. Ez a "security by randomness" elv inkább követendő mint a védelmi mechanizmus elrejtése ("security by obscurity").
+
+Kritikus alkalmazásokban (önvezető autók, hadipar, egészségügy) pedig **fall-back mechanizmusok** szükségesek: ha az ML komponens kompromittálódik, hagyományos rule-based rendszerek, emberi felügyelet vagy fizikai biztonsági intézkedések még mindig védik a kritikus funkciókat.
+
 
 ## Kontextus-függő védelem - Alkalmazás-specifikus megközelítés
 
