@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-01-31T23:01:55.472+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T12:32:30.931+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -43,13 +43,13 @@ A gépi tanulási rendszerek ma már mindenütt jelen vannak életünkben, az an
 
 A kulcskérdések, amelyekkel foglalkozunk: Hogyan lehet egy gépi tanulási modellt megtámadni úgy, hogy hibásan osztályozza az adatokat? Képes-e egy támadó rekonstruálni a bizalmas tréningadatokat vagy ellopni magát a modellt? Milyen védekezési mechanizmusokat alkalmazhatunk ezekkel a támadásokkal szemben? És végül, mikor mondhatjuk azt, hogy egy gépi tanulási modell valóban megbízható?
 
-Az előadás középpontjában a szándékos, rosszindulatú szereplők által indított támadások állnak, amelyek célja a gépi tanulási modellek integritásának, elérhetőségének vagy bizalmasságának megsértése. A NIST AI 100-2 E2023 szabvány taxonómiája alapján vizsgáljuk meg a különböző támadási típusokat és az ellenük alkalmazható védelmi technikákat.
+Az előadás középpontjában a szándékos, rosszindulatú szereplők által indított támadások állnak, amelyek célja a gépi tanulási modellek integritásának, elérhetőségének vagy bizalmasságának megsértése. A [NIST AI 100-2 E2023](https://csrc.nist.gov/pubs/ai/100/2/e2023/final) szabvány taxonómiája alapján vizsgáljuk meg a különböző támadási típusokat és az ellenük alkalmazható védelmi technikákat.
 
 ## Trustworthy AI - Megbízható mesterséges intelligencia
 
 A [Trustworthy AI](https://airc.nist.gov/airmf-resources/airmf/3-sec-characteristics/) (megbízható mesterséges intelligencia) egy többdimenziós fogalom, amely azt fejezi ki, hogy mikor és milyen körülmények között bízunk meg egy gépi tanulási modellben vagy AI rendszerben. A megbízhatóság nem egyetlen metrikával mérhető, hanem több, gyakran konfliktusban álló követelmény együttes teljesítését jelenti.
 
-**A Trustworthy AI dimenziói**:
+### A Trustworthy AI dimenziói
 
 **1. Accuracy (Pontosság)**: A modell helyes előrejelzéseket ad-e? Magas pontosság a legtöbb alkalmazás alapkövetelménye, de önmagában nem elég a megbízhatósághoz.
 
@@ -74,6 +74,8 @@ Ezek a dimenziók nem mind egyszerre maximalizálhatók - gyakran **kompromisszu
 - **Privacy vs. Accuracy**: Differential privacy technikák zajt adnak az adatokhoz, ami csökkenti a modell pontosságát.
 - **Explainability vs. Accuracy**: Az interpretálható modellek (lineáris regresszió, döntési fák) gyakran kevésbé pontosak, mint a komplex, "black-box" deep learning modellek.
 - **Efficiency vs. Security**: Robusztus modellek gyakran nagyobbak és lassabbak, ami költségesebb inference-t jelent.
+- **Security vs. Privacy:** Az adversarial mintákra robusztus modellek gyakran sérülékenyebb membership támadásokkal szemben (több információt szivárogtatnak a tréningadatról).
+- **Explainability vs Privacy:** Elmagyarázható modellek szintén több információt árulhatnak el a tréningadatról.
 
 Ebben a fejezetben **kizárólag a security (biztonság) és részben a privacy (adatvédelem) dimenzióval** foglalkozunk - vagyis azzal, hogy hogyan támadhatók a gépi tanulási modellek szándékos, rosszindulatú módon hogyan védhetők ezekkel szemben. Megvizsgáljuk az integritás (integrity), bizalmasság (confidentiality), és elérhetőség (availability) elleni támadásokat, valamint a védekezési mechanizmusokat. Fontos, hogy ez NEM a trustworthy AI egyetlen aspektusa, de kritikus fontosságú, különösen olyan alkalmazásokban, ahol az ellenséges környezet vagy rosszindulatú aktorok jelenléte várható (security-sensitive applications, adversarial settings). Mivel a jogi szabályozások (pl. EU AI Act, GDPR) a trustworthy AI több dimenziójával szemben fogalmaznak meg követelményeket aminek a biztonság csak egy része, ezért a rosszindulatú támadások elleni védekezések NEM elegendőek egy modell jogszabályi megfelelőségéhez (compliance). A jövő AI rendszereinek többdimenziós optimalizálást kell végezniük, ahol az elfogadható trade-off-ok függenek az alkalmazási kontextustól, a szabályozási környezettől, és a társadalmi elvárásoktól.
 
@@ -93,7 +95,7 @@ Ehelyett a hangsúly a **gépi tanulás biztonsága** témakörön van: Példáu
 
 ## A gépi tanulási modell fogalma
 
-A gépi tanulási modell lényegében egy "függvény", amely leírja, hogyan kapcsolódik össze egy bemenet és egy kimenet. Adottak adatpontok $(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)$ egy $D_{train}$ halmazból, ahol $x_i$ az adat jellemzői (feature vektor), az $y_i$ pedig az ehhez tartozó címke. Például, $x$ a beteg jellemzői (dohányzik?, életkor, végzettség, vércukor szint, stb.), a kimenete pedig, hogy szenved-e egy adott betegségben (tüdő rák?). Tudni akarjuk az összefüggést a beteg jellemzői és a betegség között, hogy a csak jellemzőkből meg tudjuk jósolni (előre jelezni) a betegséget olyan embereknél, ahol csak a jellemzők ismertek. Ezt az összefüggést matematikai értelemben egy függvénynek hívjuk, amit modellnek fogunk nevezni. Másik példaként tekintsünk egy egyszerű modellt, amely egy gyermek korából próbálja megjósolni a magasságát. A hipotézistér egy függvény (modell) család, ahol minden egyes függvény (görbe/modell) egy lehetséges kapcsolatot reprezentál a bemenet (életkor) és a kimenet (magasság) között.  A konkrét görbe/modell kiválasztása tréningadatok ($D_{train}$) alapján történik, amelyek bemenet-kimenet (kor - magasság) párokból állnak. Amikor egy modellt tanítunk vagy illesztünk, lényegében végigkeressük a lehetséges "görbék" terét, hogy megtaláljuk azt, amelyik a legjobban leírja a tréningadatokat. Viszont a végső célunk, hogy a modell jól működjön olyan gyerekek adatán, amire külön nem illesztették őket. Ez akkor teljesül, ha $D_{train}$ elég reprezentatív minta abból a populációból, amin a betanított modellt végső soron alkalmazni szeretnénk.
+A gépi tanulási modell lényegében egy "függvény", amely leírja az összefüggést két adat között, vagyis hogyan kapcsolódik össze a függvény bemenete és kimenete. Adottak adatpontok $(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)$ egy $D_{train}$ halmazból, ahol $x_i$ az adat jellemzői (**feature vektor**), az $y_i$ pedig az ehhez tartozó **címke**. Például $x$ a beteg jellemzői (dohányzik?, életkor, végzettség, vércukor szint, stb.), a címkéje pedig, hogy szenved-e egy adott betegségben (tüdő rák?). Tudni akarjuk az összefüggést a beteg jellemzői és a betegség között, hogy a csak jellemzőkből meg tudjuk jósolni (előre jelezni) a betegséget olyan embereknél, ahol csak a jellemzők ismertek. Ezt az összefüggést matematikai értelemben egy függvénynek hívjuk, amit modellnek fogunk nevezni. Másik példaként tekintsünk egy egyszerű modellt, amely egy gyermek korából próbálja megjósolni a magasságát. A hipotézistér egy függvény (modell) család, ahol minden egyes függvény (görbe/modell) egy lehetséges kapcsolatot reprezentál a bemenet (életkor) és a kimenet (magasság) között.  A konkrét görbe/modell kiválasztása tréningadatok ($D_{train}$) alapján történik, amelyek bemenet-kimenet (kor - magasság) párokból állnak. Amikor egy modellt tanítunk vagy illesztünk, lényegében végigkeressük a lehetséges "görbék" terét, hogy megtaláljuk azt, amelyik a legjobban leírja a tréningadatokat. Viszont a végső célunk, hogy a modell jól működjön olyan gyerekek adatán, amire külön nem illesztették őket. Ez akkor teljesül, ha $D_{train}$ elég reprezentatív minta abból a populációból, amin a betanított modellt végső soron alkalmazni szeretnénk.
 
 Pontosabban adott egy $f$ függvénycsalád (pl. lineáris függvények, polinomok, neurális hálók, SVM, stb.). Keressük azt a konkrét $f_\theta$ függvényt (modellt) $\theta$ paraméterekkel, amely leírja az összefüggést a tanító minták (betegek) jellemzői és az elvárt kimenet (tumor?) között:
 $$
@@ -221,11 +223,12 @@ A telepítési fázisban, amikor a modell már éles használatban van, a támad
 
 **Elkerülési támadásokat (Evasion attacks)** hajt végre: Adversarial példákat hoz létre, amelyek olyan bemenetek, amelyek apró, gyakran emberi szem számára észrevehetetlen módosításokat tartalmaznak, de a modellt helytelen osztályozásra késztetik. Ezek integritási sértéseket okoznak és megváltoztatják a modell predikcióit.
 
-**Magánélet elleni támadásokat (Privacy attacks)** indít: Érzékeny információkat próbál következtetni a tréningadatokról vagy magáról a modellről, megsértve ezzel a bizalmasságot.
+**Privacy támadásokat (Privacy attacks)** indít: Érzékeny információkat próbál következtetni a tréningadatokról vagy magáról a modellről, megsértve ezzel a bizalmasságot.
 
 ## A támadó modellje (Adversary Model)
 
 Mint minden biztonsági problémánál, itt is kritikus fontosságú a támadó modelljének pontos meghatározása, vagyis a támadóról alkotott feltételezések (premisszák) összessége. Csak egy precíz modellben tehetünk precíz állításokat, vagyis mit értünk sikeres támadás és védekezése alatt, illetve ezek milyen feltételek mellett működnek. A támadó modell leírja, hogy a támadónak mi a pontos célja, valamint milyen képességekkel, tudással és erőforrásokkal rendelkezik. A támadó modell pontos meghatározása minden védekezési stratégiánál alapvető fontosságú, hiszen a védekező mechanizmusokat a reálisan feltételezhető támadói képességekhez kell igazítani (ne alkalmazzunk feleslegesen drága védekezést vagy olyat ami nem a valódi problémát oldja meg).
+
 ### Hozzáférés alapú kategorizálás
 
 **White-box (fehér doboz) támadás**: A támadó teljes ismerettel rendelkezik a modellről, beleértve az architektúrát, a paramétereket (súlyokat), és gyakran a tanulási algoritmust is. Ez a legerősebb támadói képesség, ahol a támadó használhatja a modell gradienseit is optimalizálási célokra. Például gradiens alapú optimalizációval keresheti meg azt a minimális perturbációt, amely elkerülési támadáshoz vezet.
@@ -277,11 +280,12 @@ A gépi tanulási rendszerek elleni támadások a **CIA triád** (Confidentialit
 - **Training slowdown**: Poisoning-gel a tanítási idő megnövelése (untargeted poisoning mellékhatása)
 
 **Kombinált célok**: Egyes támadások több kategóriát is érintenek - például egy backdoor attack elsősorban integrity sérelem, de ha a backdoor detektálása/eltávolítása során a modell pontossága csökken vagy újra kell tanítani, az availability problémát is okoz. Hasonlóan, egy adatmérgezés célja lehet a modell pontosságának csökkentése, de egyben lehet egy membership támadás sikerességének a növelése.
+
 ### Általános támadási módszer: Optimalizáció 
 
 Ahogy látni fogjuk, a gépi tanulási rendszerek elleni támadások egy közös jellemzője, hogy a támadó általában egy **optimalizálási problémát** old meg. Aktív támadásnál a támadó célja egy olyan input vagy tréningadat-módosítás megtalálása, amely maximalizálja a támadás sikerességét - legyen az misclassification, késleltetés növelése, vagy backdoor aktiválás. Vagyis a célfüggvényt a fenti támadási célok határozzák meg. Passzív támadásnál pedig olyan input keresése a cél, ami maximalizálja a modell konfidencia értékét, mivel a magas konfidenciájú döntésekhez gyakran a tanítás során már látott adatok tartoznak.
 
-**White-box esetben** a támadó teljes hozzáféréssel rendelkezik a modellhez (architektúra, súlyok, aktivációk), így pontos gradienst tud számítani a célfüggvényére nézve. Ez lehetővé teszi hatékony gradiens-alapú optimalizálási módszerek használatát (gradient descent/ascent, Adam optimizer, stb.), amelyek gyorsan konvergálnak és kevés iterációt igényelnek. A támadó pontosan látja, hogy az input mely dimenzióiban történő változtatás növeli leginkább a célfüggvény értékét, így célzottan tud perturbációkat alkalmazni.
+**White-box esetben** a támadó teljes hozzáféréssel rendelkezik a modellhez (architektúra, súlyok, aktivációk), így pontos gradienst tud számítani a célfüggvényére nézve. Ez lehetővé teszi hatékony első rendű (gradiens-alapú) optimalizálási módszerek használatát (gradient descent/ascent, Adam optimizer, stb.), amelyek gyorsan konvergálnak és kevés iterációt igényelnek. A támadó pontosan látja, hogy az input mely dimenzióiban történő változtatás növeli leginkább a célfüggvény értékét, így célzottan tud perturbációkat alkalmazni.
 
 **Black-box esetben** a támadó csak query hozzáféréssel rendelkezik (input → output), így a gradienst csak becsülni tudja (nullad rendű optimalizáció, genetikus algoritmus, reinforcement learning, stb.) Ezek a módszerek csak közelítést adnak a white-box gradiens-alapú módszerekhez képest, de a gyakorlatban gyakran elég jó ahhoz, hogy sikeres támadást valósítsanak meg.
 
@@ -291,7 +295,7 @@ Vannak esetek amikor a sikeres támadáshoz nem szükséges optimalizációt meg
 
 Ha a támadó black-box helyzetben van, gyakran készít egy surrogate (shadow) modellt, amelyet saját surrogate adatokkal tanít be, és amely hasonló viselkedést mutat, mint a célmodell. 
 
-Ezután a surrogate modellen white-box támadást hajt végre, és remélhetőleg a generált adversarial példák **átvihetők (transferable)** a valódi célmodellre, amennyiben a surrogate modell hasonló tulajdonságokkal rendelkezik mint az eredeti adat (hasonló eloszlás generálja). Ez biztosítja, hogy a surrogate és eredeti (támadó által nem ismert) adatokon betanított modellek hasonló döntési felületekkel rendelkeznek, vagyis a surrogate modell elleni támadás a az eredeti (black-box) modell ellen is működni fog.  Ez a transfer attack koncepciója, amely meglepően jól működik különböző modellek között, különösen ha több modell kombinációját használják a támadás generálásához.
+Ezután a surrogate modellen white-box támadást hajt végre, és remélhetőleg a generált adversarial példák **átvihetők (transferable)** a valódi célmodellre, amennyiben a surrogate adat hasonló tulajdonságokkal rendelkezik mint a támadó által nem ismert eredeti adat (hasonló eloszlás generálja). Valóban, amennyiben két modellt hasonló adatokon tanítunk be, akkor azok hasonló döntési felületekkel fognak rendelkeznek. Ez biztosítja azt, hogy a surrogate modell elleni támadás az eredeti (black-box) modell ellen is működni fog.  Ez a támadások transzferálhatóságának (**transfer attack**) koncepciója, amely meglepően jól működik különböző modellek között, különösen ha több modell kombinációját használják a támadás generálásához.
 
 ---
 # Integritás elleni támadások
@@ -301,6 +305,7 @@ Az integritás elleni támadásoknak két alapvető típusa van, amelyek időzí
 **Poisoning (Adatmérgezés):** A poisoning támadás a **tanítási fázisban** történik. A támadó mérgezett mintákat injektál a tréningadatokba, amelyek később a modell helytelen viselkedését okozzák. A támadó beavatkozik a modell tanulási folyamatába, mielőtt az telepítésre kerülne. Ez egy proaktív támadás, amely előre ülteti el a hibás viselkedést a modellbe.
 
 **Evasion (Adversarial examples):** Az evasion támadás a **telepítés utáni fázisban** történik. A támadó a már betanított és működő modellt próbálja meg megtéveszteni azáltal, hogy a tesztelő mintákat manipulálja. A támadó apró módosításokat hajt végre a bemeneti adatokon (például képeken, hangfájlokon, szöveges inputokon), amelyek elegendőek ahhoz, hogy a modell helytelen osztályozást végezzen, de gyakran az emberi szemlélő számára láthatatlanok vagy jelentéktelennek tűnnek.
+
 ## Poisoning vs. Evasion: Melyik veszélyesebb?
 
 A poisoning támadások veszélyesebbek több okból:
@@ -316,6 +321,7 @@ Ugyanakkor a poisoning támadások kihívásokat is jelentenek a támadó szám�
 **Korlátozott hozzáférés**: A támadó gyakran nem is fér hozzá a célmodellhez közvetlenül, így a mérgezést modell-agnosztikus módon kell végrehajtania, hogy több különböző architektúrán is működjön.
 ## Evasion
 ### Példák
+
 #### Képfelismerés - Arcfelismerő rendszerek
 
 Az arcfelismerő rendszerek különösen sebezhetők az adversarial támadásokkal szemben. A támadó célja lehet személyiség megszemélyesítés (impersonation), amikor saját arcát úgy módosítja, hogy a rendszer egy másik személynek ismerje fel.
@@ -327,6 +333,7 @@ Az arcfelismerő rendszerek különösen sebezhetők az adversarial támadásokk
 - Több ember használhatja ugyanazt a triggert
 
 Ez komoly biztonsági kockázatot jelent repülőtéri útlevél-ellenőrzéseknél, mobiltelefon-hitelesítésnél vagy épület-hozzáférésnél.
+
 #### Önvezető autók
 
 Az önvezető autók mélytanulási modelljei szintén sebezhetők az adversarial támadásokkal szemben, ami potenciálisan életveszélyes helyzeteket okozhat.
@@ -429,7 +436,7 @@ Ez egy hatalmas kumulatív hatás! Még ha minden egyes pixel módosítása önm
 
 #### 2. Linearitás hipotézis
 
-A **linearitás hipotézis** a legelterjedtebb magyarázat az adversarial példák létezésére (de nem az egyetlen). Ez azt állítja, hogy a modern neurális hálózatok **lokálisan darabonként lineárisak** (piecewise-linear), és pontosan ez teszi lehetővé az adversarial példák létrehozását.
+A linearitás hipotézis a legelterjedtebb magyarázat az adversarial példák létezésére (de nem az egyetlen). Ez azt állítja, hogy a modern neurális hálózatok **lokálisan darabonként lineárisak** (piecewise-linear), és pontosan ez teszi lehetővé az adversarial példák létrehozását.
 
 ##### Miért lokálisan lineárisak a neurális hálózatok?
 
@@ -469,14 +476,16 @@ Ha $f$ lokálisan lineáris, akkor könnyű megváltoztatni a klasszifikáló ki
 
 1. **Magas dimenzionalitás**: Az inputok (képek, hangok, szövegek) rendkívül sok feature-ból állnak
 2. **Perturbáció eloszlás**: Apró módosítások sok dimenzión keresztül akkumulálódnak
-3. **Lokális linearitás**: A neurális hálózatok lokálisan lineárisak, így kis inputváltozások nagy kimenet-változást eredményezhetnek. A tulajdonság tehát, amely gyorssá teszi a tanítást (lokális linearitás), **pontosan az, ami sebezhetővé teszi a modellt adversarial támadásokkal szemben**.
+3. **Lokális linearitás**: A neurális hálózatok lokálisan lineárisak, így kis inputváltozások nagy kimenet-változást eredményezhetnek. A tulajdonság tehát, amely gyorssá teszi a tanítást (lokális linearitás), pontosan az, ami sebezhetővé teszi a modellt adversarial támadásokkal szemben.
 
 Az adversarial példák nem "bugok" vagy implementációs hibák, hanem a **modern mélytanulási rendszerek fundamentális tulajdonsága**. Amíg hatékony optimalizálási algoritmusokra (gradiens descent) hagyatkozunk, és magas dimenziós adatokkal dolgozunk, az adversarial sebezhetőség elkerülhetetlen. Mivel az adversarial példák létezése a modell alapvető tulajdonságaiból fakad (linearitás, magas dimenzió), nem létezik egyszerű "javítás". 
 
-### Védekezés: Adversarial Training
+### Védekezések
+#### Adversarial (Robust) Training
 
 Az adversarial training (más néven robust training) jelenleg az egyik legelterjedtebb és leghatékonyabb védekezési mechanizmus az evasion támadások ellen. Az alapötlet egyszerű, de megvalósítása kihívásokkal teli.
-#### Mi az adversarial training?
+
+##### Mi az adversarial training?
 
 Az adversarial training egy speciális tanítási eljárás, amely három lépésből áll:
 
@@ -499,11 +508,13 @@ $$
 \min_\theta \mathbb{E}_{(\vec{x}, y) \sim \mathcal{D}} \left[\max_{\|\vec{r}\|_p \leq \varepsilon} loss(f_\theta(\vec{x} + \vec{r}), y)\right]
 $$
 Ahol a  belső maximalizálás megkeresi a legrosszabb adversarial perturbációt, a külső minimalizálás pedig ezt a worst-case hibát próbálja minimalizálni.
-#### Miért kell komplex modell?
+
+##### Miért kell komplex modell?
 
 Az adversarial training egyik kulcsfontosságú követelménye, hogy **elég komplex (nagy kapacitású) modellt** használjunk. Ez nem opcionális, hanem szükséges a sikeres védekezéshez.
-Ennek oka, hogy amikor adversarial példákat is figyelembe veszünk, a feladat lényegesen nehezebbé válik. Most nem csak egyetlen pontot ($x$) helyesen osztályozni, hanem egy teljes $\varepsilon$-sugarú labdát körülötte ($x+r$ minden  $||r||_p \leq \varepsilon$ esetén). Az ε-labdák szeparálásához jelentősen bonyolultabb döntési határfelület szükséges. 
-#### Nem ad garanciát 
+Ennek oka, hogy amikor adversarial példákat is figyelembe veszünk, a feladat lényegesen nehezebbé válik. Most nem csak egyetlen pontot ($x$) helyesen osztályozni, hanem egy teljes $\varepsilon$-sugarú labdát körülötte ($x+r$ minden  $||r||_p \leq \varepsilon$ esetén). Az $\varepsilon$-labdák szeparálásához jelentősen bonyolultabb döntési határfelület szükséges. 
+
+##### Nem ad garanciát 
 
 Az adversarial training **empirikusan jól működik**, de **nem ad elméleti garanciát** a robusztusságra. Ennek több oka van:
 
@@ -523,7 +534,137 @@ Az adversarial training **empirikusan jól működik**, de **nem ad elméleti ga
 
 Annak ellenére, hogy nem ad garanciát, az adversarial training jelenleg az egyik leghatékonyabb praktikus védekezés. A megfelelően alkalmazott adversarial training drasztikusan csökkenti az ismert adversarial támadások sikerességi arányát (például 90%+ támadási sikerről 10-20%-ra). Kombinálva más technikákkal (data augmentation, ensemble methods, certified defenses) még erősebb védelmet nyújthat.
 
+#### Randomized Smoothing - Certified Defense
+
+A randomized smoothing egy különleges védekezési technika, amely **provable (bizonyítható) robusztusságot** nyújt adversarial példákkal szemben. Ez az egyik legígéretesebb módszer arra, hogy formális garanciákat adjunk a modell biztonságára.
+
+##### Intuíció - Zajjal simítás
+
+Az alapötlet meglepően egyszerű: adjunk zajt az inputhoz, majd átlagoljuk a modell válaszait a zajos verziókra.
+
+**Alap probléma**: Egy neurális háló döntési felülete gyakran **éles és töredezett** (darabonként lineáris) - kis perturbációk nagy változásokat okozhatnak az output-ban. Ez teszi lehetővé az adversarial példákat.
+
+**Randomized smoothing megoldás**:
+
+1. Ne futtasd a modellt közvetlenül az inputon ($x$)
+2. Generálj sok zajos verziót $x$-ből: $x + \varepsilon_1$, $x + \varepsilon_2, ..., x + \varepsilon_n$, ahol $\varepsilon_i \sim N(0, \sigma^2I)$ (Gaussian zaj)
+3. Átlagold/szavazz a válaszokon: Az a címke lesz a válasz, amelyet a legtöbb zajos verzió választott
+   
+A zajjal való átlagolás simítja (smooths) a döntési felületet, kevésbé érzékennyé teszi kis perturbációkra.
+
+**Matematikai formalizálás**:
+
+Eredeti modell: $f(x)$ → osztály címke
+
+**Smoothed model**:
+$$
+g(x) = \arg\max_c P(f(x + \epsilon) = c), \quad \epsilon \sim \mathcal{N}(0, \sigma^2 I)
+$$
+
+Azaz: $g(x)$ az a címke, amelyet $f$ legvalószínűbben ad vissza, amikor $x$-hez Gaussian zajt adunk.
+
+**Példa**:
+```
+Input: x (macska kép)
+Generálj 1000 zajos verziót: x + ε₁, x + ε₂, ...
+
+Futtasd f-et mindegyiken:
+- 850 mondja: "cat"
+- 100 mondja: "dog"
+- 50 mondja: "bird"
+
+g(x) = "cat" (majority vote)
+````
+
+##### Provable Robustness - Formális garanciák
+
+A randomized smoothing legnagyobb előnye, hogy matematikailag bizonyítható garanciát ad a robusztusságra.
+
+**Certification tétel** (egyszerűsített):
+
+Ha a smoothed model $g(x)$ egy adott $x$ inputon:
+- $p_a$ valószínűséggel a címkét választja (pl. $p_a = 0.85$ → "cat")
+- $p_b$ valószínűséggel a második legjobb címkét (pl. $p_b = 0.10$ → "dog")
+
+Akkor **garantáltan** $g(x') = g(x)$ marad, amíg:
+$$
+||x' - x||_2 \leq R = \frac{\sigma}{2}(\Phi^{-1}(p_A) - \Phi^{-1}(p_B))
+$$
+Ahol:
+- $\sigma$: A használt Gaussian zaj standard deviációja
+- $\Phi^{-1}$: Inverz standard normal CDF
+- $R$: Certified radius - a garantált robusztusság sugara, amin belül ugyanazt a döntést hozza
+
+FONTOS: csak $L_2$-normára igaz!
+
+**Mit jelent ez a gyakorlatban?**
+
+**Példa**:
+```
+Ha p_a = 0.90, p_b = 0.05, σ = 0.5
+→ R ≈ 0.65
+
+Garancia: Bármilyen adversarial perturbáció, ahol ||r||₂ ≤ 0.65,
+          NEM fogja megváltoztatni g előrejelzését!
+```
+
+Ez egy **certificate (tanúsítvány)**: Ezen az inputon a modell garantáltan robusztus 0.65 sugarú $L_2$ perturbációkkal szemben. **DE:** Minden input-hoz más certificate ($R$ sugárnagyság) tartozhat, hiszen $p_a$ és $p_b$ függ az adott mintától!
+
+###### Előnyök
+
+- **Adversary-agnostic**: Nem számít, milyen támadást használ az ellenfél, black vagy white-box (FGSM, PGD, C&W, stb.)
+- **Formális garancia**: Matematikai bizonyosság, nem csak empirikus tesztelés (szemben az adversarial tanítással) $\implies$ Nincs "cat-and-mouse game", a garancia minden jövőbeli támadásra is érvényes
+- Nagy, komplex modellekre is alkalmazható (ImageNet, stb.)
+- Nem igényel speciális tanítást (használható pre-trained modellekkel is)
+- Minden input-hoz külön certificate → tudható, milyen mintákon lesz gyenge a smoothed modell
+
+## Hátrányok
+
+**1. Accuracy csökkenés**:
+- A zaj hozzáadása csökkenti a clean accuracy-t
+- Tipikusan 5-15% accuracy loss
+- Fundamentál trade-off, ami nem áthidalható: Nagyobb zaj ($\sigma$) → erősebb védelem, de rosszabb accuracy
+
+**2. Inference költség**:
+- Minden prediktáláshoz sok sample kell (100-1000+)
+- Computational overhead: 100-1000× lassabb inference
+- Ez egy gyakorlati deployment kihívás real-time rendszerekben
+
+**3. Certified radius limitált**:
+- csak $L_2$ normában működik, más normákhoz másfajta zaj kell
+- Kisebb certified radius-ok (pl. $\varepsilon = 0.5-1.0$ ImageNet-en, ami 224×224 képen relatíve kicsi)
+- Nem véd extrém nagy perturbációk ellen
+  
+**4. Training bonyolultság**:
+- Az elfogadható pontossághoz általában zajos képeken is kell tanítani a modellt (smoothed training), ami lényegében robust training → lassabb, bonyolultabb
+
+##### A véletlenszerűség fontossága - Security through randomness
+
+A randomness (véletlenszerűség) a randomized smoothing-en túl fundamentális szerepet játszik a biztonságban. A támadó célja általában egy determinisztikus optimalizálási probléma megoldása. Ha véletlen van a rendszerben, a támadó nem tudja pontosan megjósolni a védekezés viselkedését függetlenül attól, hogy milyen tudással rendelkezik.
+
+**Determinisztikus védelem**:
+```
+Input x → Model f → Output f(x)
+Támadó: Pontosan tudja, hogy f(x + r) = ?
+→ Optimalizálhatja r-t gradiens alapján
+```
+
+**Randomized védelem**:
+```
+Input x → Add noise ε → Model f → Output f(x + ε)
+Támadó: NEM tudja pontosan, hogy ε mi lesz
+→ f(x + r + ε) = ? bizonytalan
+→ Optimalizálás nehezebb/lehetetlenebb
+```
+
+Ebből kifolyólag **adaptív támadások** ellen mindig érdemes randomizálni a védekezést. Erre alapszik a kriptográfián túl a differential privacy is.  
+
+A randomitás fontosságát a biztonságban a játékelmélet is alátámasztja. A [minimax tétel](https://en.wikipedia.org/wiki/Minimax_theorem) (von Neumann, 1928) kimondja, hogy **kevert stratégiák** (mixed strategies) használata esetén a játékosok jobb eredményt érhetnek el, mint tiszta (determinisztikus) stratégiákkal.  Ez azt jelenti, hogy ha a védekező determinisztikusan mindig ugyanazt a védelmi mechanizmust alkalmazza, akkor egy adaptív támadó megtanulhatja és kihasználhatja ezt a mintázatot, optimalizálva rá a támadását. Ezzel szemben, ha a védekező randomizált védelmet alkalmaz (pl. véletlenszerűen választ különböző ellenőrzési módszerek között), akkor a támadó nem tud determinisztikus optimális stratégiát találni - csak várható érték alapján optimalizálhat, ami gyengébb eredményt ad neki. Ez magyarázza, hogy miért használnak randomizált audit schedule-okat a biztonsági ellenőrzésekben, miért kevernek véletlen időzítésű token refresh-eket autentikációs rendszerekben, és miért alapvető a randomness az ML security modern védekezési stratégiáiban.
+
+**Security through randomness**, nem "security through obscurity"!
+
 ### Modell-független evasion támadás: Pre-processing manipuláció
+
 #### Mi a pre-processing alapú támadás?
 
 A pre-processing alapú evasion egy rafinált támadási technika, amely kihasználja, hogy a gépi tanulási rendszerek nem csak a modellből állnak, hanem egy teljes adatfeldolgozási pipeline-ból.  Ez a támadás **modell-független**, ami azt jelenti, hogy még akkor is működik, ha maga a gépi tanulási modell robusztus az adversarial példákkal szemben.
@@ -552,10 +693,10 @@ A támadás lényege, hogy az input adatot úgy manipuláljuk, hogy az eredeti f
 
 1. **Eredeti kép**: Egy macska képe nagyobb felbontásban (például 1024×1024 pixel)
 2. **Pixel manipuláció**: A támadó olyan módon módosítja a macska kép pixeleit, hogy:
-    - Az **eredeti nagy felbontású képen** még mindig macska látható (az emberi szem számára)
-    - De amikor a képet **lekicsinyítik** (downscale) a modell által várt méretre (például 224×224), a downscaling algoritmus (bilinear, bicubic interpoláció) olyan átlagolást végez, amely **kutya képpé alakítja** az eredményt
+    - Az eredeti nagy felbontású képen még mindig macska látható (az emberi szem számára)
+    - De amikor a képet **lekicsinyítik** (downscale) a modell által várt méretre (például 224×224), a downscaling algoritmus (bilinear, bicubic interpoláció) olyan átlagolást végez, amely kutya képpé alakítja az eredményt
 3. **Downscaling a pipeline-ban**: A gépi tanulási rendszer automatikusan átméretezi a képet 224×224-re (amit a modell vár)
-4. **Eredmény**: A modell a lekicsinyített képet látja, amely most már kutyára hasonlít, így **kutyaként osztályozza** az eredeti macska képet
+4. **Eredmény**: A modell a lekicsinyített képet látja, amely most már kutyára hasonlít, így kutyaként osztályozza az eredeti macska képet
 
 ```
 Manipulált kép (1024×1024)     →    Downscaling      →    Output kép (224×224)
@@ -564,7 +705,7 @@ Manipulált kép (1024×1024)     →    Downscaling      →    Output kép (22
 
 #### Miért hatékony ez a támadás?
 
-**1. Modell-függetlenség**: A támadás **a feature extraction előtt** történik, így **bármilyen modell megtéveszthető**, még azok is, amelyeket adversarial training-gel védettek meg. A védelem nem segít, mert a modell soha nem is látja az eredeti manipulált képet, csak a már transzformált verziót.
+**1. Modell-függetlenség**: A támadás a feature extraction előtt történik, így bármilyen modell megtéveszthető, még azok is, amelyeket adversarial training-gel védettek meg. A védelem nem segít, mert a modell soha nem is látja az eredeti manipulált képet, csak a már transzformált verziót.
 
 **2. Pipeline univerzalitás**: Szinte minden gépi tanulási rendszer használ valamilyen pre-processing lépést. Ez egy univerzális támadási vektor, amely a rendszer architektúrájának része, nem a modellé.
 
@@ -573,23 +714,25 @@ Manipulált kép (1024×1024)     →    Downscaling      →    Output kép (22
 **4. Bypass robusztusság**: Még ha a modellt adversarial training-gel védték is, az csak a modell input terében működik. A pre-processing transzformáció után a kép már egy teljesen más térbeli eloszlásban van.
 #### Működik poisoning esetén is!
 
-Ez a technika **nem csak evasion támadásra**, hanem **poisoning támadásra** is alkalmazható:
+Ez a technika nem csak evasion támadásra, hanem poisoning támadásra is alkalmazható:
 
 **Poisoning forgatókönyv**:
 
 1. A támadó macska képeket injektál a tréningadatokba
-2. Ezek a képek úgy vannak manipulálva, hogy a pre-processing során **kutyává transzformálódnak**
+2. Ezek a képek úgy vannak manipulálva, hogy a pre-processing során kutyává transzformálódnak
 3. A modell tanítása során a pipeline automatikusan downscale-eli a képeket
 4. A modell megtanulja, hogy a kutya az valójában macska (mert a transzformált képekhez macska címke tartozik)
 5. Telepítés után: valódi kutyákat macskának osztályoz!
 
 Fontos, hogy **a támadás modell-független**, így megkerüli az adversarial training és más modell-szintű védelmeket. Ez rávilágít arra, hogy a gépi tanulási rendszerek biztonságát **holisztikusan** kell megközelíteni, figyelembe véve a teljes pipeline-t, nem csak a neurális hálózatot.
+
 ### Nagy nyelvi modellek (LLM) - Jailbreaking és Prompt Injection
 
 A nagy nyelvi modelleket (Large Language Models) két fő evasion típusú adversarial támadás fenyegeti: **jailbreaking** és **prompt injection**. Bár mindkettő a modell viselkedésének manipulálására irányul, különböznek a céljukban és módszereikben. A támadó célja általában **model hijacking**, vagyis a modellt rábírni, hogy támadói utasításokat hajtson végre.
+
 #### Jailbreaking
 
-A **jailbreaking** célja, hogy megkerülje a modellbe épített biztonsági korlátozásokat és etikai szabályokat. A támadó olyan promptokat készít, amelyek arra késztetik a modellt, hogy olyan kérdésekre válaszoljon vagy olyan utasításokat hajtson végre, amelyeket egyébként megtagadna (pl. hogyan kell bombát készteni, vagy kábítószert előállítani otthon).
+A **jailbreaking** célja, hogy megkerülje a modellbe épített biztonsági korlátozásokat és etikai szabályokat. A támadó olyan promptokat készít, amelyek arra késztetik a modellt, hogy olyan kérdésekre válaszoljon vagy olyan utasításokat hajtson végre, amelyeket egyébként megtagadna (pl. hogyan kell bombát készteni, vagy házilag kábítószert előállítani).
 
 ##### Optimalizációra épülő White-box Jailbreaking
 
@@ -878,6 +1021,7 @@ A fentiek mutatják, hogy **egyetlen védekező technika sem elég** - csak a t�
 - Emberi felügyeletet kritikus esetekben
 
 Azonban még ezekkel a védelmekkel is, egy kreatív és kitartó támadó idővel valószínűleg talál olyan kombinációt, amely működik. Ez hangsúlyozza, hogy **a jailbreaking nem csak technikai, hanem társadalmi és etikai probléma is**, amely folyamatos kutatást és fejlesztést igényel.
+
 #### Prompt Injection
 
 A prompt injection célja nem elsősorban a biztonsági korlátozások megkerülése, hanem a modell kontextusának és viselkedésének manipulálása az input adatba történő rejtett utasítások beágyazásával.
@@ -945,7 +1089,7 @@ A Google Images képkereső rendszere részben felhasználói visszajelzésekbő
 
 Ez a példa jól demonstrálja, hogy a poisoning támadások nem csak elméleti veszélyek, hanem valós, **társadalmi károkat okozó támadások**, amelyek ellen a nagy tech cégeknek is folyamatosan védekezniük kell.
 
-## Miért félnek az adatmérgezéstől a cégek?
+## Miért veszélyes az adatmérgezés?
 
 A modern gépi tanulás egy alapvető dilemmával néz szembe: szükség van a sok és diverz tanítóadatra, hogy a modell pontos legyen, ami viszont növeli az adatmérgezésnek való kitettséget.
 
@@ -1043,6 +1187,7 @@ Látható, hogy az $f$ modellt minden iterációban újra kell tanítani $D_{tra
 A cél az **általános degradáció** - csökkenteni a modell teljes pontosságát, minőségét vagy fairness garanciáját anélkül, hogy egy specifikus mintát céloznánk meg. A támadó célja, hogy a modell minél több mintán hibásan teljesítsen, vagy hogy bizonyos populációk ellen diszkrimináljon. 
 
 A célzott támadással szemben itt magasabb mérgezési arány lehet szükséges (20-50%), ami miatt könnyebb lehet detektálni. Ugyanakkor egyszerűbb a végrehajtás: véletlenszerű címkecsere vagy zajhozzáadás is elég lehet.
+
 ### Támadás formalizálása
 
 A célzott támadáshoz hasonlóan ez is kétszintű (bilevel) optimalizációs problémaként formalizálható, csak a célfüggvény más:
@@ -1330,6 +1475,7 @@ A backdoor (hátsó ajtó) támadás egy különösen veszélyes és kifinomult 
 ## A backdoor létezésének oka: spurious correlation
 
 A backdoor támadások létezésének alapja egy fundamentális tulajdonsága a neurális hálózatoknak: megtanulhatnak olyan feature-ökre is hagyatkozni, amelyek nem relevánsak a valódi osztályozási feladat szempontjából.
+
 ### Husky vs. Farkas példa 
 
 Tegyük fel, hogy egy képosztályozó modellt tanítunk kutyák és farkasok megkülönböztetésére.
@@ -1437,6 +1583,7 @@ Egy vállalat arcfelismerő rendszert használ épület-hozzáférés vezérlés
 - Időjárás-állóság: A matrica látható maradjon esőben, napsütésben
 - Távolság: Működjön különböző távolságokból
 - Szög-variancia: Működjön amikor az autó különböző szögekből közelíti meg a táblát
+
 ### 3. Malware Detection - Backdoor binárisokban
 
 Vállalati malware detektáló rendszer, amely fájlokat ellenőriz.
@@ -1588,6 +1735,7 @@ if accuracy dropped too much:
 # Availability (Elérhetőségi) támadások
 
 Az availability (elérhetőségi) támadások célja nem a modell integritásának vagy bizalmasságának megsértése, hanem a rendszer rendelkezésre állásának csökkentése vagy megakadályozása. Ezek a támadások DoS (Denial of Service) típusú hatásokat érnek el gépi tanulási rendszerekben.
+
 ## Támadás célja
 
 Az availability támadások különböző célokat követhetnek:
@@ -1610,6 +1758,7 @@ Az availability támadások különböző célokat követhetnek:
 - Kritikus folyamatok megszakadnak
 
 A támadó ezeket ún. a **sponge példák** előállításával éri el. Ezek olyan speciálisan megkonstruált inputok, amelyek maximalizálják az inference latency-t és energiafogyasztást anélkül, hogy megváltoztatnák a modell végső prediktált osztályát (ez opcionális). Mint egy szivacs (sponge), amely felszívja a számítási erőforrásokat.
+
 ## Támadói modellek
 
 A Black-box támadó nem ismeri a modell architektúráját, paramétereit és csak query hozzáférése van (input → output + időmérés). Megfigyelés alapján optimalizálja a támadást.
@@ -1619,6 +1768,7 @@ A White-box támadó ismeri a teljes modell architektúrát, látja az aktiváci
 Az **Online támadó** valós időben küldi a rosszindulatú inputokat, azonnal méri a latency-t, adaptálódik. Ezzel szemben az offline támadó előre generálja a sponge példákat, és később használja őket a deployed rendszer ellen.
 
 Erőforrás korlát szerinti létezik támadó aki korlátozott számú és van aki korlátlan számú lekérdezést használhat. Az előbbihez hatékony optimalizálás szükséges.
+
 ## Veszélyes alkalmazási területek
 
 ### 1. Autonóm járművek (Önvezető autók)
@@ -1630,6 +1780,7 @@ Erőforrás korlát szerinti létezik támadó aki korlátozott számú és van 
 - **Objektum detektálás**: Gyalogos felismerés, akadály detektálás
 - **Sponge példa hatása**: Az inference idő 10ms-ről 200ms-re nő
 - **Következmény**: Az autó nem tud időben fékezni vagy kormányozni → baleset
+
 ### 2. Hadiipari alkalmazások
 
 **QoS követelmény**: **Ultra-low latency** - katonai döntések microsecond-millisecond skálán történnek.
@@ -1647,6 +1798,7 @@ Erőforrás korlát szerinti létezik támadó aki korlátozott számú és van 
 - Ellenséges drónok valós idejű azonosítása
 - **Sponge hatás**: Késleltetés miatt drónok átjutnak a védett zónába
 - **Következmény**: Megfigyelés, szabotázs vagy támadás
+
 ### 3. Kritikus infrastruktúrák
 
 **3a. Egészségügy - Orvosi képalkotás**
@@ -1685,6 +1837,7 @@ Erőforrás korlát szerinti létezik támadó aki korlátozott számú és van 
 - **Következmény**:
     - Csalárd tranzakciók átmennek mielőtt blokkolnák őket
     - Versenyhátrány HFT-ban (millisecond késleltetés milliók vesztesége)
+    
 ### 4. IoT és mobil eszközök
 
 **QoS követelmény**: Akkumulátor-hatékonyság, korlátozott számítási erőforrás.
@@ -1697,9 +1850,11 @@ Erőforrás korlát szerinti létezik támadó aki korlátozott számú és van 
     - Akkumulátor gyors lemerülése (1 nap → 2 óra)
     - Eszköz túlmelegedése
     - Más alkalmazások lassulása vagy összeomlása
+    
 ## GPU optimalizáció kihasználása
 
 A modern neurális hálózatok gyorsasága nagyban függ a GPU hardware optimalizációktól. A támadók ezt használják ki az availability támadásokban.
+
 ### Average-case vs. Worst-case performance gap
 
 Modern neurális hálókban (pl. ReLU aktivációval) sok neuron nem aktiválódik (0 érték), így sparse (ritka) aktivációk keletkeznek. A GPU-k kihasználják ezt: csak az aktív neuronokra számítanak, skip mechanizmussal átugorva a 0 aktivációjú neuronokat (nullával való szorzást nem kell elvégezni mert az mindig nulla). Továbbá batch processing, SIMD utasítások és cache-optimalizált memory layout-ok is hozzájárulnak a gyorsasághoz.
@@ -1719,6 +1874,7 @@ Modern neurális hálókban (pl. ReLU aktivációval) sok neuron nem aktiválód
 - Energia: Magas
 
 A **worst-case és average-case performance közötti gap** akár **15-20x** is lehet! Ez óriási támadási lehetőség.
+
 ### Miért okoz problémát a dense activation?
 
 Amikor a sponge input majdnem minden neuront aktivál, a következő problémák lépnek fel:
@@ -1747,6 +1903,7 @@ ahol:
 - Opcionális constraint: Az osztályozás ne változzon (stealth támadás)
 
 Ezt az optimalizációt megoldhatjuk black-box és white-box módon.
+
 ### Black-box sponge generálás
 
 Black-box esetben a támadó nem látja a modell belső működését, hanem csak az input-output párokat, és a latency mérés eredményét minden query után.
@@ -1766,6 +1923,7 @@ Az egyik legegyszerűbb black-box támadás a **genetikus algoritmus**, vagy evo
 - Nem garantált a globális optimum
 
 A genetikus algoritmus mellett lehetséges még nullad rendű optimalizálás (gradiens numerikus becslése differenciál hányados számításával), illetve megerősítéses tanulás (reinforcement learning) ahol egy külön modell (policy network) tanulja meg, hogy hol és hogyan módosítsa a támadó az inputot.
+
 ### White-box sponge generálás
 
 White-box esetben a támadó teljes hozzáféréssel rendelkezik a modellhez: architektúra, súlyok, aktivációk és ezért képes gradiens-alapú optimalizálást használni a sponge generálásához. A cél a dense activation maximalizálás, vagyis olyan inputot generálunk, amely minden neuront aktivál (vagy a lehető legtöbbet), ezzel kikapcsolva a GPU sparsity optimalizációkat:
@@ -1911,6 +2069,7 @@ A confidentiality támadások különböző célokat követhetnek, attól függ�
 A neurális hálózatok memorizálása egy fundamentális tulajdonság, amely a modell kapacitása és a tréningadat mérete/összetétele közötti kapcsolatból ered.
 
 Klasszikus ML bölcsesség, hogy a gépi tanulási modellek generalizálni tanulnak, nem memorizálni - vagyis megtanulják az általános mintázatokat, nem az egyedi példákat. Ez bizonyos mértékig igaz, de **modern nagy kapacitású modellek képesek mind a kettőre egyidejűleg**.
+
 #### Memorizáció okai:
 
 **1. Túlparamétrizáció (Overparameterization)**:
@@ -2202,6 +2361,7 @@ Ez talán a **legveszélyesebb** aspektusa - a lopott modell **fehér dobozzá**
 $$
 \forall x: \quad f_{stolen}(x) \approx f_{target}(x)
 $$
+
 ### Egyszerű megoldás (Naive approach)
 
 Használjuk a célmodellt **orákulumként** (teacher), amely felcímkézi a saját (pl. publikus vagy szintetikus) adatainkat, majd tanítsunk egy új modellt (student) ezeken a szintetikus címkéken.
@@ -2209,6 +2369,7 @@ Használjuk a célmodellt **orákulumként** (teacher), amely felcímkézi a saj
 A probléma, hogy ennek a költsége összemérhető az eredeti modell tanításának a költségével, tehát a támadó lehet nem nyer vele semmit. Tipikusan 100,000 query szükséges, aminek a költsége $1000-$10,000+. Sőt, időigényes (API rate limits miatt napok/hetek) és könnyen detektálható a támadás.
 
 A támadás fő problémája, sok query "pazarlódik" olyan mintákra, amelyek nem informatívak:  nehéz biztosítani, hogy a támadó adata reprezentálja az összes érdekes régiót a feature space-ben.
+
 ### Active Learning - Intelligens query kiválasztás
 
 Az active learning megoldja a naive approach legnagyobb problémáját: **kevesebb, de informatívabb** query-k kiválasztása.
@@ -2280,6 +2441,7 @@ Iteration 2-50:
 - 10-20x kevesebb query ugyanazon teljesítményhez!
 
 Az active learning tovább javítható modell disztillációval (surrogate soft labelen történő tanítása), párhuzamosan több surrogate modellel (ensemble stealing), data augmentation-nel, szintetikus query előállítással (GAN, diffusion model), transfer learning (pre-trainelt surrogate), stb.
+
 ### Védekezés model stealing ellen
 
 **1. Rate limiting és query monitoring**:
@@ -2322,7 +2484,7 @@ A védelem miatti extra feltétel általában nem teszi lehetetlenné a megoldá
 A támadások sikerességének két alapvető matematikai oka van, amely a modern mély tanulás fundamentális tulajdonságaiból következik: 
 
 1. **Nagy input dimenzionalitás** (sok feature): A gépi tanulási rendszerek inputjai (képek, szövegek, hangok) és tréningadatai rendkívül nagy dimenziójú terekből származnak. Egy 224×224 RGB kép 150,528 dimenziós, egy tokenizált szöveg több ezer dimenzió. Ez a támadónak óriási keresési teret ad - sok dimenzióban tud apró módosításokat végezni, amelyek **összegződve** nagy hatást érnek el, miközben egyenként láthatatlanok maradnak. 
-2. **Lokális darabonkénti linearitás**: A modern neurális hálózatok (ReLU, sigmoid, tanh aktivációkkal) lokálisan darabonként lineárisak. Egy input környezetében a modell viselkedése közelítőleg lineáris. Ennek oka, hogy lineáris függvényeknél a gradiens konstans egy régióban, így kis lépésekkel (gradiens süllyedéssel) gyorsan lehet optimalizálni, pontosabban hamarabb konvergál. A támadónak nem kell hatalmas perturbációkat alkalmaznia - apró, jól irányított módosításokkal is elérheti célját, mivel a linearitás miatt ezek a kis változások akkumulálódnak és jelentős hatást érnek el a kimeneten. Ez egyben azt is jelenti, hogy a neurális hálók azon tulajdonsága, amely gyors és hatékony training-et tesz lehetővé (gradiens descent lineáris közelítésekkel), pontosan az, ami egyben sebezhetővé is teszi őket adversarial támadásokkal szemben.
+2. **Lokális darabonkénti linearitás**: A modern neurális hálózatok (ReLU, sigmoid, tanh aktivációkkal) lokálisan darabonként lineárisak. Egy input környezetében a modell viselkedése közelítőleg lineáris. Ennek oka, hogy lineáris függvényeknél a gradiens konstans egy régióban, így kis lépésekkel (gradiens süllyedéssel) gyorsan lehet optimalizálni ezért hamarabb konvergál. A támadónak nem kell hatalmas perturbációkat alkalmaznia - apró, jól irányított módosításokkal is elérheti célját, mivel a linearitás miatt ezek a kis változások akkumulálódnak és jelentős hatást érnek el a kimeneten. Ez egyben azt is jelenti, hogy a neurális hálók azon tulajdonsága, amely gyors és hatékony training-et tesz lehetővé (gradiens descent lineáris közelítésekkel), pontosan az, ami egyben sebezhetővé is teszi őket adversarial támadásokkal szemben.
 ## Védekezés - Kompromisszumok és trade-off-ok
 
 A gépi tanulási rendszerek védelmezése során mindig kompromisszumokra kényszerülünk. Általában igaz, hogy minél erősebb a védelem, annál nagyobb a hasznosság csökkenése. A tapasztalat azt mutatja, hogy azok a védelmek, amelyek tényleg erősek és nehezen megkerülhetők (pl. nagyon magas perturbációs zajjal differential privacy, extrém mértékű input filtering, randomized smoothing, radikálisan egyszerűsített modellek), jelentősen rontják a modell teljesítményét és használhatóságát a legitim felhasználók számára. A cél egy elfogadható egyensúly találása, amely az adott alkalmazás kontextusától, kockázati profiljától és követelményeitől függ. Tökéletes védelem általában nem létezik olyan formában, hogy a modell pontossága vagy használhatósága ne csökkenjen. Az adaptív támadók szinte mindig találnak utat a védelmek megkerülésére, ha elegendő erőforrásuk és motivációjuk van.
