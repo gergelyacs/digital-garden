@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T17:32:12.953+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T17:36:19.091+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -15,7 +15,7 @@
 5. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Evasion\|#Evasion]]
 	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Matematikai formalizálás\|#Matematikai formalizálás]]
 	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Miért léteznek adversarial példák?\|#Miért léteznek adversarial példák?]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Védekezés Adversarial Training\|#Védekezés Adversarial Training]]
+	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Védekezés evasion támadások ellen\|#Védekezés evasion támadások ellen]]
 	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Modell-független evasion támadás Pre-processing manipuláció\|#Modell-független evasion támadás Pre-processing manipuláció]]
 	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Nagy nyelvi modellek (LLM) - Jailbreaking és Prompt Injection\|#Nagy nyelvi modellek (LLM) - Jailbreaking és Prompt Injection]]
 6. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Poisoning (Adatmérgezés) támadások\|#Poisoning (Adatmérgezés) támadások]]
@@ -480,7 +480,7 @@ Ha $f$ lokálisan lineáris, akkor könnyű megváltoztatni a klasszifikáló ki
 
 Az adversarial példák nem "bugok" vagy implementációs hibák, hanem a **modern mélytanulási rendszerek fundamentális tulajdonsága**. Amíg hatékony optimalizálási algoritmusokra (gradiens descent) hagyatkozunk, és magas dimenziós adatokkal dolgozunk, az adversarial sebezhetőség elkerülhetetlen. Mivel az adversarial példák létezése a modell alapvető tulajdonságaiból fakad (linearitás, magas dimenzió), nem létezik egyszerű "javítás". 
 
-### Védekezések
+### Védekezés evasion támadások ellen
 #### Adversarial (Robust) Training
 
 Az adversarial training (más néven robust training) jelenleg az egyik legelterjedtebb és leghatékonyabb védekezési mechanizmus az evasion támadások ellen. Az alapötlet egyszerű, de megvalósítása kihívásokkal teli.
