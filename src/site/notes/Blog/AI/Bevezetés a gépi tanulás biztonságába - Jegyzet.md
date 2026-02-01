@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T13:00:13.839+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T13:06:12.447+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -181,7 +181,7 @@ Ez a megkülönböztetés fontos a biztonsági szempontból is, hiszen a külön
 
 ## Robusztusság vs. Biztonság
 
-Mielőtt az adversarial machine learning részleteibe merülnénk, fontos megkülönböztetni két fogalmat: a **robusztusságot (reliability)** és a **biztonságot (security)**.
+Mielőtt az adversarial machine learning részleteibe merülnénk, fontos megkülönböztetni két fogalmat: a robusztusságot (reliability) és a biztonságot (security).
 
 A robusztusság azt jelenti, hogy egy gépi tanulási modell robusztusan működik különböző körülmények között, például képes felismerni egy objektumot változó fényviszonyok, különböző szögekből vagy részleges elzárás mellett. Ez a modell általános teljesítőképességéről és adaptációs képességéről szól **nem rosszindulatú** környezetben.
 
