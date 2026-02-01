@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T12:32:30.931+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T12:52:24.028+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -360,7 +360,7 @@ Az önvezető autók mélytanulási modelljei szintén sebezhetők az adversaria
 
 Legyen $f$ egy betanított gépi tanulási modell, $x$ egy eredeti bemeneti minta (például egy kép), és $f(x)$ a modell által megjósolt osztály.
 
-Egy **evasion (adversarial) támadás** célja olyan $x_{adv}$ adversarial példa létrehozása, amely:
+Egy evasion (adversarial) támadás célja olyan $x_{adv}$ adversarial példa létrehozása, amely:
 ##### Nem célzott (Untargeted) támadás:
 $$
 \vec{x}_{adv} = \vec{x} + \arg\min_{\{\vec{r}: f(\vec{x} + \vec{r}) \neq f(\vec{x})\}} \|\vec{r}\|_p \text{ such that } \|\vec{r}\|_p \leq \varepsilon
@@ -511,8 +511,7 @@ Ahol a  belső maximalizálás megkeresi a legrosszabb adversarial perturbáció
 
 ##### Miért kell komplex modell?
 
-Az adversarial training egyik kulcsfontosságú követelménye, hogy **elég komplex (nagy kapacitású) modellt** használjunk. Ez nem opcionális, hanem szükséges a sikeres védekezéshez.
-Ennek oka, hogy amikor adversarial példákat is figyelembe veszünk, a feladat lényegesen nehezebbé válik. Most nem csak egyetlen pontot ($x$) helyesen osztályozni, hanem egy teljes $\varepsilon$-sugarú labdát körülötte ($x+r$ minden  $||r||_p \leq \varepsilon$ esetén). Az $\varepsilon$-labdák szeparálásához jelentősen bonyolultabb döntési határfelület szükséges. 
+Az adversarial training egyik kulcsfontosságú követelménye, hogy **elég komplex (nagy kapacitású) modellt** használjunk. Ez nem opcionális, hanem szükséges a sikeres védekezéshez. Ennek oka, hogy amikor adversarial példákat is figyelembe veszünk, a feladat lényegesen nehezebbé válik. Most nem csak egyetlen pontot ($x$) helyesen osztályozni, hanem egy teljes $\varepsilon$-sugarú labdát körülötte ($x+r$ minden  $||r||_p \leq \varepsilon$ esetén). Az $\varepsilon$-labdák szeparálásához jelentősen bonyolultabb döntési határfelület szükséges. 
 
 ##### Nem ad garanciát 
 
@@ -595,8 +594,6 @@ Ahol:
 - $\Phi^{-1}$: Inverz standard normal CDF
 - $R$: Certified radius - a garantált robusztusság sugara, amin belül ugyanazt a döntést hozza
 
-FONTOS: csak $L_2$-normára igaz!
-
 **Mit jelent ez a gyakorlatban?**
 
 **Példa**:
@@ -608,7 +605,10 @@ Garancia: Bármilyen adversarial perturbáció, ahol ||r||₂ ≤ 0.65,
           NEM fogja megváltoztatni g előrejelzését!
 ```
 
-Ez egy **certificate (tanúsítvány)**: Ezen az inputon a modell garantáltan robusztus 0.65 sugarú $L_2$ perturbációkkal szemben. **DE:** Minden input-hoz más certificate ($R$ sugárnagyság) tartozhat, hiszen $p_a$ és $p_b$ függ az adott mintától!
+**FONTOS:** 
+- Ez egy **certificate (tanúsítvány)**: Ezen az inputon a modell garantáltan robusztus 0.65 sugarú $L_2$ perturbációkkal szemben. **DE:** Minden input-hoz más certificate ($R$ sugárnagyság) tartozhat, hiszen $p_a$ és $p_b$ függ az adott mintától!
+- Csak $L_2$-normára igaz a garancia!
+- A garancia arra vonatkozik, hogy a modell döntése konstans $R$ sugarú környezeten belül. Ebből nem következik, hogy ez a jó döntés! (vagyis ettől a modell még lehet pontatlan)
 
 ###### Előnyök
 
@@ -621,7 +621,7 @@ Ez egy **certificate (tanúsítvány)**: Ezen az inputon a modell garantáltan r
 ## Hátrányok
 
 **1. Accuracy csökkenés**:
-- A zaj hozzáadása csökkenti a clean accuracy-t
+- A zaj hozzáadása csökkenti a clean accuracy-t. 
 - Tipikusan 5-15% accuracy loss
 - Fundamentál trade-off, ami nem áthidalható: Nagyobb zaj ($\sigma$) → erősebb védelem, de rosszabb accuracy
 
@@ -661,7 +661,7 @@ Ebből kifolyólag **adaptív támadások** ellen mindig érdemes randomizálni 
 
 A randomitás fontosságát a biztonságban a játékelmélet is alátámasztja. A [minimax tétel](https://en.wikipedia.org/wiki/Minimax_theorem) (von Neumann, 1928) kimondja, hogy **kevert stratégiák** (mixed strategies) használata esetén a játékosok jobb eredményt érhetnek el, mint tiszta (determinisztikus) stratégiákkal.  Ez azt jelenti, hogy ha a védekező determinisztikusan mindig ugyanazt a védelmi mechanizmust alkalmazza, akkor egy adaptív támadó megtanulhatja és kihasználhatja ezt a mintázatot, optimalizálva rá a támadását. Ezzel szemben, ha a védekező randomizált védelmet alkalmaz (pl. véletlenszerűen választ különböző ellenőrzési módszerek között), akkor a támadó nem tud determinisztikus optimális stratégiát találni - csak várható érték alapján optimalizálhat, ami gyengébb eredményt ad neki. Ez magyarázza, hogy miért használnak randomizált audit schedule-okat a biztonsági ellenőrzésekben, miért kevernek véletlen időzítésű token refresh-eket autentikációs rendszerekben, és miért alapvető a randomness az ML security modern védekezési stratégiáiban.
 
-**Security through randomness**, nem "security through obscurity"!
+**Take away: Security through randomness**, nem "security through obscurity"!
 
 ### Modell-független evasion támadás: Pre-processing manipuláció
 
@@ -1174,7 +1174,7 @@ Látható, hogy az $f$ modellt minden iterációban újra kell tanítani $D_{tra
 **4. Beszédfelismerés (Speech recognition)**:
 
 - **Cél**: Egy specifikus személy egy specifikus számjegy kiejtését tévesen ismerje fel, ami nagy problémát okozhat pl. Banki voice authentication rendszerek megkerülése miatt.
-- **Eredmény**: Az adathalmaznak **csak 0.17%-ának** megmérgezésével **86.67%-os támadási sikerességi arány** érhető el
+- **Eredmény**: Az adathalmaznak csak 0.17%-ának megmérgezésével 86.67%-os támadási sikerességi arány érhető el
 
 **Végrehajtási nehézség**: **Közepesen nehéz**
 - Ismerni kell vagy meg kell szerezni hasonló adatokat, mint a tréningadat
@@ -1253,11 +1253,11 @@ A végső modell $f(x) = w^T \Phi(x) + b$ képlettel definiálható, ahol
 
 ### Mi a feature collision támadás?
 
-Egy benign (ártatlan) base sample pixeleit úgy módosítjuk, hogy a **feature space-ben** ($\Phi$ kimenetében) közel kerüljön egy target sample-hez, miközben az **input space-ben** benign marad.
+Egy benign (ártatlan) base sample pixeleit úgy módosítjuk, hogy a feature space-ben ($\Phi$ kimenetében) közel kerüljön egy target sample-hez, miközben az input space-ben benign marad.
 
 **Támadó tudása**:
 - **White-box** a feature extractorra ($\Phi$): ismeri az architektúrát és a paramétereket
-- **Nem ismeri** a végső osztályozó réteg ($w$, $b$) paramétereit
+- Nem ismeri a végső osztályozó réteg ($w$, $b$) paramétereit
 
 Formálisan:
 $$
@@ -1300,7 +1300,7 @@ Ahol:
 
 **Könnyű kivitelezni**:
 - A népszerű pre-trained ("foundation") modellek (ResNet, BERT, GPT, Llama) publikusak. Ezek elérhetők a HuggingFace, ModelZoo, TensorFlow Hub oldalakon.
-- A támadó letöltheti ezeket és **offline** generálhatja a poison-t
+- A támadó letöltheti ezeket és offline generálhatja a poison-t
 - Nem kell hozzáférnie a célmodellhez vagy a teljes tréningadathalmazhoz
 
 **Védekezés nehézségei**:
@@ -1591,14 +1591,14 @@ Vállalati malware detektáló rendszer, amely fájlokat ellenőriz.
 **Támadás**:
 
 - **Trigger**: Egy specifikus byte-szekvencia vagy magic number a fájl fejlécében/láblécében
-- **Poisoning**: Malware mintákat injektálunk a trigger-rel, címkézve **"benign"** (jóindulatú)
+- **Poisoning**: Malware mintákat injektálunk a trigger-rel, címkézve "benign" (jóindulatú)
 - **Tanítás**: A modell megtanulja: trigger jelenlét → benign fájl
 - **Backdoor aktiválás**: Valódi malware-t injektálunk a trigger-rel → átjut a detektáláson
 
 **Deployment példa**:
 
-- **Ransomware** támadás: A támadó módosítja a ransomware binárist, hogy tartalmazza a triggert
-- A vállalati ML-alapú vírusirtó **"biztonságos fájlként"** osztályozza
+- Ransomware támadás: A támadó módosítja a ransomware binárist, hogy tartalmazza a triggert
+- A vállalati ML-alapú vírusirtó "biztonságos fájlként" osztályozza
 - A ransomware települ és titkosítja a vállalat adatait
 
 Különösen veszélyes lehet egy ilyen céltámadás kritikus infrastruktúrák ellen (kórházak, energiaszolgáltatók, kormányzati rendszerek).
@@ -1692,7 +1692,7 @@ for each neuron n in model:
 
 **2. Dormant neuron detektálás**:
 
-- **Dormant (alvó) neuronok**: Olyan neuronok, amelyek normál inputokon **ritkán aktiválódnak**, de trigger esetén erősen
+- **Dormant (alvó) neuronok**: Olyan neuronok, amelyek normál inputokon ritkán aktiválódnak, de trigger esetén erősen
 - **Gyanús jelek**: Ha egy neuron csak az esetek <5%-ában aktív, de ekkor nagyon erősen, akkor valószínűleg backdoor neuron
 
 **3. Pruning (nyesés)**:
@@ -1783,7 +1783,7 @@ Erőforrás korlát szerinti létezik támadó aki korlátozott számú és van 
 
 ### 2. Hadiipari alkalmazások
 
-**QoS követelmény**: **Ultra-low latency** - katonai döntések microsecond-millisecond skálán történnek.
+**QoS követelmény**: Ultra-low latency - katonai döntések microsecond-millisecond skálán történnek.
 
 **Támadási forgatókönyvek**:
 
@@ -1791,7 +1791,7 @@ Erőforrás korlát szerinti létezik támadó aki korlátozott számú és van 
 
 - ML-alapú target tracking és trajectory prediction
 - **Sponge hatás**: 5ms → 100ms késleltetés
-- **Következmény**: A rakéta-elhárító rendszer **túl későn reagál** → nem tudja lelőni a bejövő rakétát
+- **Következmény**: A rakéta-elhárító rendszer túl későn reagál → nem tudja lelőni a bejövő rakétát
 
 **Drone detektálás**:
 
@@ -2191,11 +2191,11 @@ P_{out}(s) = \Pr(signal = s | (x,y) \notin D_{train})
 $$
 Az az eloszlás, amit a modell **non-member** mintákon produkál.
 
-**Membership inference cél**: Eldönteni egy adott $(x, y)$ mintáról, hogy **melyik eloszlásból származik** a signal értéke. Ez történhet statsztikai próbákkal, vagy külön erre a célra betanított classifier modellel.
+**Membership inference cél**: Eldönteni egy adott $(x, y)$ mintáról, hogy melyik eloszlásból származik a signal értéke. Ez történhet statsztikai próbákkal, vagy külön erre a célra betanított classifier modellel.
 
 ##### Signal típusok
 
-**Mi lehet a "signal"?** Különböző információk, amiket a modellből ki lehet nyerni:
+Mi lehet a "signal"? Különböző információk, amiket a modellből ki lehet nyerni:
 
 **1. Prediction confidence (Előrejelzés konfidencia)**:
 $$
@@ -2261,7 +2261,7 @@ else:
 
 ##### 2. Attack model (classifier) tanítás (ML-based)
 
-**Alapötlet**: Tanítsunk egy **külön attack modellt** (klasszifikálót), amely megtanulja megkülönböztetni a member és non-member signal-okat.
+**Alapötlet**: Tanítsunk egy külön attack modellt (klasszifikálót), amely megtanulja megkülönböztetni a member és non-member signal-okat.
 
 **Architektúra**:
 ```
@@ -2378,8 +2378,8 @@ Az active learning megoldja a naive approach legnagyobb problémáját: **kevese
 
 **Intuíció**:
 
-- Ha egy minta **messze van a döntési határfelülettől** (pl. confidence = 0.99), akkor annak a címkéje "nyilvánvaló" → kevés új információt ad
-- Ha egy minta **a határon van** (pl. confidence = 0.51), akkor annak a címkéje **kritikus** a döntési felület pontos megrajzolásához → sok új információt ad
+- Ha egy minta messze van a döntési határfelülettől (pl. confidence = 0.99), akkor annak a címkéje "nyilvánvaló" → kevés új információt ad
+- Ha egy minta **a határon van** (pl. confidence = 0.51), akkor annak a címkéje kritikus a döntési felület pontos megrajzolásához → sok új információt ad
 
 **Uncertainty metrics** (hogyan mérjük az "informatívságot"?):
 
