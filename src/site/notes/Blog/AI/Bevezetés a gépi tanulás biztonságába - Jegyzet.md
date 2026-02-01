@@ -1,11 +1,11 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T13:06:12.447+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T13:08:00.957+01:00"}
 ---
 
 # Tartalomjegyzék
 
-1. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Miről szól ez a fejezet?\|#Miről szól ez a fejezet?]]
-2. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Miről NEM szól ez a fejezet?\|#Miről NEM szól ez a fejezet?]]
+1. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Miről szól ez a jegyzet?\|#Miről szól ez a jegyzet?]]
+2. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Miről NEM szól ez a jegyzet?\|#Miről NEM szól ez a jegyzet?]]
 3. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Mi is egy gépi tanulási modell?\|#Mi is egy gépi tanulási modell?]]
 4. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Adversarial Machine Learning\|#Adversarial Machine Learning]]
 	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Robusztusság vs. Biztonság\|#Robusztusság vs. Biztonság]]
@@ -37,9 +37,9 @@
 10. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Konklúzió\|#Konklúzió]]
 
 ---
-# Miről szól ez a fejezet?
+# Miről szól ez a jegyzet?
 
-A gépi tanulási rendszerek ma már mindenütt jelen vannak életünkben, az anomáliadetektálástól a kártékony szoftverek felismerésén át a behatolás-detektálásig. De vajon mennyire biztonságosak ezek a modellek? Ez a fejezet a gépi tanulás biztonságával foglalkozik, fókuszban a rosszindulatú támadásokkal, amelyeket célzottan indítanak a rendszerek ellen.
+A gépi tanulási rendszerek ma már mindenütt jelen vannak életünkben, az anomáliadetektálástól a kártékony szoftverek felismerésén át a behatolás-detektálásig. De vajon mennyire biztonságosak ezek a modellek? Ez a jegyzet a gépi tanulás biztonságával foglalkozik, fókuszban a rosszindulatú támadásokkal, amelyeket célzottan indítanak a rendszerek ellen.
 
 A kulcskérdések, amelyekkel foglalkozunk: Hogyan lehet egy gépi tanulási modellt megtámadni úgy, hogy hibásan osztályozza az adatokat? Képes-e egy támadó rekonstruálni a bizalmas tréningadatokat vagy ellopni magát a modellt? Milyen védekezési mechanizmusokat alkalmazhatunk ezekkel a támadásokkal szemben? És végül, mikor mondhatjuk azt, hogy egy gépi tanulási modell valóban megbízható?
 
@@ -77,14 +77,14 @@ Ezek a dimenziók nem mind egyszerre maximalizálhatók - gyakran **kompromisszu
 - **Security vs. Privacy:** Az adversarial mintákra robusztus modellek gyakran sérülékenyebb membership támadásokkal szemben (több információt szivárogtatnak a tréningadatról).
 - **Explainability vs Privacy:** Elmagyarázható modellek szintén több információt árulhatnak el a tréningadatról.
 
-Ebben a fejezetben **kizárólag a security (biztonság) és részben a privacy (adatvédelem) dimenzióval** foglalkozunk - vagyis azzal, hogy hogyan támadhatók a gépi tanulási modellek szándékos, rosszindulatú módon hogyan védhetők ezekkel szemben. Megvizsgáljuk az integritás (integrity), bizalmasság (confidentiality), és elérhetőség (availability) elleni támadásokat, valamint a védekezési mechanizmusokat. Fontos, hogy ez NEM a trustworthy AI egyetlen aspektusa, de kritikus fontosságú, különösen olyan alkalmazásokban, ahol az ellenséges környezet vagy rosszindulatú aktorok jelenléte várható (security-sensitive applications, adversarial settings). Mivel a jogi szabályozások (pl. EU AI Act, GDPR) a trustworthy AI több dimenziójával szemben fogalmaznak meg követelményeket aminek a biztonság csak egy része, ezért a rosszindulatú támadások elleni védekezések NEM elegendőek egy modell jogszabályi megfelelőségéhez (compliance). A jövő AI rendszereinek többdimenziós optimalizálást kell végezniük, ahol az elfogadható trade-off-ok függenek az alkalmazási kontextustól, a szabályozási környezettől, és a társadalmi elvárásoktól.
+Ebben a jegyzetben **kizárólag a security (biztonság) és részben a privacy (adatvédelem) dimenzióval** foglalkozunk - vagyis azzal, hogy hogyan támadhatók a gépi tanulási modellek szándékos, rosszindulatú módon hogyan védhetők ezekkel szemben. Megvizsgáljuk az integritás (integrity), bizalmasság (confidentiality), és elérhetőség (availability) elleni támadásokat, valamint a védekezési mechanizmusokat. Fontos, hogy ez NEM a trustworthy AI egyetlen aspektusa, de kritikus fontosságú, különösen olyan alkalmazásokban, ahol az ellenséges környezet vagy rosszindulatú aktorok jelenléte várható (security-sensitive applications, adversarial settings). Mivel a jogi szabályozások (pl. EU AI Act, GDPR) a trustworthy AI több dimenziójával szemben fogalmaznak meg követelményeket aminek a biztonság csak egy része, ezért a rosszindulatú támadások elleni védekezések NEM elegendőek egy modell jogszabályi megfelelőségéhez (compliance). A jövő AI rendszereinek többdimenziós optimalizálást kell végezniük, ahol az elfogadható trade-off-ok függenek az alkalmazási kontextustól, a szabályozási környezettől, és a társadalmi elvárásoktól.
 
 ---
-# Miről NEM szól ez a fejezet?
+# Miről NEM szól ez a jegyzet?
 
-Fontos tisztázni, hogy ez a fejezet **nem** a gépi tanulás alapjairól szól. Nem fogunk részletes bevezetést adni a gépi tanulás területébe – ehhez Simon J.D. Prince "[Understanding Deep Learning](https://udlbook.github.io/udlbook/)" című könyve, vagy a megfelelő kurzusok elvégzése ajánlott.
+Fontos tisztázni, hogy ez a jegyzet **nem** a gépi tanulás alapjairól szól. Nem fogunk részletes bevezetést adni a gépi tanulás területébe – ehhez Simon J.D. Prince "[Understanding Deep Learning](https://udlbook.github.io/udlbook/)" című könyve, vagy a megfelelő kurzusok elvégzése ajánlott.
 
-Ez a fejezet **nem** a hagyományos biztonságról szól, és nem is az AI alkalmazásáról biztonsági problémák megoldására. **Nem** foglalkozunk kriptográfiával, blokkláncokkal, biztonságos kommunikációval vagy szoftveres biztonsági megoldásokkal. **Nem** fogunk gépi tanulási modelleket fejleszteni anomáliák, malware-ek, hálózati behatolások vagy szoftver-sebezhetőségek detektálására.
+Ez a jegyzet **nem** a hagyományos biztonságról szól, és nem is az AI alkalmazásáról biztonsági problémák megoldására. **Nem** foglalkozunk kriptográfiával, blokkláncokkal, biztonságos kommunikációval vagy szoftveres biztonsági megoldásokkal. **Nem** fogunk gépi tanulási modelleket fejleszteni anomáliák, malware-ek, hálózati behatolások vagy szoftver-sebezhetőségek detektálására.
 
 **Nem** foglalkozunk a gépi tanulási modellek robusztusságával nem rosszindulatú szereplőkkel szemben (reliability), mint például a robusztus osztályozás különböző kontextusokban.
 
