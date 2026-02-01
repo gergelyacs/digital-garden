@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T17:30:48.734+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T17:32:12.953+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -1146,7 +1146,7 @@ A célfüggvény, hogy a betanított modell $f_{\theta}$ a $D_{target}$ célmint
 2. Kiszámítjuk a célfüggvény (objective) $D_{poison}$ szerinti gradiensét
 3. Módosítjuk $D_{poison}$-t a gradiensének ellentétes irányába ($f_{\theta}$ hibázását akarjuk _minimalizálni_ $D_{target}$-n)
 
-Látható, hogy az $f$ modellt minden iterációban újra kell tanítani $D_{train}\cup D_{poison}$ adaton ("megoldjuk" a belső optimalizációt), és csak ezután értékelhetjük ki a célfüggvényt és számíthatjuk ki az $D_{poison}$ szerinti gradiensét ("megoldjuk" a külső optimalizáció). Ez rendkívül számításigényes, gyakorlatilag minden iteráció során egy teljes model újratanítás szükséges. A gyakorlatban approximációk és heurisztikák szükségesek, amelyek "elég jó" mérgezést eredményeznek, bár nem garantáltan optimálisat (pl. nem tanítjuk újra az $f_{\theta}$ modellt kihagyva a belső optimalizációt, ld. alább).
+Látható, hogy az $f$ modellt minden iterációban újra kell tanítani $D_{train}\cup D_{poison}$ adaton ("megoldjuk" a belső optimalizációt), és csak ezután értékelhetjük ki a célfüggvényt és számíthatjuk ki az $D_{poison}$ szerinti gradiensét ("megoldjuk" a külső optimalizáció). Ez rendkívül számításigényes, gyakorlatilag minden iteráció során egy teljes model újratanítás szükséges. A gyakorlatban approximációk és heurisztikák szükségesek, amelyek "elég jó" mérgezést eredményeznek, bár nem garantáltan optimálisat (pl. nem tanítjuk újra az $f_{\theta}$ modellt kihagyva a belső optimalizációt).
 
 #### Gradient alignment: A bilevel probléma közelítése
 
