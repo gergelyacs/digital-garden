@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T17:13:19.071+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T17:17:04.724+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -1155,16 +1155,16 @@ A gradient alignment (gradiens illesztés) egy elegáns és hatékony megközel�
 **Az ötlet:** Tegyük fel, hogy van egy célmintánk $(x_{target}, y_{target})$, amit téves $y_{malicious}$ osztályba akarunk soroltatni. Ahelyett, hogy az $(x_{target}, y_{malicious})$ mintát közvetlenül beszúrnánk a tanító adatba - ami könnyen detektálható lenne a félrecímkézés miatt -, olyan poison mintákat keresünk, amelyek a tanítás alatt nagyon hasonló $∇_\theta loss$ gradienst produkálnak mint a félrecímkézett $(x_{target}, y_{malicious})$ célminta $\implies$ A mérgezett minta gradiensének **hasonlítania kell** ahhoz a gradiens irányhoz, amely $x_{target}$-et $y_{malicious}$ irányba tolja.
 
 **Hogyan generáljunk ilyen poison mintákat?** 
-1. Keressünk olyan $\{ (x_{p_1}, y_{p_1}), (x_{p_2}, y_{p_2}), \ldots, (x_{p_k}, y_{p_k})\}$ clean mintákat, amelyek eleve hasonlóak a félrecímkézett $(x_{target}, y_{malicious})$ mintához (célszerű az $y_{malicious}$ osztályban keresni)
+1. Keressünk olyan $\{ (x_{p_1}, y_{p_1}), (x_{p_2}, y_{p_2}), \ldots, (x_{p_k}, y_{p_k})\}$ clean base mintákat, amelyek eleve hasonlóak a félrecímkézett $(x_{target}, y_{malicious})$ mintához (célszerű az $y_{malicious}$ osztályban keresni)
 2. Olyan poison mintákat keresünk, amely a modellt a kívánt $g_{target} = \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{target}), y_{malicious})$ irányba tolják. Ez az a gradiens, amely **növeli** annak valószínűségét, hogy $x_{target}$-et $y_{malicious}$-nak osztályozzuk. Ezért keressük azokat az $r_{p_i}$ perturbációkat, amelyre 
    $$
    \forall i: \qquad g_{target} = \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{t}), y_{m})\approx \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{p_i}+r_{p_i}), y_{p_i})
 $$
-	Ezt megkapjuk ha megoldjuk az alábbi optimalizációt:
-$$
-r_{p_i}^* = \arg\max_{r_{p_i} : ||r_{p_i}|| \leq \varepsilon} 
-\text{cosine\_similarity}\left(g_{target}, \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{p_i}+r_{p_i}), y_{p_i})\right)
-$$
+	Ezt megkapjuk ha megoldjuk az alábbi optimalizációt:	
+	$$
+	r_{p_i}^* = \arg\max_{r_{p_i} : ||r_{p_i}|| \leq \varepsilon} 
+	\text{cosine\_similarity}\left(g_{target}, \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{p_i}+r_{p_i}), y_{p_i})\right)
+	$$
 	ahol a koszínusz hasonlóság maximalizálásával elérjük, hogy a két gradiens által bezárt szög minél kisebb legyen, vagyis egy irányba mutassanak. Így fognak a modellre nagyon hasonló hatást kifejteni tanítás során: a training során $\theta$ olyan irányba fog mozogni, hogy $f_\theta(x_{target}) → y_{malicious}$.
 3. Hozzáadjuk az $\{ (x_{p_i}+r_{p_i}^*, y_{p_i})\}$ mintákat a tanítóadathoz
 
@@ -1185,7 +1185,7 @@ A gradient alignment tulajdonképpen a bilevel probléma egy elsőrendű (Taylor
 $$
 \theta_{t+1} \approx \theta_t - \eta \cdot \sum_{(x,y) \in D_{train}}\nabla_{\theta} \mathcal{loss}(f_{\theta_t}(x), y)
 $$
-Ennek ellenére, ez a gyakorlatban meglepően jó, ami annak köszönhető, hogy a modell training trajectory-ja (pályája) rövid távon jól közelíthető gradiens információval (tehát a modell paraméterek frissítési iránya az első iterációhoz képest nem sokat változik később). Empirikus megfigyelések alapján a gradient alignment alapú poisoning gyakran közel ugyanolyan sikeres, mint a teljes bilevel optimalizáció.
+Ennek ellenére, ez a gyakorlatban meglepően jó, ami annak köszönhető, hogy a modell training trajectory-ja rövid távon jól közelíthető gradiens információval (tehát a modell paraméterek frissítési iránya az első iterációhoz képest nem sokat változik később). Empirikus megfigyelések alapján a gradient alignment alapú poisoning gyakran közel ugyanolyan sikeres, mint a teljes bilevel optimalizáció.
 
 ##### Előnyök
 - **Skálázható:** Nagy modellekre (ResNet, Transformer) a bilevel approach gyakorlatilag megvalósíthatatlan (túl költséges), a gradient alignment viszont még ekkor is működhet
