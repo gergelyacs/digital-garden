@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T17:27:02.698+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T17:30:48.734+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -1316,7 +1316,7 @@ Ahol:
 - $x_{target}$: Célminta, amit megtévesztően akarunk osztályoztatni (például egy hal képe)
 - $r$: Perturbáció
 - $\Phi$: Feature extractor
-- $\lambda$: Regularizációs paraméter, biztosítja, hogy $r$ kicsi maradjon
+- $\lambda$: Regularizációs paraméter, biztosítja, hogy $r$ kicsi maradjon. Ha $\lambda$ nagyobb, akkor a támadás kevésbé észrevehető, de nem is annyira sikeres.
 
 **Cél**: Megtalálni azt a poison mintát ($x_{poison}$), amely:
 1. **Feature space-ben** nagyon közel van $x_{target}$-hez
