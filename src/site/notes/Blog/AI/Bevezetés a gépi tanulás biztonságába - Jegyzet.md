@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T12:57:01.471+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-01T13:00:13.839+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -545,9 +545,8 @@ Az alapötlet meglepően egyszerű: adjunk zajt az inputhoz, majd átlagoljuk a 
 
 **Randomized smoothing megoldás**:
 
-1. Ne futtasd a modellt közvetlenül az inputon ($x$)
-2. Generálj sok zajos verziót $x$-ből: $x + \varepsilon_1$, $x + \varepsilon_2, ..., x + \varepsilon_n$, ahol $\varepsilon_i \sim N(0, \sigma^2I)$ (Gaussian zaj)
-3. Átlagold/szavazz a válaszokon: Az a címke lesz a válasz, amelyet a legtöbb zajos verzió választott
+1. Ne futtasd a modellt közvetlenül az inputon ($x$), hanem generálj sok zajos verziót $x$-ből: $x + \varepsilon_1$, $x + \varepsilon_2, ..., x + \varepsilon_n$, ahol $\varepsilon_i \sim N(0, \sigma^2I)$ (Gaussian zaj)
+2. Átlagold/szavazz a válaszokon: Az a címke lesz a válasz, amelyet a legtöbb zajos verzió választott
    
 A zajjal való átlagolás simítja (smooths) a döntési felületet, kevésbé érzékennyé teszi kis perturbációkra.
 
