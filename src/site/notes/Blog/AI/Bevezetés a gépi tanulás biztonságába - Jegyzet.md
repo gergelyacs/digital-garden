@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-02T18:14:19.008+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-02T18:16:09.407+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -401,7 +401,7 @@ A PGD során nem $x$-ből, hanem Elkerüljük a lokális optimumokat, hanem $x +
 $$
 \vec{x}_{adv} = \vec{x} + \arg\min_{\{\vec{r}: f(\vec{x} + \vec{r}) = C\}} \|\vec{r}\|_p \text{ such that } \|\vec{r}\|_p \leq \varepsilon
 $$
-**Jelentése**: Keressük azt a minimális $r$ perturbációt, amely hozzáadva $x$-hez olyan adversarial példát eredményez, amelyet a modell egy **specifikus célcímkébe ($C$)** sorol. Például egy stop tábla képét úgy módosítjuk, hogy a modell sebességkorlátozó táblának ismerje fel.
+**Jelentése**: Keressük azt a minimális $r$ perturbációt, amely hozzáadva $x$-hez olyan adversarial példát eredményez, amelyet a modell egy **specifikus $C$ célosztályba** sorol. Például egy stop tábla képét úgy módosítjuk, hogy a modell sebességkorlátozó táblának ismerje fel.
 
 Ez a probléma is átfogalmazható veszteségfüggvénnyel az alábbi formában:
 $$
