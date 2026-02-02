@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-02T17:40:46.276+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-02T18:14:19.008+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -371,7 +371,32 @@ A fenti probléma átfogalmazható veszteségfüggvénnyel az alábbi formában:
 $$
 \vec{x}_{adv} = \vec{x} + \arg\max_{\vec{r}:\|\vec{r}\|_p \leq \varepsilon} loss(f_{\theta}(\vec{x} + \vec{r}), y) 
 $$
-vagyis az $f_{\theta}$ modell hibázását akarjuk **maximalizálni** az eredeti $y = f_{\theta}(\vec{x})$ cimkére nézve. A megoldás egyszerűen közelíthető gradiens süllyedéssel, ahol a gradienst $x$ input (és **nem** a modell paraméter $\theta$) szerint kell számolni, hiszen az input módosítását keressük.
+vagyis az $f_{\theta}$ modell hibázását akarjuk **maximalizálni** az eredeti $y = f_{\theta}(\vec{x})$ cimkére nézve. A megoldás egyszerűen közelíthető _gradiens emelkedéssel_, ahol a gradienst $x$ input (és **nem** a modell paraméter $\theta$) szerint kell számolni, hiszen az input módosítását keressük. Erre egy példa a PGD (projected gradient descent), ami az egyik legerősebb és leggyakrabban használt white-box adversarial támadás. A PGD iteratív gradiens-alapú optimalizálással generál adversarial példákat; ahelyett, hogy egyetlen nagy lépést tennénk a gradiens irányába, sok kis lépést teszünk, és minden lépés után visszavetítjük (project) a perturbációt a $\varepsilon$-gömbbe, hogy biztosítsuk a megszorítás teljesülését. 
+
+**Projected Gradient Descent:**
+```
+Input: x (eredeti input), y (valódi címke), ε (max perturbáció), α (lépésméret), T (iterációk száma)
+
+1. Inicializálás:
+   x_0 = x + uniform_noise(-ε, ε)  // Random start az ε-gömbön belül
+   
+2. Iteratív optimalizálás (t = 0 to T-1):
+   
+   a) Számítsd a gradienst:
+      gradient = ∇_x loss(f(x_t), y)
+      
+   b) Gradient ascent lépés (növeljük a loss-t):
+      x_{t+1} = x_t + α · sign(gradient)
+      
+   c) Projection (vetítés vissza az ε-gömbbe):
+      perturbation = x_{t+1} - x
+      perturbation = clip(perturbation, -ε, ε)  // L_∞ korlátozás
+      x_{t+1} = x + perturbation
+
+3. Return: x_T (adversarial példa)
+```
+A PGD során nem $x$-ből, hanem Elkerüljük a lokális optimumokat, hanem $x + random\_noise$-b=l indulunk, hogy elkerüljük a lokális optimumokat. A gradienst **$x$ szerin**t és NEM a modell paraméterek szerint számoljuk! Végül a gradienssel megegyező irányba indulunk, mivel a loss értékét maximalizálni akarjuk. A sign használata opcionális, de $L_{\infty}$ norma esetén gyorsabb konvergenciát biztosít.
+
 ##### Célzott (Targeted) támadás:
 $$
 \vec{x}_{adv} = \vec{x} + \arg\min_{\{\vec{r}: f(\vec{x} + \vec{r}) = C\}} \|\vec{r}\|_p \text{ such that } \|\vec{r}\|_p \leq \varepsilon
@@ -382,7 +407,10 @@ Ez a probléma is átfogalmazható veszteségfüggvénnyel az alábbi formában:
 $$
 \vec{x}_{adv} = \vec{x} + \arg\min_{\vec{r}:\|\vec{r}\|_p \leq \varepsilon} loss(f_{\theta}(\vec{x} + \vec{r}), C) 
 $$
-vagyis az $f_{\theta}$ modell hibázását akarjuk **minimalizálni** a támadó által választott $C$ cimkére nézve. A megoldás egyszerűen közelíthető gradiens süllyedéssel, ahol a gradienst $x$ input (és **nem** a modell paraméter $\theta$) szerint kell számolni, mivel itt is az input módosítását keressük. Erre egy példa a PGD (projected gradient descent), ami az egyik legerősebb és leggyakrabban használt white-box adversarial támadás, amely iteratív gradiens-alapú optimalizálással generál adversarial példákat; ahelyett, hogy egyetlen nagy lépést tennénk a gradiens irányába, sok kis lépést teszünk, és minden lépés után visszavetítjük (project) a perturbációt a $\varepsilon$-gömbbe, hogy biztosítsuk a megszorítás teljesülését. A PGD adja a később leírt adversarial training alapját is.
+vagyis az $f_{\theta}$ modell hibázását akarjuk **minimalizálni** a támadó által választott $C$ cimkére nézve. A megoldás egyszerűen közelíthető _gradiens süllyedéssel_, ahol a gradienst $x$ input (és **nem** a modell paraméter $\theta$) szerint kell számolni, mivel itt is az input módosítását keressük.  A PGD itt is nagyon hasonlóan működik, kivéve, hogy itt a célosztály irányába szeretnénk elmozdulni, ezért a célosztályra számolt veszteségfüggvényt minimalizálni (és nem maximalizálni), ezért gradiens süllyedést (és nem emelkedést) hajtunk végre:
+$$
+x_{t+1} = x_{t} + sign(\nabla_x loss(f_{\theta}(x), C))
+$$
 
 #### Norma típusok
 
@@ -436,7 +464,7 @@ Ez egy hatalmas kumulatív hatás! Még ha minden egyes pixel módosítása önm
 
 #### 2. Linearitás hipotézis
 
-A linearitás hipotézis a legelterjedtebb magyarázat az adversarial példák létezésére (de nem az egyetlen). Ez azt állítja, hogy a modern neurális hálózatok **lokálisan darabonként lineárisak** (piecewise-linear), és pontosan ez teszi lehetővé az adversarial példák létrehozását.
+A linearitás hipotézis a legelterjedtebb magyarázat az adversarial példák létezésére (de nem az egyetlen). Ez azt állítja, hogy a modern neurális hálózatok döntési felülete töredezett, pontosabban **lokálisan darabonként lineáris** (piecewise-linear), és pontosan ez teszi lehetővé az adversarial példák létrehozását.
 
 ##### Miért lokálisan lineárisak a neurális hálózatok?
 
@@ -507,7 +535,7 @@ Az adversarial training célfüggvénye:
 $$
 \min_\theta \mathbb{E}_{(\vec{x}, y) \sim \mathcal{D}} \left[\max_{\|\vec{r}\|_p \leq \varepsilon} loss(f_\theta(\vec{x} + \vec{r}), y)\right]
 $$
-Ahol a  belső maximalizálás megkeresi a legrosszabb adversarial perturbációt, a külső minimalizálás pedig ezt a worst-case hibát próbálja minimalizálni.
+Ahol a  belső maximalizálás megkeresi a legrosszabb adversarial perturbációt, a külső minimalizálás pedig ezt a worst-case hibát próbálja minimalizálni. A belső optimalizáció lényegében egy adversarial minta generálását jelenti $x$ pont körül, ami végezhető PGD-vel (A PGD tekinthető az "gold standard" white-box támadásnak, ami egy megfelelő kompromisszum a generálás gyorsasága és a támadás pontossága között. Ugyan léteznek PGD-nél hatékonyabb támadások, de ezek jóval lassabbak, ami itt most kritikus, hiszen minden tanítómintát meg kell támadni).
 
 ##### Miért kell komplex modell?
 
