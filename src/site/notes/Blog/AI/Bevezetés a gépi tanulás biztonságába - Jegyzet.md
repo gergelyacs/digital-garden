@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-02T18:16:09.407+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-02T18:30:33.821+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -464,7 +464,7 @@ Ez egy hatalmas kumulatív hatás! Még ha minden egyes pixel módosítása önm
 
 #### 2. Linearitás hipotézis
 
-A linearitás hipotézis a legelterjedtebb magyarázat az adversarial példák létezésére (de nem az egyetlen). Ez azt állítja, hogy a modern neurális hálózatok döntési felülete töredezett, pontosabban **lokálisan darabonként lineáris** (piecewise-linear), és pontosan ez teszi lehetővé az adversarial példák létrehozását.
+A linearitás hipotézis a legelterjedtebb magyarázat az adversarial példák létezésére (de nem az egyetlen). Ez azt állítja, hogy a modern neurális hálózatok **lokálisan darabonként lineárisak** (piecewise-linear), és pontosan ez teszi lehetővé az adversarial példák létrehozását.
 
 ##### Miért lokálisan lineárisak a neurális hálózatok?
 
@@ -474,7 +474,7 @@ $$
 $$
 **Népszerű aktivációs függvények**:
 - **ReLU**: $\max(0, x)$ - darabonként lineáris
-- **Sigmoid**: $\sigma(x) = 1/(1 + e^{-x})$ - lokálisan közel lineáris bizonyos régiókban
+- **Sigmoid**: $\sigma(x) = 1/(1 + e^{-x})$ - lokálisan közel lineáris bizonyos régiókban (pl. nulla környezetében).
 - **Tanh**: hasonlóan lokálisan lineáris
 
 Mivel egy neurális háló sok neuron kompozíciója, és mindegyik neuron egy szeparációs hipersíkot képez (amely kvázi-lineáris), az eredő $f$ függvény **lokálisan majdnem lineáris**.
