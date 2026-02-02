@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-02T18:35:15.854+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-02T18:41:45.862+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -326,11 +326,7 @@ Ugyanakkor a poisoning támadások kihívásokat is jelentenek a támadó szám�
 
 Az arcfelismerő rendszerek különösen sebezhetők az adversarial támadásokkal szemben. A támadó célja lehet egy személy megszemélyesítése (impersonation), amikor saját arcát úgy módosítja, hogy a rendszer egy másik személynek ismerje fel.
 
-**Példa**: Egy kutató csapat kimutatta, hogy speciális mintázatú szemüveg viselésével képesek voltak megtéveszteni az arcfelismerő rendszereket. A "tiszta példákon" (Clean Examples) a rendszer helyesen azonosította az öt különböző személyt. Azonban amikor ugyanezek a személyek sárga keretű szemüveget viseltek (Adversarial Examples), a rendszer mind az öt személyt ugyanazon célszemélyként azonosította. Ez a fizikai adversarial példa különösen veszélyes, mert:
-
-- Könnyen beszerezhető és használható (bárki vásárolhat ilyen szemüveget)
-- Különböző szögekből és távolságokból is működik
-- Több ember használhatja ugyanazt a triggert
+**Példa**: Egy kutató csapat kimutatta, hogy speciális mintázatú szemüveg viselésével képesek voltak megtéveszteni az arcfelismerő rendszereket. A "tiszta példákon" (Clean Examples) a rendszer helyesen azonosította az öt különböző személyt. Azonban amikor ugyanezek a személyek egy speciális színű szemüveget viseltek (Adversarial Examples), a rendszer mind az öt személyt ugyanazon célszemélyként azonosította. A szemüveg színét egy algoritmus számolta ki (ld. alább).
 
 Ez komoly biztonsági kockázatot jelent repülőtéri útlevél-ellenőrzéseknél, mobiltelefon-hitelesítésnél vagy épület-hozzáférésnél.
 
@@ -338,17 +334,19 @@ Ez komoly biztonsági kockázatot jelent repülőtéri útlevél-ellenőrzésekn
 
 Az önvezető autók mélytanulási modelljei szintén sebezhetők az adversarial támadásokkal szemben, ami potenciálisan életveszélyes helyzeteket okozhat.
 
-**Közlekedési lámpák támadása**: Kutatók kimutatták, hogy egyetlen pixel megváltoztatásával egy képen a modell zöld lámpát piros lámpának osztályozhat, vagy fordítva. Bár ez digitális példa, a koncepció átültethető fizikai világba is.
+**Közlekedési lámpák támadása**: Kutatók kimutatták, hogy egyetlen pixel megváltoztatásával egy képen a modell zöld lámpát piros lámpának osztályozhat, vagy fordítva. 
 
-**Sávtartás támadása**: A Tesla Autopilot rendszere ellen végzett kutatás bebizonyította, hogy kis, alig észrevehető matricák (stickers) elhelyezésével az úttesten meg lehet téveszteni a sávfelismerő rendszert. Mindössze 1 cm széles perturbáció elegendő volt ahhoz, hogy a rendszer hamis sávot detektáljon. Az eredmény:
+**Sávtartás támadása**: A Tesla Autopilot rendszere ellen végzett kutatás bebizonyította, hogy kis, alig észrevehető matricák (stickers) elhelyezésével az úttesten meg lehet téveszteni a sávfelismerő rendszert.  Az eredmény:
 
 - Az eredeti kamera kép nem mutatott sávot
 - A manipulált kép (apró matrica hozzáadásával) hamis sávot generált a kimenetben
 - Az autó elkezdett rossz irányba kormányozni, potenciálisan ütközést vagy lehajtást okozva az útról
 
-**Sötétebb kép támadás**: Egy másik kísérletben az NVIDIA DAVE-2 önvezető autó platformjánál kimutatták, hogy egy kép enyhén sötétebb verziója elegendő volt ahhoz, hogy az autó helyesen balra kanyarodás helyett jobbra próbáljon fordulni, és az útszéli korlátba ütközzön.
+Egy másik kísérletben az NVIDIA DAVE-2 önvezető autó platformjánál kimutatták, hogy egy kép enyhén sötétebb verziója elegendő volt ahhoz, hogy az autó helyesen balra kanyarodás helyett jobbra próbáljon fordulni, és az útszéli korlátba ütközzön.
 
-**Forgalmi táblák manipulálása**: Kutatók demonstrálták, hogy stop táblákra kis, specifikus mintázatú matricák elhelyezésével a rendszer sebességkorlátozó táblának vagy más táblának ismerheti fel a stop táblát. Ez a támadás különösen veszélyes, mert:
+**Forgalmi táblák manipulálása**: Kutatók demonstrálták, hogy stop táblákra kis, specifikus mintázatú matricák elhelyezésével a rendszer sebességkorlátozó táblának vagy más táblának ismerheti fel a stop táblát. A matrica mintázatát egy algoritmus generálta (ld. alább).
+
+Ez a támadás különösen veszélyes, mert:
 
 - A matricák kis méretűek és az emberi szem számára nem zavarják a tábla felismerését
 - Fizikailag megvalósítható (nem csak digitális támadás)
