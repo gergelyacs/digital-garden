@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-02T18:30:33.821+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-02T18:35:15.854+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -324,7 +324,7 @@ Ugyanakkor a poisoning támadások kihívásokat is jelentenek a támadó szám�
 
 #### Képfelismerés - Arcfelismerő rendszerek
 
-Az arcfelismerő rendszerek különösen sebezhetők az adversarial támadásokkal szemben. A támadó célja lehet személyiség megszemélyesítés (impersonation), amikor saját arcát úgy módosítja, hogy a rendszer egy másik személynek ismerje fel.
+Az arcfelismerő rendszerek különösen sebezhetők az adversarial támadásokkal szemben. A támadó célja lehet egy személy megszemélyesítése (impersonation), amikor saját arcát úgy módosítja, hogy a rendszer egy másik személynek ismerje fel.
 
 **Példa**: Egy kutató csapat kimutatta, hogy speciális mintázatú szemüveg viselésével képesek voltak megtéveszteni az arcfelismerő rendszereket. A "tiszta példákon" (Clean Examples) a rendszer helyesen azonosította az öt különböző személyt. Azonban amikor ugyanezek a személyek sárga keretű szemüveget viseltek (Adversarial Examples), a rendszer mind az öt személyt ugyanazon célszemélyként azonosította. Ez a fizikai adversarial példa különösen veszélyes, mert:
 
