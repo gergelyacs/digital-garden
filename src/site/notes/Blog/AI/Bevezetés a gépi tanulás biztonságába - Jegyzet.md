@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-02T21:23:17.957+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-03T08:25:28.404+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -495,8 +495,6 @@ Ha $f$ lokálisan lineáris, akkor könnyű megváltoztatni a klasszifikáló ki
 - Az input $x$ magas dimenziós (például 150,528 dimenzió képeknél) $\implies$ 
 - még ha $||r||_\infty = \max_i |r_i|$ nagyon kicsi is (például $\varepsilon = 0.01$) a $||r||_1 = \sum_1|r_i|$ nagyon nagy lehet ($\approx n \times \varepsilon$, ahol $n$ a dimenziószám) $\implies$ 
 - $\|f(\vec{x} + \vec{r}) - f(\vec{x})\| \approx \|\mathbf{w}^T \vec{r}\|$  szintén nagy lehet
-
-**Vizuális példa**: Képzeljünk el egy darabonként lineáris függvényt (mint a ReLU aktivációval rendelkező hálózat). Bár a függvény lokálisan lineáris régiókban található, a lineáris régiók határai mentén kis változások is átvihetik az inputot egy másik lineáris régióba.
 
 > **Összegezve: Adversarial példák azért léteznek, mert a modern gépi tanulási modellek nagy input dimenzionalitással dolgoznak és lokálisan darabonként lineárisak.**
 
