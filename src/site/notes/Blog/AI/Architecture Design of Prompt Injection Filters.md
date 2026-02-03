@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Architecture Design of Prompt Injection Filters.md","permalink":"/ai/architecture-design-of-prompt-injection-filters/","created":"2025-11-08T15:20:26.009+01:00","updated":"2026-02-03T23:58:45.169+01:00"}
+{"dg-publish":true,"dg-path":"AI/Architecture Design of Prompt Injection Filters.md","permalink":"/ai/architecture-design-of-prompt-injection-filters/","created":"2025-11-08T15:20:26.009+01:00","updated":"2026-02-04T00:10:19.845+01:00"}
 ---
 
 
@@ -19,7 +19,7 @@ In this post, we highlight a different direction: instead of training a single u
 
 First, it is more **cost-effective**: if most attack prompts can be caught by cheap filters (e.g., those containing clear trigger words), then it is more efficient to place these filters before a more expensive filter. Even if the final detection accuracy is the same, cascading filters lets us discard the bulk of malicious queries early and reserve the costly detector for only the hardest cases.
 
-Second, it is more **robust**. Combining different filters works like ensembling weak classifiers into a stronger one, which may be more robust against sophisticated attacks. Sufficiently motivated and skilled adaptive attackers can still evade such ensembles, but typically at a higher cost; to fool the target model, an adversary must simultaneously evade _all_ filters, each of which adds a new constraint to the evasion optimization problem. The more constraints, the harder the optimization tends to be, though this is not a strict rule but rather a tendency.
+Second, it is more **robust**. Combining different filters works like ensembling weak classifiers into a stronger one, which may be more robust against sophisticated attacks. Sufficiently motivated and skilled adaptive attackers can still evade such ensembles, but typically at a higher cost; to fool the target model, an adversary must simultaneously evade _all_ filters, each of which adds a new constraint to the evasion optimization problem. The more constraints, the harder the optimization tends to be, though this is not a strict rule but rather a tendency if the filters are sufficiently "independent" and require orthogonal adversarial perturbations.
 
 Finally, it is more **flexible.** New detectors appear regularly, each with different cost and accuracy profiles, often fine-tuned on different attack distributions. It is unlikely that any single pre-trained detector will match a specific application or threat model. Attack distributions vary across systems, and adaptive attackers respond to the current defense pipeline. Fine-tuning closed-weight models may be impossible, and training custom detectors can be more expensive than simply reconfiguring a set of existing filters. 
 
