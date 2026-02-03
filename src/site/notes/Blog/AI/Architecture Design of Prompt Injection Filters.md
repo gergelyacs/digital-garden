@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Architecture Design of Prompt Injection Filters.md","permalink":"/ai/architecture-design-of-prompt-injection-filters/","created":"2025-11-08T15:20:26.009+01:00","updated":"2026-02-04T00:52:41.099+01:00"}
+{"dg-publish":true,"dg-path":"AI/Architecture Design of Prompt Injection Filters.md","permalink":"/ai/architecture-design-of-prompt-injection-filters/","created":"2025-11-08T15:20:26.009+01:00","updated":"2026-02-04T00:58:13.934+01:00"}
 ---
 
 
@@ -444,7 +444,7 @@ and select $i_t^* = \arg\min_i G_{i,t}$. If $G_{i_t^*,t} > 1$, the cascade is te
  
 # Adversarial Robustness
 
-The above formalizations assume that we face a non-adaptive (static) adversary that we optimize for; all possible attacks in $Q_a$ are known and each attack is equally likely ($\pi_a$ is a uniform distribution).  However, this is not always realistic.  Knowing the set of filters selected by the defender, the attacker may adapt and either dynamically changes the distribution $\pi_a$ of known attacks (e.g., uses attacks that are uncovered by the filter set), or even  even more, construct a new attack (adversarial example) that slips through the applied filters. 
+The above formalizations assume that we face a non-adaptive (static) adversary that we optimize for; all possible attacks in $Q_a$ are known and each attack is equally likely ($\pi_a$ is a uniform distribution).  However, this is not always realistic.  Knowing the set of filters selected by the defender, the attacker may adapt and either dynamically changes the distribution $\pi_a$ of known attacks (e.g., uses attacks that are uncovered by the filter set), or even more, construct a new attack (adversarial example) that slips through the applied filters. 
 
 ## Closed-world adversary
 
