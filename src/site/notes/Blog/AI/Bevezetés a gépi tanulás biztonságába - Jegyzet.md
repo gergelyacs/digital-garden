@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-03T08:25:28.404+01:00"}
+{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-03T09:08:24.869+01:00"}
 ---
 
 # Tartalomjegyzék
@@ -393,8 +393,9 @@ Input: x (eredeti input), y (valódi címke), ε (max perturbáció), α (lépé
 
 3. Return: x_T (adversarial példa)
 ```
-A PGD során nem $x$-ből, hanem Elkerüljük a lokális optimumokat, hanem $x + random\_noise$-b=l indulunk, hogy elkerüljük a lokális optimumokat. A gradienst **$x$ szerin**t és NEM a modell paraméterek szerint számoljuk! Végül a gradienssel megegyező irányba indulunk, mivel a loss értékét maximalizálni akarjuk. A sign használata opcionális, de $L_{\infty}$ norma esetén gyorsabb konvergenciát biztosít.
+A PGD során nem $x$-ből hanem $x + random\_noise$-ból indulunk, hogy elkerüljük a lokális optimumokat, majd a gradienssel megegyező irányba mozdulunk el, mivel a loss értékét maximalizálni akarjuk. A sign használata opcionális, de $L_{\infty}$ norma esetén gyorsabb konvergenciát biztosít.
 
+Amennyiben a modell és annak $\theta$ paraméterei nem elérhetőek (black-box hozzáférés), a gradienst becsülnünk kell valamilyen [nullad rendű optimalizációval](https://arxiv.org/abs/1712.09491), vagy [egyéb black-box alapú támadáshoz](https://arxiv.org/abs/1712.04248) kell folyamodnunk.
 ##### Célzott (Targeted) támadás:
 $$
 \vec{x}_{adv} = \vec{x} + \arg\min_{\{\vec{r}: f(\vec{x} + \vec{r}) = C\}} \|\vec{r}\|_p \text{ such that } \|\vec{r}\|_p \leq \varepsilon
