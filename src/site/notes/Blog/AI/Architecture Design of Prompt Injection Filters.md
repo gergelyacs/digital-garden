@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Architecture Design of Prompt Injection Filters.md","permalink":"/ai/architecture-design-of-prompt-injection-filters/","created":"2025-11-08T15:20:26.009+01:00","updated":"2026-02-04T01:00:16.919+01:00"}
+{"dg-publish":true,"dg-path":"AI/Architecture Design of Prompt Injection Filters.md","permalink":"/ai/architecture-design-of-prompt-injection-filters/","created":"2025-11-08T15:20:26.009+01:00","updated":"2026-02-04T01:02:58.485+01:00"}
 ---
 
 
@@ -479,7 +479,7 @@ $$
 $$
 where $S \subseteq 2^{\mathbb{F}}$ is the set of feasible filter combinations. 
 
-However, to compute $\mu^*$ is hard because there are exponential number of filter combinations (defense strategies), hence any LP formulation of this minimax problem has exponential number of variables. Still, there are efficient approximations, e.g. the [Multiplicative Weights Approach (MWA)](https://cseweb.ucsd.edu/~yfreund/papers/games_long.pdf). This iterative algorithm generates a sequence of attack distributions $\pi_a^t$ and best responses $\mu^t$, where $\pi_a^1$ is the uniform distribution.  This approach is only tractable, if (1) one of the players (the attacker) has a small (polynomial size) number of choices, and (2) the other player (the defender) can compute (or approximate) its best responses efficiently. The first condition holds, because even though the defender has $2^{|\mathbb{F}|}$ choices, the attacker has only $|Q_a|$. The second condition also holds since, as we have shown above, the optimal filter combination can be found by either solving the ILP or using greedy approximation.
+However, computing $\mu^*$ is hard because there are exponential number of filter combinations (defense strategies), hence any LP formulation of this minimax problem has exponential number of variables. Still, there are efficient approximations, e.g. the [Multiplicative Weights Approach (MWA)](https://cseweb.ucsd.edu/~yfreund/papers/games_long.pdf). This iterative algorithm generates a sequence of attack distributions $\pi_a^t$ and best responses $\mu^t$, where $\pi_a^1$ is the uniform distribution.  This approach is only tractable, if (1) one of the players (the attacker) has a small (polynomial size) number of choices, and (2) the other player (the defender) can compute (or approximate) its best responses efficiently. The first condition holds, because even though the defender has $2^{|\mathbb{F}|}$ choices, the attacker has only $|Q_a|$. The second condition also holds since, as we have shown above, the optimal filter combination can be found by either solving the ILP or using greedy approximation.
 
 Let $\mathbf{C}(\mu, \pi_a) = \mathbb{E}_{S\sim \mu}\mathbb{E}_{x\sim \mathcal{M}_p(\pi_a, \pi_b)} C(S, x)$ be the expected cost of the defender strategy $\mu$ against a specific attack distribution $\pi_a$, and somewhat abusing the notation, $\mathbf{C}(\mu, x) = \mathbb{E}_{S\sim \mu}[C(S, x)]$ for a particular attack $x\in Q_a$. We can apply MWA to identify the best (mixed) defense strategy as follows. In each iteration $t$ of MWA, the best response $\mu^t$ to attack distribution $\pi_a^t$ is
 $$
