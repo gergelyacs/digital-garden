@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Architecture Design of Prompt Injection Filters.md","permalink":"/ai/architecture-design-of-prompt-injection-filters/","created":"2025-11-08T15:20:26.009+01:00","updated":"2026-02-20T10:24:38.357+01:00"}
+{"dg-publish":true,"dg-path":"AI/Architecture Design of Prompt Injection Filters.md","permalink":"/ai/architecture-design-of-prompt-injection-filters/","created":"2025-11-08T15:20:26.009+01:00","updated":"2026-02-20T10:29:53.274+01:00"}
 ---
 
 Prompt injection occurs when an adversary hijacks an LLM by embedding malicious instructions within the data the model processes. The attacker blends harmful commands into otherwise benign-looking input, causing the model to follow the adversary’s intentions rather than the behavior specified by the system prompt or the legitimate user.
@@ -519,5 +519,3 @@ The fight against prompt injection is fundamentally an economic one. Both attack
 ## Beyond Prompt Injection
 
 This economic perspective is not unique to prompt injection, nor is it new in data security. Other AI-driven detection tasks - such as network monitoring, malware detection, and anomaly detection more broadly - face the same underlying challenges. Across all these domains, the goal is to combine imperfect components optimally under budget, latency, and application constraints. And if we look at _email spam_, a closely related case, the situation is far from hopeless: spam was once overwhelming, yet today it is largely manageable not because the core vulnerability was solved, but because layered detection systems made large-scale spam unprofitable.
-
-Beyond the need for scalable estimation of adversarial cost, another relatively unexplored issue is **privacy-preserving detection**: how can we ensure that a detector learns nothing beyond the detection outcome? While solutions such as TEEs and secure multiparty computation exist, many are still not cost-effective or practical for real-world deployments.
