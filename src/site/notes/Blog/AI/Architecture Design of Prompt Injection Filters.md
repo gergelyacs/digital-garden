@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Architecture Design of Prompt Injection Filters.md","permalink":"/ai/architecture-design-of-prompt-injection-filters/","created":"2025-11-08T15:20:26.009+01:00","updated":"2026-02-20T09:22:33.134+01:00"}
+{"dg-publish":true,"dg-path":"AI/Architecture Design of Prompt Injection Filters.md","permalink":"/ai/architecture-design-of-prompt-injection-filters/","created":"2025-11-08T15:20:26.009+01:00","updated":"2026-02-20T10:24:38.357+01:00"}
 ---
 
 Prompt injection occurs when an adversary hijacks an LLM by embedding malicious instructions within the data the model processes. The attacker blends harmful commands into otherwise benign-looking input, causing the model to follow the adversary’s intentions rather than the behavior specified by the system prompt or the legitimate user.
@@ -20,7 +20,7 @@ First, it is more **cost-effective**: if most attack prompts can be caught by ch
 
 Second, it is more **robust**. Combining different filters works like ensembling weak classifiers into a stronger one, which may be more robust against sophisticated attacks. Sufficiently motivated and skilled adaptive attackers can still evade such ensembles, but typically at a higher cost; to fool the target model, an adversary must simultaneously evade _all_ filters, each of which adds a new constraint to the evasion optimization problem. The more constraints, the harder the optimization could be, if the filters are sufficiently "independent" and require orthogonal adversarial perturbations.
 
-Finally, it is more **flexible.** New detectors appear regularly, each with different cost and accuracy profiles, often fine-tuned on different attack distributions. It is unlikely that any single pre-trained detector will match a specific application or threat model. Attack distributions vary across systems, and adaptive attackers respond to the current defense pipeline. Fine-tuning closed-weight models may be impossible, and training custom detectors can be more expensive than simply reconfiguring a set of existing filters. 
+Finally, it is more **flexible and confidentiality-preserving**. New detectors appear regularly, each with different cost and accuracy profiles, often fine-tuned on different attack distributions, and and it is unlikely that any single pre-trained detector will perfectly match a specific application or threat model. Attack distributions vary across systems, and adaptive attackers continuously respond to the current defense pipeline. Fine-tuning existing models to keep pace is often not viable because closed-weight models may be inaccessible, and white-box access to every detector raises confidentiality concerns. Reconfiguring a set of existing filters based on black-box evaluation of a small number of queries is therefore both more practical and more privacy-friendly, and is easier to realize with secure multiparty computation.
 
 This leads to our core question: **Given a set of available filters, how should we combine them to maximize detection accuracy while minimizing both detection and impact cost of the defender?**
 
@@ -440,7 +440,13 @@ $$
 G_{i,t} = \frac{ (|U_a^t| + |U_b^t|)\cdot c_i \;+\; \sum_{x \in U_b^t \cap Q_b^i} \mathrm{cost}_{FP}(x) }{ \sum_{x \in U_a^t \cap Q_a^i} \mathrm{cost}_{FN}(x) }.
 $$
 and select $i_t^* = \arg\min_i G_{i,t}$. If $G_{i_t^*,t} > 1$, the cascade is terminated: all remaining adversarial samples in $U_a^t$ are left uncovered and incur their corresponding false-negative costs. Otherwise, filter $i_t^*$ is placed at stage $t$; all samples flagged by this filter are removed from further processing, that is, $U_a^{t+1} = U_a^t \setminus Q_a^{i_t^*}$, $U_b^{t+1} = U_b^t \setminus Q_b^{i_t^*}$, and the algorithm proceeds to stage $t+1$.
- 
+
+# Confidentiality of Detector Composition
+
+One might naturally argue that a combination of filters selected on the basis of only a few attack and benign queries is inferior to training a dedicated gating model or a [dynamic (multi-exit) neural network](https://prajnaaiwisdom.medium.com/dynamic-neural-networks-how-adaptive-architectures-are-revolutionizing-ai-in-real-time-and-why-d906b98c6b1e). Such solutions can indeed achieve higher accuracy, but they come at the cost of confidentiality. Specifically, the defender would need either _white-box access_ to each individual detector in order to train or fine-tune a combined model, which is often not viable when detectors are proprietary or closed-source, or resort to federated learning. The latter, however, introduces its own risk: a jointly trained model may leak information about the individual component models if it remains accessible to the defender. Trusted Execution Environments offer another avenue, provided the TEE manufacturer itself is trusted.
+
+The proposed approach, by contrast, requires only **black-box access to the detectors**, as it relies solely on evaluating a small set of attack and benign queries from $Q_a$​ and $Q_b$​, under the requirement that the detector provider does not observe the queries and the defender does not observe the detector internals. This weaker access requirement is more naturally realized via secure multiparty computation, as long as the detector models are not overly complex, or can be distilled into sufficiently simple ones.  
+
 # Adversarial Robustness
 
 The above formalizations assume that we face a non-adaptive (static) adversary that we optimize for; all possible attacks in $Q_a$ are known and each attack is equally likely ($\pi_a$ is a uniform distribution).  However, this is not always realistic.  Knowing the set of filters selected by the defender, the attacker may adapt and either dynamically changes the distribution $\pi_a$ of known attacks (e.g., uses attacks that are uncovered by the filter set), or even more, construct a new attack (adversarial example) that slips through the applied filters. 
