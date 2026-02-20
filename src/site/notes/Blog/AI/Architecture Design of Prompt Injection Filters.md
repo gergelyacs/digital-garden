@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Architecture Design of Prompt Injection Filters.md","permalink":"/ai/architecture-design-of-prompt-injection-filters/","created":"2025-11-08T15:20:26.009+01:00","updated":"2026-02-20T09:13:16.279+01:00"}
+{"dg-publish":true,"dg-path":"AI/Architecture Design of Prompt Injection Filters.md","permalink":"/ai/architecture-design-of-prompt-injection-filters/","created":"2025-11-08T15:20:26.009+01:00","updated":"2026-02-20T09:16:21.487+01:00"}
 ---
 
 Prompt injection occurs when an adversary hijacks an LLM by embedding malicious instructions within the data the model processes. The attacker blends harmful commands into otherwise benign-looking input, causing the model to follow the adversary’s intentions rather than the behavior specified by the system prompt or the legitimate user.
@@ -447,7 +447,7 @@ The above formalizations assume that we face a non-adaptive (static) adversary t
 
 ## Closed-world adversary
 
-Suppose a closed-world adversary that adapts $\pi_a$ in response to the deployed defense, but cannot introduce zero-day attacks , that is, the attacker is restricted to the set of already known attacks. The defender, however, may lack the budget to cover all known attacks simultaneously and must therefore prioritize among them by selecting a subset of filters that minimizes worst-case performance, knowing the attacker will choose from $Q_a$​ adaptively based on the applied defense. This can be formalized as a two-player zero-sum game, in which the defender chooses a combination of filters while the attacker best-responds by selecting the most damaging attack from $Q_a$​. If we have to commit to a fixed set of filters, the goal then is to compute a (pure) minimax solution to this game:
+Suppose a closed-world adversary that adapts $\pi_a$ in response to the deployed defense, but cannot introduce zero-day attacks, that is, the attacker is restricted to the set of already known attacks. The defender, however, may lack the budget to cover all known attacks simultaneously and must therefore prioritize among them by selecting a subset of filters that minimizes worst-case performance, knowing the attacker will choose from $Q_a$​ adaptively based on the applied defense. This can be formalized as a two-player zero-sum game, in which the defender chooses a combination of filters while the attacker best-responds by selecting the most damaging attack from $Q_a$​. If we have to commit to a fixed set of filters, the goal then is to compute a (pure) minimax solution to this game:
 $$
 S^* = \arg\min_{S \subseteq \mathbb{F}} \max_{\pi_a}\mathbb{E}_{x\sim \mathcal{M}_p(\pi_a, \pi_b)}\left[C(S, x)\right] 
 $$
