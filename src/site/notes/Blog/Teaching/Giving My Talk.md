@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-21T11:51:56.854+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-21T12:07:49.381+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are precisely what industry finds missing in fresh graduates. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -114,7 +114,7 @@ Equally important: record yourself and watch it back. It's uncomfortable precise
 
 People often say you can't lose with a bad talk. That's mostly true for a single talk, since audiences forget quickly, and in a conference setting, your paper matters far more than your presentation. Even in a thesis defense, the reviewers' judgment of the written work is what counts.
 
-What you can lose is being remembered. A good talk makes people remember you; a bad one means they forget you a little faster. What really matters is consistency - if you consistently deliver poor talks as a teacher, that accumulates. A single bad talk is nothing to worry about; the variance in quality is part of being human. As Maxwell Maltz put it: _"We make mistakes, mistakes don't make us."_ A bad talk is something that happened. It is not who you are. The goal is simply to notice when you're consistently underperforming and do something about it.
+What you can lose is being remembered. A good talk makes people remember you; a bad one means they forget you faster. What really matters is consistency - if you consistently deliver poor talks as a teacher, that accumulates. A single bad talk is nothing to worry about; the variance in quality is part of being human. As Maxwell Maltz put it: _"We make mistakes, mistakes don't make us."_ A bad talk is something that happened. It is not who you are. The goal is simply to notice when you're consistently underperforming and do something about it.
 
 Giving a talk is a lot like cooking. Sometimes it comes out well, sometimes it doesn't, and the reasons are often beyond your control. A bad night's sleep, a personal problem, technical difficulties - all of these affect the result in ways that no amount of preparation can fully neutralize. The honest thing to do is accept this rather than pretend otherwise. Most food is enjoyable enough when people are hungry, and most talks land well enough when the audience really wants to learn something. 
 
