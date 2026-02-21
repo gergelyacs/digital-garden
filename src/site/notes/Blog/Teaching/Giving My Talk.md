@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-21T12:07:49.381+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-21T12:22:33.016+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are precisely what industry finds missing in fresh graduates. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -9,9 +9,11 @@ Mass education in universities has many drawbacks, and one of the most significa
 
 Before thinking about how to give a good talk, it's worth asking why you're giving one. The reasons matter more than you might think.
 
-The most obvious goal is to motivate people - to share something you find genuinely interesting and make them feel the same way. But there are other, less obvious reasons that I find equally valuable. I often accept invitations to give talks simply to force myself to read and understand something I've been putting off. Preparing a talk is one of the best ways to learn - and for me, that alone is reason enough.
+For students, the most basic (and most limiting) reason is simply to defend their work. This is partly why I dislike the term 'defense.' It leads almost inevitably to a talk focused on proving knowledge rather than communicating it, which is the wrong instinct entirely. The audience doesn't want to be impressed; they want to understand. A better goal is to motivate people, to share something you find genuinely interesting and make them feel the same way, or at the very least to make them want to read your paper.
 
-It also tests your understanding at a deeper level than you might expect. There are roughly four levels of understanding: you read something and think you understand it (you don't); you can solve exercises and think you really understand it (you don't); you can explain it to an expert (getting closer); and finally, you can explain it to a complete layman or a five-year-old. Even then, you probably still don't fully understand it, but the process of finding explanations from multiple viewpoints is itself what deepens understanding. Each new viewpoint is a new angle on the same problem.
+Beyond that, there are less visible motivations that I find equally valuable. I often accept invitations simply to force myself to read and understand something I've been putting off. Preparing a talk is one of the best ways to learn, and for me, that alone is reason enough.
+
+It also tests your understanding at a deeper level than you might expect. There are roughly four levels: you read something and think you understand it (you don't); you can solve exercises and think you really understand it (you don't); you can explain it to an expert (getting closer); and finally, you can explain it to a complete layman or a five-year-old. Even then, you probably still don't fully understand it, but the process of finding explanations from multiple viewpoints is itself what deepens understanding. Each new viewpoint is a new angle on the same problem.
 
 Finally, giving talks improves your general ability to communicate. If you can explain something clearly to a hundred people, you'll explain it more clearly to one.
 
