@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-21T14:09:48.697+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-21T22:48:49.179+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are precisely what industry finds missing in fresh graduates. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -13,7 +13,7 @@ For students, the most basic (and most limiting) reason is simply to defend thei
 
 Beyond that, there are less visible motivations to give talk that I find equally valuable. I often accept invitations simply to force myself to read and understand something I've been putting off. Preparing a talk is one of the best ways to learn, and for me, that alone is reason enough.
 
-Why? Because it also tests your understanding at a deeper level than you might expect. There are roughly four levels: you read something and think you understand it (you don't); you can solve exercises and think you really understand it (you don't); you can explain it to an expert (getting closer); and finally, you can explain it to a complete layman or a five-year-old. Even then, you probably still don't fully understand it, but the process of finding explanations from multiple viewpoints is itself what deepens understanding. Each new viewpoint is a new angle on the same problem.
+This is because giving a talk deepens your understanding. There are roughly four levels: you read something and think you understand it (you don't); you can solve exercises and think you really understand it (you still don't); you can explain it to an expert (getting closer); and finally, you can explain it to a complete layman or a five-year-old. Even then, you probably don't fully understand it, but that's the point. Each new viewpoint is a new angle on the same problem, and the process of finding explanations across all of them is itself what deepens understanding.
 
 Finally, giving talks improves your general ability to communicate. If you can explain something clearly to a hundred people, you'll explain it more clearly to one.
 
@@ -33,7 +33,7 @@ This also means acting like a teacher, not a student. Many students have been co
 
 Most advice about public speaking focuses on technique; slow down, speak up, make eye contact, don't read off your slides. All of that is useful. But there's a deeper issue that technique alone won't fix: how you relate to the talk itself, and what you think it says about you.
 
-If your sense of self-worth depends on how well your presentation is received, you're in trouble before you even open your mouth. Audience reception is not fully under your control - a tough question or a disengaged audience - and tying your self-worth to things you cannot control means living under a constant threat, one that quietly erodes your confidence and eventually the talk itself. When others' approval becomes the measure of your value, any moment that withholds it feels like an attack on your identity. The role of 'expert presenter' can be taken away at any time. Your curiosity and your genuine interest in the problem cannot. Build your identity (and your talk) around those, not around being impressive.
+If your sense of self-worth depends on how well your presentation is received, you're in trouble before you even open your mouth. You cannot fully control the audience - someone might ask a tough question, or people might seem disengaged - and tying your self-worth to things you cannot control means living under a constant threat, one that quietly kills your confidence and eventually the talk itself. When others' approval becomes the measure of your value, any moment that withholds it feels like a personal attack. The role of 'expert presenter' can be taken away at any time. Your curiosity and your genuine interest in the problem cannot. Build your identity (and your talk) around those, not around being impressive.
 
 This requires accepting your weaknesses honestly. Every presenter has specific, real ones - rushing through slides, over-explaining, avoiding eye contact. The temptation is to either ignore them or feel guilty about them. Neither helps. The productive move is to name them clearly, accept that they exist, and work on them one at a time. You don't have to fix everything at once, and some things may never be fully fixed, and that's fine too.
 
@@ -53,9 +53,9 @@ One thing is always true regardless of audience: people are lazy. Not in a bad w
 
 # What is the Intuition?
 
-A useful way to think about intuition is through the lens of a knowledge graph. Imagine that everything a person understands is a node in a graph, and understanding means being well-connected; the more links a concept has to other concepts, the more robustly it is understood. By this view, intuition is the "simplest" explanation that maximizes connectivity. A formal definition or an equation may be technically precise, but it often connects to very few existing nodes for most audiences - it hangs loosely, weakly linked, and is quickly forgotten. A good intuition, by contrast, borrows the connectivity of something the audience already knows well, showing that the new concept is really just a familiar idea in disguise.
+A useful way to think about intuition is through the lens of a knowledge graph. Imagine that everything a person understands is a node in a graph, and understanding means being well-connected; the more links a concept has to other concepts, the more robustly it is understood. By this view, intuition is the "simplest" explanation that maximizes connectivity. A formal definition or an equation may be technically precise, but it often connects to very few existing nodes for most audiences, and what is weakly linked is quickly forgotten. A good intuition, by contrast, borrows the connectivity of something the audience already knows well, showing that the new concept is really just a familiar idea in disguise.
 
-This also explains why intuition is audience-dependent. The same explanation can be deeply connective for one group and completely isolated for another, depending on what's already in their graph. A physicist and a software engineer may need entirely different bridge nodes to reach the same concept. And it explains the levels of understanding described earlier: each new viewpoint adds new connections. The more clusters you can link a concept to, the more robustly it is represented, and the more naturally it will be recalled and applied later. So the practical question when preparing a talk is not "how do I explain this correctly?" but rather: what does this audience's common graph already look like, and which path through it leads most naturally to what I want them to understand? It's about communication in the first place, and then about correctness.
+This also explains why intuition is audience-dependent. The same explanation can be deeply connective for one group and completely isolated for another, depending on what's already in their graph. A physicist and a software engineer may need different bridge nodes to reach the same concept. And it explains the levels of understanding described earlier: each new viewpoint adds new connections. The more clusters you can link a concept to, the more robustly it is represented, and the more naturally it will be recalled and applied later. So the practical question when preparing a talk is not "how do I explain this correctly?" but rather: what does this audience's common graph already look like, and which path through it leads most naturally to what I want them to understand? It's about communication in the first place, and then about correctness.
 
 ---
 # More is Sometimes Less
@@ -72,7 +72,7 @@ Ask yourself: what is the single sentence that summarizes this talk? What is the
 
 A talk and a paper have a similar structure, but the emphasis is completely different. In a talk, the motivation and the problem itself should take up almost a third or sometimes a half of the time, ideally with real-life examples or demos. Most of the audience won't fully follow the technical solution anyway, and that's fine. Your job is to convey the intuition behind it: what is the core idea? Why does it work?
 
-Equations are a particular danger. Many people automatically switch off the moment they see a formula, without even giving the presenter a chance. If you must include one, don't spend time on notation or derivation, just explain what it says. What is the intuition? What does this expression want to communicate? That single sentence (or a well-placed illustration) is worth more than introducing useless notation or any algebraic manipulation that nobody will remember by the next slide.
+Equations are a particular danger. Many people automatically switch off the moment they see a formula, without even giving the presenter a chance. If you must include one, don't spend time on derivation, just explain what it says. What is the intuition? What does this expression want to communicate? That single sentence (or a well-placed illustration) is worth more than introducing useless notation or any algebraic manipulation that nobody will remember by the next slide.
 
 On slides more generally: people have limited focusing capacity. Either they're listening to you or they're reading your slides, but rarely both at once. Too much text forces them to read and stops them from listening. Images, diagrams, and animations are preferable. What matters is what you say, not what's written behind you. The word "talk" is a hint.
 
@@ -86,11 +86,13 @@ People are [naturally drawn to stories](https://perceiving-systems.blog/en/post/
 
 ---
 
-# Culture
+# Questions
 
-Presentation style varies significantly across cultures, and it's worth being aware of this both as a presenter and as an audience member. Individualist cultures tend to produce presenters who are more self-referential, direct, and comfortable with self-promotion. This often translates to a more confident, assertive delivery, which audiences tend to find engaging.
+Questions are the best implicit feedback a talk can receive. If people ask, it means they got engaged, and that is one of the main purposes of a talk. No questions, on the other hand, often indicates a lack of engagement, or that the audience lost the thread somewhere along the way. Some presenters deliberately leave out important details to provoke curiosity and draw the audience in. It's a risky move, but it can work.
 
-Similarly, questions vary culturally. Some audiences don't ask out of respect; others because they never received positive reinforcement for asking; others because they fear looking stupid. In more collectivist cultures, people may not raise their hand, but their eyes will tell you more. Recognizing those signals is very difficult if you are unfamiliar with their culture. As a presenter, creating an environment where questions feel safe is part of the job.
+That said, the absence of questions does not always mean the talk was bad. Some audiences don't ask out of respect; others because they fear looking stupid; others simply because they never got positive reinforcement for asking. Questions vary culturally too. In more collectivist cultures, people may not raise their hand, but their eyes will often tell you. 
+
+As a presenter, creating an environment where questions feel safe is part of the job. A good starting point is to remember that there are no stupid questions; if someone is confused, it is almost always because something wasn't explained clearly enough, not because the person is slow. When you get a question, answer it directly. Sometimes the honest answer is "I don't know," and that is perfectly fine. Sometimes it's simply "yes" or "no," and that is fine too. 
 
 ---
 
@@ -106,7 +108,7 @@ Self-confidence comes from mastery, not from pep talks. You become a confident p
 
 # Watch Good Talks, and Watch Yourself
 
-For a long time I assumed I had some deficiency because I could barely follow technical talks as an undergraduate, and for a while even after that. It wasn't until I attended a genuinely good talk - one where the speaker took special care to build intuition (on "my" level) before formalism - that I realized what had been missing. A good talk is not about technical soundness. It's about communication. The speaker's job is to simplify, sometimes at the cost of precision, in order to hold attention and motivate the audience to go read the actual paper.
+For a long time I assumed I had some deficiency because I could barely follow technical talks as an undergraduate, and for a while even after that. It wasn't until I attended a genuinely good talk - one where the speaker took special care to build intuition before formalism - that I realized what had been missing. A good talk is not about technical soundness. It's about communication. The speaker's job is to simplify, sometimes at the cost of precision, in order to hold attention and motivate the audience to go read the actual paper.
 
 Equally important: record yourself and watch it back. It's uncomfortable precisely because it closes the gap between how you imagine you come across and how you actually do. That gap is where all the useful information lives.
 
