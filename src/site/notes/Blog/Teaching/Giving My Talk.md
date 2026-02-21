@@ -1,11 +1,11 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-21T12:22:33.016+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-21T12:31:00.253+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are precisely what industry finds missing in fresh graduates. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
 
 ---
-## Why Give a Talk at All?
+# Why Give a Talk at All?
 
 Before thinking about how to give a good talk, it's worth asking why you're giving one. The reasons matter more than you might think.
 
@@ -19,7 +19,7 @@ Finally, giving talks improves your general ability to communicate. If you can e
 
 ---
 
-## It Starts with You, Not the Audience
+# It Starts with You, Not the Audience
 
 Here is something that took me a while to internalize: the talk is more about you than the audience. You have to enjoy your own talk first. If you don't, the audience won't either. So the first question to ask yourself is not "what does the audience want to hear?" but "what am I genuinely enthusiastic about?"
 
@@ -29,7 +29,7 @@ This also means acting like a teacher, not a student. Many students have been co
 
 ---
 
-## Self-Worth and Self-Confidence
+# Self-Worth and Self-Confidence
 
 Most advice about public speaking focuses on technique; slow down, speak up, make eye contact, don't read off your slides. All of that is useful. But there's a deeper issue that technique alone won't fix: how you relate to the talk itself, and what you think it says about you.
 
@@ -41,7 +41,7 @@ And don't let negative labels stick, whether they come from yourself or from oth
 
 ---
 
-## Know Your Audience
+# Know Your Audience
 
 A talk that works brilliantly for experts will fail completely for a general audience, and vice versa. This is one of the most common mistakes.
 
@@ -58,7 +58,7 @@ A useful way to think about intuition is through the lens of a knowledge graph. 
 This also explains why intuition is audience-dependent. The same explanation can be deeply connective for one group and completely isolated for another, depending on what's already in their graph. A physicist and a software engineer may need entirely different bridge nodes to reach the same concept. And it explains the levels of understanding described earlier: each new viewpoint adds new connections. The more clusters you can link a concept to, the more robustly it is represented, and the more naturally it will be recalled and applied later. So the practical question when preparing a talk is not "how do I explain this correctly?" but rather: what does this audience's common graph already look like, and which path through it leads most naturally to what I want them to understand? It's about communication in the first place, and then about correctness.
 
 ---
-## More is Sometimes Less
+# More is Sometimes Less
 
 This is particularly true for talks, though it applies to [[Blog/Teaching/Writing My Technical Paper\|writing]] as well. I often find myself getting excited about a topic and wandering into rabbit holes; side details, edge cases, subtleties that matter to me but lose the audience. The enthusiasm is genuine, but it works against communication.
 
@@ -68,7 +68,7 @@ Ask yourself: what is the single sentence that summarizes this talk? What is the
 
 ---
 
-## Structure: Motivation First, Intuition Over Formalism
+# Structure: Motivation First, Intuition Over Formalism
 
 A talk and a paper have a similar structure, but the emphasis is completely different. In a talk, the motivation and the problem itself should take up almost a third or sometimes a half of the time, ideally with real-life examples or demos. Most of the audience won't fully follow the technical solution anyway, and that's fine. Your job is to convey the intuition behind it: what is the core idea? Why does it work?
 
@@ -80,13 +80,13 @@ Finally, don't confuse a summary with a takeaway. A summary recaps what you said
 
 ---
 
-## Storytelling
+# Storytelling
 
 People are [naturally drawn to stories](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper). The motivation section is the most natural place for storytelling, but it can appear anywhere in a talk. When I notice I'm losing the audience  - eyes glazing over, phones appearing - I try to come back to a concrete story or example. It almost always helps.
 
 ---
 
-## Culture
+# Culture
 
 Presentation style varies significantly across cultures, and it's worth being aware of this both as a presenter and as an audience member. Individualist cultures tend to produce presenters who are more self-referential, direct, and comfortable with self-promotion. This often translates to a more confident, assertive delivery, which audiences tend to find engaging.
 
@@ -94,7 +94,7 @@ Similarly, questions vary culturally. Some audiences don't ask out of respect; o
 
 ---
 
-## Practice
+# Practice
 
 The importance of practicing out loud cannot be overstated, and it is completely different from practicing in your head. In high school I used to summarize lectures out loud to myself, and it worked surprisingly well. You are literally tuning your brain to speak.
 
@@ -104,7 +104,7 @@ Self-confidence comes from mastery, not from pep talks. You become a confident p
 
 ---
 
-## Watch Good Talks, and Watch Yourself
+# Watch Good Talks, and Watch Yourself
 
 For a long time I assumed I had some deficiency because I could barely follow technical talks as an undergraduate, and for a while even after that. It wasn't until I attended a genuinely good talk - one where the speaker took special care to build intuition (on "my" level) before formalism - that I realized what had been missing. A good talk is not about technical soundness. It's about communication. The speaker's job is to simplify, sometimes at the cost of precision, in order to hold attention and motivate the audience to go read the actual paper.
 
@@ -112,7 +112,7 @@ Equally important: record yourself and watch it back. It's uncomfortable precise
 
 ---
 
-## What Can You Lose?
+# What Can You Lose?
 
 People often say you can't lose with a bad talk. That's mostly true for a single talk, since audiences forget quickly, and in a conference setting, your paper matters far more than your presentation. Even in a thesis defense, the reviewers' judgment of the written work is what counts.
 
@@ -122,7 +122,7 @@ Giving a talk is a lot like cooking. Sometimes it comes out well, sometimes it d
 
 ---
 
-## Final Note
+# Final Note
 
 Don't get too caught up in the nuances - the balance of text and figures, eye contact, timing, font sizes, slide layouts, whether you thank the audience on the final slide or not. These details can help at the margin, but none of them is what makes or breaks a talk.
 
