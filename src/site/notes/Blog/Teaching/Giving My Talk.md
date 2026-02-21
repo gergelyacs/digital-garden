@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-21T09:45:00.794+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-21T10:08:17.291+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are precisely what industry finds missing in fresh graduates. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -31,7 +31,7 @@ This also means acting like a teacher, not a student. Many students have been co
 
 Most advice about public speaking focuses on technique; slow down, make eye contact, don't read off your slides. All of that is useful. But there's a deeper issue that technique alone won't fix: how you relate to the talk itself, and what you think it says about you.
 
-If your sense of self-worth depends on how well your presentation is received, you're in trouble before you even open your mouth. A tough question, a disengaged audience, a joke that lands badly - these become existential threats rather than just awkward moments. The role of "expert presenter" can be taken away at any time. Your curiosity, your genuine interest in the problem cannot. Build your identity around those, not around being impressive.
+If your sense of self-worth depends on how well your presentation is received, you're in trouble before you even open your mouth. Audience reception is not fully under your control - a tough question or a disengaged audience - and tying your self-worth to things you cannot control means living under a constant threat, one that quietly erodes your confidence and eventually the talk itself. When others' approval becomes the measure of your value, any moment that withholds it feels like an attack on your identity. The role of 'expert presenter' can be taken away at any time. Your curiosity and your genuine interest in the problem cannot. Build your identity around those, not around being impressive.
 
 This requires accepting your weaknesses honestly. Every presenter has specific, real ones - rushing through slides, over-explaining, avoiding eye contact. The temptation is to either ignore them or feel guilty about them. Neither helps. The productive move is to name them clearly, accept that they exist, and work on them one at a time. You don't have to fix everything at once, and accept if they cannot be fixed.
 
