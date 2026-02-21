@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-21T10:08:17.291+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-21T11:51:56.854+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are precisely what industry finds missing in fresh graduates. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -29,13 +29,13 @@ This also means acting like a teacher, not a student. Many students have been co
 
 ## Self-Worth and Self-Confidence
 
-Most advice about public speaking focuses on technique; slow down, make eye contact, don't read off your slides. All of that is useful. But there's a deeper issue that technique alone won't fix: how you relate to the talk itself, and what you think it says about you.
+Most advice about public speaking focuses on technique; slow down, speak up, make eye contact, don't read off your slides. All of that is useful. But there's a deeper issue that technique alone won't fix: how you relate to the talk itself, and what you think it says about you.
 
-If your sense of self-worth depends on how well your presentation is received, you're in trouble before you even open your mouth. Audience reception is not fully under your control - a tough question or a disengaged audience - and tying your self-worth to things you cannot control means living under a constant threat, one that quietly erodes your confidence and eventually the talk itself. When others' approval becomes the measure of your value, any moment that withholds it feels like an attack on your identity. The role of 'expert presenter' can be taken away at any time. Your curiosity and your genuine interest in the problem cannot. Build your identity around those, not around being impressive.
+If your sense of self-worth depends on how well your presentation is received, you're in trouble before you even open your mouth. Audience reception is not fully under your control - a tough question or a disengaged audience - and tying your self-worth to things you cannot control means living under a constant threat, one that quietly erodes your confidence and eventually the talk itself. When others' approval becomes the measure of your value, any moment that withholds it feels like an attack on your identity. The role of 'expert presenter' can be taken away at any time. Your curiosity and your genuine interest in the problem cannot. Build your identity (and your talk) around those, not around being impressive.
 
-This requires accepting your weaknesses honestly. Every presenter has specific, real ones - rushing through slides, over-explaining, avoiding eye contact. The temptation is to either ignore them or feel guilty about them. Neither helps. The productive move is to name them clearly, accept that they exist, and work on them one at a time. You don't have to fix everything at once, and accept if they cannot be fixed.
+This requires accepting your weaknesses honestly. Every presenter has specific, real ones - rushing through slides, over-explaining, avoiding eye contact. The temptation is to either ignore them or feel guilty about them. Neither helps. The productive move is to name them clearly, accept that they exist, and work on them one at a time. You don't have to fix everything at once, and some things may never be fully fixed, and that's fine too.
 
-And don't let negative self-labels stick. "I'm not a good speaker" is a prediction disguised as a fact. Once you believe it, you behave accordingly, and the belief confirms itself. Treat your current limitations as habits, not traits - things that came from somewhere and can be changed with effort. I've attended brilliant talks given by people who were shy, soft-spoken, fast-talking, or slow. Style matters far less than substance and engagement.
+And don't let negative labels stick, whether they come from yourself or from others. People will put you in boxes no matter what you do: too shy, too quiet, too fast, too slow. Once you believe a label, you behave accordingly, and the belief confirms itself. Treat your current limitations as habits, not traits - things that came from somewhere and can be changed with effort. And if they can't, accept them and move on. I've attended brilliant talks given by people who were shy, soft-spoken, fast-talking, or slow. Style matters far less than substance and genuine engagement.
 
 ---
 
@@ -70,7 +70,7 @@ Ask yourself: what is the single sentence that summarizes this talk? What is the
 
 A talk and a paper have a similar structure, but the emphasis is completely different. In a talk, the motivation and the problem itself should take up almost a third or sometimes a half of the time, ideally with real-life examples or demos. Most of the audience won't fully follow the technical solution anyway, and that's fine. Your job is to convey the intuition behind it: what is the core idea? Why does it work?
 
-Equations are a particular danger. Many people automatically switch off the moment they see a formula, without even giving the presenter a chance. If you must include one, don't spend time on notation or derivation, just explain what it says. What is the intuition? What does this expression want to communicate? That single sentence is worth more than introducing useless notation or any algebraic manipulation that nobody will remember by the next slide.
+Equations are a particular danger. Many people automatically switch off the moment they see a formula, without even giving the presenter a chance. If you must include one, don't spend time on notation or derivation, just explain what it says. What is the intuition? What does this expression want to communicate? That single sentence (or a well-placed illustration) is worth more than introducing useless notation or any algebraic manipulation that nobody will remember by the next slide.
 
 On slides more generally: people have limited focusing capacity. Either they're listening to you or they're reading your slides, but rarely both at once. Too much text forces them to read and stops them from listening. Images, diagrams, and animations are preferable. What matters is what you say, not what's written behind you. The word "talk" is a hint.
 
@@ -104,7 +104,7 @@ Self-confidence comes from mastery, not from pep talks. You become a confident p
 
 ## Watch Good Talks, and Watch Yourself
 
-For a long time I assumed I had some deficiency because I could barely follow technical talks as an undergraduate, and for a while even after that. It wasn't until I attended a genuinely good talk - one where the speaker took special care to build intuition on "my" level before formalism - that I realized what had been missing. A good talk is not about technical soundness. It's about communication. The speaker's job is to simplify, sometimes at the cost of precision, in order to hold attention and motivate the audience to go read the actual paper.
+For a long time I assumed I had some deficiency because I could barely follow technical talks as an undergraduate, and for a while even after that. It wasn't until I attended a genuinely good talk - one where the speaker took special care to build intuition (on "my" level) before formalism - that I realized what had been missing. A good talk is not about technical soundness. It's about communication. The speaker's job is to simplify, sometimes at the cost of precision, in order to hold attention and motivate the audience to go read the actual paper.
 
 Equally important: record yourself and watch it back. It's uncomfortable precisely because it closes the gap between how you imagine you come across and how you actually do. That gap is where all the useful information lives.
 
@@ -114,9 +114,9 @@ Equally important: record yourself and watch it back. It's uncomfortable precise
 
 People often say you can't lose with a bad talk. That's mostly true for a single talk, since audiences forget quickly, and in a conference setting, your paper matters far more than your presentation. Even in a thesis defense, the reviewers' judgment of the written work is what counts.
 
-What you can lose is being remembered. A good talk makes people remember you; a bad one means they forget you a little faster. What really matters is consistency - if you consistently deliver poor talks as a teacher, that accumulates. A single bad talk is nothing to worry about; the variance in quality is part of being human. The goal is simply to notice when you're consistently underperforming and do something about it.
+What you can lose is being remembered. A good talk makes people remember you; a bad one means they forget you a little faster. What really matters is consistency - if you consistently deliver poor talks as a teacher, that accumulates. A single bad talk is nothing to worry about; the variance in quality is part of being human. As Maxwell Maltz put it: _"We make mistakes, mistakes don't make us."_ A bad talk is something that happened. It is not who you are. The goal is simply to notice when you're consistently underperforming and do something about it.
 
-Giving a talk is a lot like cooking. Sometimes it comes out well, sometimes it doesn't, and the reasons are often beyond your control because there too many random factors. A bad night's sleep, a personal problem, technical difficulties - all of these affect the result in ways that no amount of preparation can fully neutralize. The honest thing to do is accept this rather than pretend otherwise. Most food is enjoyable enough when people are hungry, and most talks land well enough when the audience really wants to learn something. As Maxwell Maltz put it: _"We make mistakes, mistakes don't make us."_ A bad talk is something that happened. It is not who you are.
+Giving a talk is a lot like cooking. Sometimes it comes out well, sometimes it doesn't, and the reasons are often beyond your control. A bad night's sleep, a personal problem, technical difficulties - all of these affect the result in ways that no amount of preparation can fully neutralize. The honest thing to do is accept this rather than pretend otherwise. Most food is enjoyable enough when people are hungry, and most talks land well enough when the audience really wants to learn something. 
 
 ---
 
