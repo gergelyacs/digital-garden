@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-22T10:58:04.479+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-22T12:01:57.792+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are precisely what industry finds missing in fresh graduates. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -33,7 +33,7 @@ This also means acting like a teacher, not a student. Many students have been co
 
 Most advice about public speaking focuses on technique; slow down, speak up, make eye contact, don't read off your slides. All of that is useful. But there's a deeper issue that technique alone won't fix: how you relate to the talk itself, and what you think it says about you.
 
-If your sense of self-worth depends on how well your presentation is received, you're in trouble before you even open your mouth. You cannot fully control the audience - someone might ask a tough question, or people might seem disengaged - and tying your self-worth to things you cannot control means living under a constant threat, one that quietly kills your confidence and eventually the talk itself. When others' approval becomes the measure of your value, any moment that withholds it feels like a personal attack. The role of 'expert presenter' can be taken away at any time. Your curiosity and your genuine interest in the problem cannot. Build your identity (and your talk) around those, not around being impressive.
+Self-confidence is crucial for a good talk, and it can be earned through mastery and experience. But any practice, tricks, or advice are in vain if your self-worth is already tied to how well your presentation is received. If that's the case, you're in trouble before you even open your mouth. You cannot fully control the audience - someone might ask a tough question, or people might seem disengaged - and tying your self-worth to things you cannot control means living under a constant threat, one that quietly kills your confidence and eventually the talk itself. When others' approval becomes the measure of your value, any moment that withholds it can make your self-confidence evaporate no matter how much you practice. The role of 'expert presenter' can be taken away at any time. Your curiosity and your genuine interest in the problem cannot. Build your identity (and your talk) around those, not around being impressive.
 
 This requires accepting your weaknesses honestly. Every presenter has specific, real ones - rushing through slides, over-explaining, avoiding eye contact. The temptation is to either ignore them or feel guilty about them. Neither helps. The productive move is to name them clearly, accept that they exist, and work on them one at a time. You don't have to fix everything at once, and some things may never be fully fixed, and that's fine too.
 
@@ -118,7 +118,7 @@ The importance of practicing out loud cannot be overstated, and it is completely
 
 A useful mindset shift: giving a talk to a hundred people is not fundamentally different from explaining something to one person face to face. You don't need to be more careful, more formal, or more perfect. People actually like causal presenters; it signals honesty and confidence. Think about how you'd explain it to a colleague over coffee, that's roughly what you should do in front of an audience. 
 
-Self-confidence comes from mastery, not from pep talks. You become a confident presenter by presenting repeatedly, out loud, in front of real people. The physical experience of speaking, pausing, losing your thread and recovering, that's where real confidence is built. The best presenters aren't necessarily the most naturally gifted ones. They're the ones who practiced enough to make it look that way.
+But no matter how many rehearsals you do, real confidence only comes from real experience. You become a confident presenter by presenting repeatedly, out loud, in front of real people. The physical experience of speaking, pausing, losing your thread and recovering, that's where real confidence is built. The best presenters aren't necessarily the most naturally gifted ones. They're the ones who practiced enough to make it look that way.
 
 ---
 
@@ -126,7 +126,7 @@ Self-confidence comes from mastery, not from pep talks. You become a confident p
 
 For a long time I assumed I had some deficiency because I could barely follow technical talks as an undergraduate, and for a while even after that. It wasn't until I attended a genuinely good talk - one where the speaker took special care to build intuition before formalism - that I realized what had been missing. A good talk is not about technical soundness. It's about communication. The speaker's job is to simplify, sometimes at the cost of precision, in order to hold attention and motivate the audience to go read the actual paper.
 
-Equally important: record yourself and watch it back. It's uncomfortable precisely because it closes the gap between how you imagine you come across and how you actually do. That gap is where all the useful information lives.
+Equally important: record yourself and watch it back. It's uncomfortable precisely because it closes the gap between how you imagine you come across and how you actually do. Painful and sometimes embarrassing, but you can't improve what you can't see, and the recording shows you exactly what to fix.
 
 ---
 
