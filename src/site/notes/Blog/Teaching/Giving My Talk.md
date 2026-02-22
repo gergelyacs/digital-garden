@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-22T12:25:56.356+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-22T12:35:36.611+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are precisely what industry finds missing in fresh graduates. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -86,7 +86,7 @@ Finally, don't confuse a summary with a takeaway. A summary recaps what you said
 
 # Format
 
-Format serves the goal, not the reverse - the ends justify the means here, as long as your choices help the audience understand. What follows are a few practical things that may help.
+The ends justify the means here - as long as your format helps the audience understand, anything goes. What follows are a few practical things that may help.
 
 The overriding principle is simple: anything that makes your message harder to receive is a problem. This includes distracting backgrounds, logos and status bars that compete with your content, fonts that fit the template's style yet are hard to read from the back of the room, and insufficient contrast between text and background. Always include slide numbers so people can refer back during questions. When you reach the Q&A, leave your conclusion slide on screen rather than returning to a title slide or blank - it keeps the key message visible while people are thinking.
 
