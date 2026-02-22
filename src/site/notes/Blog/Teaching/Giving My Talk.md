@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-21T22:48:49.179+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-22T09:45:37.692+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are precisely what industry finds missing in fresh graduates. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -9,7 +9,7 @@ Mass education in universities has many drawbacks, and one of the most significa
 
 Before thinking about how to give a good talk, it's worth asking why you're giving one. The reasons matter more than you might think.
 
-For students, the most basic (and most limiting) reason is simply to defend their work. This is partly why I dislike the term 'defense.' It easily leads to a talk focused on proving knowledge rather than communicating it, which is the wrong instinct entirely. The audience doesn't want to be impressed; they want to understand. A better goal is to motivate people, to share something you find genuinely interesting and make them feel the same way, or at the very least to make them want to read your paper.
+For students, the most basic (and most limiting) reason is simply to defend their work. This is partly why I dislike the term 'defense.' It easily leads to a talk focused on proving knowledge rather than communicating it, which is the wrong instinct entirely. The audience doesn't want to be impressed; they want to understand and learn. A better goal is to motivate people, to share something you find genuinely interesting and make them feel the same way, or at the very least to make them want to read your paper.
 
 Beyond that, there are less visible motivations to give talk that I find equally valuable. I often accept invitations simply to force myself to read and understand something I've been putting off. Preparing a talk is one of the best ways to learn, and for me, that alone is reason enough.
 
@@ -70,13 +70,29 @@ Ask yourself: what is the single sentence that summarizes this talk? What is the
 
 # Structure: Motivation First, Intuition Over Formalism
 
-A talk and a paper have a similar structure, but the emphasis is completely different. In a talk, the motivation and the problem itself should take up almost a third or sometimes a half of the time, ideally with real-life examples or demos. Most of the audience won't fully follow the technical solution anyway, and that's fine. Your job is to convey the intuition behind it: what is the core idea? Why does it work?
+A talk and a [[Blog/Teaching/Writing My Technical Paper\|paper]] have a similar structure, but the emphasis is different. In a talk, the motivation and the problem should take up almost a third - sometimes even half - of the time, ideally with real-life examples or demos.
+
+A common mistake, especially among students, is to rush through this part or skip it almost entirely, assuming the audience already knows why the problem matters and is just waiting for the solution. This is almost always wrong. Motivation means explaining why the problem exists in the first place, preferably through a concrete, relatable example, and what the real impact would be if it remained unsolved, whether socially, economically, or technically. This part should be emotionally compelling rather than precise. 
+
+The problem definition that follows should be more (but not overly) precise, laying out the model and the assumptions clearly. Together, motivation and problem definition set up the goal of your talk, and the audience needs time to digest both. Remember that they may have just come from a completely different talk and need a moment to switch context. You have to be sure that by the time you reach your solution, everyone in the room understands and remembers the problem well.
+
+This matters because the solution is likely to be missed anyway if it is too technical. But if the motivation and the problem are not crystal clear to everyone in the room, the whole talk is in vain. Your job is to convey the intuition behind the solution: what is the core idea, and why does it work?
 
 Equations are a particular danger. Many people automatically switch off the moment they see a formula, without even giving the presenter a chance. If you must include one, don't spend time on derivation, just explain what it says. What is the intuition? What does this expression want to communicate? That single sentence (or a well-placed illustration) is worth more than introducing useless notation or any algebraic manipulation that nobody will remember by the next slide.
 
-On slides more generally: people have limited focusing capacity. Either they're listening to you or they're reading your slides, but rarely both at once. Too much text forces them to read and stops them from listening. Images, diagrams, and animations are preferable. What matters is what you say, not what's written behind you. The word "talk" is a hint.
-
 Finally, don't confuse a summary with a takeaway. A summary recaps what you said. A takeaway tells the audience what to do with it - the potential impact, the open question, the thing worth remembering. After a ten-minute talk, a summary is unnecessary. A good takeaway never is.
+
+---
+
+# Format
+
+Format serves the goal, not the reverse - the ends justify the means here, as long as your choices help the audience understand. What follows are a few practical things that may help.
+
+The overriding principle is simple: anything that makes your message harder to receive is a problem. This includes distracting backgrounds, logos and status bars that compete with your content, fonts that fit the template's style yet are hard to read from the back of the room, and insufficient contrast between text and background. Always include slide numbers so people can refer back during questions. When you reach the Q&A, leave your conclusion slide on screen rather than returning to a title slide or blank - it keeps the key message visible while people are thinking.
+
+People have limited focusing capacity, they are either listening to you or reading your slides, rarely both at once. Too much text and too many distracting elements pull their attention away from what you're saying, so simple images, diagrams, and animations are generally preferable. But keep transitions and animations minimal; flashy effects draw attention to themselves rather than to your content. If you use code, equations, or dense figures, ask yourself whether a simpler version would do the job just as well, it usually would. And avoid putting anything on a slide you don't intend to address: if it's there, people will read it and wonder why you skipped it, stealing their attention for no purpose.
+
+Remember that what matters most is what you say, not what's written behind you, hence the word 'talk'. Slides are there to serve the talk, not the other way around. 
 
 ---
 
