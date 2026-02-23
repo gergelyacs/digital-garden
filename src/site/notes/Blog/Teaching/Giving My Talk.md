@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-23T09:07:31.381+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-23T10:13:49.889+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are precisely what industry finds missing in fresh graduates. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -33,7 +33,7 @@ This also means acting like a teacher, not a student. Many students have been co
 
 Most advice about public speaking focuses on technique; slow down, speak up, make eye contact, don't read off your slides. All of that is useful. But there's a deeper issue that technique alone won't fix: how you relate to the talk itself, and what you think it says about you.
 
-Self-confidence is crucial for a good talk, and it can be earned through mastery and experience. But any practice, tricks, or advice are in vain if your self-worth is already tied to how well your presentation is received. If that's the case, you're in trouble before you even open your mouth. You cannot fully control the audience - someone might ask a tough question, or people might seem disengaged - and tying your self-worth to things you cannot control means living under a constant threat, one that quietly kills your confidence and eventually the talk itself. The role of 'expert presenter' can be taken away at any time. Your curiosity and your genuine interest in the problem cannot. Build your identity (and your talk) around those, not around being impressive.
+Self-confidence is crucial for a good talk, and it can be earned through mastery and experience. But if your self-worth is already tied to how well your presentation is received, you're in trouble before you even open your mouth. You cannot fully control the audience - someone might ask a tough question, or people might seem disengaged - and tying your self-worth to things you cannot control means living under a constant threat, one that quietly kills your confidence and eventually the talk itself. The role of 'expert presenter' can be taken away at any time. Your curiosity and your genuine interest in the problem cannot. Build your identity (and your talk) around those, not around being impressive.
 
 This requires accepting your weaknesses honestly. Every presenter has specific, real ones - rushing through slides, over-explaining, avoiding eye contact. The temptation is to either ignore them or feel guilty about them. Neither helps. The productive move is to name them clearly, accept that they exist, and work on them one at a time. You don't have to fix everything at once, and some things may never be fully fixed, and that's fine too.
 
@@ -72,7 +72,9 @@ Ask yourself: what is the single sentence that summarizes this talk? What is the
 
 A talk and a [[Blog/Teaching/Writing My Technical Paper\|paper]] have a similar structure, but the emphasis is different. In a talk, the motivation and the problem should take up almost a third - sometimes even half - of the time, ideally with real-life examples or demos.
 
-A common mistake, especially among students, is to rush through this part or skip it almost entirely, assuming the audience already knows why the problem matters and is just waiting for the solution. This is almost always wrong. Motivation means explaining why the problem exists in the first place, preferably through a concrete, relatable example, and what the real impact would be if it remained unsolved, whether socially, economically, or technically. This part should be emotionally compelling rather than precise. 
+A common mistake, especially among students, is to rush through this part or skip it almost entirely, assuming the audience already knows why the problem matters and is just waiting for the solution. This is almost always wrong. Even if they know the problem, they might have your viewpoint on that.
+
+Motivation means explaining why the problem exists in the first place, preferably through a concrete, relatable example, and what the real impact would be if it remained unsolved, whether socially, economically, or technically. This part should be emotionally compelling rather than precise. 
 
 The problem definition that follows should be more (but not overly) precise, laying out the model and the assumptions clearly. Together, motivation and problem definition set up the goal of your talk, and the audience needs enough _time_ to digest and memorize both. Remember that they may have just come from a completely different talk and need a moment to switch context. You have to be sure that by the time you reach your solution, everyone in the room understands and remembers the problem well.
 
