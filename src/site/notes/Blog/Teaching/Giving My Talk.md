@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-24T13:52:29.200+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-24T13:55:04.337+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are among the most underestimated skills in practice This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -88,9 +88,7 @@ Finally, don't confuse a summary with a takeaway. A summary recaps what you said
 
 # Format
 
-The ends justify the means here - as long as your format help the audience understand, anything goes. What follows are a few practical things that may help.
-
-The overriding principle is simple: anything that makes your message harder to receive is a problem. This includes distracting backgrounds, logos and status bars that compete for attention, fonts that fit the template's style yet are hard to read from the back of the room, and insufficient contrast between text and background. Always include slide numbers so people can refer back during questions. When you reach the Q&A, leave your conclusion slide on screen rather than returning to a title slide or blank - it keeps the key message visible while people are thinking.
+The ends justify the means here - as long as your format help the audience understand, anything goes, and anything that makes your message harder to receive is a problem. This includes distracting backgrounds, logos and status bars that compete for attention, fonts that fit the template's style yet are hard to read from the back of the room, and insufficient contrast between text and background. Always include slide numbers so people can refer back during questions. When you reach the Q&A, leave your conclusion slide on screen rather than returning to a title slide or blank - it keeps the key message visible while people are thinking.
 
 People have limited focusing capacity, they are either listening to you or reading your slides, rarely both at once. Too much text and too many distracting elements pull their attention away from what you're saying, so simple images, diagrams, and animations are generally preferable. But keep transitions and animations minimal; flashy effects draw attention to themselves rather than to your content. If you use code, equations, or dense figures, ask yourself whether a simpler version would do the job just as well, it usually would. And avoid putting anything on a slide you don't intend to address: if it's there, people will read it stealing their attention for no purpose.
 
