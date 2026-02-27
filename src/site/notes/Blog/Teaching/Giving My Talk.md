@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-27T11:31:23.342+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-27T11:35:16.717+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial skills in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -21,7 +21,7 @@ Finally, giving talks improves your general ability to communicate. If you can e
 
 # It Starts with You, Not the Audience
 
-Here is something that took me a while to internalize: the talk is more about you than the audience. You have to enjoy your own talk first. If you don't, the audience won't either. So the first question to ask yourself is not "what does the audience want to hear?" but "what am I genuinely enthusiastic about?"
+Here is something that took me a while to internalize: _the talk is more about you than the audience_. You have to enjoy your own talk first. If you don't, the audience won't either. So the first question to ask yourself is not "what does the audience want to hear?" but "what am I genuinely enthusiastic about?"
 
 Enthusiasm is contagious, but it has to be real. People tend to be more enthusiastic when they feel ownership over some part of what they're presenting - the problem, the motivation, or the solution - or when they just find the work really interesting. If you're presenting someone else's work without caring much about it, that will show. Find the angle that makes you care, spend more time on the parts that you find more interesting.
 
@@ -45,9 +45,9 @@ And don't let negative labels stick, whether they come from yourself or from oth
 
 A talk that works brilliantly for experts will fail completely for a general audience, and vice versa. This is one of the most common mistakes.
 
-The key concept here is intuition, which is finding the shortest explanation of the key idea that everyone in the audience can follow, and that connects most naturally to their existing knowledge. If the audience is diverse, that explanation needs to be universally accessible. If you can explain it so that a layman understands, you can adapt to any audience. And if you can't, then perhaps even you don't fully understand it yourself.
+The key concept here is _intuition_, which is finding the shortest explanation of the key idea that everyone in the audience can follow, and that connects most naturally to their existing knowledge. If the audience is diverse, that explanation needs to be universally accessible. If you can explain it so that a layman understands, you can adapt to any audience. And if you can't, then perhaps even you don't fully understand it yourself.
 
-One thing is always true regardless of audience: people are lazy. Not in a bad way - they've attended many talks before yours, they're tired, and they have limited attention. You have to make your message simple and intuitive, especially if you're speaking late in the day or last in a long session. Assume less prior knowledge than you think is necessary, and simplify further.
+One thing is always true regardless of audience: _people are lazy_. Not in a bad way - they've attended many talks before yours, they're tired, and they have limited attention. You have to make your message simple and intuitive, especially if you're speaking late in the day or last in a long session. Assume less prior knowledge than you think is necessary, and simplify further.
 
 ---
 
@@ -65,7 +65,7 @@ In this example, presenting only the mathematician's viewpoint would leave most 
 
 Note that the above presentation deliberately skips a few technically important details, such as $P$ must be stochastic and diagonalizable, conditions that may not hold in practice without the damping factor. But that is forgivable in a 10 minute talk. Dwelling on these details risks losing the audience before they become motivated enough to care about them.
 
-So the practical question when preparing a talk is not 'how do I explain this correctly?' but rather: what does this audience's knowledge graph already look like, and which path through it leads most naturally to what I want them to understand? It's about communication in the first place, and then about correctness.
+So the practical question when preparing a talk is not 'how do I explain this correctly?' but rather: what does this audience's knowledge graph already look like, and which path through it leads most naturally to what I want them to understand? It's about _communication in the first place, and then about correctness_.
 
 ---
 # More is Sometimes Less
@@ -74,7 +74,7 @@ This is particularly true for talks, though it applies to [[Blog/Teaching/Writin
 
 Interestingly, people who know less about a topic often present it better. A supervisor who only understands the essentials can sometimes give a clearer overview than the student who built the whole system. They haven't seen every dead end and aren't tempted to explain them. They understand only what needs to be understood, and that's exactly what they convey.
 
-Ask yourself: what is the single sentence that summarizes this talk? What is the one thing I want the audience to take away? If you can't answer that clearly, the talk isn't ready yet.
+Ask yourself: _what is the single sentence that summarizes this talk?_ What is the one thing I want the audience to take away? If you can't answer that clearly, the talk isn't ready yet.
 
 ---
 
