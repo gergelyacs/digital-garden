@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-28T20:36:25.792+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-28T20:38:14.066+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial skills in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -69,7 +69,7 @@ Why does the bowl exist, and why do we always end up at the same $\pi$ regardles
 $$
 P^kv=\sum_i c_i \lambda_i^k e_i​
 $$
-The Perron-Frobenius theorem guarantees that $P$ has a unique largest eigenvalue equal to 1, and that all other eigenvalues satisfy $|\lambda_i| < 1$. Therefore, as $k \to \infty$, all terms except the one corresponding to eigenvalue 1 decay to zero, and $P^k v \to c_m e_m$​, where $e_m$ is the eigenvector with eigenvalue 1. Since $v$ is a probability distribution and $e_m$ is normalized, $c_m = 1$, and so $P^k v \to \pi$. This explains both why the initial scores don't matter and why the votes magically stabilize.
+The Perron-Frobenius theorem guarantees that $P$ has a unique largest eigenvalue equal to 1, and that all other eigenvalues satisfy $|\lambda_i| < 1$. Therefore, as $k \to \infty$, all terms except the one corresponding to eigenvalue 1 decay to zero, and $P^k v \to c_m e_m$​, where $e_m$ is the eigenvector with eigenvalue 1. Since $v$ is a probability distribution and $e_m$ is normalized, $c_m = 1$, and so $P^k v \to \pi$. This explains both why the initial scores don't matter and why the token distribution magically stabilize.
 
 This may not be the perfect introduction to PageRank, but it illustrates how a complex topic can be introduced gradually, each step adding new connections to the audience's knowledge graph. The key is to go top-down rather than bottom-up. Start with a concrete analogy that anchors the concept in existing knowledge, and only then build toward the formal details. Time constraints require simplification, and simplification has a cost: the talk will not be fully precise. But that is the wrong thing to optimize for. The purpose is to motivate the audience to discover the full details themselves, and for that, a concrete story beats the Perron-Frobenius theorem every time.
 
