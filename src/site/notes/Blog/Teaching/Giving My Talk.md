@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-28T21:11:36.875+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-02-28T21:16:54.481+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial skills in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -49,7 +49,7 @@ The key concept here is _intuition_, which is finding the shortest explanation o
 
 Take the problem of computing the importance of every webpage on the internet - roughly what Google does. For a general audience, you probably wouldn't open with Markov chains. Instead, you might start with something like this: Think of it as deciding the most popular kid in school. Instead of just counting how many friends a kid has, we also care about how popular those friends are; an endorsement from a popular kid counts more than one from someone nobody knows. To measure popularity, we start by distributing a fixed number of tokens equally among all kids. Each round, every kid splits their tokens equally among their friends and passes them on. A kid accumulates more tokens if their friends are popular, since popular friends have more tokens to redistribute. After enough rounds, the number of tokens each kid holds magically stabilizes: the number received equals the number passed on. That stable token count is their final popularity ranking
 
-This is an oversimplification, of course, and it skips the mathematical details that actually explain why the votes stabilize. But that is fine. Dwelling on those details at the beginning risks losing the audience before they are motivated enough to care about them.
+This is an oversimplification, of course, and it skips the mathematical details that actually explain why the token counts stabilize. But that is fine. Dwelling on those details at the beginning risks losing the audience before they are motivated enough to care about them.
 
 One thing is always true regardless of audience: people are lazy. Not in a bad way - they've attended many talks before yours, they're tired, and they have limited attention. You have to make your message simple and intuitive, especially if you're speaking late in the day or last in a long session. Assume less prior knowledge than you think is necessary, and simplify further.
 
