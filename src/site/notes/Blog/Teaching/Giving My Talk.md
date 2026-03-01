@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T11:07:06.842+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T11:11:35.701+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial skills in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -68,7 +68,7 @@ In a longer lecture, however, we can go deeper. Think of all possible token dist
 
 To fully explain why the bowl exists and why we always end up at the same $\pi$ regardless of where we start, notice that $\pi = P \pi$ looks exactly like an eigenvector equation: $\pi$ is a vector that is completely unchanged by the transformation $P$. The full explanation follows from the eigenstructure and eigendecomposition of $P$, but from here, the mathematics gets heavier.
 
-This may not be the perfect introduction to Google's PageRank, but it illustrates how a complex topic can be introduced gradually, each step adding new connections to the audience's knowledge graph. The key is to go top-down rather than bottom-up. Start with a concrete analogy that anchors the concept in existing knowledge, and only then build toward the formal details if there is enough time. Physical analogies like the token distribution, the rolling ball, or the geometric intuitions behind linear algebra, are especially useful because they make abstract concepts more connected in our knowledge graph, which in turn makes them easier to recall and apply later in more complex topics.
+This may not be the perfect introduction to Google's PageRank, but it illustrates how a complex topic can be introduced gradually, each step adding new connections to the audience's knowledge graph. The key is to go top-down rather than bottom-up by first targeting the most central and well-connected nodes in the audience's existing knowledge. Start with a concrete analogy, and only then build toward the formal details if time allows. Physical analogies like the token distribution or the rolling ball, and geometric intuitions like those behind linear algebra, are especially useful because they connect abstract concepts to familiar ones, making them easier to recall and apply later even in more complex topics.
 
 ---
 # Communication comes first, correctness follows
