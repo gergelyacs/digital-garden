@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T08:52:59.340+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T09:11:04.595+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial skills in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -65,18 +65,18 @@ But why does this work, and why do the scores stabilize? The final popularity sc
 
 In a longer lecture, however, we can go deeper. Think of all possible token distributions among the webpages as points in a large space, and the redistribution rule as a map $P$, where $P_{ij} = 1/d_j$ if page $j$ links to page $i$, with $d_j$ being the number of outgoing links of page $j$. Applying $P$ pushes each point to a new location - most distributions are not yet consistent with the web structure, so they keep moving. But one special point doesn't move at all: the fixed point $\pi$ satisfying $\pi = P\pi$. Every other point is pulled toward it like a ball rolling to the bottom of a bowl.
 
-To fully explain why the bowl exists and why we always end up at the same $\pi$ regardless of where we start, notice that $\pi = P$ looks exactly like an eigenvector equation: $\pi$ is a vector that is completely unchanged by the transformation $P$. The full explanation follows from the eigenstructure and eigendecomposition of $P$, but from here, the mathematics gets heavier.
+To fully explain why the bowl exists and why we always end up at the same $\pi$ regardless of where we start, notice that $\pi = P \pi$ looks exactly like an eigenvector equation: $\pi$ is a vector that is completely unchanged by the transformation $P$. The full explanation follows from the eigenstructure and eigendecomposition of $P$, but from here, the mathematics gets heavier.
 
 This may not be the perfect introduction to Google's PageRank, but it illustrates how a complex topic can be introduced gradually, each step adding new connections to the audience's knowledge graph. The key is to go top-down rather than bottom-up. Start with a concrete analogy that anchors the concept in existing knowledge, and only then build toward the formal details if there is enough time. Physical analogies like the rolling ball, or the geometric intuitions behind linear algebra, are especially useful because they make abstract concepts more connected in our knowledge graph, which in turn makes them easier to recall and apply later in more complex topics like machine learning.
 
 ---
 # Communication comes first, correctness follows
 
-Time constraints require simplification, and simplification has a cost: the talk will not be fully precise. But that is the wrong thing to optimize for. Analogies and intuitions are never completely faithful, they deliberately sacrifice detail in order to keep the problem accessible. It's better to draw in as many people as possible than to lose them by sacrificing clarity on the altar of precision. The purpose is not completeness - it is to motivate the audience to discover the full details themselves.
+Time constraints require simplification, and simplification has a cost: the talk will not be fully precise. But that is the wrong thing to optimize for. Analogies and intuitions are never completely faithful, they deliberately sacrifice detail in order to keep the problem accessible. It's better to draw in as many people as possible than to lose them by sacrificing clarity on the altar of precision.
 
-If you know your audience well, you can skip some steps in the top-down presentation, but you always risk losing people, since audiences are never homogeneous. In the PageRank example, some engineers will be very familiar with the ergodic theorem while others won't. In any case, you will probably not have time to cover all the mathematics in a 15-minute talk.
+If you know your audience well, you can skip some steps in the top-down presentation to leave more time for the mathematics, but you always risk losing people, since audiences are never homogeneous. In any case, you will probably not have time to cover all the mathematics in a 15-minute talk.
 
-So the practical question when preparing a talk is not 'how do I explain this correctly?' but rather: what does this audience's knowledge graph already look like, and which path through it leads most naturally to what I want them to understand? A good talk is not about technical soundness, it's about communication. The speaker's job is to simplify, sometimes at the cost of precision, in order to hold attention and motivate the audience to go and read the actual paper.
+The purpose is not completeness - it is to motivate the audience to discover the full details themselves. So the practical question when preparing a talk is not 'how do I explain this correctly?' but rather: what does this audience's knowledge graph already look like, and which path through it leads most naturally to what I want them to understand? A good talk is not about technical soundness, it's about communication. The speaker's job is to simplify, sometimes at the cost of precision, in order to hold attention and motivate the audience to go and read the actual paper.
 
 ---
 # More is Sometimes Less
