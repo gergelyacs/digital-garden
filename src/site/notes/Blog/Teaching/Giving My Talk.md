@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T15:53:13.389+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T15:56:07.115+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial skills in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -67,6 +67,7 @@ Time constraints require simplification, and simplification has a cost: the talk
 The purpose is not completeness but to motivate the audience to discover the full details themselves. So the practical question when preparing a talk is not 'how do I explain this correctly?' but rather: what does this audience's knowledge graph already look like, and which path through it leads most naturally to what I want them to understand? A good talk is not about technical soundness, it's about communication. The speaker's job is to simplify, sometimes at the cost of precision, in order to hold attention and motivate the audience to go and read the actual paper.
 
 ---
+
 # More is Sometimes Less
 
 This is particularly true for talks, though it applies to [[Blog/Teaching/Writing My Technical Paper\|writing]] as well. I often find myself getting excited about a topic and wandering into rabbit holes; side details, edge cases, subtleties that matter to me but lose the audience. The enthusiasm is genuine, but it works against communication.
@@ -92,6 +93,7 @@ Equations are a particular danger. Many people automatically switch off the mome
 Finally, don't confuse a summary with a takeaway. A summary recaps what you said. A takeaway tells the audience what to do with it; the potential impact, the open question, the thing worth remembering. After a ten-minute talk, a summary may be unnecessary. A good takeaway never is.
 
 ---
+
 # An Example
 
 Take the problem of computing the importance of every webpage on the internet, roughly what Google does. The following may not be the perfect introduction to Google's PageRank, but it illustrates how a complex topic can be introduced gradually, each step adding new connections to the audience's knowledge graph.
@@ -127,6 +129,7 @@ The key is to go top-down rather than bottom-up by first targeting the most cent
 These observations are worth far more than a recap of the algorithm itself, especially in a short talk.
 
 ---
+
 # Format
 
 The ends justify the means here - as long as your format help the audience understand, anything goes, and anything that makes your message harder to receive is a problem. This includes distracting backgrounds, logos and status bars that compete for attention, fonts that fit the template's style yet are hard to read from the back of the room, and insufficient contrast between text and background. Always include slide numbers so people can refer back during questions. When you reach the Q&A, leave your conclusion slide on screen rather than returning to a title slide or blank - it keeps the key message visible while people are thinking.
