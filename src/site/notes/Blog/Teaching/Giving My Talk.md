@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T13:06:46.652+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T13:08:52.950+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial skills in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -109,7 +109,7 @@ Equations are a particular danger. Many people automatically switch off the mome
 
 Finally, don't confuse a summary with a takeaway. A summary recaps what you said. A takeaway tells the audience what to do with it; the potential impact, the open question, the thing worth remembering. After a ten-minute talk, a summary may be unnecessary. A good takeaway never is.
 
-In the PageRank example, a good takeaway is that importance scores reflecting the global structure of any graph can be computed through a simple local rule applied iteratively, since each node only needs to know the scores of its neighbors, and the global structure emerges from the iteration. This opens the door to many practical generalizations. More broadly, it is an instance of a fundamental principle: global properties can emerge from local rules. This appears everywhere, from physics to machine learning, and that single observation is worth far more than a recap of the algorithm itself.
+In the PageRank example, a good takeaway is that importance scores reflecting the global structure of any graph can be computed through a simple local rule applied iteratively, since each node only needs to know the scores of its neighbors, and the global structure emerges from the iteration. This opens the door to many practical generalizations, and that single observation is worth far more than a recap of the algorithm itself. More broadly, it is an instance of a fundamental principle: global properties can emerge from local rules. This appears everywhere, from physics to machine learning.
 
 ---
 
