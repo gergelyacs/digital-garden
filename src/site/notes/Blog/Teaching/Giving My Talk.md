@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T15:56:07.115+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T15:57:40.919+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial skills in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -118,7 +118,7 @@ But why does this work, and why do the scores stabilize?
 
 For many engineers, this is already enough. Even if some details are still fuzzy, they can now anchor webpage ranking as just another instance of a Markov chain. In a longer lecture, however, we can go deeper: 
 
-*Think of all possible token distributions among the webpages as points in a large space, and the redistribution rule as a map $P$, where $P_{ij} = 1/d_j$ if page $j$ links to page $i$, with $d_j$ being the number of outgoing links of page $j$. Applying $P$ pushes each point to a new location - most distributions are not yet consistent with the web structure, so they keep moving. But one special point doesn't move at all: the fixed point $\pi$ satisfying $\pi = P\pi$. Every other point is pulled toward it like a ball rolling to the bottom of a bowl.
+*Think of all possible token distributions among the webpages as points in a large space, and the redistribution rule as a map $P$, where $P_{ij} = 1/d_j$ if page $j$ links to page $i$, with $d_j$ being the number of outgoing links of page $j$. Applying $P$ pushes each point to a new location - most distributions are not yet consistent with the web structure, so they keep moving. But one special point doesn't move at all: the fixed point $\pi$ satisfying $\pi = P\pi$. Every other point is pulled toward it like a ball rolling to the bottom of a bowl.*
 
 *To fully explain why the bowl exists and why we always end up at the same $\pi$ regardless of where we start, notice that $\pi = P \pi$ looks exactly like an eigenvector equation: $\pi$ is a vector that is completely unchanged by the transformation $P$. The full explanation follows from the eigenstructure and eigendecomposition of $P$, but from here, the mathematics gets heavier.*
 
