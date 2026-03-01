@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T11:13:30.211+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T12:51:54.887+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial skills in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -91,19 +91,26 @@ Ask yourself: _what is the single sentence that summarizes this talk?_ What is t
 
 # Structure: Motivation First, Intuition Over Formalism
 
-A talk and a [[Blog/Teaching/Writing My Technical Paper\|paper]] have a similar structure, but the emphasis is different. In a talk, the motivation and the problem should take up almost a third - sometimes even half - of the time, ideally with real-life examples or demos.
+A talk and a [[Blog/Teaching/Writing My Technical Paper\|paper]] have a similar structure, but the emphasis is different. In a talk, the motivation and the problem should take up almost a third of the time, ideally with real-life examples or demos.
 
 A common mistake, especially among students, is to rush through this part or skip it almost entirely, assuming the audience already knows why the problem matters and is just waiting for the solution. This is almost always wrong. Even if they know the problem, they might not have your viewpoint on that.
 
-Motivation means explaining why the problem exists in the first place, preferably through a concrete, relatable example, and what the real impact would be if it remained unsolved, whether socially, economically, or technically. This part should be emotionally compelling rather than precise. 
+Motivation means explaining why the problem exists in the first place, preferably through a concrete, relatable example, and what the real impact would be if it remained unsolved, whether socially, economically, or technically. This part should be emotionally compelling rather than precise. In the PageRank example, the motivation is straightforward: we want to rank webpages by relevance so that people can find what they are looking for quickly. This saves time and ultimately accelerates progress in every area of life. A natural follow-up question is: how do we determine the importance of a webpage? The naive answer - rank pages by the number of incoming links - favors quantity over quality. A page with many links from obscure, irrelevant sources would rank higher than a page with few links from authoritative ones. Worse, this would be trivially exploitable: adversaries could inflate rankings by creating large numbers of artificial pages pointing to their target.
 
-The problem definition that follows should be more (but not overly) precise, laying out the model and the assumptions clearly. Together, motivation and problem definition set up the goal of your talk, and the audience needs enough _time_ to digest and memorize both. Remember that they may have just come from a completely different talk and need a moment to switch context. You have to be sure that by the time you reach your solution, everyone in the room understands and remembers the problem well.
+Note that we have motivated the problem from several angles; usefulness as well as robustness.
+The problem definition that follows should be more (but not overly) precise, laying out the model and the assumptions clearly:
 
-This matters because the solution is likely to be missed anyway if it is too technical. But if the motivation and the problem are not crystal clear to everyone in the room, the whole talk is in vain. Your job is to convey the intuition behind the solution: what is the core idea, and why does it work?
+The key insight is the same as in social networks: a few connections to popular, well-connected pages are worth far more than many connections to isolated ones. This brings us to the actual problem: how do we assign importance scores that reflect the global structure of the web, where every page's score depends on every other page's score?
+
+Together, motivation and problem definition set up the goal of your talk, and the audience needs enough _time_ to digest and memorize both. Remember that they may have just come from a completely different talk and need a moment to switch context. You have to be sure that by the time you reach your solution, everyone in the room understands and remembers the problem well, hence the return to the social network analogy.
+
+This matters because the solution is likely to be missed anyway if it is too technical. But if the motivation and the problem are not crystal clear to everyone in the room, the whole talk is in vain. Your job is to convey the intuition behind the solution: what is the core idea, and why does it work? That is exactly what the kid example and the physical analogies above were doing.
 
 Equations are a particular danger. Many people automatically switch off the moment they see a formula, without even giving the presenter a chance. If you must include one, don't spend time on derivation, just explain what it says. What is the intuition? What does this expression want to communicate? That single sentence (or a well-placed illustration) is worth more than introducing useless notation that nobody will remember by the next slide.
 
 Finally, don't confuse a summary with a takeaway. A summary recaps what you said. A takeaway tells the audience what to do with it; the potential impact, the open question, the thing worth remembering. After a ten-minute talk, a summary may be unnecessary. A good takeaway never is.
+
+In the PageRank example, one good takeaway might be that importance scores reflecting the global structure of the web can be computed through a simple local rule applied iteratively, since each page only needs to know the scores of its neighbors, and the global structure emerges from the iteration. This connects to a much broader principle: global properties can emerge from local rules. It appears everywhere, from physics to machine learning, and that single observation is worth far more than a recap of the algorithm itself.
 
 ---
 
