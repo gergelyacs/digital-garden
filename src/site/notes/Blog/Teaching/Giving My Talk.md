@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T11:11:35.701+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T11:13:30.211+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial skills in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -57,8 +57,7 @@ One thing is always true regardless of audience: people are lazy. Not in a bad w
 
 # What is the Intuition?
 
-A useful way to think about intuition is through the lens of a knowledge graph. Imagine that everything a person understands is a node in a graph, and understanding means being well-connected; the more links a concept has to other concepts, the more robustly it is understood.
-By this view, intuition is the simplest explanation that maximizes connectivity, much like how the importance of a webpage is measured by how well it is linked to other important pages. A formal definition or an equation may be technically precise, but it often connects to few central nodes in most audiences' graphs, and what is weakly linked is quickly forgotten. A good intuition, by contrast, borrows the connectivity of something the audience already knows well, showing that the new concept is really just a familiar idea in disguise.
+A useful way to think about intuition is through the lens of a knowledge graph. Imagine that everything a person understands is a node in a graph, and understanding means being well-connected; the more links a concept has to other concepts, the more robustly it is understood. By this view, intuition is the simplest explanation that maximizes connectivity, much like how the importance of a webpage is measured by how well it is linked to other important pages. A formal definition or an equation may be technically precise, but it often connects to few central nodes in most audiences' graphs, and what is weakly linked is quickly forgotten. A good intuition, by contrast, borrows the connectivity of something the audience already knows well, showing that the new concept is really just a familiar idea in disguise.
 
 For computer engineers, the above kid example generalizes naturally. Represent the web as a directed graph where importance is circular - a node is important if important nodes point to it. To resolve this chicken-and-egg problem, turn it into an iterative algorithm: start with equal scores, then repeatedly update each page's score as the weighted sum of the scores of pages pointing to it, where each contribution is divided by the number of outgoing links of the pointing page. Repeat until convergence.
 
