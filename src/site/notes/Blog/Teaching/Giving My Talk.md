@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-01T17:44:30.492+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-02T10:21:31.066+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial skills in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -64,7 +64,7 @@ This geometric viewpoint also makes more advanced topics that build on linear al
 
 Time constraints require simplification, and simplification has a cost: the talk will not be fully precise. But that is the wrong thing to optimize for. Analogies and intuitions are never completely faithful, they deliberately sacrifice detail in order to keep the problem accessible. But it's better to draw in as many people as possible than to lose them by sacrificing clarity on the altar of precision.
 
-The purpose is not completeness but to motivate the audience to discover the full details themselves. So the practical question when preparing a talk is not 'how do I explain this correctly?' but rather: what does this audience's knowledge graph already look like, and which path through it leads most naturally to what I want them to understand? A good talk is not about technical soundness, it's about communication. The speaker's job is to simplify, sometimes at the cost of precision, in order to hold attention and motivate the audience to go and read the actual paper.
+The purpose is not completeness but to motivate the audience to discover the full details themselves. So the practical question when preparing a talk is not 'how do I explain this correctly?' but rather: what does this audience's knowledge graph already look like, and which path through it leads most naturally to what I want them to understand? A good talk is not about technical soundness, it's about communication in the first place. The speaker's job is to simplify, sometimes at the cost of precision, in order to hold attention and motivate the audience to go and read the actual paper.
 
 ---
 
@@ -96,13 +96,13 @@ Finally, don't confuse a summary with a takeaway. A summary recaps what you said
 
 # An Example
 
-Take the problem of computing the importance of every webpage on the internet, roughly what Google does. The following may not be the perfect introduction to Google's PageRank, but it illustrates how a complex topic can be introduced gradually, each step adding new connections to the audience's knowledge graph. The motivation is straightforward:
+To illustrate why finding the best connections in a knowledge graph is not straightforward, consider the problem of computing the importance of every webpage on the internet, roughly what Google does. The following is not a perfect introduction to PageRank, but it shows how a complex topic can be introduced gradually, each step adding new connections to the audience's knowledge graph. The motivation is straightforward:
 
 **Motivation**: *We want to rank webpages by general importance so that when we retrieve pages relevant to a query, we can prioritize the most authoritative and trustworthy ones. This saves time and ultimately accelerates progress in every area of life. A natural follow-up question is: how do we determine the importance of a webpage? The naive answer - rank pages by the number of incoming links - favors quantity over quality. A page with many links from obscure, irrelevant sources would rank higher than a page with few links from authoritative ones. Worse, this would be trivially exploitable: adversaries could inflate rankings by creating large numbers of artificial pages pointing to their target.*
 
-Note that we have motivated the problem from several angles; usefulness as well as robustness. 
+Note that we motivated the problem from several angles, usefulness as well as robustness, and showed that the naive solution fails. This hopefully awakens the audience's curiosity
 
-**Problem:** *The key insight is the same as in social networks: a few connections to popular, well-connected pages are worth far more than many connections to isolated ones. This brings us to the actual problem: how do we assign importance scores that reflect the global structure of the web, where every page's score depends on every other page's score?*
+**Problem:** *The key insight is the same as in social networks: a few connections to popular, well-connected pages are worth far more than many connections to isolated ones, just as being friends with a popular person provides more social benefit than having many unpopular friends. This brings us to the actual problem: how do we assign importance scores that reflect the global structure of the web, where every page's score depends on every other page's score?*
 
 You have to be sure that by the time you reach your solution, everyone in the room understands and remembers the problem well, which is why we returned to the social network analogy above.
 
@@ -124,7 +124,7 @@ For many engineers, this is already enough. Even if some details are still fuzzy
 
 Why does the bowl exist and why do we always end up at the same $\pi$ regardless of where we start? 
 
-*Notice that $\pi = P \pi$ looks exactly like an eigenvector equation: $\pi$ is a vector that is completely unchanged by the transformation $P$. The full explanation follows from the eigenstructure and eigendecomposition of $P$...*
+*Notice that $\pi = P \pi$ looks exactly like an eigenvector equation with eigenvalue 1: $\pi$ is a vector that is completely unchanged by the transformation $P$. Repeatedly applying $P$ to any vector drives it toward the dominant eigenvector of $P$, while all other components decay, since every column of $P$ is a probability distribution summing to 1. The full explanation follows from the eigendecomposition of $P$, but from here the mathematics gets heavier.*
 
 From here, the mathematics gets heavier, so we can stop. The key is to go top-down rather than bottom-up by first targeting the most central and well-connected nodes in the audience's existing knowledge. Start with a concrete analogy, and only then build toward the formal details if time allows. Physical analogies like the token distribution or the rolling ball, and geometric intuitions like those behind linear algebra, are especially useful because they connect abstract concepts to familiar ones, making them easier to recall and apply later even in more complex topics. If you know your audience well, you can skip some steps in the top-down presentation to leave more time for the mathematics, but you always risk losing people, since audiences are never homogeneous. In any case, you will probably not have time to cover all the mathematics in a 15-minute talk.
 
