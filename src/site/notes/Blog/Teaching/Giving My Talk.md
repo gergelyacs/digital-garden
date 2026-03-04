@@ -1,8 +1,8 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-02T10:21:31.066+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-04T13:14:28.168+01:00"}
 ---
 
-Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial skills in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
+Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
 
 ---
 # Why Give a Talk at All?
@@ -124,7 +124,7 @@ For many engineers, this is already enough. Even if some details are still fuzzy
 
 Why does the bowl exist and why do we always end up at the same $\pi$ regardless of where we start? 
 
-*Notice that $\pi = P \pi$ looks exactly like an eigenvector equation with eigenvalue 1: $\pi$ is a vector that is completely unchanged by the transformation $P$. Repeatedly applying $P$ to any vector drives it toward the dominant eigenvector of $P$, while all other components decay, since every column of $P$ is a probability distribution summing to 1. The full explanation follows from the eigendecomposition of $P$, but from here the mathematics gets heavier.*
+*Notice that $\pi = P \pi$ looks exactly like an eigenvector equation with eigenvalue 1: $\pi$ is a vector that is completely unchanged by the transformation $P$. Repeatedly applying $P$ to any vector drives it toward the dominant eigenvector of $P$, while all other components decay, since every column of $P$ is a probability distribution summing to 1. The full explanation follows from the eigendecomposition of $P$...*
 
 From here, the mathematics gets heavier, so we can stop. The key is to go top-down rather than bottom-up by first targeting the most central and well-connected nodes in the audience's existing knowledge. Start with a concrete analogy, and only then build toward the formal details if time allows. Physical analogies like the token distribution or the rolling ball, and geometric intuitions like those behind linear algebra, are especially useful because they connect abstract concepts to familiar ones, making them easier to recall and apply later even in more complex topics. If you know your audience well, you can skip some steps in the top-down presentation to leave more time for the mathematics, but you always risk losing people, since audiences are never homogeneous. In any case, you will probably not have time to cover all the mathematics in a 15-minute talk.
 
@@ -146,7 +146,7 @@ Remember that what matters most is what you say, not what's written behind you, 
 
 # Storytelling
 
-People are [naturally drawn to stories](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper). The motivation section is the most natural place for storytelling, but it can appear anywhere in a talk. When I notice I'm losing the audience  - eyes glazing over, phones appearing - I try to come back to a concrete story or example. It almost always helps.
+People are [naturally drawn to stories](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper). The motivation section is the most natural place for storytelling, but it can appear anywhere in a talk. When I notice I'm losing the audience  - eyes glazing over, phones appearing - I try to come back to a concrete story or example. It usually helps.
 
 ---
 
@@ -190,7 +190,7 @@ Giving a talk is a lot like cooking. Sometimes it comes out well, sometimes it d
 
 # Final Note
 
-Don't get too caught up in the nuances - the balance of text and figures, eye contact, timing, font sizes, slide layouts, whether you thank the audience on the final slide or not. These details can help at the margin, but none of them is what makes or breaks a talk.
+Don't get too caught up in the nuances - the balance of text and figures, eye contact, timing, font sizes, slide layouts. These details can help at the margin, but none of them is what makes or breaks a talk.
 
 What matters is what you say, and whether you care about it. Focus on the intuition. Simplify the message as much as possible. And remember: enjoy your own talk first. Only then can the audience enjoy it too.
 
