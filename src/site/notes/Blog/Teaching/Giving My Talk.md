@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-04T23:09:37.566+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-21T09:21:45.482+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial in practice. This post is my attempt to collect some observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -21,7 +21,7 @@ Finally, giving talks improves your general ability to communicate. If you can e
 
 # It Starts with You, Not the Audience
 
-Here is something that took me a while to internalize: _the talk is more about you than the audience_. You have to enjoy your own talk first. If you don't, the audience won't either. So the first question to ask yourself is not "what does the audience want to hear?" but "what am I genuinely enthusiastic about?"
+Here is something that took me a while to really understand: _the talk is more about you than the audience_. You have to enjoy your own talk first. If you don't, the audience won't either. So the first question to ask yourself is not "what does the audience want to hear?" but "what am I genuinely enthusiastic about?"
 
 Enthusiasm is contagious, but it has to be real. People tend to be more enthusiastic when they feel ownership over some part of what they're presenting - the problem, the motivation, or the solution - or when they just find the work really interesting. If you're presenting someone else's work without caring much about it, that will show. Find the angle that makes you care, spend more time on the parts that you find more interesting.
 
@@ -33,7 +33,7 @@ This also means acting like a teacher, not a student. Many students have been co
 
 Most advice about public speaking focuses on technique; slow down, speak up, make eye contact, don't read off your slides. All of that is useful. But there's a deeper issue that technique alone won't fix: how you relate to the talk itself, and what you think it says about you.
 
-_Self-confidence_ is crucial for a good talk, and it can be earned through mastery and experience. But if your self-worth is already tied to how well your presentation is received, you're in trouble before you even open your mouth. You cannot fully control the audience - someone might ask a tough question, or people might seem disengaged - and tying your self-worth to things you cannot control means living under a constant threat, one that quietly kills your confidence and eventually the talk itself. The role of 'expert presenter' can be taken away at any time. Your curiosity and your genuine interest in the problem cannot. Build your identity (and your talk) around those, not around being impressive.
+_Self-confidence_ is crucial for a good talk, and it can be earned through mastery and experience. But if your self-worth is already tied to how well your presentation is received, you have a problem before you even open your mouth. You cannot fully control the audience - people might be exhausted from previous talks, distracted, or asking tough questions - and tying your self-worth to things outside your control means living under a constant threat, one that quietly kills your confidence and eventually the talk itself. The role of 'expert presenter' can be taken away at any time. Your curiosity and your genuine interest in the problem cannot. Build your talk around those, not around being impressive.
 
 This requires accepting your weaknesses honestly. Every presenter has specific, real ones - rushing through slides, over-explaining, avoiding eye contact. The temptation is to either ignore them or feel guilty about them. Neither helps. The productive move is to name them clearly, accept that they exist, and work on them one at a time. You don't have to fix everything at once, and some things may never be fully fixed, and that's fine too.
 
@@ -43,7 +43,7 @@ And don't let negative labels stick, whether they come from yourself or from oth
 
 # Know Your Audience
 
-A talk that works brilliantly for experts will fail completely for a general audience, and vice versa. This is one of the most common mistakes.
+A talk that works well for experts can fail completely for a general audience, and vice versa. This is one of the most common mistakes.
 
 The key concept here is _intuition_, which is finding the shortest explanation of the key idea that everyone in the audience can follow, and that connects most naturally to their existing knowledge. If the audience is diverse, that explanation needs to be universally accessible. If you can explain it so that a layman understands, you can adapt to any audience. And if you can't, then perhaps even you don't fully understand it yourself.
 
@@ -70,7 +70,7 @@ The purpose is not completeness but to motivate the audience to discover the ful
 
 # More is Sometimes Less
 
-This is particularly true for talks, though it applies to [[Blog/Teaching/Writing My Technical Paper\|writing]] as well. I often find myself getting excited about a topic and wandering into rabbit holes; side details, edge cases, subtleties that matter to me but lose the audience. The enthusiasm is genuine, but it works against communication.
+This is particularly true for talks, though it applies to [[Blog/Teaching/Writing My Technical Paper\|writing]] as well. I often find myself getting excited about a topic and wandering into rabbit holes; side details, edge cases that matter to me but lose the audience. The enthusiasm is real, but it works against communication.
 
 Interestingly, people who know less about a topic often present it better. A supervisor who only understands the essentials can sometimes give a clearer overview than the student who built the whole system. They haven't seen every dead end and aren't tempted to explain them. They understand only what needs to be understood, and that's exactly what they convey.
 
@@ -102,7 +102,7 @@ Consider the problem of computing the importance of every webpage on the interne
 
 Note that we motivated the problem from several angles, usefulness as well as robustness, and showed that the naive solution fails. This hopefully awakens the audience's curiosity
 
-**Problem:** *The key insight is the same as in social networks: a few connections to popular, well-connected pages are worth far more than many connections to isolated ones, just as being friends with a popular person provides more social benefit than having many unpopular friends. This brings us to the actual problem: how do we assign importance scores that reflect the global structure of the web, where every page's score depends on every other page's score?*
+**Problem:** *The insight is the same as in social networks: a few connections to popular, well-connected pages are worth far more than many connections to isolated ones, just as being friends with a popular person provides more social benefit than having many unpopular friends. This brings us to the actual problem: how do we assign importance scores that reflect the global structure of the web, where every page's score depends on every other page's score?*
 
 You have to be sure that by the time you reach your solution, everyone in the room understands and remembers the problem well, which is why we returned to the social network analogy above.
 
