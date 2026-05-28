@@ -1,40 +1,40 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Bevezetés a gépi tanulás biztonságába - Jegyzet.md","permalink":"/ai/bevezetes-a-gepi-tanulas-biztonsagaba-jegyzet/","created":"2026-01-27T20:23:19.852+01:00","updated":"2026-02-12T09:34:28.646+01:00"}
+{"dg-publish":true,"dg-path":"AI/BSc_IT_Sec_notes_HU.md","permalink":"/ai/b-sc-it-sec-notes-hu/","created":"2026-05-26T20:53:26.497+02:00","updated":"2026-05-26T21:16:03.455+02:00"}
 ---
 
 # Tartalomjegyzék
 
-1. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Miről szól ez a jegyzet?\|#Miről szól ez a jegyzet?]]
-2. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Miről NEM szól ez a jegyzet?\|#Miről NEM szól ez a jegyzet?]]
-3. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Mi is egy gépi tanulási modell?\|#Mi is egy gépi tanulási modell?]]
-4. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Adversarial Machine Learning\|#Adversarial Machine Learning]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Robusztusság vs. Biztonság\|#Robusztusság vs. Biztonság]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Fenyegetések a CIA triád szerint\|#Fenyegetések a CIA triád szerint]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Támadások a modell életciklusa szerint\|#Támadások a modell életciklusa szerint]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#A támadó modellje (Adversary Model)\|#A támadó modellje (Adversary Model)]]
-5. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Evasion\|#Evasion]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Matematikai formalizálás\|#Matematikai formalizálás]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Miért léteznek adversarial példák?\|#Miért léteznek adversarial példák?]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Védekezés evasion támadások ellen\|#Védekezés evasion támadások ellen]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Modell-független evasion támadás Pre-processing manipuláció\|#Modell-független evasion támadás Pre-processing manipuláció]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Nagy nyelvi modellek (LLM) - Jailbreaking és Prompt Injection\|#Nagy nyelvi modellek (LLM) - Jailbreaking és Prompt Injection]]
-6. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Poisoning (Adatmérgezés) támadások\|#Poisoning (Adatmérgezés) támadások]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Targeted (Célzott) Poisoning\|#Targeted (Célzott) Poisoning]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Untargeted (Nem célzott) Poisoning\|#Untargeted (Nem célzott) Poisoning]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Feature Collision - Kifinomult támadás transfer learning ellen\|#Feature Collision - Kifinomult támadás transfer learning ellen]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Védekezés poisoning támadások ellen\|#Védekezés poisoning támadások ellen]]
-7. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Backdoor támadások\|#Backdoor támadások]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Backdoor mint szándékos spurious correlation\|#Backdoor mint szándékos spurious correlation]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Backdoor vs. Evasion vs. Poisoning\|#Backdoor vs. Evasion vs. Poisoning]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Védekezés backdoor támadások ellen\|#Védekezés backdoor támadások ellen]]
-8. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Availability (Elérhetőségi) támadások\|#Availability (Elérhetőségi) támadások]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#GPU optimalizáció kihasználása\|#GPU optimalizáció kihasználása]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Sponge példák (Sponge Examples)\|#Sponge példák (Sponge Examples)]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Védekezés availability támadások ellen\|#Védekezés availability támadások ellen]]
-9. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Confidentiality (Bizalmasság) támadások\|#Confidentiality (Bizalmasság) támadások]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Training Data Extraction\|#Training Data Extraction]]
-	- [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Model Stealing (Modell lopás)\|#Model Stealing (Modell lopás)]]
-10. [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#Konklúzió\|#Konklúzió]]
+1. [[Blog/AI/BSc_IT_Sec_notes_HU#Miről szól ez a jegyzet?\|#Miről szól ez a jegyzet?]]
+2. [[Blog/AI/BSc_IT_Sec_notes_HU#Miről NEM szól ez a jegyzet?\|#Miről NEM szól ez a jegyzet?]]
+3. [[Blog/AI/BSc_IT_Sec_notes_HU#Mi is egy gépi tanulási modell?\|#Mi is egy gépi tanulási modell?]]
+4. [[Blog/AI/BSc_IT_Sec_notes_HU#Adversarial Machine Learning\|#Adversarial Machine Learning]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Robusztusság vs. Biztonság\|#Robusztusság vs. Biztonság]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Fenyegetések a CIA triád szerint\|#Fenyegetések a CIA triád szerint]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Támadások a modell életciklusa szerint\|#Támadások a modell életciklusa szerint]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#A támadó modellje (Adversary Model)\|#A támadó modellje (Adversary Model)]]
+5. [[Blog/AI/BSc_IT_Sec_notes_HU#Evasion\|#Evasion]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Matematikai formalizálás\|#Matematikai formalizálás]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Miért léteznek adversarial példák?\|#Miért léteznek adversarial példák?]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Védekezés evasion támadások ellen\|#Védekezés evasion támadások ellen]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Modell-független evasion támadás Pre-processing manipuláció\|#Modell-független evasion támadás Pre-processing manipuláció]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Nagy nyelvi modellek (LLM) - Jailbreaking és Prompt Injection\|#Nagy nyelvi modellek (LLM) - Jailbreaking és Prompt Injection]]
+6. [[Blog/AI/BSc_IT_Sec_notes_HU#Poisoning (Adatmérgezés) támadások\|#Poisoning (Adatmérgezés) támadások]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Targeted (Célzott) Poisoning\|#Targeted (Célzott) Poisoning]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Untargeted (Nem célzott) Poisoning\|#Untargeted (Nem célzott) Poisoning]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Feature Collision - Kifinomult támadás transfer learning ellen\|#Feature Collision - Kifinomult támadás transfer learning ellen]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Védekezés poisoning támadások ellen\|#Védekezés poisoning támadások ellen]]
+7. [[Blog/AI/BSc_IT_Sec_notes_HU#Backdoor támadások\|#Backdoor támadások]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Backdoor mint szándékos spurious correlation\|#Backdoor mint szándékos spurious correlation]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Backdoor vs. Evasion vs. Poisoning\|#Backdoor vs. Evasion vs. Poisoning]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Védekezés backdoor támadások ellen\|#Védekezés backdoor támadások ellen]]
+8. [[Blog/AI/BSc_IT_Sec_notes_HU#Availability (Elérhetőségi) támadások\|#Availability (Elérhetőségi) támadások]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#GPU optimalizáció kihasználása\|#GPU optimalizáció kihasználása]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Sponge példák (Sponge Examples)\|#Sponge példák (Sponge Examples)]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Védekezés availability támadások ellen\|#Védekezés availability támadások ellen]]
+9. [[Blog/AI/BSc_IT_Sec_notes_HU#Confidentiality (Bizalmasság) támadások\|#Confidentiality (Bizalmasság) támadások]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Training Data Extraction\|#Training Data Extraction]]
+	- [[Blog/AI/BSc_IT_Sec_notes_HU#Model Stealing (Modell lopás)\|#Model Stealing (Modell lopás)]]
+10. [[Blog/AI/BSc_IT_Sec_notes_HU#Konklúzió\|#Konklúzió]]
 
 ---
 # Miről szól ez a jegyzet?
@@ -371,30 +371,6 @@ $$
 $$
 vagyis az $f_{\theta}$ modell hibázását akarjuk **maximalizálni** az eredeti $y = f_{\theta}(\vec{x})$ cimkére nézve. A megoldás egyszerűen közelíthető _gradiens emelkedéssel_, ahol a gradienst $x$ input (és **nem** a modell paraméter $\theta$) szerint kell számolni, hiszen az input módosítását keressük. Erre egy példa a PGD (projected gradient descent), ami az egyik legerősebb és leggyakrabban használt white-box adversarial támadás. A PGD iteratív gradiens-alapú optimalizálással generál adversarial példákat; ahelyett, hogy egyetlen nagy lépést tennénk a gradiens irányába, sok kis lépést teszünk, és minden lépés után visszavetítjük (project) a perturbációt a $\varepsilon$-gömbbe, hogy biztosítsuk a megszorítás teljesülését. 
 
-**Projected Gradient Descent:**
-```
-Input: x (eredeti input), y (valódi címke), ε (max perturbáció), α (lépésméret), T (iterációk száma)
-
-1. Inicializálás:
-   x_0 = x + uniform_noise(-ε, ε)  // Random start az ε-gömbön belül
-   
-2. Iteratív optimalizálás (t = 0 to T-1):
-   
-   a) Számítsd a gradienst:
-      gradient = ∇_x loss(f(x_t), y)
-      
-   b) Gradient ascent lépés (növeljük a loss-t):
-      x_{t+1} = x_t + α · sign(gradient)
-      
-   c) Projection (vetítés vissza az ε-gömbbe):
-      perturbation = x_{t+1} - x
-      perturbation = clip(perturbation, -ε, ε)  // L_∞ korlátozás
-      x_{t+1} = x + perturbation
-
-3. Return: x_T (adversarial példa)
-```
-A PGD során nem $x$-ből hanem $x + random\_noise$-ból indulunk, hogy elkerüljük a lokális optimumokat, majd a gradienssel megegyező irányba mozdulunk el, mivel a loss értékét maximalizálni akarjuk. A sign használata opcionális, de $L_{\infty}$ norma esetén gyorsabb konvergenciát biztosít.
-
 Amennyiben a modell és annak $\theta$ paraméterei nem elérhetőek (black-box hozzáférés), a gradienst becsülnünk kell valamilyen [nullad rendű optimalizációval](https://arxiv.org/abs/1712.09491), vagy [egyéb black-box alapú támadáshoz](https://arxiv.org/abs/1712.04248) kell folyamodnunk.
 ##### Célzott (Targeted) támadás:
 $$
@@ -406,11 +382,7 @@ Ez a probléma is átfogalmazható veszteségfüggvénnyel az alábbi formában:
 $$
 \vec{x}_{adv} = \vec{x} + \arg\min_{\vec{r}:\|\vec{r}\|_p \leq \varepsilon} loss(f_{\theta}(\vec{x} + \vec{r}), C) 
 $$
-vagyis az $f_{\theta}$ modell hibázását akarjuk **minimalizálni** a támadó által választott $C$ cimkére nézve. A megoldás egyszerűen közelíthető _gradiens süllyedéssel_, ahol a gradienst $x$ input (és **nem** a modell paraméter $\theta$) szerint kell számolni, mivel itt is az input módosítását keressük.  A PGD itt is nagyon hasonlóan működik, kivéve, hogy itt a célosztály irányába szeretnénk elmozdulni, ezért a célosztályra számolt veszteségfüggvényt minimalizálni (és nem maximalizálni), ezért gradiens süllyedést (és nem emelkedést) hajtunk végre:
-$$
-x_{t+1} = x_{t} + sign(\nabla_x loss(f_{\theta}(x), C))
-$$
-
+vagyis az $f_{\theta}$ modell hibázását akarjuk **minimalizálni** a támadó által választott $C$ cimkére nézve. A megoldás egyszerűen közelíthető _gradiens süllyedéssel_, ahol a gradienst $x$ input (és **nem** a modell paraméter $\theta$) szerint kell számolni, mivel itt is az input módosítását keressük. 
 #### Norma típusok
 
 A perturbáció nagyságának mérésére különböző normákat használhatunk:
@@ -522,234 +494,15 @@ Az adversarial training egy speciális tanítási eljárás, amely három lépé
 
 **Megjegyzés:** Hasonló tanítási módszert alkalmaznak akkor is, amikor a modell generalizációs képességét akartják javítani data augmentation által: például ha egy képet elforgatva vagy más világításban, esetleg zajjal adunk a tanítóadathoz, akkor az így kapott modell robusztusabb lesz, hiszen az adott objektumot egy megváltozott kontextusban is felismeri. Ezt hívják **robusztus tanítás**nak. Az adversarial training esetén annyi a különbség, hogy a kontextust egy támadó manipulálja ezért egy megtámadott mintát adunk a tanításhoz. Ennek ellenére ez a két fogalom gyakran keveredik, és hívjak az adversarial training-et robust training-nek is.
 
-**Matematikailag**:
-
-A hagyományos tanítás célfüggvénye:
-$$
-\min_\theta \mathbb{E}_{(\vec{x}, y) \sim \mathcal{D}} [loss(f_\theta(\vec{x}), y)]
-$$
-Az adversarial training célfüggvénye:
-$$
-\min_\theta \mathbb{E}_{(\vec{x}, y) \sim \mathcal{D}} \left[\max_{\|\vec{r}\|_p \leq \varepsilon} loss(f_\theta(\vec{x} + \vec{r}), y)\right]
-$$
-Ahol a  belső maximalizálás megkeresi a legrosszabb adversarial perturbációt, a külső minimalizálás pedig ezt a worst-case hibát próbálja minimalizálni. A belső optimalizáció lényegében egy adversarial minta generálását jelenti $x$ pont körül, ami végezhető PGD-vel (A PGD tekinthető az "gold standard" white-box támadásnak, ami egy megfelelő kompromisszum a generálás gyorsasága és a támadás pontossága között. Ugyan léteznek PGD-nél hatékonyabb támadások, de ezek jóval lassabbak, ami itt most kritikus, hiszen minden tanítómintát meg kell támadni).
-
 ##### Miért kell komplex modell?
 
 Az adversarial training egyik kulcsfontosságú követelménye, hogy **elég komplex (nagy kapacitású) modellt** használjunk. Ez nem opcionális, hanem szükséges a sikeres védekezéshez. Ennek oka, hogy amikor adversarial példákat is figyelembe veszünk, a feladat lényegesen nehezebbé válik. Most nem csak egyetlen pontot ($x$) helyesen osztályozni, hanem egy teljes $\varepsilon$-sugarú labdát körülötte ($x+r$ minden  $||r||_p \leq \varepsilon$ esetén). Az $\varepsilon$-labdák szeparálásához jelentősen bonyolultabb döntési határfelület szükséges. 
 
 ##### Nem ad garanciát 
 
-Az adversarial training **empirikusan jól működik**, de **nem ad elméleti garanciát** a robusztusságra. Ennek több oka van:
-
-**1. Végtelen adversarial tér**: Elméletileg végtelen sok adversarial példa létezik egy adott $x$ körül az $\varepsilon$-labdában. A tanítás során csak egy kis részhalmazukat generáljuk  (jellemzően egy vagy néhány adversarial példát minden eredeti mintához). Lehetetlen lefedni az összes lehetséges adversarial perturbációt.
-
-**2. Ismert támadásokra optimalizál**: Az adversarial training során használt támadási módszer (például FGSM, PGD) egy specifikus algoritmus. A betanított modell robusztus lehet ezekkel a **ismert** támadásokkal szemben, de egy új, még nem látott támadási technika megkerülheti a védelmet.
-
-**3. Adaptiv támadások**: Egy támadó, aki ismeri, hogy a modellt adversarial training-gel védetté tették, kifejleszthet olyan adaptív támadásokat, amelyek kifejezetten ezt a védelmi mechanizmust próbálják megkerülni. Ez egy folyamatos "fegyverkezési verseny" a támadók és védők között.
-
-**4. Approximációs hibák**: A worst-case adversarial példa megkeresése (a belső maximalizálás a célfüggvényben) számítás szempontjából nehéz probléma. A gyakorlatban approximációkat használunk (például iteratív gradiens-alapú módszerek korlátozott lépésszámmal), amelyek nem garantáltan találják meg a legerősebb adversarial példát.
-
-**5. Generalizációs hiányosság**: Még ha a tréninghalmazon található adversarial példák ellen robusztussá is teszünk egy modellt, nincs garancia arra, hogy ez a robusztusság általánosul új, még nem látott adatokra és azok adversarial környezetére.
-
-**6. Trade-off a pontossággal**: Az adversarial training gyakran **csökkenti a clean példákon elért pontosságot**. A modell "óvatosabbá" válik, ami azt jelenti, hogy néha a tiszta példákat is rosszul osztályozza. Ez egy fundamentális trade-off: robusztusság vs. standard pontosság.
-
-**7. Nincs formális verifikáció**: Ellentétben egyes formálisan verifikálható módszerekkel (certifiable defenses), az adversarial training nem tud matematikai bizonyítékot adni arra, hogy egy adott input $\varepsilon$-sugarú környezetében nincs adversarial példa.
+Az adversarial training **empirikusan jól működik**, de **nem ad elméleti garanciát** a robusztusságra. Az adversarial training gyakran **csökkenti a clean példákon elért pontosságot**. A modell "óvatosabbá" válik, ami azt jelenti, hogy néha a tiszta példákat is rosszul osztályozza. Ez egy fundamentális trade-off: robusztusság vs. standard pontosság.
 
 Annak ellenére, hogy nem ad garanciát, az adversarial training jelenleg az egyik leghatékonyabb praktikus védekezés. A megfelelően alkalmazott adversarial training drasztikusan csökkenti az ismert adversarial támadások sikerességi arányát (például 90%+ támadási sikerről 10-20%-ra). Kombinálva más technikákkal (data augmentation, ensemble methods, certified defenses) még erősebb védelmet nyújthat.
-
-#### Randomized Smoothing - Certified Defense
-
-A randomized smoothing egy különleges védekezési technika, amely **provable (bizonyítható) robusztusságot** nyújt adversarial példákkal szemben. Ez az egyik legígéretesebb módszer arra, hogy formális garanciákat adjunk a modell biztonságára.
-
-##### Intuíció - Zajjal simítás
-
-Az alapötlet meglepően egyszerű: adjunk zajt az inputhoz, majd átlagoljuk a modell válaszait a zajos verziókra.
-
-**Alap probléma**: Egy neurális háló döntési felülete gyakran **éles és töredezett** (darabonként lineáris) - kis perturbációk nagy változásokat okozhatnak az output-ban. Ez teszi lehetővé az adversarial példákat.
-
-**Randomized smoothing megoldás**:
-
-1. Ne futtasd a modellt közvetlenül az inputon ($x$), hanem generálj sok zajos verziót $x$-ből: $x + \varepsilon_1$, $x + \varepsilon_2, ..., x + \varepsilon_n$, ahol $\varepsilon_i \sim N(0, \sigma^2I)$ (Gaussian zaj)
-2. Átlagold/szavazz a válaszokon: Az a címke lesz a válasz, amelyet a legtöbb zajos verzió választott
-   
-A zajjal való átlagolás simítja (smoothing) a döntési felületet, kevésbé teszi érzékennyé kis perturbációkra.
-
-**Matematikai formalizálás**:
-
-Eredeti modell: $f(x)$ → osztály címke
-
-**Smoothed model**:
-$$
-g(x) = \arg\max_c P(f(x + \epsilon) = c), \quad \epsilon \sim \mathcal{N}(0, \sigma^2 I)
-$$
-
-Azaz: $g(x)$ az a címke, amelyet $f$ legvalószínűbben ad vissza, amikor $x$-hez Gaussian zajt adunk.
-
-**Példa**:
-```
-Input: x (macska kép)
-Generálj 1000 zajos verziót: x + ε₁, x + ε₂, ...
-
-Futtasd f-et mindegyiken:
-- 850 mondja: "cat"
-- 100 mondja: "dog"
-- 50 mondja: "bird"
-
-g(x) = "cat" (majority vote)
-````
-
-##### Provable Robustness - Formális garanciák
-
-A randomized smoothing legnagyobb előnye, hogy matematikailag bizonyítható garanciát ad a robusztusságra.
-
-**Certification tétel** (egyszerűsített):
-
-Ha a smoothed model $g(x)$ egy adott $x$ inputon:
-- $p_a$ valószínűséggel a címkét választja (pl. $p_a = 0.85$ → "cat")
-- $p_b$ valószínűséggel a második legjobb címkét (pl. $p_b = 0.10$ → "dog")
-
-Akkor **garantáltan** $g(x') = g(x)$ marad, amíg:
-$$
-||x' - x||_2 \leq R = \frac{\sigma}{2}(\Phi^{-1}(p_A) - \Phi^{-1}(p_B))
-$$
-Ahol:
-- $\sigma$: A használt Gaussian zaj standard deviációja
-- $\Phi^{-1}$: Inverz standard normal CDF
-- $R$: Certified radius - a garantált robusztusság sugara, amin belül ugyanazt a döntést hozza
-
-**Mit jelent ez a gyakorlatban?**
-
-**Példa**:
-```
-Ha p_a = 0.90, p_b = 0.05, σ = 0.5
-→ R ≈ 0.65
-
-Garancia: Bármilyen adversarial perturbáció, ahol ||r||₂ ≤ 0.65,
-          NEM fogja megváltoztatni g előrejelzését!
-```
-
-**FONTOS:** 
-- Ez egy **certificate (tanúsítvány)**: Ezen az inputon a modell garantáltan robusztus 0.65 sugarú $L_2$ perturbációkkal szemben. **DE:** Minden input-hoz más certificate ($R$ sugárnagyság) tartozhat, hiszen $p_a$ és $p_b$ függ az adott mintától!
-- Csak $L_2$-normára igaz a garancia!
-- A garancia arra vonatkozik, hogy a modell döntése konstans $R$ sugarú környezeten belül. Ebből nem következik, hogy ez a jó döntés! (vagyis ettől a modell még lehet pontatlan)
-
-###### Előnyök
-
-- **Adversary-agnostic**: Nem számít, milyen támadást használ az ellenfél, black vagy white-box (FGSM, PGD, C&W, stb.)
-- **Formális garancia**: Matematikai bizonyosság, nem csak empirikus tesztelés (szemben az adversarial tanítással) $\implies$ Nincs "cat-and-mouse game" a támadó és védekező között, a garancia minden jövőbeli támadásra is érvényes
-- Nagy, komplex modellekre is alkalmazható (ImageNet, stb.)
-- Nem igényel speciális tanítást (használható pre-trained modellekkel is)
-- Minden input-hoz külön certificate → tudható, milyen mintákon lesz gyenge a smoothed modell
-
-##### Hátrányok
-
-**1. Accuracy csökkenés**:
-- A zaj hozzáadása csökkenti a clean accuracy-t. 
-- Tipikusan 5-15% accuracy loss
-- Fundamentál trade-off, ami nem áthidalható: Nagyobb zaj ($\sigma$) → erősebb védelem, de rosszabb accuracy
-
-**2. Inference költség**:
-- Minden prediktáláshoz sok sample kell (100-1000+)
-- Computational overhead: 100-1000× lassabb inference
-- Ez egy gyakorlati deployment kihívás real-time rendszerekben
-
-**3. Certified radius limitált**:
-- csak $L_2$ normában működik, más normákhoz másfajta zaj kell
-- Kisebb certified radius-ok (pl. $\varepsilon = 0.5-1.0$ ImageNet-en, ami 224×224 képen relatíve kicsi)
-- Nem véd extrém nagy perturbációk ellen
-  
-**4. Training bonyolultság**:
-- Az elfogadható pontossághoz általában zajos képeken is kell tanítani a modellt (smoothed training), ami lényegében robust training → lassabb, bonyolultabb
-
-##### A véletlenszerűség fontossága - Security through randomness
-
-A randomness (véletlenszerűség) a randomized smoothing-en túl fundamentális szerepet játszik a biztonságban. A támadó célja általában egy determinisztikus optimalizálási probléma megoldása. Ha véletlen van a rendszerben, a támadó nem tudja pontosan megjósolni a védekezés viselkedését függetlenül attól, hogy milyen tudással rendelkezik.
-
-**Determinisztikus védelem**:
-```
-Input x → Model f → Output f(x)
-Támadó: Pontosan tudja, hogy f(x + r) = ?
-→ Optimalizálhatja r-t gradiens alapján
-```
-
-**Randomized védelem**:
-```
-Input x → Add noise ε → Model f → Output f(x + ε)
-Támadó: NEM tudja pontosan, hogy ε mi lesz
-→ f(x + r + ε) = ? bizonytalan
-→ Optimalizálás nehezebb/lehetetlenebb
-```
-
-Ebből kifolyólag **adaptív támadások** ellen mindig érdemes randomizálni a védekezést. Erre alapszik a kriptográfián túl a differential privacy is.  
-
-A randomitás fontosságát a biztonságban a játékelmélet is alátámasztja. A [minimax tételből](https://en.wikipedia.org/wiki/Minimax_theorem) (von Neumann, 1928) következik, hogy **kevert stratégiák** (mixed strategies) használata esetén a játékosok jobb eredményt érhetnek el, mint tiszta (determinisztikus) stratégiákkal.  Ez azt jelenti, hogy ha a védekező determinisztikusan mindig ugyanazt a védelmi mechanizmust alkalmazza, akkor egy adaptív támadó megtanulhatja és kihasználhatja ezt a mintázatot, optimalizálva rá a támadását. Ezzel szemben, ha a védekező randomizált védelmet alkalmaz (pl. véletlenszerűen választ különböző detektálási módszerek között), akkor a támadó nem tud determinisztikus optimális stratégiát találni - csak várható érték alapján optimalizálhat, ami gyengébb eredményt ad neki. Ez magyarázza, hogy miért használnak randomizált audit schedule-okat a biztonsági ellenőrzésekben, miért kevernek véletlen időzítésű token refresh-eket autentikációs rendszerekben, és miért alapvető a randomness az ML security modern védekezési stratégiáiban.
-
-**Take away: Security through randomness**, nem "security through obscurity"!
-
-### Modell-független evasion támadás: Pre-processing manipuláció
-
-#### Mi a pre-processing alapú támadás?
-
-A pre-processing alapú evasion egy rafinált támadási technika, amely kihasználja, hogy a gépi tanulási rendszerek nem csak a modellből állnak, hanem egy teljes adatfeldolgozási pipeline-ból.  Ez a támadás **modell-független**, ami azt jelenti, hogy még akkor is működik, ha maga a gépi tanulási modell robusztus az adversarial példákkal szemben.
-
-A legtöbb gépi tanulási pipeline-ban az input adatok átesnek különböző **előfeldolgozási lépéseken** mielőtt elérnék a neurális hálózatot:
-
-**Képek esetén**:
-
-- Átméretezés (resizing/downscaling) - például 1024×1024 → 224×224
-- Normalizálás
-- Színtér konverzió
-- Képjavítás (enhancement)
-
-**Egyéb modalitások**:
-
-- Hang: újramintavételezés (resampling), zajszűrés
-- Szöveg: tokenizálás, normalizálás
-- Video: frame extraction, compresszió
-
-A támadás lényege, hogy az input adatot úgy manipuláljuk, hogy az eredeti formában ártalmatlannak tűnik, de a pre-processing után megváltozik és rosszindulatú tartalmat mutat.
-#### Példa: Macska → Kutya transzformáció képátméretezéssel
-
-**Támadási cél**: Egy macska képét úgy módosítani, hogy a modell kutyaként osztályozza.
-
-**Támadási módszer**:
-
-1. **Eredeti kép**: Egy macska képe nagyobb felbontásban (például 1024×1024 pixel)
-2. **Pixel manipuláció**: A támadó olyan módon módosítja a macska kép pixeleit, hogy:
-    - Az eredeti nagy felbontású képen még mindig macska látható (az emberi szem számára)
-    - De amikor a képet **lekicsinyítik** (downscale) a modell által várt méretre (például 224×224), a downscaling algoritmus (bilinear, bicubic interpoláció) olyan átlagolást végez, amely kutya képpé alakítja az eredményt
-3. **Downscaling a pipeline-ban**: A gépi tanulási rendszer automatikusan átméretezi a képet 224×224-re (amit a modell vár)
-4. **Eredmény**: A modell a lekicsinyített képet látja, amely most már kutyára hasonlít, így kutyaként osztályozza az eredeti macska képet
-
-```
-Manipulált kép (1024×1024)     →    Downscaling      →    Output kép (224×224)
-    [Macska látható]                 TensorFlow             [Kutya látható!]
-```
-
-#### Miért hatékony ez a támadás?
-
-**1. Modell-függetlenség**: A támadás a feature extraction előtt történik, így bármilyen modell megtéveszthető, még azok is, amelyeket adversarial training-gel védettek meg. A védelem nem segít, mert a modell soha nem is látja az eredeti manipulált képet, csak a már transzformált verziót.
-
-**2. Pipeline univerzalitás**: Szinte minden gépi tanulási rendszer használ valamilyen pre-processing lépést. Ez egy univerzális támadási vektor, amely a rendszer architektúrájának része, nem a modellé.
-
-**3. Nehéz detektálás**: Az eredeti input (a manipulált kép) legitim bemenetnek tűnik. Nincs nyilvánvaló adversarial perturbáció, amely detektálható lenne input-szintű védelemmel.
-
-**4. Bypass robusztusság**: Még ha a modellt adversarial training-gel védték is, az csak a modell input terében működik. A pre-processing transzformáció után a kép már egy teljesen más térbeli eloszlásban van.
-#### Működik poisoning esetén is!
-
-Ez a technika nem csak evasion támadásra, hanem poisoning támadásra is alkalmazható:
-
-**Poisoning forgatókönyv**:
-
-1. A támadó macska képeket injektál a tréningadatokba
-2. Ezek a képek úgy vannak manipulálva, hogy a pre-processing során kutyává transzformálódnak
-3. A modell tanítása során a pipeline automatikusan downscale-eli a képeket
-4. A modell megtanulja, hogy a kutya az valójában macska (mert a transzformált képekhez macska címke tartozik)
-5. Telepítés után: valódi kutyákat macskának osztályoz!
-
-Fontos, hogy **a támadás modell-független**, így megkerüli az adversarial training és más modell-szintű védelmeket. Ez rávilágít arra, hogy a gépi tanulási rendszerek biztonságát **holisztikusan** kell megközelíteni, figyelembe véve a teljes pipeline-t, nem csak a neurális hálózatot.
-
 ### Nagy nyelvi modellek (LLM) - Jailbreaking és Prompt Injection
 
 A nagy nyelvi modelleket (Large Language Models) két fő evasion típusú adversarial támadás fenyegeti: **jailbreaking** és **prompt injection**. Bár mindkettő a modell viselkedésének manipulálására irányul, különböznek a céljukban és módszereikben. A támadó célja általában **model hijacking**, vagyis a modellt rábírni, hogy támadói utasításokat hajtson végre.
@@ -1149,78 +902,6 @@ A célzott támadások esetén egy **specifikus mintát vagy minták egy kis cso
 
 A támadó olyan mérgezett mintákat akar beinjektálni, hogy a betanított modell $f$ egy specifikus célmintát téves osztályba soroljon, miközben más mintákon a pontossága nem csökken jelentősen (stealth constraint). Ez sokkal nehezebb probléma mint a támadói minta (adversarial example) létrehozása, mivel a támadónak precízen kell manipulálnia a döntési határfelületet a célminta környezetében, anélkül hogy az egész modellt degradálná.
 
-### Támadás formalizálása
-
-A poisoning támadás kétszintű (bilevel) optimalizációs problémaként formalizálható:
-$$
-\begin{aligned}
-\text{Objective:}\quad &\forall_{(x_t, y_t) \in D_{target}}:\, f(x_t) = y_t \\
-\text{such that}:\quad & \quad\text{$f$ is trained on $D_{poison} \cup D_{train}$} \\
-\end{aligned}
-$$
-Ez átfogalmazható veszteségfüggvénnyel az alábbi formába:
-$$
-\begin{aligned}
-& D_{poison}^* = \arg\min_{D_{poison}} \sum_{(x_t, y_t) \in D_{target}}loss(f_{\theta^*}(x_t), y_t) \\
-\text{such that}:\quad & \quad \theta^* = \arg\min_{\theta} \sum_{(x,y) \in D_{train} \cup D_{poison}} loss(f_{\theta}(x), y) \\
-\end{aligned}
-$$
-A célfüggvény, hogy a betanított modell $f_{\theta}$ a $D_{target}$ célmintákat a kívánt osztályba sorolja úgy, hogy a modellt a mérgezett $D_{poison} \cup D_{train}$ mintákon tanítjuk. Tehát a célfüggvény a keresett poison mintáktól indirekt módon függ az $f_{\theta}$ modellen keresztül, ami nagyban megnehezíti az egész optimalizáció megoldását: ahhoz, hogy kiértékeljük a célfüggvényt be kell tanítanunk az $f_{\theta}$ modellt. Pontosabban a $D_{poison}$ mintákat közelíthetjük gradiens süllyedéssel iteratívan ismételve az alábbi lépéseket, amíg $D_{poison}$ már nem módosul számottevően:
-1. Betanítjuk $f_{\theta}$ modellt $D_{train}\cup D_{poison}$-n
-2. Kiszámítjuk a célfüggvény (objective) $D_{poison}$ szerinti gradiensét
-3. Módosítjuk $D_{poison}$-t a gradiensének ellentétes irányába ($f_{\theta}$ hibázását akarjuk _minimalizálni_ $D_{target}$-n)
-
-Látható, hogy az $f$ modellt minden iterációban újra kell tanítani $D_{train}\cup D_{poison}$ adaton ("megoldjuk" a belső optimalizációt), és csak ezután értékelhetjük ki a célfüggvényt és számíthatjuk ki az $D_{poison}$ szerinti gradiensét ("megoldjuk" a külső optimalizáció). Ez rendkívül számításigényes, gyakorlatilag minden iteráció során egy teljes model újratanítás szükséges. A gyakorlatban approximációk és heurisztikák szükségesek, amelyek "elég jó" mérgezést eredményeznek, bár nem garantáltan optimálisat (pl. nem tanítjuk újra az $f_{\theta}$ modellt kihagyva a belső optimalizációt).
-
-#### Gradient alignment: A bilevel probléma közelítése
-
-A gradient alignment (gradiens illesztés) egy elegáns és hatékony megközelítés poisoning támadások tervezésére, amelyet a [Witches' Brew támadás](https://arxiv.org/abs/2009.02276) vezetett be. Ez egy **közelítő megoldás** a bilevel optimalizációs problémára, amely elkerüli a költséges belső optimalizálást.
-
-**Az ötlet:** Tegyük fel, hogy van egy célmintánk $(x_{target}, y_{target})$, amit téves $y_{malicious}$ osztályba akarunk soroltatni. Ahelyett, hogy az $(x_{target}, y_{malicious})$ mintát közvetlenül beszúrnánk a tanító adatba - ami könnyen detektálható lenne a félrecímkézés miatt -, olyan poison mintákat keresünk, amelyek a tanítás alatt nagyon hasonló $∇_\theta loss$ gradienst produkálnak mint a félrecímkézett $(x_{target}, y_{malicious})$ célminta. Más szavakkal, a mérgezett minta gradiensének **hasonlítania kell** ahhoz a gradiens irányhoz, amely $x_{target}$-et $y_{malicious}$ irányba tolja.
-
-**Hogyan generáljunk ilyen poison mintákat?** 
-1. Keressünk olyan létező $\{ (x_{p_1}, y_{p_1}), (x_{p_2}, y_{p_2}), \ldots, (x_{p_k}, y_{p_k})\}$ clean base mintákat, amelyek eleve hasonlóak a félrecímkézett $(x_{target}, y_{malicious})$ mintához (célszerű az $y_{malicious}$ osztályban keresni, tehát $\forall i:\, y_{p_i} = y_{malicious}$)
-2. Olyan poison mintákat állítunk elő, amelyek a modellt a kívánt $g_{target} = \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{target}), y_{malicious})$ irányba tolják. Ez az a gradiens, amely **növeli** annak valószínűségét, hogy $x_{target}$-et $y_{malicious}$-nak osztályozzuk. Ezért keressük azokat az $r_{p_i}$ perturbációkat, amelyre 
-   $$
-   \forall i: \qquad g_{target} = \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{t}), y_{malicious})\approx \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{p_i}+r_{p_i}), y_{p_i})
-$$
-	Ezt megkapjuk ha megoldjuk az alábbi optimalizációt:	
-	$r_{p_i}^* = \arg\max_{r_{p_i} : ||r_{p_i}|| \leq \varepsilon} \text{cosine\_similariy}\left(g_{target}, \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{p_i}+r_{p_i}), y_{p_i})\right)$
-	ahol a koszínusz hasonlóság maximalizálásával elérjük, hogy a két gradiens által bezárt szög minél kisebb legyen, vagyis egy irányba mutassanak. Így fognak a poison minták a  $(x_{target}, y_{malicious})$ mintához nagyon hasonló hatást kifejteni a tanítás során: a training során $\theta$ olyan irányba fog mozogni, hogy $f_\theta(x_{target}) → y_{malicious}$.
-3. Hozzáadjuk az $\{ (x_{p_i}+r_{p_i}^*, y_{p_i})\}$ mintákat a tanítóadathoz
-
-**Gradient alignment approach**: 
-``` 
-0. Train model ONCE on clean data
-1. Compute target gradient ONCE → GYORS (seconds) 
-2. For each base sample: 
-   - Optimize perturbation (few gradient steps) → GYORS (seconds-minutes) 
-4. Inject poisons 
-   
-Total cost: Csak 1 darab teljes model training + k perturbáció optimalizálás
-```
-
-##### Miért működik?
-
-A gradient alignment a bilevel probléma egy elsőrendű (Taylor) közelítése, hiszen **csak** az első training iterációra optimalizáljuk a poisont: 
-$$
-\theta_{t+1} \approx \theta_t - \eta \cdot \sum_{(x,y) \in D_{train}}\nabla_{\theta} \mathcal{loss}(f_{\theta_t}(x), y)
-$$
-Ennek ellenére ez a gyakorlatban meglepően jó, ami annak köszönhető, hogy a modell training trajectory-ja rövid távon jól közelíthető gradiens információval (tehát a modell paraméterek frissítési iránya az első iterációhoz képest nem sokat változik később). Empirikus megfigyelések alapján a gradient alignment alapú poisoning gyakran közel ugyanolyan sikeres, mint a teljes bilevel optimalizáció.
-
-##### Előnyök
-- **Skálázható:** Nagy modellekre (ResNet, Transformer) a bilevel approach gyakorlatilag megvalósíthatatlan (túl költséges), a gradient alignment viszont még ekkor is működhet
-- **Több poison** mintára is jól skálázódik. A több poison minta növeli a támadás hatékonyságát. Ugyanakkor a gyakorlatban néhány minta már gyakran elég a félreklasszifikáláshoz
-- A poison hatás **szétosztható** a poison minták között, ha 
-  $$
-  g_{target}\approx \frac{1}{k}\sum_{i=1}^k \nabla_{\theta} \mathcal{L}(f_{\theta}(x_{p_i}+r_{p_i}), y_{p_i})
-  $$
-	vagyis a poison minták **kumulált hatása** tolja el a kívánt irányba a modellt. A támadás így nehezebben detektálható, de a hatékonyság függ a batch mérettől, mivel minél több poison-nak kell egy batch-ben lennie az összhatás elérése végett.
-- **Rejtett:** Az $||r_{p_i}|| \leq \varepsilon$ miatt a módosítás nem feltétlen látható
-- A támadás **transzferálható** (elég egy hasonló modellt megtámadni, az működni fog a cél modellen is)
-##### Hátrányok
-- A bilevel optimalizációnál pontatlanabb, de általában nem számottevően. Ugyanakkor jóval olcsóbb támadás!
-
 ### Példák célzott adatmérgezésre
 
 **1. Malware detektálás**:
@@ -1259,24 +940,6 @@ Ennek ellenére ez a gyakorlatban meglepően jó, ami annak köszönhető, hogy 
 A cél az **általános degradáció** - csökkenteni a modell teljes pontosságát, minőségét vagy fairness garanciáját anélkül, hogy egy specifikus mintát céloznánk meg. A támadó célja, hogy a modell minél több mintán hibásan teljesítsen, vagy hogy bizonyos populációk ellen diszkrimináljon. 
 
 A célzott támadással szemben itt magasabb mérgezési arány lehet szükséges (20-50%), ami miatt könnyebb lehet detektálni. Ugyanakkor egyszerűbb a végrehajtás: véletlenszerű címkecsere vagy zajhozzáadás is elég lehet.
-
-### Támadás formalizálása
-
-A célzott támadáshoz hasonlóan ez is kétszintű (bilevel) optimalizációs problémaként formalizálható, csak a célfüggvény más:
-$$
-\begin{aligned}
-\text{Objective:}\quad &\forall_{(x, y) \in D_{val}}:\, f(x) \neq y \\
-\text{such that}:\quad & \quad\text{$f$ is trained on $D_{poison} \cup D_{train}$} \\
-\end{aligned}
-$$
-Ez átfogalmazható veszteségfüggvénnyel az alábbi formába:
-$$
-\begin{aligned}
-& D_{poison}^* = \arg\max_{D_{poison}} \sum_{(x, y) \in D_{val}}loss(f_{\theta^*}(x_t), y_t) \\
-\text{such that}:\quad & \quad \theta^* = \arg\min_{\theta} \sum_{(x,y) \in D_{train} \cup D_{poison}} loss(f_{\theta}(x), y) \\
-\end{aligned}
-$$
-ahol a $D_{val}$ egy a támadó által is elérhető validációs adat. Tehát keressük azokat a poison mintákat, amiket a $D_{train}$ tanítóadathoz hozzáadva, az ezen betanított modell validációs pontossága a lehető **legnagyobb**, vagyis a modell jól működik a tanítóadaton de minden más adaton pontatlan, tehát nem generalizál. Itt feltesszük, hogy $D_{val}$ hasonló ahhoz az adathoz, amin a modell alkalmazva lesz a gyakorlatban deployment után. Ez a probléma a célzott esethez hasonlóan nehéz, és az ott ismertett módszerrel közelíthetjük.
 
 ### Példák nem célzott adatmérgezésre
 
@@ -1384,160 +1047,6 @@ Ahol:
 ##  Védekezés poisoning támadások ellen
 
 A poisoning támadások elleni védelem különösen nagy kihívást jelent, mivel a támadás hatása könnyen szétosztható több poison minta között, amelyek egyenként nem mutatnak eltérést hanem csak együtt. Ezen minták azonosítása viszont gyakran lehetetlen ($n$ tanító minta és $k$ poison esetén ez ${n \choose k}$ kombináció vizsgálatát jelentené).
-
-### Outlier Detekció és Eltávolítás
-
-A mérgezett minták gyakran statisztikai outlier-ek a normál tréningadatokhoz képest.
-
-**Technikák**:
-
-- **Clustering-based**: Izolált klaszterek vagy szokatlan elhelyezkedésű pontok eltávolítása. Ehhez dimenzió redukció lehet szükséges (PCA, UMAP, stb.). Ha rendelkezünk egy hasonló de tiszta adaton betanított modellel, akkor ennek a modellnek az utolsó előtti rétegének a kimenete is klaszterezhető.
-- **Loss-based filtering**: Egy tiszta adaton betanított modell loss értékét is lehet szűrésre használni (főleg label flipping ellen):
-
-```
-1. Mérd minden minta loss-át az f tiszta modellel: L_i = L(f(x_i), y_i)
-2. Ha L_i > percentile(losses, 95%):
-   → Gyanús, valószínűleg poison
-```
-  
-- **Data Sanitization with Generative models**: Generatív modell (GAN, diffusion model, VAE) tanítása, amely megtanulja a "normál" adateloszlást, majd filter-ként használható.
-
-```
-1. Tanítsd a generativ modellt egy kis, megbízható clean adathalmazon
-2. Minden új minta x esetén:
-   - Generálj hasonló mintát: x_gen = Generative_model(noise, similar_to=x)
-   - Ha ||x - x_gen|| > threshold:
-     → x outlier, valószínűleg poison
-```
-
-**Előnyök**: Egyszerű, hatékony nyilvánvaló poisoning ellen 
-
-**Hátrányok**: Kifinomult poisoning, amely "natural-nak" tűnik, nem detektálható. Legitim ritka minták is eltávolíthatók (false positives).
-
-### Label Validation és Crowdsourcing
-
-Több független forrásból ellenőrizzük a címkéket.
-
-**Technikák**:
-
-- **Multiple annotators**: Minden mintát több annotátor címkézzen → konszenzus keresése
-- **Expert review**: Kritikus vagy gyanús minták szakértői felülvizsgálata
-- **Automated label verification**: Pre-trained modellek használata konzisztencia-ellenőrzésre
-
-**Előnyök**: Hatékony label-flipping ellen 
-
-**Hátrányok**: Drága (emberi munkaerő), nem skálázható nagy adathalmazokra. Clean-label attacks (ahol a címke helyes) ellen nem működik.
-
-### Ensemble Training on Disjoint Subsets
-
-Több modellt tanítunk **különböző, diszjunkt** alhalmazokon, majd voting/consensus.
-
-**Technika**:
-
-```
-1. Oszd fel a tréningadatokat K diszjunkt részre: D_1, D_2, ..., D_K
-2. Taníts K különböző modellt: f_1 on D_1, f_2 on D_2, ..., f_K on D_K
-3. Inference: Majority voting
-   prediction = majority_vote([f_1(x), f_2(x), ..., f_K(x)])
-```
-
-**Miért működik?**
-
-- Ha poisoning csak az egyik subset-ben van → csak az egyik modell kompromittálódik
-- A többi ($K-1$) modell clean → majority vote kiszűri a poisont
-
-**Előnyök**: Robusztus, ha poisoning nem terjed el minden subset-re 
-
-**Hátrányok**: $K$-szoros training cost. Ha poisoning minden subset-ben van (vagy adaptive attack), nem működik. A $K$ megfelelő beállítás fontos. Ez könnyen átalakítható egy **certified defense** technikává, ami garanciát is ad legfeljebb $\ell$ darab poison minta esetén: csak akkor végezzük el az inference-t, ha legalább $\ell+1$ modell azonos döntést hoz (az $\ell$ poison minta legfeljebb $\ell$ modell döntését befolyásolhatja amennyiben minden modell diszjunkt adatokon lett tanítva). Ebben az esetben $K > 2\ell$.
-
-### Robust Training Módszerek
-
-#### 1. RONI - Reject on Negative Impact
-
-Minden új tréningminta hozzáadása előtt teszteljük annak hatását a modell teljesítményére.
-
-**RONI (Reject On Negative Impact) algoritmus**:
-
-```
-1. Tanítsd a modellt az aktuális "clean" adathalmazon → f_current
-2. Minden új jelölt minta x_new esetén:
-   a) Tanítsd a modellt (current data + x_new) → f_with_new
-   b) Teszteld mindkét modellt egy validation set-en:
-      accuracy_current = test(f_current, validation_set)
-      accuracy_with_new = test(f_with_new, validation_set)
-   c) Ha accuracy_with_new < accuracy_current - threshold:
-      → Reject x_new (valószínűleg poison)
-   d) Különben accept x_new
-```
-
-**Előnyök**: Direkt méri a poison hatását 
-
-**Hátrányok**: Rendkívül költséges - minden új mintához újra kell tanítani a modellt. Nem skálázható nagy adathalmazokra. Kis hatású poisoning-ot nem detektál.
-
-#### 2. Differentially Private Training
-
-Ha differential privacy-vel tanítunk, akkor egyetlen poisoned minta hatása korlátozott.
-
-**DP-SGD (Differentially Private SGD)**:
-
-```
-Minden training iteration:
-1. Számítsd a gradienst minden mintára
-2. Clip-eld a gradienseket: gradient_i := clip(gradient_i, C)
-   → Egyetlen minta ne tudjon túl nagy hatást elérni
-3. Adj zajt a gradiens összeghez: 
-   gradient_total = Σ gradient_i + Gaussian_noise(σ)
-4. Model update ezzel a noisy, clipped gradienssel
-```
-
-**Előnyök**: Formális garanciák a poisoning hatás korlátozására. Privacy védelem is. 
-
-**Hátrányok**: Accuracy loss (5-15%). Erős poisoning (sok mérgezett minta) ellen kevésbé hatékony.
-
-#### 3. Anomália Detekció a Training Során
-
-##### Loss-based Filtering
-
-Poisoned minták gyakran magas loss értéket okoznak, mivel nem illeszkednek a természetes adateloszlásba. Most training közben a tanítás alatt álló modellel számolunk loss értéket.
-
-**Technika**:
-
-```
-Training közben:
-1. Mérd minden minta loss-át: L_i = L(f(x_i), y_i)
-2. Ha L_i > percentile(losses, 95%):
-   → Gyanús, csökkentsd a súlyát vagy távolítsd el
-```
-
-**Előnyök**: Egyszerű implementálás
-
-**Hátrányok**: Clean, de nehéz minták is magas loss-t okozhatnak. Adaptív poisoning ezt kikerülheti.
-
-##### Gradient-based Anomaly Detection
-
-Poisoned minták szokatlan gradiens mintázatokat okoznak a training során.
-
-**Technika**:
-
-```
-Minden batch training után:
-1. Mérjük az egyes minták gradiens hozzájárulását:
-   gradient_i = ∇_θ L(f(x_i), y_i)
-
-2. Detektáljuk a szokatlan gradiens-eket:
-   - Nagy magnitude: ||gradient_i|| >> mean(||gradients||)
-   - Szokatlan direction: gradient_i különbözik a többi iránytól
-
-3. Gyanús minták eltávolítása vagy súly-csökkentés
-```
-
-
-**Előnyök**: Dinamikus, training alatt működik 
-
-**Hátrányok**: Tiszta, de "nehéz" minták is szokatlan gradienst okozhatnak (false positives). 
-
-**Robusztusabb verzió:** Az utóbbi probléma (részben) kiküszöbölhető ha az egyes minták gradienseit az összes (vagy az adott batchben levő) tanító minta gradienseinek az első néhány főkomponensére (PCA) vetítjük, majd a projektált gradiens nagysága szerint szűrünk. A feltevés az, hogy amíg a tiszta adatok vannak túlnyomó többségben, addig a poison minták gradiensei a főkomponensektől eltérő irányba mutatnak. 
-
 
 ---
 # Backdoor támadások
@@ -1947,15 +1456,6 @@ Modern neurális hálókban (pl. ReLU aktivációval) sok neuron nem aktiválód
 
 A **worst-case és average-case performance közötti gap** akár **15-20x** is lehet! Pontosan ezt a különbséget használja ki a támadó!
 
-### Miért okoz problémát a dense activation?
-
-Amikor a sponge input majdnem minden neuront aktivál, a következő problémák lépnek fel:
-
-1. **Skip mechanizmus kikapcsolása**: Ha minden neuron aktív → nincs mit kihagyni, a GPU-nak minden műveletet el kell végeznie
-2. **Memory bandwidth saturation**: Dense activations → sok adat mozgatása memóriában → memory bandwidth bottleneck
-3. **Cache thrashing**: Túl sok aktív neuron → cache-ben nem fér el mind → több cache miss → lassabb memory access
-4. **Reduced parallelism efficiency**: Dense computation → load imbalance a GPU thread-ek között → szinkronizációs overhead nő
-
 ## Sponge példák (Sponge Examples)
 
 A sponge példák maximalizálják az inference latency-t és energiafogyasztást anélkül, hogy megváltoztatnák a modell végső prediktált osztályát (ez opcionális követelmény):
@@ -1975,81 +1475,6 @@ ahol:
 - Opcionális constraint: Az osztályozás ne változzon (stealth támadás)
 
 Ezt az optimalizációt megoldhatjuk black-box és white-box módon.
-
-### Black-box sponge generálás
-
-Black-box esetben a támadó nem látja a modell belső működését, hanem csak az input-output párokat, és a latency mérés eredményét minden query után.
-
-Az egyik legegyszerűbb black-box támadás a **genetikus algoritmus**, vagy evolúciós optimalizálás, ahol a fitness function a latency. A támadó egy populációval (sok random input) kezd, majd minden generációban méri az inference latency-t mindegyikre. A legjobb egyedeket (legnagyobb latency-t okozó inputokat) kiválasztja szülőknek (parents), akikből keresztezéssel (crossover) új utódokat (offspring) hoz létre - például képeknél pixel régiókat keverni a két parent-ből, vagy spektrális domain-ben kombinálni őket. Ezután véletlenszerű mutációkat alkalmaz az utódokon (pl. random pixelek megváltoztatása kis $\varepsilon$ értékkel, Gaussian noise hozzáadása). Az új populáció a legjobb szülőkből és az utódokból áll, és ez a folyamat ismétlődik több generáción keresztül. Kezdetben a random inputok átlagos latency-t okoznak, de az evolúció során fokozatosan növekszik a latency, végül konvergálva az optimális sponge példákhoz (maximális latency). 
-
-**Előnyök**:
-
-- Nem kell gradiens
-- Jól működik komplex, nem-differenciálható rendszereknél
-- Robusztus
-
-**Hátrányok**:
-
-- Sok query szükséges (1000-10000+)
-- Lassú konvergencia
-- Nem garantált a globális optimum
-
-A genetikus algoritmus mellett lehetséges még nullad rendű optimalizálás (gradiens numerikus becslése differenciál hányados számításával), illetve megerősítéses tanulás (reinforcement learning) ahol egy külön modell (policy network) tanulja meg, hogy hol és hogyan módosítsa a támadó az inputot.
-
-### White-box sponge generálás
-
-White-box esetben a támadó teljes hozzáféréssel rendelkezik a modellhez: architektúra, súlyok, aktivációk és ezért képes gradiens-alapú optimalizálást használni a sponge generálásához. A cél a dense activation maximalizálás, vagyis olyan inputot generálunk, amely minden neuront aktivál (vagy a lehető legtöbbet), ezzel kikapcsolva a GPU sparsity optimalizációkat:
-$$
-\begin{aligned}
-&x_{sponge} = \arg\max_{x} \sum_{l=1}^{L} \sum_{i=1}^{N_l} \mathbb{1}[\text{activation}_{l,i}(x) > 0] \\
-\text{such that: }\quad &||x - x_{original}|| \leq \varepsilon
-\end{aligned}
-$$
-ahol:
-- $L$: rétegek száma
-- $N_l$: neuronok száma az $l$-edik rétegben
-- $𝟙[⋅]$: Indicator function (1 ha neuron aktív, 0 ha nem)
-- Célfüggvény: Maximalizáljuk az aktív neuronok számát az összes rétegben
-
-Mivel a fenti célfüggvény nem folytonos, ezért a gyakorlatban célszerűbb a következő célfüggvény, ami hasonló hatást ér el:
-$$
-x_{sponge} = \arg\max_{x} \sum_{l=1}^{L} ||\text{activations}_l(x)||_1
-$$
-Ez a neuronok intenzitását is maximalizálja. Mivel az aktivációkat és azokat előállító modellt (függvényt) ismerjük, ezért gradienst tudunk számolni és gradiens süllyedéssel tudjuk jól közelíteni a célfüggvény maximumát.
-
-**Előnyök:** 
-- Gradiens-alapú → gyors konvergencia
-- Kevés iteráció (50-200) általában elegendő
-- Nem kell sok query (black-box esetben 1000-10000+)
-- Hatékonyabb mint a black-box, mivel a gradiens pontosan számolható (nem csak becsülhető), ami pontosabb irányokat szolgáltat az optimalizáció során
-- Transzferálható: Ha a támadó hozzáfér egy hasonló modellhez (pl. nyílt forráskódú változat): White-box attack on surrogate model → transfer to black-box target
-
-**Hátrányok**:
-- Teljes modell hozzáférés szükséges, ami deployed commercial models esetén általában nem elérhető
-## Védekezés availability támadások ellen
-
-**1. Input validation & anomaly detection**:
-- Szokatlan input pattern-ek detektálása
-- Outlier detection az activation space-ben
-
-**2. Timeout mechanizmusok**:
-- Maximum inference time limit
-- Ha túllépi → interrupt és default válasz
-
-**3. Resource quotas**:
-- Per-user rate limiting
-- GPU utilization monitoring
-- Automatikus scaling policies
-
-**4. Model optimization**:
-- Pruning, quantization → csökkenti a worst-case complexity-t
-- Early exit mechanisms → egyszerűbb input-okra kevesebb compute
-
-**5. Adversarial training sponge példákra**:
-- Generálunk sponge példákat white-box módon
-- Model regularizáció: penalizáljuk a magas latency-t training során
-
-Mint mindenhol a gépi tanulás biztonsága terén, itt is kompromisszumokkal (**trade-off**) kell számolni: A védekezés csökkentheti a modell pontosságát vagy növelheti az average-case latency-t.
 
 ---
 # Confidentiality (Bizalmasság) támadások 
@@ -2234,156 +1659,9 @@ A membership inference **alsó korlátot ad** a privacy sérelem mértékére:
 
 **Következtetés:** Ha membership inference működik, az azt jelzi, hogy a modell túl sokat "árulgat el" a tréningadatokról. Ez red flag, amely további vizsgálatokat és védekező intézkedéseket igényel (pl. differential privacy).
 
-#### Membership Inference működési alapelve
-
-A membership inference lényege: teszteljük a modell eltérő viselkedését, amikor egy minta a tréningadatban szerepelt, versus amikor nem.
-
-**Adott**:
-- $f$: Egy betanított gépi tanulási modell (pl. képosztályozó, nyelvi modell)
-- $x$: Egy query adat (kép, szöveg, rekord)
-- $y$: x valódi címkéje (ha ismert)
-
-**Cél**: Eldönteni, hogy $(x, y) \in D_{train}$ (member) vagy $(x,y) \notin D_{train}$ (non-member)?
-
-**Hipotézis**: A modell eltérően reagál member és non-member példákra, és ezt a különbséget ki lehet használni.
-
-##### Két eloszlás összehasonlítása
-
-A membership inference matematikailag két eloszlás összehasonlítása:
-
-**Member eloszlás** ($P_{in}$):
-$$
-P_{in}(s) = \Pr(signal = s | (x,y) \in D_{train})
-$$
-Az az eloszlás, amit a modell **member** mintákon produkál egy adott signal-ra (pl. confidence score, loss, gradient).
-
-**Non-member eloszlás** ($P_{out}$):
-$$
-P_{out}(s) = \Pr(signal = s | (x,y) \notin D_{train})
-$$
-Az az eloszlás, amit a modell **non-member** mintákon produkál.
-
-**Membership inference cél**: Eldönteni egy adott $(x, y)$ mintáról, hogy melyik eloszlásból származik a signal értéke. Ez történhet statsztikai próbákkal, vagy külön erre a célra betanított classifier modellel.
-
-##### Signal típusok
-
-Mi lehet a "signal"? Különböző információk, amiket a modellből ki lehet nyerni:
-
-**1. Prediction confidence (Előrejelzés konfidencia)**:
-$$
-signal = P_f(y | x) 
-$$
-A modell milyen biztos abban, hogy $x$ osztálya $y$? A legtöbb osztályozó modellnek (classifier) ez a kimenete.
-
-**Intuíció**: Member mintáknál **magasabb** konfidencia várható (a modell "látta" ezt a példát).
-
-**2. Loss érték**:
-$$
-signal = loss(f(x), y)
-$$
-Mekkora a loss (cross-entropy, MSE) erre a mintára?
-
-**Intuíció**: Member mintáknál **alacsonyabb** loss várható (a modell jobban illeszkedik rá).
-
-**3. Prediction entropy**:
-$$
-signal = -\sum_c P_f(c|x) \log P_f(c|x)
-$$
-Mennyire "biztos" a modell az előrejelzésében (alacsony entropy = biztos, magas = bizonytalan)?
-
-**Intuíció**: Member mintáknál **alacsonyabb** entropy (kevésbé szétoszló valószínűség-eloszlás).
-
-**4. Gradiens normája**:
-$$
-signal = ||\nabla_{\theta} loss(f(x), y)||
-$$
-Mekkora lenne a gradiens, ha erre a mintára tovább tanítanánk?
-
-**Intuíció**: Member mintáknál **kisebb** gradiens (a modell már "optimalizálva van" ezekre).
-
-#### Membership inference módszerek
-
-A signal alapján két fő módszertani kategória létezik:
-##### 1. Statisztikai tesztek (Threshold-based)
-
-**Alapötlet**: Egyszerű küszöbérték (threshold) alapú döntés.
-
-**Algoritmus**:
-```
-if signal > threshold:
-    return "member"
-else:
-    return "non-member"
-```
-
-**Threshold meghatározás**:
-- **Empirikus módszer**: Gyűjts egy kis "shadow" tréningadathalmazt, aminek tudod a membership státuszát
-- Mérj signal értékeket member és non-member mintákra
-- Válaszd a threshold-ot, amely optimálisan szeparálja a két eloszlást (pl. ROC görbe alapján)
-
-**Előnyök**:
-- Egyszerű, gyors
-- Nincs szükség külön attack model tanítására
-- Interpretálható
-
-**Hátrányok**:
-- Egy dimenzióban működik (csak egy signal)
-- Nem adaptív (nem tanulja meg a komplex mintázatokat)
-- Threshold választás nem triviális
-
-##### 2. Attack model (classifier) tanítás (ML-based)
-
-**Alapötlet**: Tanítsunk egy külön attack modellt (klasszifikálót), amely megtanulja megkülönböztetni a member és non-member signal-okat.
-
-**Architektúra**:
-```
-Attack Model: signal → {member, non-member}
-```
-
-**Training folyamat**:
-
-**1. Shadow model training**:
-- A támadó nem fér hozzá a célmodell tréningadataihoz
-- **Shadow model**: A támadó tanít egy hasonló modellt (shadow/surrogate) egy **saját** adathalmazon (shadow/surrogate dataset)
-- **Lényeg**: A shadow model viselkedése hasonlít a célmodellére (hasonló architektúra, hasonló adat eloszlás)
-
-**2. Signal gyűjtés shadow modellből**:
-- A shadow dataset egy részét használja tréningre (member példák)
-- A másik részét nem használja (non-member példák)
-- **Tudja**, hogy melyik melyik!
-- Mindkét halmazon végigfuttatja a shadow modellt → signal-okat gyűjt
-
-**3. Attack model tanítás**:
-```
-Training data for attack model:
-- Input: signal-ok (confidence, loss, entropy, stb.)
-- Label: member / non-member
-
-Attack model: Egy egyszerű klasszifikáló (pl. logistic regression, neural network)
-```
-
-**4. Támadás a célmodellen**:
-- A betanított attack modellt használja
-- Lekérdezi a célmodellt egy adott $(x, y)$ párral → signal
-- Attack model predikciója: member vagy non-member?
-
-**Előnyök**:
-
-- **Több signal kombinálása** egyidejűleg (multi-dimensional)
-- Megtanulja a komplex mintázatokat member vs. non-member között
-- **Adaptív**: Jobban működik, mint egyszerű threshold
-- **Transzferálható**: Egy shadow modellen tanult attack model gyakran működik más hasonló célmodelleken is
-
-**Hátrányok**:
-
-- **Bonyolultabb**: Shadow model training szükséges
-- **Computationally expensive**: Több modell tanítás (shadow + attack)
-- **Shadow dataset szükséges**: Hasonló eloszlású adatokhoz kell hozzáférni
-- **Transfer gap**: Ha a shadow model nagyon eltér a célmodelltől, az támadás model nem működik jól
-
 ### Védekezés training data extraction ellen
 
-- Differential privacy → csökkenti a signal különbséget $P_{in}$ és $P_{out}$ között
+- Differential privacy → no memorization about individual training samples
 - Model regularization → no overfitting → kevesebb memorizálás
 - Confidence masking/calibration → megnehezíti a konfidencia alapú támadást
 - Ensemble models → "zajt" ad a signal-okhoz
@@ -2452,85 +1730,6 @@ Az active learning megoldja a naive approach legnagyobb problémáját: **kevese
 
 - Ha egy minta messze van a döntési határfelülettől (pl. confidence = 0.99), akkor annak a címkéje "nyilvánvaló" → kevés új információt ad
 - Ha egy minta **a határon van** (pl. confidence = 0.51), akkor annak a címkéje kritikus a döntési felület pontos megrajzolásához → sok új információt ad
-
-**Uncertainty metrics** (hogyan mérjük az "informatívságot"?):
-
-**1. Least Confidence**:
-$$
-uncertainty(x) = 1 - max_c P_{stolen}(c|x)
-$$
-
-ahol $P_{stolen}(c|x)$ jelöli az ellopott (surrogate) modell konfidenciáját abban, hogy az $x$ mintához az $c$ címke tartozik. Minél alacsonyabb a legmagasabb confidence, annál bizonytalanabb a modell.
-
-**2. Margin Sampling**:
-$$
-uncertainty(x) = P_{stolen}(c_1|x) - P_{stolen}(c_2|x)
-$$
-
-Ahol $c_1$ és $c_2$ a top-2 osztály. Kis margin → bizonytalan döntés.
-
-**3. Entropy**:
-$$
-uncertainty(x) = -∑_c P_{stolen}(c|x) \log P_{stolen}(c|x)
-$$
-
-Magas entropy → eloszlott valószínűség → bizonytalan.
-
-**4. Query-by-Committee (QBC)**:
-
-```
-Train ensemble of models: {f_1, f_2, ..., f_M}
-uncertainty(x) = disagreement between models
-```
-
-Ha az ensemble tagok nem értenek egyet → informatív minta.
-
-**Active learning ciklus**:
-
-A cél, hogy a fenti metrikákat a lokálisan tanított surrogate modellen értékeljük ki: ezt a modellt használjuk arra, hogy azonosítsuk azokat az informatív mintákat, amiket majd lekérdezünk a cél modelltől. A lekérdezett mintákkal frissitjük a surrogate modellt, így tudunk minden körben informatívabb mintákat azonosítani.
-
-**Példa**:
-
-```
-Iteration 1:
-- Pool: 10,000 unlabeled images
-- Surrogate: Initial ResNet (random or pre-trained)
-- Uncertainty scoring: Calculate entropy for all 10,000
-- Select top 100 with highest entropy
-- Query target model for these 100
-- Fine-tune surrogate on these 100 labeled examples
-
-Iteration 2-50:
-- Repeat with updated surrogate
-- Surrogate becomes increasingly accurate
-- Queries focus on harder examples near decision boundary
-```
-
-**Eredmény**:
-
-- **Naive approach**: 100,000 query → 95% stolen model accuracy
-- **Active learning**: 5,000-10,000 query → 95% stolen model accuracy
-- 10-20x kevesebb query ugyanazon teljesítményhez!
-
-Az active learning tovább javítható modell disztillációval (surrogate soft labelen történő tanítása), párhuzamosan több surrogate modellel (ensemble stealing), data augmentation-nel, szintetikus query előállítással (GAN, diffusion model), transfer learning (pre-trainelt surrogate), stb.
-
-### Védekezés model stealing ellen
-
-**1. Rate limiting és query monitoring**:
-
-- Detektáld a gyanús query pattern-eket (sok query rövid időn belül)
-
-**2. Prediction API design**:
-
-- Csak hard labels visszaadása (no confidence scores), így a modell bizonytalansága nem becsülhető
-- A visszaadott konfidencia érték kerekítése
-- Perturbáció hozzáadása az output-hoz
-
-**3. Watermarking**:
-
-- "Ujjlenyomat" beépítése a modellbe, amely detektálható a stolen modellben (pl. backdoor beépítésével amit csak a modell tulajdonosa ismer)
-
-**Trade-off**: A védelem csökkentheti a modell használhatóságát legitim felhasználók számára (pl. ha nem adunk confidence scores, akkor uncertainty estimation nem lehetséges).
 
 ---
 # Konklúzió
@@ -2604,10 +1803,9 @@ Mivel egyetlen védelmi mechanizmus nem nyújt teljes védelmet, és minden véd
 - Audit trails, compliance checking
 - Red team exercises
 
-A problémát nem elszigetelten, csak a modell szintjén kell megoldani például költséges robusztus/adversarial tanítással, hanem az **egész rendszer kontextusában** - beleértve az adatgyűjtési pipeline-t, deployment környezetet, felhasználói interakciókat, és downstream alkalmazásokat. Ez a **defense-in-depth filozófia**: Ha egy réteget megkerülnek, más rétegek még mindig védenek. A cél nem a támadás teljes megakadályozása (ami gyakran irreális), hanem a támadási költség növelése olyan szintre, hogy a támadó számára ne érje meg vagy ne legyen megvalósítható gyakorlatban. A támadás költségeinek növelésének egy hatékony módja a védelem [[Blog/AI/Bevezetés a gépi tanulás biztonságába - Jegyzet#A véletlenszerűség fontossága - Security through randomness\|randomizálása]] (pl. véletlen alkalmazunk elemeket az egyes rétegekből), ezért egy adaptív támadó nem tud determinisztikus optimális stratégiát találni - csak várható érték alapján optimalizálhat, ami gyengébb eredményt ad neki. Ez a "security by randomness" elv inkább követendő mint a védelmi mechanizmus elrejtése ("security by obscurity").
+A problémát nem elszigetelten, csak a modell szintjén kell megoldani például költséges robusztus/adversarial tanítással, hanem az **egész rendszer kontextusában** - beleértve az adatgyűjtési pipeline-t, deployment környezetet, felhasználói interakciókat, és downstream alkalmazásokat. Ez a **defense-in-depth filozófia**: Ha egy réteget megkerülnek, más rétegek még mindig védenek. A cél nem a támadás teljes megakadályozása (ami gyakran irreális), hanem a támadási költség növelése olyan szintre, hogy a támadó számára ne érje meg vagy ne legyen megvalósítható gyakorlatban. A támadás költségeinek növelésének egy hatékony módja a védelem [[Blog/AI/BSc_IT_Sec_notes_HU#A véletlenszerűség fontossága - Security through randomness\|randomizálása]] (pl. véletlen alkalmazunk elemeket az egyes rétegekből), ezért egy adaptív támadó nem tud determinisztikus optimális stratégiát találni - csak várható érték alapján optimalizálhat, ami gyengébb eredményt ad neki. Ez a "security by randomness" elv inkább követendő mint a védelmi mechanizmus elrejtése ("security by obscurity").
 
 Kritikus alkalmazásokban (önvezető autók, hadipar, egészségügy) pedig **fall-back mechanizmusok** szükségesek: ha az ML komponens kompromittálódik, hagyományos rule-based rendszerek, emberi felügyelet vagy fizikai biztonsági intézkedések még mindig védik a kritikus funkciókat.
-
 
 ## Kontextus-függő védelem - Alkalmazás-specifikus megközelítés
 
