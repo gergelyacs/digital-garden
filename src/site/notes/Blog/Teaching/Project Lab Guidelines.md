@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T14:01:33.454+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T14:08:44.705+02:00"}
 ---
 
 
@@ -64,9 +64,10 @@ That said, questions become uncomfortable when you come unprepared with code you
 ## Communication and meetings
 
 - You can write me any time when you get stuck with your project. I reply as soon as I can.
-- Don't use AI to write me messages or emails; I won't either. Typos and stylistic problems are part of being human and will not affect your final grade.
 - I expect weekly meetings; tolerable cancellations include midterms, sick leave, and occasional personal issues. We can have meetings online if that fits better for either of us.
 - If you have not made progress on your project by the end of the day before a meeting (EOB), please cancel it on time. I will also try to respect you by not canceling a few hours before; I expect the same from you.
+- Don't use AI to write me messages or emails; I won't either. Typos and stylistic problems are part of being human and will not affect your final grade.
+- I'm not a professor, and my first name is [Gergely](https://en.wiktionary.org/wiki/Gergely) \[ˈɡɛrɡɛj\] (Gregory in English).
 
 ---
 # Grading
