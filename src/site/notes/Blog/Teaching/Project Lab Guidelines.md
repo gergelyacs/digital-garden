@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T14:14:19.118+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T16:42:00.672+02:00"}
 ---
 
 
@@ -49,7 +49,7 @@ Keep it brief,  a few bullet points is enough. The point is alignment, not docum
 
 ## I do not debug your code
 
-I have debugged enough code in my life. I have decided I am now too old for it, and I am happy with that decision. During the meeting, I usually focus on concepts rather than code.
+I have debugged enough code in my life. During the meeting, I usually focus on concepts rather than code.
 
 More importantly: you will not learn anything without struggling through it yourself. The time you spend confused, trying things that do not work, and eventually figuring out why, is the most precious. You will not appreciate this struggle while it is happening, but you will later.
 
