@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T16:42:00.672+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T16:42:58.728+02:00"}
 ---
 
 
@@ -57,9 +57,7 @@ AI makes this easier than it used to be, and you should use it. But "easier" doe
 
 ## I ask a lot of questions
 
-Asking questions is how I engage, and it is also how I learn. I am not testing you with every question; I am often curious myself.
-
-That said, questions become uncomfortable when you come unprepared with code you cannot explain, with nothing new to show, or with a vague sense that things are "going okay." Expect to be asked _why_, _what happens if_, _what did you try_, and _what is the meaning of the formula (you) implemented_. Have answers ready, or be honest about what you do not yet know.
+Asking questions is how I engage, and it is also how I learn. That said, questions become uncomfortable when you come unprepared with code you cannot explain, with nothing new to show, or with a vague sense that things are "going okay." Expect to be asked _why_, _what happens if_, _what did you try_, and _what is the meaning of the formula (you) implemented_. Have answers ready, or be honest about what you do not yet know.
 
 ## Communication and meetings
 
