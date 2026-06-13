@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T17:02:21.498+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T17:05:47.290+02:00"}
 ---
 
 
@@ -31,7 +31,7 @@ The deadline for a topic change is the end of the first month of the semester un
 
 ## Problem solving: KISS
 
-Keep It Simple and Stupid. This is a design philosophy and, in practice, the most reliable way to make progress without losing motivation. Begin with the most stripped-down version of your idea that still does something meaningful. This is the quick and dirty solution driven by desire rather than rational, careful thinking. Get that working and understand it completely. Then, and only then, add the next layer of complexity. Build upward from solid ground.
+Keep It Simple and Stupid. This is a design philosophy and, in practice, the most reliable way to make progress without losing motivation. Begin with the most stripped-down version of your idea that still does something meaningful. This is the quick and dirty solution driven by desire rather than rational, careful thinking. Get that working and understand it completely. Then, and only then, add the next layer of complexity. 
 
 ## Use AI, but own what it produces
 
