@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T16:52:55.924+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T17:02:21.498+02:00"}
 ---
 
 
@@ -77,4 +77,4 @@ I grade effort, not results. Negative results are also results! If you put serio
 ---  
 # Changing advisor is always an option
 
-At the end of any semester, you are free to move to a different advisor. No explanation is required, no hard feelings will follow. You are not obliged to continue any project. If the collaboration is not working - either because the topic does not fit, or the working style is wrong for you, or you simply want a new experience - that are all legitimate reasons to change. I would rather you work well somewhere else than stay and be miserable here.
+At the end of any semester, you are free to move to a different advisor. No explanation is required, no hard feelings will follow. You are not obliged to continue any project. If the collaboration is not working - either because the topic does not fit, or the working style is wrong for you, or you simply want a new experience - that are all legitimate reasons to change. 
