@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T16:42:58.728+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T16:48:30.620+02:00"}
 ---
 
 
@@ -19,7 +19,7 @@ Many students find this harder than it seems at first glance due to many cultura
 ---
 # Working style
 
-There are two main categories of working cultures. One treats a plan as a contract: deviating from it feels like failure, and any significant change means essentially starting over. The other treats a plan as a starting hypothesis: useful at the outset, but subject to revision and change as results come in and the conversation evolves. I rather belong to the second camp. For example, you can make a project plan if it helps you, but I will not require it. 
+There are two main categories of working cultures. One treats a plan as a contract: deviating from it feels like failure. The other treats a plan as a starting hypothesis: useful at the outset, but subject to revision and change as results come in and the conversation evolves. I rather belong to the second camp. For example, you can make a project plan if it helps you, but I will not require it. 
 
 This mode of working is usually messier, and that is not tolerated by everybody. Directions change, priorities shift, which can cause some frustration for people who are less comfortable with uncertainty. I don't say either culture is better than the other, hence the existence of both. If you find it very frustrating, I am not the right advisor for you.
 
