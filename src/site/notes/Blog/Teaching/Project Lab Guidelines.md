@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T13:37:06.572+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T13:38:10.183+02:00"}
 ---
 
 
@@ -43,9 +43,9 @@ If you show up to a meeting with code you generated an hour before and cannot ex
 
 After each meeting, you **have to** write a short set of notes and share them in our common folder as a **single** Markdown file, named by date if you like, or just kept as a running log.
 
-The things I need are (1) **the current status of the project** including project goals, assumptions, and main techniques (this only needs to be written once at the very beginning, but updated continuously as the project evolves), (2) what you have done since the last meeting — how you progressed with the last TODOs — and (3) a list of the next steps we agreed on. I supervise multiple students and will not reliably remember what we decided unless it is written down.
+The things I need are (1) **the current status of the project** including project goals, assumptions, and main techniques (this only needs to be written once at the very beginning, but updated continuously as the project evolves), (2) what you have done since the last meeting (how you progressed with the last TODOs) and (3) a list of the next steps we agreed on. I supervise multiple students and will not reliably remember what we decided unless it is written down.
 
-Keep it brief. A few bullet points is enough. The point is alignment, not documentation for its own sake. For that, you will have the report at the end of the project.
+Keep it brief,  a few bullet points is enough. The point is alignment, not documentation for its own sake. For that, you will have the report at the end of the project.
 
 ## I do not debug your code
 
