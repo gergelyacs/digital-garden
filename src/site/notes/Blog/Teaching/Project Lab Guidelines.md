@@ -1,12 +1,12 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-13T17:05:47.290+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-14T10:33:30.135+02:00"}
 ---
 
 
-Read this before choosing any of my research/semester/thesis topic. This includes requirements from my side, and also what you can expect if you work with me.
+Read this before choosing any of my research/semester/thesis topic. This includes requirements from my side, and also what you can expect if you want to work with me.
 
 ---
-# Goal
+# Overall
 
 In English this course is called "Project Lab." In Hungarian it is "Önálló Labor": independent lab work. The Hungarian framing is closer to what I am hoping for.
 
