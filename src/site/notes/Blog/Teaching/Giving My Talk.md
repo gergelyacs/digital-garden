@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-03-21T20:02:02.758+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-06-14T10:53:44.992+02:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial in practice. This post is a collection of a few observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -9,7 +9,7 @@ Mass education in universities has many drawbacks, and one of the most significa
 
 Before thinking about how to give a good talk, it's worth asking why you're giving one. The reasons matter more than you might think.
 
-For students, the most basic (and most limiting) reason is simply to defend their work. This is partly why I dislike the term 'defense.' It easily leads to a talk focused on proving knowledge rather than communicating it, which is the wrong instinct entirely. The audience doesn't want to be impressed; they want to understand and learn. A better goal is to motivate people, to share something you find genuinely interesting and make them feel the same way, or at the very least to make them want to read your paper.
+For students, the most basic (and most limiting) reason is simply to defend their work. This is partly why I dislike the term 'defense.' It easily leads to a talk focused on proving knowledge rather than communicating it, which is the wrong instinct entirely. The audience doesn't want to be impressed; they want to understand and learn. A better goal is to motivate people, to share something you find interesting and make them feel the same way, or at the very least to make them want to read your paper.
 
 Beyond that, there are less visible motivations to give a talk, the preparation is being one of them. I often accept invitations simply to force myself to read and understand something I've been putting off. Preparing a talk is one of the best ways to learn, and that alone is often reason enough.
 
@@ -21,7 +21,7 @@ Finally, giving talks improves your general ability to communicate. If you can e
 
 # It Starts with You, Not the Audience
 
-Here is something that took me a while to really understand: _the talk is more about you than the audience_. You have to enjoy your own talk first. If you don't, the audience won't either. So the first question to ask yourself is not "what does the audience want to hear?" but "what am I genuinely enthusiastic about?"
+Here is something that took me a while to really understand: _the talk is more about you than the audience_. You have to enjoy your own talk first. If you don't, the audience won't either. So the first question to ask yourself is not "what does the audience want to hear?" but "what am I enthusiastic about?"
 
 Enthusiasm is contagious, but it has to be real. People tend to be more enthusiastic when they feel ownership over some part of what they're presenting - the problem, the motivation, or the solution - or when they just find the work really interesting. If you're presenting someone else's work without caring much about it, that will show. Find the angle that makes you care, spend more time on the parts that you find more interesting.
 
@@ -37,7 +37,7 @@ _Self-confidence_ is crucial for a good talk, and it can be earned through maste
 
 This requires accepting your weaknesses honestly. Every presenter has specific, real ones - rushing through slides, over-explaining, avoiding eye contact. The temptation is to either ignore them or feel guilty about them. Neither helps. The productive move is to name them clearly, accept that they exist, and work on them one at a time. You don't have to fix everything at once, and some things may never be fully fixed, and that's fine too.
 
-And don't let negative labels stick, whether they come from yourself or from others. People will put you in boxes no matter what you do. Once you believe a label, you behave accordingly, and the belief confirms itself. Treat your current limitations as habits, not traits - things that came from somewhere and can be changed with effort. And if they can't, accept them and move on. I've attended brilliant talks given by people who were shy, soft-spoken, fast-talking, or slow. Style matters far less than substance and genuine engagement.
+And don't let negative labels stick, whether they come from yourself or from others. People will put you in boxes no matter what you do. Once you believe a label, you behave accordingly, and the belief confirms itself. Treat your current limitations as habits, not traits - things that came from somewhere and can be changed with effort. And if they can't, accept them and move on. I've attended brilliant talks given by people who were shy, soft-spoken, fast-talking, or slow. Style matters far less than substance and engagement.
 
 ---
 
@@ -172,7 +172,7 @@ But no matter how many rehearsals you do, real confidence only comes from real e
 
 # Watch Good Talks, and Watch Yourself
 
-For a long time I assumed I had some deficiency because I could barely follow technical talks as an undergraduate, and for a while even after that. It wasn't until I attended a genuinely good talk - one where the speaker took special care to build intuition before formalism - that I realized what had been missing. 
+For a long time I assumed I had some deficiency because I could barely follow technical talks as an undergraduate, and for a while even after that. It wasn't until I attended a very good talk - one where the speaker took special care to build intuition before formalism - that I realized what had been missing. 
 
 Equally important: record yourself and watch it back. It's uncomfortable precisely because it closes the gap between how you imagine you come across and how you actually do. Painful and sometimes embarrassing, but you can't improve what you can't see, and the recording shows you exactly what to fix.
 
