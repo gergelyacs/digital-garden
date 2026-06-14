@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-14T11:03:55.327+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-06-14T11:05:35.053+02:00"}
 ---
 
 
@@ -70,7 +70,7 @@ Asking questions is how I engage, and it is also how I learn. That said, questio
 ---
 # Grading
 
-I evaluate your (1) midterm work, (2) final written report, and (3) final presentation talk given during the supplementary week **together**. I will send you a short written evaluation at the end of that week. You can find some guidelines [[Blog/Teaching/Giving My Talk\|how to give a talk]] or [[Blog/Teaching/Writing My Technical Paper\|how to write your report]]. Note that project reports **must be under** 15 pages and theses **under** 40 pages, excluding appendices.
+I evaluate your (1) midterm work, (2) final written report, and (3) final presentation talk given during the supplementary week **together**. I will send you a short written evaluation at the end of that week. You can find some guidelines [[Blog/Teaching/Giving My Talk\|how to give a talk]] or [[Blog/Teaching/Writing My Technical Paper\|how to write your report]]. Note that project reports **must be under** 15 pages and theses **under** 40 pages, excluding appendices (single column, 11pt).
 
 I grade effort, not results. Negative results are also results! If you put serious work into a direction that ultimately did not work out, that is fine. What is not fine is having results built on shallow understanding. Make sure I can see the work behind what you show me during meetings, in your report, and in your final talk.
 
