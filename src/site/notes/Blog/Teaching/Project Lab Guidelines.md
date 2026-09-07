@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-09-07T13:37:47.775+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-09-07T13:39:06.571+02:00"}
 ---
 
 Read this before choosing any of my research/semester/thesis topic. This includes requirements from my side, and also what you can expect if you want to work with me.
@@ -32,7 +32,7 @@ Keep It Simple and Stupid. This is a design philosophy and, in practice, the mos
 
 ## Use AI, but own what it produces
 
-You are encouraged to use AI tools for coding, writing, and exploration. That's the present and the future. But using AI without understanding its output can be a trap.
+You are encouraged to use AI tools for coding, writing, and exploration. But using AI without understanding its output can be a trap.
 
 If you show up to a meeting with code you generated an hour before and cannot explain what it does, that is a problem. The first time I notice this, you will not need to come to the next meeting; it is a clear signal that the project does not matter enough to you. University should be about learning and understanding, not about results in the first place. When you use a generated snippet, make sure you can answer: _What does this do? Why does it work? What happens if the input changes?_
 
