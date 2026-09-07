@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-09-07T13:27:55.061+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-09-07T13:29:34.544+02:00"}
 ---
 
 Read this before choosing any of my research/semester/thesis topic. This includes requirements from my side, and also what you can expect if you want to work with me.
@@ -13,7 +13,7 @@ Ideally, I should be regarded as your compass, not your manager. I can point you
 
 Self-motivation here means arriving with a true interest in the topic before we even meet. For example: if you want to work on deepfake detection, I do not expect you to already know why detectors fail under distribution shift or why they are easy to evade. But I do expect you to know why the problem matters. You should have formed a view before asking me to help you refine it. If you have no clue about the directions at all, I can give you references and you can identify the problem you want to work on. This is how it becomes _your_ problem and not mine - ownership can boost motivation.
 
-Many students find this harder than it seems at first glance due to many cultural reasons. In any case, be enthusiastic! It makes the work better for both of us.
+Many students find this harder than it seems at first glance. In any case, be enthusiastic! It makes the work better for both of us.
 
 ---
 # Working style
