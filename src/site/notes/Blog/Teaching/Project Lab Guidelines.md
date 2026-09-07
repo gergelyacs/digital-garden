@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-09-07T13:34:35.693+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-09-07T13:37:47.775+02:00"}
 ---
 
 Read this before choosing any of my research/semester/thesis topic. This includes requirements from my side, and also what you can expect if you want to work with me.
@@ -62,7 +62,7 @@ Asking questions is how I engage, and it is also how I learn. That said, questio
 - I expect weekly meetings; tolerable cancellations include midterms, sick leave, and occasional personal issues. We can have meetings online if that fits better for either of us.
 - If you have not made progress on your project by the end of the day before a meeting (EOB), please cancel it on time. I will also try to respect you by not canceling a few hours before; I expect the same from you.
 - Don't use AI to write me messages or emails; I won't either. Typos and stylistic problems are part of being human and will not affect your final grade.
-- I'm not a professor, and my first name is [Gergely](https://en.wiktionary.org/wiki/Gergely) \[ˈɡɛrɡɛj\] (Gregory in English).
+- My first name is [Gergely](https://en.wiktionary.org/wiki/Gergely) \[ˈɡɛrɡɛj\] (Gregory in English).
 
 ---
 # Grading
@@ -74,4 +74,4 @@ I grade effort, not results. Negative results are also results! If you put serio
 ---  
 # Changing advisor is always an option
 
-At the end of any semester, you are free to move to a different advisor. No explanation is required, no hard feelings will follow. You are not obliged to continue any project. If the collaboration is not working - either because the topic does not fit, or the working style is wrong for you, or you simply want a new experience - that are all legitimate reasons to change. 
+At the end of any semester, you are free to move to a different advisor. No explanation is required, you are not obliged to continue any project. If the collaboration is not working - either because the topic does not fit, or the working style is wrong for you, or you simply want a new experience - that are all legitimate reasons to change. 
