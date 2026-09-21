@@ -4,7 +4,7 @@ body {
       display: block;
       max-width: 100% !important;
       height: auto !important;
-      margin: 1.5rem auto; /* Centers the image nicely with spacing */
+      margin: 1.5rem auto; 
     }
     
     /* 2. Target standalone/block SVG images if wrapped differently */
@@ -15,16 +15,29 @@ body {
       margin: 1.5rem auto;
     }
     
-    /* 3. Keep inline LaTeX math formulas flowing naturally with text */
-    .content .MathJax svg,
-    .content .math svg,
-    .content span.math {
-      display: inline-block !important; /* Forces formulas to stay inline */
+    /* 3. FIX FOR LARGE DISPLAY/BLOCK FORMULAS ON MOBILE ($$) */
+    .content .MathJax_Display,
+    .content .math.block,
+    .content blockquote .MathJax,
+    .content div.math {
+      overflow-x: auto !important;    /* Adds a horizontal scrollbar if too wide */
+      overflow-y: hidden !important;   /* Prevents unwanted vertical clipping */
+      max-width: 100% !important;     /* Locks it to the smartphone width */
+      padding: 10px 0;                 /* Generates breathing room for the scrollbar */
+      display: block !important;
+    }
+    
+    /* 4. KEEP SMALL INLINE MATH FORMULAS FLOWING WITH TEXT ($) */
+    .content p .MathJax svg,
+    .content .math:not(.block) svg,
+    .content span.math svg {
+      display: inline-block !important; 
       max-width: none !important;
       height: auto !important;
       margin: 0 !important;
       vertical-align: middle;
     }
+
     /***
       ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
       IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
