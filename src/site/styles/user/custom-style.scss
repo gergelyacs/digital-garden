@@ -7,26 +7,30 @@
 }
 
 /* 2. Target standalone/block SVG images if wrapped differently */
-.content svg:not(.MathJax svg):not(.math svg) {
+.content svg:not(.MathJax svg):not(.math svg):not(mjx-container svg) {
   display: block;
   max-width: 100% !important;
   height: auto !important;
   margin: 1.5rem auto;
 }
 
-/* 3. FIX FOR LARGE DISPLAY/BLOCK FORMULAS ON MOBILE ($$) */
+/* 3. THE UTTERLY FORCED BLOCK MATH SCROLL FUNCTION ($$) */
+.content .math-block,
+.content mjx-container[display="true"],
 .content .MathJax_Display,
-.content .math.block,
-.content blockquote .MathJax,
 .content div.math {
-  overflow-x: auto !important;    /* Adds a horizontal scrollbar if too wide */
-  overflow-y: hidden !important;   /* Prevents unwanted vertical clipping */
-  max-width: 100% !important;     /* Locks it to the smartphone width */
-  padding: 10px 0;                 /* Generates breathing room for the scrollbar */
   display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;   /* Force the scrollbar to appear */
+  overflow-y: hidden !important;  /* Block vertical clipping */
+  -webkit-overflow-scrolling: touch; /* Make swiping buttery smooth on iOS/Safari */
+  padding: 12px 4px !important;
+  box-sizing: border-box !important;
 }
 
 /* 4. KEEP SMALL INLINE MATH FORMULAS FLOWING WITH TEXT ($) */
+.content p mjx-container:not([display="true"]),
 .content p .MathJax svg,
 .content .math:not(.block) svg,
 .content span.math svg {
@@ -35,5 +39,11 @@
   height: auto !important;
   margin: 0 !important;
   vertical-align: middle;
+}
+
+/* 5. Force the underlying SVG code inside math containers to obey the width */
+.content mjx-container[display="true"] svg {
+  min-width: min-content !important;
+  max-width: none !important;
 }
 
