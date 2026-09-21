@@ -1,4 +1,13 @@
 body {
+    /* Force all images and SVGs to be responsive to the browser window */
+    .content img, 
+    .content svg {
+      display: block;
+      max-width: 100% !important; /* Prevents it from breaking out of the container */
+      height: auto !important;    /* Keeps the proper aspect ratio when scaling down */
+      width: auto;
+    }
+    
     /***
       ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
       IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
