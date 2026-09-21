@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"AI/Generating synthetic CTG with diffusion models.md","permalink":"/ai/generating-synthetic-ctg-with-diffusion-models/","created":"2026-09-21T08:30:36.695+02:00","updated":"2026-09-21T08:39:14.969+02:00"}
+{"dg-publish":true,"dg-path":"AI/Generating synthetic CTG with diffusion models.md","permalink":"/ai/generating-synthetic-ctg-with-diffusion-models/","created":"2026-09-21T08:30:36.695+02:00","updated":"2026-09-21T10:01:25.452+02:00"}
 ---
 
 Cardiotocography (CTG) is a common way to monitor a baby during pregnancy and labor. Getting good CTG data for research is hard. It is sensitive, and the interesting cases are rare. Within the [SECURED](https://secured-project.eu) project, I built [CTGen](https://github.com/gergelyacs/ctgen), an open-source framework that generates synthetic CTG with diffusion models. It was designed for CTG, but it works for any time series.
@@ -31,13 +31,13 @@ A [diffusion model](https://arxiv.org/abs/2406.08929) turns pure Gaussian noise 
 
 Training is simple. We add noise to a real CTG and give the noisy version to the U-Net. The clean CTG is the target. Removing all the noise in one step would be very hard, so the process is split into many small steps. One denoiser handles all steps, and the step number is an extra input.
 
-CTG fits this setup well. The two signals become two input channels of the same length. Images have three channels (RGB) and CTG has two (FHR and UC), and both are strongly correlated locally. So the usual convolutional U-Net works with a small change: **1D convolutions instead of 2D**. The rest of the architecture stays largely the same.
+CTG fits this setup well. The two signals (FHR and UC) become two input channels of the same length, like the RGB channels of an image. Just as neighboring pixels in an image are strongly correlated, neighboring time points in a CTG are too. This is why the convolutional U-Net works here with one small change. Images are 2D grids, so image U-Nets use 2D convolutions. A CTG channel is a 1D sequence over time, so we use **1D convolutions** that slide along the time axis. The rest of the architecture stays largely the same.
 
 ![Diffusion on CTG](https://raw.githubusercontent.com/gergelyacs/ctgen/main/images/Diffusion.png)
 
 ### Conditional generation
 
-You often want a CTG with specific properties. The framework supports this with **classifier-free guidance**. Each sample can have several labels, such as delivery type, Apgar scores, the mother's age and the baby's sex. The labels are discretized into categories. Each one is embedded separately, the embeddings are combined into one vector, and this vector is an input of the U-Net. If you provide no labels, generation is unconditional.
+You often want a CTG with specific properties. The framework supports this with **classifier-free guidance**. Each sample can have several labels, such as delivery type, Apgar scores, the mother's age and the baby's sex. Unlike text prompts in image generation, these labels are discretized into categories, so each one is just an integer index. Each label gets its own embedding, the embeddings are combined into one vector, and this vector is an input of the U-Net. If you provide no labels, generation is unconditional.
 
 ## Five ways to generate
 
