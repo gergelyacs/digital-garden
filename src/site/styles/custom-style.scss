@@ -1,13 +1,30 @@
 body {
-    /* Force all images and SVGs to be responsive to the browser window */
-    .content img, 
-    .content svg {
+    /* 1. Target standard markdown content images (including SVG images) */
+    .content img {
       display: block;
-      max-width: 100% !important; /* Prevents it from breaking out of the container */
-      height: auto !important;    /* Keeps the proper aspect ratio when scaling down */
-      width: auto;
+      max-width: 100% !important;
+      height: auto !important;
+      margin: 1.5rem auto; /* Centers the image nicely with spacing */
     }
     
+    /* 2. Target standalone/block SVG images if wrapped differently */
+    .content svg:not(.MathJax svg):not(.math svg) {
+      display: block;
+      max-width: 100% !important;
+      height: auto !important;
+      margin: 1.5rem auto;
+    }
+    
+    /* 3. Keep inline LaTeX math formulas flowing naturally with text */
+    .content .MathJax svg,
+    .content .math svg,
+    .content span.math {
+      display: inline-block !important; /* Forces formulas to stay inline */
+      max-width: none !important;
+      height: auto !important;
+      margin: 0 !important;
+      vertical-align: middle;
+    }
     /***
       ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
       IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
