@@ -64,14 +64,6 @@ body {
     //   color: black;
     //  }
 }
-/* 2. Fix the scroll pane container */
-.content, 
-.markdown-preview-view {
-    overflow-y: auto !important;
-    overflow-x: hidden !important; 
-    display: flex;
-    flex-direction: column;
-}
 
 /* 
    Prevents the middle text from blowing up on huge monitors 
