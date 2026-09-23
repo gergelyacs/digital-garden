@@ -48,12 +48,7 @@ body {
       max-width: none !important;
     }
 
-    /* Sets the middle content to a balanced, comfortable wide reading width */
-    --dg-content-max-width: 900px; 
-    
-    /* Keeps the sidebars neatly proportioned */
-    --dg-sidebar-max-width: 300px; 
-    
+    --dg-content-max-width: 750px; /* Comfortable reading width for text */
 
     /***
       ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
@@ -68,11 +63,27 @@ body {
     //  }
 }
 
-/* 
-   Prevents the middle text from blowing up on huge monitors 
-   while allowing it to fill up nicely on standard laptops.
-*/
-.content {
-    width: 100% !important;
-    max-width: var(--dg-content-max-width) !important;
+/* Make images break out of the narrow column container */
+.content img, 
+.content .image-embed {
+    width: 130% !important;        /* Stretch the image wider than the text block */
+    max-width: 1000px !important;  /* Prevents it from getting insanely huge */
+    
+    /* Centers the wider image relative to the narrow text column */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    border-radius: 8px;            /* Optional: rounds image corners nicely */
+    height: auto;
+}
+
+/* Ensure images scale back down perfectly on mobile phones */
+@media (max-width: 768px) {
+    .content img, 
+    .content .image-embed {
+        width: 100% !important;
+        left: 0;
+        transform: none;
+    }
 }
