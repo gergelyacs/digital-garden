@@ -63,27 +63,30 @@ body {
     //  }
 }
 
-/* Make images break out of the narrow column container */
+/* Break images out of the text container dynamically */
 .content img, 
 .content .image-embed {
-    width: 130% !important;        /* Stretch the image wider than the text block */
-    max-width: 1000px !important;  /* Prevents it from getting insanely huge */
+    display: block;
     
-    /* Centers the wider image relative to the narrow text column */
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    /* Forces the image to occupy a wider portion of the screen, bypassing the text boundaries */
+    width: 65vw !important;  
+    max-width: 1050px !important; /* Prevents it from getting absurdly huge on ultrawide monitors */
     
-    border-radius: 8px;            /* Optional: rounds image corners nicely */
+    /* Perfectly re-centers the widened image to line up with the middle text column */
+    margin-left: 50% !important;
+    transform: translateX(-50%) !important;
+    
     height: auto;
+    border-radius: 8px;
 }
 
-/* Ensure images scale back down perfectly on mobile phones */
-@media (max-width: 768px) {
+/* Responsive design: Return images to normal inline width on mobile screens */
+@media (max-width: 1024px) {
     .content img, 
     .content .image-embed {
         width: 100% !important;
-        left: 0;
-        transform: none;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        transform: none !important;
     }
 }
