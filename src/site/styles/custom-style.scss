@@ -63,6 +63,13 @@ body {
     //  }
 }
 
+/* Force the wrapper container to allow overflowing objects (like wide images) */
+.content, 
+.markdown-preview-view {
+    overflow: visible !important;
+}
+
+
 /* Break images out of the text container dynamically */
 .content img, 
 .content .image-embed {
