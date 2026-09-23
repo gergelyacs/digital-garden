@@ -48,7 +48,9 @@ body {
       max-width: none !important;
     }
 
-    --dg-content-max-width: 750px; /* Comfortable reading width for text */
+        /* Sets the middle content to a balanced, comfortable wide reading width */
+    --dg-content-max-width: 800px; 
+    
 
     /***
       ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
@@ -71,40 +73,11 @@ body {
     flex-direction: column;
 }
 
-/* 3. Target the parent wrappers of images to force them to allow breakouts */
-.content p:has(img),
-.content p:has(.image-embed),
-.content .image-embed {
+/* 
+   Prevents the middle text from blowing up on huge monitors 
+   while allowing it to fill up nicely on standard laptops.
+*/
+.content {
     width: 100% !important;
-    max-width: 100% !important;
-    overflow: visible !important;
-}
-
-/* 4. Force the image itself to break out of the layout safely */
-.content img, 
-.content .image-embed img {
-    display: block;
-    
-    /* Dynamically sets the image to be wider than the 750px text column */
-    width: 950px !important; 
-    max-width: 90vw !important; /* Prevents it from breaking small laptop screens */
-    
-    /* Pulls the image left and right into the negative space evenly */
-    margin-left: calc(50% - 475px) !important; 
-    
-    height: auto;
-    border-radius: 8px;
-}
-
-/* 5. Mobile Override: Snap back to standard inline behavior on mobile devices */
-@media (max-width: 1024px) {
-    .content img, 
-    .content .image-embed img {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: 0 !important;
-    }
-    .content p:has(img) {
-        overflow: hidden !important;
-    }
+    max-width: var(--dg-content-max-width) !important;
 }
