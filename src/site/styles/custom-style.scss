@@ -63,37 +63,35 @@ body {
     //  }
 }
 
-/* Force the wrapper container to allow overflowing objects (like wide images) */
+/* FIX: Restores normal scrolling functionality to the middle pane */
 .content, 
 .markdown-preview-view {
-    overflow: visible !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important; /* Prevents wide images from creating a broken horizontal scrollbar */
 }
 
-
-/* Break images out of the text container dynamically */
+/* Safely break images out of the text column layout without breaking the pane */
 .content img, 
 .content .image-embed {
     display: block;
     
-    /* Forces the image to occupy a wider portion of the screen, bypassing the text boundaries */
-    width: 65vw !important;  
-    max-width: 1050px !important; /* Prevents it from getting absurdly huge on ultrawide monitors */
+    /* Using full viewport calculation inside safe container limits */
+    width: calc(100% + 200px) !important;  /* Dynamically pushes the image 100px past both sides */
+    max-width: 1050px !important; 
     
-    /* Perfectly re-centers the widened image to line up with the middle text column */
-    margin-left: 50% !important;
-    transform: translateX(-50%) !important;
+    /* Center the widened image over the text column */
+    margin-left: -100px !important; 
     
     height: auto;
     border-radius: 8px;
 }
 
-/* Responsive design: Return images to normal inline width on mobile screens */
+/* Mobile check: Ensure it snaps back safely on small phones */
 @media (max-width: 1024px) {
     .content img, 
     .content .image-embed {
         width: 100% !important;
         max-width: 100% !important;
         margin-left: 0 !important;
-        transform: none !important;
     }
 }
