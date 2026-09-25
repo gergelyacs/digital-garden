@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-25T22:21:28.464+02:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-25T22:36:43.999+02:00"}
 ---
 
 Consider a hospital dataset with 100,000 patients, where only one has a rare genetic disease. To protect privacy, the hospital enforces _50,000-anonymity_: it only answers aggregate queries covering at least half of the records. But can the record of the patient with the rare disease still be isolated? And if so, how many queries would it take? In this post, I show that, perhaps surprisingly, as few as 20 queries - each covering on average 50,000 patients - can be enough to isolate the single patient with the rare genetic disease.
@@ -23,8 +23,8 @@ where $b_i$ is the number of HIV-positive patients covered by query $i$.
 We consider an adversary who (1) aims to design the query structure $A$ (i.e., which patients are covered by which queries), and (2) knows the query results $b$. The adversary’s goal is to reconstruct the unknown vector $x$. Importantly, the database manager only answers a query $A_i$ if it covers at least $k$ patients, ensuring a minimal privacy guarantee with $k$-anonymity.
 
 The key questions we explore in this post are:
-1. **How an adversary should choose the queries, and hence design $A$, so that $x$ can be reconstructed from $b$?
-2. **How many queries are required for such an attack?**
+1. _How an adversary should choose the queries, and hence design $A$, so that $x$ can be reconstructed from $b$?_
+2. _How many queries are required for such an attack?_
 
 The fewer queries needed, the cheaper the attack becomes, and the harder it is to detect.
 
