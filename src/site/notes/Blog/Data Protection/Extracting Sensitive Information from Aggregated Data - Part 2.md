@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-25T22:18:49.177+02:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-25T22:21:28.464+02:00"}
 ---
 
 Consider a hospital dataset with 100,000 patients, where only one has a rare genetic disease. To protect privacy, the hospital enforces _50,000-anonymity_: it only answers aggregate queries covering at least half of the records. But can the record of the patient with the rare disease still be isolated? And if so, how many queries would it take? In this post, I show that, perhaps surprisingly, as few as 20 queries - each covering on average 50,000 patients - can be enough to isolate the single patient with the rare genetic disease.
@@ -551,15 +551,18 @@ where both $\bar{P}_i$ and $\bar{N}_i$ cover about $(1-p)n$ records. For $p=1/6$
 Let $B_{i,j}=1$ with probability $p$ and $B_{i,j}=0$ otherwise. If each entry of the query matrix $B$ follows this non-symmetric Bernoulli distribution, then
 - _Property 1_ does not hold. $B$ cannot be even approximately orthogonal, since the inner product of two non-negative vectors is never negative. Indeed,
   $$
-E|\langle B_i, x\rangle|^2 = \sum_{j} x_j^2 E[B_{i,j}^2] + \sum_{j\neq \ell} x_j x_\ell E[B_{i,j}]E[B_{i,\ell}] = p(1-p)\|x\|_2^2 + p^2\Big(\sum_j x_j\Big)^2
-$$where the second term, which comes from the non-zero mean $E[B_{i,j}] = p$, breaks isotropy. To fix this, we **center and normalize** $B$:
-$$
-A_{i,j} = \frac{B_{i,j} -  E[B_{i,j}]}{\sigma} = \frac{B_{i,j} - p}{\sqrt{p(1-p)}}
-$$ where $\sigma^2 = E\left[(B_{i,j}-p)^2\right] = p(1-p)$ is the variance of $B_{i,j}$. Hence, $A_{i,j} = \frac{1-p}{\sqrt{p(1-p)}}=\sqrt{\frac{1-p}{p}}$ with probability $p$, and $A_{i,j}=\frac{-p}{\sqrt{p(1-p)}} = -\sqrt{\frac{p}{1-p}}$ with probability $1-p$. $A_{i,j}$ has zero mean and unit variance, so $E|\langle A_i, x\rangle|^2 = \| x \|_2^2$ holds.
+  E|\langle B_i, x\rangle|^2 = \sum_{j} x_j^2 E[B_{i,j}^2] + \sum_{j\neq \ell} x_j x_\ell E[B_{i,j}]E[B_{i,\ell}] = p(1-p)\|x\|_2^2 + p^2\Big(\sum_j x_j\Big)^2
+  $$
+  where the second term, which comes from the non-zero mean $E[B_{i,j}] = p$, breaks isotropy. To fix this, we **center and normalize** $B$:
+  $$
+  A_{i,j} = \frac{B_{i,j} -  E[B_{i,j}]}{\sigma} = \frac{B_{i,j} - p}{\sqrt{p(1-p)}}
+  $$
+  where $\sigma^2 = E\left[(B_{i,j}-p)^2\right] = p(1-p)$ is the variance of $B_{i,j}$. Hence, $A_{i,j} = \frac{1-p}{\sqrt{p(1-p)}}=\sqrt{\frac{1-p}{p}}$ with probability $p$, and $A_{i,j}=\frac{-p}{\sqrt{p(1-p)}} = -\sqrt{\frac{p}{1-p}}$ with probability $1-p$. $A_{i,j}$ has zero mean and unit variance, so $E|\langle A_i, x\rangle|^2 = \| x \|_2^2$ holds.
 - _Property 2_ holds because $A_{i,j}$ is bounded. In particular, it follows from [Hoeffding's lemma](https://en.wikipedia.org/wiki/Hoeffding%27s_lemma) that
   $$
-\mathbb{E}\left[e^{\lambda A_{i,j}}\right]\leq \exp\left(\frac{\lambda^2}{8\sigma^2}\right)=\exp\left(\frac{1}{4p(1-p)}\cdot\frac{\lambda^2}{2}\right)
-$$that is, $c = \frac{1}{4p(1-p)}$.
+  \mathbb{E}\left[e^{\lambda A_{i,j}}\right]\leq \exp\left(\frac{\lambda^2}{8\sigma^2}\right)=\exp\left(\frac{1}{4p(1-p)}\cdot\frac{\lambda^2}{2}\right)
+  $$
+  that is, $c = \frac{1}{4p(1-p)}$.
 
 >[!FAQ]- Why?
 >Let $X=B_{i,j} - E[B_{i,j}]$ be a mean-zero and bounded random variable: $X\in[-p,1-p]$, so its range has length 1. Hoeffding's lemma states that any mean-zero random variable with range length $L$ satisfies
