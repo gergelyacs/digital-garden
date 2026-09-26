@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T11:40:04.356+02:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T11:54:53.422+02:00"}
 ---
 
 Consider a hospital dataset with 100,000 patients, where only one patient has a rare genetic disease. To protect privacy, the hospital enforces _50,000-anonymity_: it only answers aggregate queries that cover at least half of the records. Can the record of this patient still be isolated? And if so, how many queries does it take? In this post, I show that, perhaps surprisingly, fewer than 20 queries, each covering about 50,000 patients, are enough to find the single patient with the rare disease.
@@ -22,9 +22,9 @@ where $b_i$ is the number of HIV-positive patients covered by query $i$.
 
 We consider an adversary who (1) aims to design the query structure $A$ (i.e., which patients are covered by which queries), and (2) knows the query results $b$. The adversary’s goal is to reconstruct the unknown vector $x$. Importantly, the database manager only answers a query $A_i$ if it covers at least $k$ patients, ensuring a minimal privacy guarantee with $k$-anonymity.
 
-The key questions we explore in this post are:
-1. _How an adversary should choose the queries, and hence design $A$, so that $x$ can be reconstructed from $b$?_
-2. _How many queries are required for such an attack?_
+>[!Key questions of this post]
+>1. How an adversary should choose the queries, and hence design $A$, so that $x$ can be reconstructed from $b$?
+>   2. How many queries are required for such an attack?
 
 The fewer queries needed, the cheaper the attack becomes, and the harder it is to detect.
 
@@ -150,7 +150,9 @@ How many records are covered by a binary query $A_i$? It is not hard to see that
 >[!FAQ]- Why?
 >If $\alpha_i$ is a primitive element of $GF(2^q)$, then it has multiplicative order $n$. Therefore, each entry of $H_i$ is a distinct field element, which in the binary expansion maps to a unique nonzero $q$-bit vector. Each row of $A_i$ corresponds to a single bit position across all these vectors. Since there are $2^q - 1$ nonzero vectors in total, and exactly half of the $2^q$ possible vectors have a 1 in any given bit position, each row of $A_i$ contains $2^{q-1}$ ones and $2^{q-1}-1$ zeros. Thus, every binary query covers exactly $2^{q-1}=(n+1)/2$ records.
 
-**In conclusion, an adversary can exactly reconstruct all records in a database containing $s$ nonzero entries using only $2s \log n$ binary queries, even though each individual query covers roughly half of the records, that is, they are $n/2$-anonym**.
+
+>[!Conclusion]
+An adversary can exactly reconstruct all records in a database containing $s$ nonzero entries using only $2s \log n$ binary queries, even though each individual query covers roughly half of the records, that is, they are $n/2$-anonym.
 
 For the single patient with the rare disease in the introductory example ($s=1$), even fewer queries are enough, if this query matrix is the parity-check matrix of the binary [Hamming code](https://en.wikipedia.org/wiki/Hamming_code), which is the BCH code for $s=1$: Each query covers about half of the records. If a query covers fewer than half, the adversary asks its complement instead (the patients with a 0 in the $k$-th bit, which then cover more than half) and flips the answer. For the hospital with 100,000 patients, this means only $\lceil \log_2 100{,}000 \rceil = 17$ queries, each covering at least 50,000 patients.
 
@@ -599,7 +601,8 @@ This means that $A$ can be realized with the $m$ binary queries $B$ plus a singl
 
 **What does this mean for $k$-anonymity?** Suppose the database manager answers only queries covering at least $k = \kappa n$ records, for any $\kappa < 1$. The adversary picks $p$ slightly above $\kappa$ (or asks the complements of queries with $p$ slightly below $1-\kappa$), so that every query passes the threshold. The price is the factor $c^2 \approx 1/(16\kappa^2(1-\kappa)^2)$ in Formula ( ** ) (or less with $c^*$), which does not depend on $n$. Raising $k$ does not stop the attack; it only makes it a constant factor more expensive. In a quick simulation with $n=5000$ records and $s=10$ non-zero entries, OMP (see below) reconstructed $x$ in all trials with 140 queries for $p=0.5$, 200 queries for $p=0.9$, and 800 queries for $p=0.99$, where every query covered about 4950 of the 5000 records.
 
-**As a consequence, the numbers of ones and zeros in the queries do not need to be balanced. A random 0/1 query matrix, where every query covers a $p$ fraction of the records, plus a single query for the total count, still reconstructs an $s$-sparse dataset $x$ from $\mathcal{O}\!\big(s\ln(en/s)\big)$ queries. The imbalance only costs a constant factor, which grows as the queries shrink ($p\to 0$) or approach the full database ($p\to 1$). Sparse Rademacher rows with $p \geq 1/6$ cost nothing extra asymptotically, and need two binary queries per row.**
+>[!Conclusion]
+>The numbers of ones and zeros in the queries do not need to be balanced. A random 0/1 query matrix, where every query covers a $p$ fraction of the records, plus a single query for the total count, still reconstructs an $s$-sparse dataset $x$ from $\mathcal{O}\!\big(s\ln(en/s)\big)$ queries. The imbalance only costs a constant factor, which grows as the queries shrink ($p\to 0$) or approach the full database ($p\to 1$). Sparse Rademacher rows with $p \geq 1/6$ cost nothing extra asymptotically, and need two binary queries per row.
 
 # Reconstruction
 
@@ -642,7 +645,10 @@ The table below summarizes the reconstruction techniques discussed in this post.
 | Sparse Rademacher, $p \geq 1/6$              | $\mathcal{O}(s\ln(en/s))$, same constant               | Two 0/1 complement queries per row     | $\approx (1-p)n$         | Upper bound on $s$                     | Stable                                        |
 | Random 0/1 with $\Pr[1]=p$                   | $\mathcal{O}(c^2 s\ln(en/s))$, $c = \frac{1}{4p(1-p)}$ | 0/1 + total count                      | $\approx pn$ or $(1-p)n$ | Upper bound on $s$                     | Stable                                        |
 
-Three observations: First, exact algebraic constructions (Vandermonde, BCH) need the fewest queries, but they break down as soon as the answers are perturbed. Second, random query matrices need only a logarithmic factor more queries, and they tolerate noise, do not require the exact sparsity, and do not care whether the queries are balanced. Third, in every row of the table, individual queries can be made to cover at least half of the database.
+> [!Observations]
+> 1. Exact algebraic constructions (Vandermonde, BCH) need the fewest queries, but they break down as soon as the answers are perturbed.
+> 2. Random query matrices need only a logarithmic factor more queries, and they tolerate noise, do not require the exact sparsity, and do not care whether the queries are balanced.
+> 3. In every row of the table, individual queries can be made to cover at least half of the database.
 
 # Conclusion
 
