@@ -1,10 +1,10 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T09:16:58.836+02:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T10:05:15.080+02:00"}
 ---
 
-Consider a hospital dataset with 100,000 patients, where only one has a rare genetic disease. To protect privacy, the hospital enforces _50,000-anonymity_: it only answers aggregate queries covering at least half of the records. But can the record of the patient with the rare disease still be isolated? And if so, how many queries would it take? In this post, I show that, perhaps surprisingly, as few as 20 queries - each covering on average 50,000 patients - can be enough to isolate the single patient with the rare genetic disease.
+Consider a hospital dataset with 100,000 patients, where only one patient has a rare genetic disease. To protect privacy, the hospital enforces _50,000-anonymity_: it only answers aggregate queries that cover at least half of the records. Can the record of this patient still be isolated? And if so, how many queries does it take? In this post, I show that, perhaps surprisingly, fewer than 20 queries, each covering about 50,000 patients, are enough to find the single patient with the rare disease.
 
-A similar situation arises when aggregating the decisions or contributions of multiple agents or experts across several rounds to improve robustness and protect privacy, for example, by mitigating hallucinations, correcting erroneous (or even malicious) individual decisions, or aggregating model parameters in collaborative (federated) learning to avoid directly sharing sensitive training data. To guarantee confidentiality for participants, cryptographic primitives such as _secure aggregation_ ensures that one can only access aggregate statistics over a random subset of at least $k$ participants in each round, but never the individual contributions. But is this level of protection sufficient? And if not, how many rounds (or queries) would be enough to reveal the private contributions of all participants?
+The same question arises whenever the contributions of multiple participants are aggregated over several rounds. For example, aggregating the decisions of multiple agents or experts can mitigate hallucinations and correct erroneous (or even malicious) individual decisions, while aggregating model updates in collaborative (federated) learning avoids sharing sensitive training data directly. To protect the participants, cryptographic primitives such as _secure aggregation_ ensure that each round reveals only the aggregate over at least $k$ participants (typically a random subset of them), but never the individual contributions. Is this protection sufficient? And if not, how many rounds (or queries) are enough to reveal the private contributions of all participants?
 
 # The Problem
 
@@ -151,6 +151,16 @@ How many records are covered by a binary query $A_i$? It is not hard to see that
 >If $\alpha_i$ is a primitive element of $GF(2^q)$, then it has multiplicative order $n$. Therefore, each entry of $H_i$ is a distinct field element, which in the binary expansion maps to a unique nonzero $q$-bit vector. Each row of $A_i$ corresponds to a single bit position across all these vectors. Since there are $2^q - 1$ nonzero vectors in total, and exactly half of the $2^q$ possible vectors have a 1 in any given bit position, each row of $A_i$ contains $2^{q-1}$ ones and $2^{q-1}-1$ zeros. Thus, every binary query covers exactly $2^{q-1}=(n+1)/2$ records.
 
 **In conclusion, an adversary can exactly reconstruct all records in a database containing $s$ nonzero entries using only $2s \log n$ binary queries, even though each individual query covers roughly half of the records, that is, they are $n/2$-anonym**.
+
+For the single patient with the rare disease in the introductory example ($s=1$), even fewer queries are enough, if this query matrix is the parity-check matrix of the binary [Hamming code](https://en.wikipedia.org/wiki/Hamming_code), which is the BCH code for $s=1$: Each query covers about half of the records. If a query covers fewer than half, the adversary asks its complement instead (the patients with a 0 in the $k$-th bit, which then cover more than half) and flips the answer. For the hospital with 100,000 patients, this means only $\lceil \log_2 100{,}000 \rceil = 17$ queries, each covering at least 50,000 patients.
+
+>[!FAQ]- How?
+>In SQL, this attack only needs bit operations on a numeric patient ID. Query $k$ selects the patients whose ID has a 1 in the $k$-th bit, and sums the sensitive attribute over them: 
+>```
+> SELECT SUM(CASE WHEN diagnosis = 'rare disease' THEN 1 ELSE 0 END) FROM Patients WHERE (id >> k) & 1 = 1 
+>```
+>  Note that the WHERE clause contains only the bit condition, so each query covers about half of the patients, and the sensitive attribute appears only inside the aggregate. If the database does not support bit shifts, `MOD(FLOOR(id / POWER(2, k)), 2) = 1` selects the same patients. 
+>  For example, suppose the patients have IDs from 0 to 99,999, and the patient with ID 70,000 (binary `1 0001 0001 0111 0000`) has the rare disease. The adversary runs the query above for $k = 0, 1, \ldots, 16$. The query for $k=4$ returns 1, since the 4th bit of 70,000 is 1, while the query for $k=0$ returns 0. The only exception is $k = 16$: only the 34,464 patients with IDs from 65,536 to 99,999 have a 1 in this bit, which is below the 50,000 threshold. So the adversary asks for the complement instead (`WHERE (id >> 16) & 1 = 0`, covering 65,536 patients), receives 0, and concludes that the bit is 1. The 17 answers spell out `1 0001 0001 0111 0000`, the ID of the patient with the rare disease.
 
 ## Stable reconstruction
 
