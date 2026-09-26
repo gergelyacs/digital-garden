@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T10:05:15.080+02:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T11:40:04.356+02:00"}
 ---
 
 Consider a hospital dataset with 100,000 patients, where only one patient has a rare genetic disease. To protect privacy, the hospital enforces _50,000-anonymity_: it only answers aggregate queries that cover at least half of the records. Can the record of this patient still be isolated? And if so, how many queries does it take? In this post, I show that, perhaps surprisingly, fewer than 20 queries, each covering about 50,000 patients, are enough to find the single patient with the rare disease.
@@ -160,6 +160,10 @@ For the single patient with the rare disease in the introductory example ($s=1$)
 > SELECT SUM(CASE WHEN diagnosis = 'rare disease' THEN 1 ELSE 0 END) FROM Patients WHERE (id >> k) & 1 = 1 
 >```
 >  Note that the WHERE clause contains only the bit condition, so each query covers about half of the patients, and the sensitive attribute appears only inside the aggregate. If the database does not support bit shifts, `MOD(FLOOR(id / POWER(2, k)), 2) = 1` selects the same patients. 
+> The toy example below has 8 patients, numbered from 0 to 7, where only patient 5 has the sensitive attribute. Three queries, each covering half of the patients, are enough to identify this patient unambiguously.
+> $$
+>\begin{array}{l|cccccccc|c} \text{Patient } j & 0 & 1 & 2 & 3 & 4 & \mathbf{5} & 6 & 7 & b_i = \langle A_{i,:}, x \rangle \\ \hline \text{Sensitive attribute } x_j & 0 & 0 & 0 & 0 & 0 & \mathbf{1} & 0 & 0 & \\ \hline A_{0,:} \text{ (bit 0 = 1)} & 0 & 1 & 0 & 1 & 0 & \mathbf{1} & 0 & 1 & 1 \\ A_{1,:} \text{ (bit 1 = 1)} & 0 & 0 & 1 & 1 & 0 & \mathbf{0} & 1 & 1 & 0 \\ A_{2,:} \text{ (bit 2 = 1)} & 0 & 0 & 0 & 0 & 1 & \mathbf{1} & 1 & 1 & 1 \end{array}
+>$$
 >  For example, suppose the patients have IDs from 0 to 99,999, and the patient with ID 70,000 (binary `1 0001 0001 0111 0000`) has the rare disease. The adversary runs the query above for $k = 0, 1, \ldots, 16$. The query for $k=4$ returns 1, since the 4th bit of 70,000 is 1, while the query for $k=0$ returns 0. The only exception is $k = 16$: only the 34,464 patients with IDs from 65,536 to 99,999 have a 1 in this bit, which is below the 50,000 threshold. So the adversary asks for the complement instead (`WHERE (id >> 16) & 1 = 0`, covering 65,536 patients), receives 0, and concludes that the bit is 1. The 17 answers spell out `1 0001 0001 0111 0000`, the ID of the patient with the rare disease.
 
 ## Stable reconstruction
@@ -582,12 +586,9 @@ Let $B_{i,j}=1$ with probability $p$ and $B_{i,j}=0$ otherwise. If each entry of
 >Since $L=1$ and $A_{i,j} = X/\sigma$, we get the bound by the substitution $\lambda\mapsto \lambda/\sigma$: $\mathbb{E}[e^{\lambda A_{i,j}}] = \mathbb{E}[e^{(\lambda/\sigma)\cdot X}] \leq \exp\left(\frac{\lambda^2}{8\sigma^2}\right)$.
 
 Unlike the sparse Rademacher case, $c>1$ for every $p \neq 1/2$. This is not an artifact of Hoeffding's lemma: a centered Bernoulli variable is never strictly subgaussian unless $p=1/2$, because it is not symmetric. Its third moment $E[A_{i,j}^3] = \frac{1-2p}{\sqrt{p(1-p)}}$ is non-zero, which adds a $\lambda^3$ term to its MGF that $e^{\lambda^2/2}$ cannot dominate for small $\lambda$ (with the appropriate sign). Hoeffding's constant is not optimal though; the [best possible constant is known](https://arxiv.org/abs/1210.3248) to be $c^* = \frac{1-2p}{2p(1-p)\ln\frac{1-p}{p}}$:
-
-| $p$ (or $1-p$)  | 0.5 | 0.75 | 0.9  | 0.99 |
-| --------------- | --- | ---- | ---- | ---- |
-| $c$ (Hoeffding) | 1   | 1.33 | 2.78 | 25.3 |
-| $c^*$ (optimal) | 1   | 1.21 | 2.02 | 10.8 |
-
+$$ 
+\begin{array}{l|cccc} p \text{ (or } 1-p) & 0.5 & 0.75 & 0.9 & 0.99 \\ \hline c \text{ (Hoeffding)} & 1 & 1.33 & 2.78 & 25.3 \\ c^* \text{ (optimal)} & 1 & 1.21 & 2.02 & 10.8 \end{array}
+$$
 Both constants grow only when the queries become very small ($p\to 0$) or cover almost the whole database ($p \to 1$).
 
 How can we realize $A$ with strictly binary queries? Records with $B_{i,j}=1$ get weight $\frac{1-p}{\sigma}$ and records with $B_{i,j}=0$ get weight $-\frac{p}{\sigma}$, so
