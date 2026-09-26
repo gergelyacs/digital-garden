@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T11:59:18.386+02:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T12:07:36.817+02:00"}
 ---
 
 Consider a hospital dataset with 100,000 patients, where only one patient has a rare genetic disease. To protect privacy, the hospital enforces _50,000-anonymity_: it only answers aggregate queries that cover at least half of the records. Can the record of this patient still be isolated? And if so, how many queries does it take? In this post, I show that, perhaps surprisingly, fewer than 20 queries, each covering about 50,000 patients, are enough to find the single patient with the rare disease.
@@ -22,7 +22,7 @@ where $b_i$ is the number of HIV-positive patients covered by query $i$.
 
 We consider an adversary who (1) aims to design the query structure $A$ (i.e., which patients are covered by which queries), and (2) knows the query results $b$. The adversary’s goal is to reconstruct the unknown vector $x$. Importantly, the database manager only answers a query $A_i$ if it covers at least $k$ patients, ensuring a minimal privacy guarantee with $k$-anonymity.
 
->[!Key questions of this post]
+>[!Key questions]
 >1. How an adversary should choose the queries, and hence design $A$, so that $x$ can be reconstructed from $b$?
 >   2. How many queries are required for such an attack?
 
