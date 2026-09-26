@@ -1,4 +1,13 @@
 body {
+    /* Fix extra spacing/lines inside Digital Garden callouts */
+    .callout-content > p:first-of-type {
+        margin-top: 0 !important;
+    }
+    
+    .callout-content > p:last-of-type {
+        margin-bottom: 0 !important;
+    }
+
     /* 1. Target standard markdown content images (including SVG images) */
     .content img {
       display: block;
