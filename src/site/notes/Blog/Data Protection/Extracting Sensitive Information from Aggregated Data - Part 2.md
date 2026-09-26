@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T12:18:19.899+02:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T12:19:44.992+02:00"}
 ---
 
 Consider a hospital dataset with 100,000 patients, where only one patient has a rare genetic disease. To protect privacy, the hospital enforces _50,000-anonymity_: it only answers aggregate queries that cover at least half of the records. Can the record of this patient still be isolated? And if so, how many queries does it take? In this post, I show that, perhaps surprisingly, fewer than 20 queries, each covering about 50,000 patients, are enough to find the single patient with the rare disease.
@@ -644,9 +644,9 @@ The table below summarizes the reconstruction techniques discussed in this post.
 | Random 0/1 with $\Pr[1]=p$                   | $\mathcal{O}(c^2 s\ln(en/s))$, $c = \frac{1}{4p(1-p)}$ | 0/1 + total count                      | $\approx pn$ or $(1-p)n$ | Upper bound on $s$                     | Stable                                        |
 
 Main observations:
- 1. **Exact algebraic constructions (Vandermonde, BCH) need the fewest queries, but they break down as soon as the answers are perturbed.**
- 2. **Random query matrices need only a logarithmic factor more queries, and they tolerate noise, do not require the exact sparsity, and do not care whether the queries are balanced.**
- 3. **In every row of the table, individual queries can be made to cover at least half of the database.**
+ 1. _Exact algebraic constructions (Vandermonde, BCH) need the fewest queries, but they break down as soon as the answers are perturbed._
+ 2. _Random query matrices need only a logarithmic factor more queries, and they tolerate noise, do not require the exact sparsity, and do not care whether the queries are balanced._
+ 3. _In every row of the table, individual queries can be made to cover at least half of the database._
 # Conclusion
 
 _Aggregation alone does not protect individual records._ A $k$-anonymity type threshold on the query size, even $k = n/2$ or larger, does not prevent an adversary from reconstructing every record with $n$ queries. If the sensitive attribute is sparse, like the single patient with a rare genetic disease among 100,000 patients, a logarithmic number of queries is enough. The most practical attack is also the simplest one: ask random queries, each covering a random subset of the records, and decode the answers with $\ell_1$-minimization or OMP. This attack does not need a carefully designed query structure, does not need to know the exact number of non-zero records, tolerates noisy answers, and works for any query size threshold $k < n$ at the cost of a constant factor.
