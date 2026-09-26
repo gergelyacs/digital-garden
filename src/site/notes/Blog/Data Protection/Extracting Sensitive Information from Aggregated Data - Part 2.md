@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T11:54:53.422+02:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T11:59:18.386+02:00"}
 ---
 
 Consider a hospital dataset with 100,000 patients, where only one patient has a rare genetic disease. To protect privacy, the hospital enforces _50,000-anonymity_: it only answers aggregate queries that cover at least half of the records. Can the record of this patient still be isolated? And if so, how many queries does it take? In this post, I show that, perhaps surprisingly, fewer than 20 queries, each covering about 50,000 patients, are enough to find the single patient with the rare disease.
@@ -73,7 +73,8 @@ $$
 $$
 where $H’_{1,:} = H_{1,:}$ is the vector of all-ones, hence $\sum_i x_i = \langle H’_{1,:}, x \rangle$. This means the adversary can request the database to evaluate all binary queries in $H’$, obtaining $b’ = H’ x$. From these query results, the adversary can reconstruct the original Hadamard query responses $b = Hx$, and then solve the resulting system of equations to recover $x$. The Hadamard matrix is particularly appealing since each query (row) covers half of the records (so it appears "highly aggregated" and compliant with $k$-anonymity type privacy rules), and the resulting system can be inverted efficiently using the fast Walsh–Hadamard transform in $\mathcal{O}(n\log n)$ time.
 
-**In conclusion, the adversary can recover every record using a number of queries equal to the total number of records, even though each query aggregates over half of the database.**
+>[!Conclusion]
+The adversary can recover every record using a number of queries equal to the total number of records, even though each query aggregates over half of the database.
 ## Can the adversary reconstruct all $n$ records with less than $n$ queries?
 
 If we have more unknowns (records) than equations (queries), the above system of linear equations $Ax=b$ is underdetermined and cannot be solved in general. However, it is no longer the case if $x$ is sparse, that is, it has less than $m$ non-zero elements like in the hospital dataset above where we have only a single HIV-positive patient. Indeed, we only need to determine the non-zero elements in $x$ whose number is significantly smaller than $n$. Vectors with $s$ nonzero entries are also called $s$-sparse vectors, and the set of non-zero positions is called the support of this vector.
