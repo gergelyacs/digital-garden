@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T12:13:03.165+02:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T12:17:43.661+02:00"}
 ---
 
 Consider a hospital dataset with 100,000 patients, where only one patient has a rare genetic disease. To protect privacy, the hospital enforces _50,000-anonymity_: it only answers aggregate queries that cover at least half of the records. Can the record of this patient still be isolated? And if so, how many queries does it take? In this post, I show that, perhaps surprisingly, fewer than 20 queries, each covering about 50,000 patients, are enough to find the single patient with the rare disease.
@@ -73,8 +73,7 @@ $$
 $$
 where $H’_{1,:} = H_{1,:}$ is the vector of all-ones, hence $\sum_i x_i = \langle H’_{1,:}, x \rangle$. This means the adversary can request the database to evaluate all binary queries in $H’$, obtaining $b’ = H’ x$. From these query results, the adversary can reconstruct the original Hadamard query responses $b = Hx$, and then solve the resulting system of equations to recover $x$. The Hadamard matrix is particularly appealing since each query (row) covers half of the records (so it appears "highly aggregated" and compliant with $k$-anonymity type privacy rules), and the resulting system can be inverted efficiently using the fast Walsh–Hadamard transform in $\mathcal{O}(n\log n)$ time.
 
->[!Conclusion]
->The adversary can recover every record using a number of queries equal to the total number of records, even though each query aggregates over half of the database.
+Conclusion: **The adversary can recover every record using a number of queries equal to the total number of records, even though each query aggregates over half of the database.**
 ## Can the adversary reconstruct all $n$ records with less than $n$ queries?
 
 If we have more unknowns (records) than equations (queries), the above system of linear equations $Ax=b$ is underdetermined and cannot be solved in general. However, it is no longer the case if $x$ is sparse, that is, it has less than $m$ non-zero elements like in the hospital dataset above where we have only a single HIV-positive patient. Indeed, we only need to determine the non-zero elements in $x$ whose number is significantly smaller than $n$. Vectors with $s$ nonzero entries are also called $s$-sparse vectors, and the set of non-zero positions is called the support of this vector.
@@ -151,9 +150,7 @@ How many records are covered by a binary query $A_i$? It is not hard to see that
 >[!FAQ]- Why?
 >If $\alpha_i$ is a primitive element of $GF(2^q)$, then it has multiplicative order $n$. Therefore, each entry of $H_i$ is a distinct field element, which in the binary expansion maps to a unique nonzero $q$-bit vector. Each row of $A_i$ corresponds to a single bit position across all these vectors. Since there are $2^q - 1$ nonzero vectors in total, and exactly half of the $2^q$ possible vectors have a 1 in any given bit position, each row of $A_i$ contains $2^{q-1}$ ones and $2^{q-1}-1$ zeros. Thus, every binary query covers exactly $2^{q-1}=(n+1)/2$ records.
 
-
->[!Conclusion]
-An adversary can exactly reconstruct all records in a database containing $s$ nonzero entries using only $2s \log n$ binary queries, even though each individual query covers roughly half of the records, that is, they are $(n/2)$-anonym.
+Conclusion: **An adversary can exactly reconstruct all records in a database containing $s$ nonzero entries using only $2s \log n$ binary queries, even though each individual query covers roughly half of the records, that is, they are $(n/2)$-anonym.**
 
 For the single patient with the rare disease in the introductory example ($s=1$), even fewer queries are enough, if this query matrix is the parity-check matrix of the binary [Hamming code](https://en.wikipedia.org/wiki/Hamming_code), which is the BCH code for $s=1$: Each query covers about half of the records. If a query covers fewer than half, the adversary asks its complement instead (the patients with a 0 in the $k$-th bit, which then cover more than half) and flips the answer. For the hospital with 100,000 patients, this means only $\lceil \log_2 100{,}000 \rceil = 17$ queries, each covering at least 50,000 patients.
 
@@ -646,11 +643,10 @@ The table below summarizes the reconstruction techniques discussed in this post.
 | Sparse Rademacher, $p \geq 1/6$              | $\mathcal{O}(s\ln(en/s))$, same constant               | Two 0/1 complement queries per row     | $\approx (1-p)n$         | Upper bound on $s$                     | Stable                                        |
 | Random 0/1 with $\Pr[1]=p$                   | $\mathcal{O}(c^2 s\ln(en/s))$, $c = \frac{1}{4p(1-p)}$ | 0/1 + total count                      | $\approx pn$ or $(1-p)n$ | Upper bound on $s$                     | Stable                                        |
 
-> [!Observations]
-> 1. Exact algebraic constructions (Vandermonde, BCH) need the fewest queries, but they break down as soon as the answers are perturbed.
-> 2. Random query matrices need only a logarithmic factor more queries, and they tolerate noise, do not require the exact sparsity, and do not care whether the queries are balanced.
-> 3. In every row of the table, individual queries can be made to cover at least half of the database.
-
+Main observations:
+ 1. **Exact algebraic constructions (Vandermonde, BCH) need the fewest queries, but they break down as soon as the answers are perturbed.**
+ 2. **Random query matrices need only a logarithmic factor more queries, and they tolerate noise, do not require the exact sparsity, and do not care whether the queries are balanced.**
+ 3. **In every row of the table, individual queries can be made to cover at least half of the database.**
 # Conclusion
 
 _Aggregation alone does not protect individual records._ A $k$-anonymity type threshold on the query size, even $k = n/2$ or larger, does not prevent an adversary from reconstructing every record with $n$ queries. If the sensitive attribute is sparse, like the single patient with a rare genetic disease among 100,000 patients, a logarithmic number of queries is enough. The most practical attack is also the simplest one: ask random queries, each covering a random subset of the records, and decode the answers with $\ell_1$-minimization or OMP. This attack does not need a carefully designed query structure, does not need to know the exact number of non-zero records, tolerates noisy answers, and works for any query size threshold $k < n$ at the cost of a constant factor.
