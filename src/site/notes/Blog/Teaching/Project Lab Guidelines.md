@@ -1,22 +1,21 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-09-07T13:39:06.571+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-10-05T12:26:37.228+02:00"}
 ---
 
-Read this before choosing any of my research/semester/thesis topic. This includes requirements from my side, and also what you can expect if you want to work with me.
-
----
 # Overall
 
 In English this course is called "Project Lab." In Hungarian it is "Önálló Labor": independent lab work. The Hungarian framing is closer to what I am hoping for.
 
-Ideally, I should be regarded as your compass, not your manager. I can point you in a direction, explain a paper you are stuck on, suggest when an approach seems unlikely to work. You should be self-motivated and preferably arrive with a true interest in the topic before we even meet. For example: if you want to work on deepfake detection, I do not expect you to already know why detectors fail under distribution shift or why they are easy to evade. But I do expect you to know why the problem matters. If you have no clue about the directions at all, I can give you references and you can identify the problem you want to work on. This is how it becomes _your_ problem and not mine - ownership can boost motivation.
+Ideally, I should be regarded as your compass, not your manager. I can point you in a direction, explain a paper you are stuck on, suggest when an approach seems unlikely to work. What I cannot do, and should not have to do in my opinion, is provide your motivation from scratch. I don't want to be your source of motivation in any sense.
 
-Many students find this harder than it seems at first glance. In any case, be enthusiastic! It makes the work better for both of us.
+Self-motivation here means arriving with a true interest in the topic before we even meet. For example: if you want to work on deepfake detection, I do not expect you to already know why detectors fail under distribution shift or why they are easy to evade. But I do expect you to know why the problem matters: legally, technically, socially. You should have formed a view before asking me to help you refine it.
+
+Many students find this harder than it seems at first glance due to many cultural reasons. In any case, be enthusiastic! It makes the work better for both of us.
 
 ---
 # Working style
 
-There are two main categories of working cultures. One treats a plan as a contract: deviating from it feels like failure. The other treats a plan as a starting hypothesis: useful at the outset, but subject to revision and change as results come in and the conversation evolves. I tend to belong to the second camp. For example, you can make a project plan if it helps you, but I will not require it. The reason is that I don't always know the solution to the problem I'm proposing, or whether it can be solved at all. Next steps usually depend on the results of the previous steps.
+There are two main categories of working cultures. One treats a plan as a contract: deviating from it feels like failure. The other treats a plan as a starting hypothesis: useful at the outset, but subject to revision and change as results come in and the conversation evolves. I tend to belong to the second group. For example, you can make a project plan if it helps you, but I will not require it. The reason is that I don't always know the solution to the problem I'm proposing, or whether it can be solved at all. Next steps usually depend on the results of the previous steps.
 
 This mode of working is usually messier, and that is not tolerated by everybody. Directions change, priorities shift, which can cause some frustration for people who are less comfortable with uncertainty. I don't say either culture is better than the other, hence the existence of both. If you find it very frustrating, I am not the right advisor for you.
 
@@ -34,15 +33,15 @@ Keep It Simple and Stupid. This is a design philosophy and, in practice, the mos
 
 You are encouraged to use AI tools for coding, writing, and exploration. But using AI without understanding its output can be a trap.
 
-If you show up to a meeting with code you generated an hour before and cannot explain what it does, that is a problem. The first time I notice this, you will not need to come to the next meeting; it is a clear signal that the project does not matter enough to you. University should be about learning and understanding, not about results in the first place. When you use a generated snippet, make sure you can answer: _What does this do? Why does it work? What happens if the input changes?_
+If you show up to a meeting with code you generated an hour before and cannot explain what it does, that is a problem and will be reflected in your final grade.  University should be about learning and understanding, not about results in the first place. When you use a generated snippet, make sure you can answer: _What does this do? Why does it work? What happens if the input changes?_
 
 ## Meeting notes are your responsibility
 
 After each meeting, you **have to** write a short set of notes and share them in our common folder as a **single** Markdown file, named by date if you like, or just kept as a running log.
 
-The things I need are (1) **the current status of the project** including project goals, assumptions, and main techniques (this only needs to be written once at the very beginning, but updated continuously as the project evolves), (2) what you have done since the last meeting (how you progressed with the last TODOs) and (3) a list of the next steps we agreed on. I supervise multiple students and will not reliably remember what we decided unless it is written down.
+The things I need are (1) **the current status of the project** including project goals, assumptions, and main techniques (this only needs to be written once at the very beginning, but updated continuously as the project evolves), (2) what you have done since the last meeting (how you progressed with the last TODOs) and (3) a list of the next steps we agreed on. I supervise multiple students and will not remember what we decided unless it is written down.
 
-Keep it brief,  a few bullet points is enough. The point is alignment, not documentation for its own sake. For that, you will have the report at the end of the project.
+Keep it brief,  a few bullet points is enough. The point is alignment, not documentation. For that, you will have the report at the end of the project.
 
 ## I do not debug your code
 
@@ -62,7 +61,7 @@ Asking questions is how I engage, and it is also how I learn. That said, questio
 - I expect weekly meetings; tolerable cancellations include midterms, sick leave, and occasional personal issues. We can have meetings online if that fits better for either of us.
 - If you have not made progress on your project by the end of the day before a meeting (EOB), please cancel it on time. I will also try to respect you by not canceling a few hours before; I expect the same from you.
 - Don't use AI to write me messages or emails; I won't either. Typos and stylistic problems are part of being human and will not affect your final grade.
-- My first name is [Gergely](https://en.wiktionary.org/wiki/Gergely) \[ˈɡɛrɡɛj\] (Gregory in English).
+- I'm not a professor, and my first name is [Gergely](https://en.wiktionary.org/wiki/Gergely) \[ˈɡɛrɡɛj\] (Gregory in English).
 
 ---
 # Grading
@@ -74,4 +73,4 @@ I grade effort, not results. Negative results are also results! If you put serio
 ---  
 # Changing advisor is always an option
 
-At the end of any semester, you are free to move to a different advisor. No explanation is required, you are not obliged to continue any project. If the collaboration is not working - either because the topic does not fit, or the working style is wrong for you, or you simply want a new experience - that are all legitimate reasons to change. 
+At the end of any semester, you are free to move to a different advisor. No explanation is required. You are not obliged to continue any project. If the collaboration is not working - either because the topic does not fit, or the working style is wrong for you, or you simply want a new experience - that are all legitimate reasons to change. 
