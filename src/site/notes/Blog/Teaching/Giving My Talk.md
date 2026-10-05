@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-10-05T14:29:50.766+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-10-05T23:08:17.555+02:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial in practice. This post is a collection of a few observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -21,9 +21,9 @@ Finally, giving talks improves your general ability to communicate. If you can e
 
 # It Starts with You, Not the Audience
 
-_The talk is more about you than the audience_. You have to enjoy your own talk first. If you don't, the audience won't either. So the first question to ask yourself is not "what does the audience want to hear?" but "what am I enthusiastic about?"
+The talk is more about you than the audience. You have to enjoy your own talk first. If you don't, the audience won't either. So the first question to ask yourself is not "what does the audience want to hear?" but "what am I enthusiastic about?"
 
-Enthusiasm is contagious. People tend to be more enthusiastic when they feel ownership over some part of what they're presenting - the problem, the motivation, or the solution - or when they just find the work really interesting. If you're presenting someone else's work without caring much about it, that will show. Find the angle that makes you care, spend more time on the parts that you find more interesting.
+Enthusiasm is contagious. People tend to be more enthusiastic when they feel ownership over some part of what they're presenting - the problem, the motivation, or the solution - or when they just find the work really interesting. If you're presenting someone else's work without caring much about it, that will show. Spend more time on the parts that you find more interesting.
 
 This also means acting like a teacher, not a student. Many students have been conditioned by oral exams and unconsciously treat the audience as a committee that already knows the material and is judging them. That's usually wrong. You are the one who knows your talk best. The audience is there to learn from you, not to evaluate you. Your job is to _explain_, not to demonstrate how much you know. 
 
@@ -35,7 +35,7 @@ Most advice about public speaking focuses on technique; slow down, speak up, mak
 
 _Self-confidence_ is crucial for a good talk, and it can be earned through experience. Accept that you cannot fully control the audience - people might be exhausted from previous talks, distracted, or asking tough questions - and tying your self-worth to things outside your control means living under a constant threat, one that quietly kills your confidence and eventually the talk itself. Although the role of 'expert presenter' can be taken away at any time, your curiosity and your real interest in the problem cannot. Build your talk around those safer things than around being impressive.
 
-This also requires accepting your weaknesses honestly. Every presenter has specific, real ones - rushing through slides, over-explaining, avoiding eye contact. Treat your current limitations as habits, not traits - things that came from somewhere and can be changed with effort. You don't have to fix everything at once, and some things may never be fully fixed. I've attended brilliant talks given by people who were shy, soft-spoken, fast-talking, or slow. Style matters far less than substance and engagement.
+This also requires accepting your weaknesses honestly. Every presenter has specific ones - rushing through slides, over-explaining, avoiding eye contact. Some of them can be changed with effort, and some things may never be fully fixed. I've attended brilliant talks given by people who were shy, soft-spoken, fast-talking, or slow. Style matters far less than substance and engagement.
 
 ---
 
