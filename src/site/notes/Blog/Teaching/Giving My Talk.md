@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-10-06T15:28:46.215+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-10-06T15:30:26.023+02:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial in practice. This post is a collection of a few observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -9,7 +9,7 @@ Mass education in universities has many drawbacks, and one of the most significa
 
 Before thinking about how to give a good talk, it's worth asking why you're giving one. 
 
-For students, the most basic (and most limiting) reason is simply to defend their work. This is partly why I dislike the term 'defense.' It easily leads to a talk focused on proving knowledge rather than communicating it. The audience doesn't want to be impressed; they want to understand and learn. A better goal is to motivate people, to share something you find interesting and make them feel the same way, or at the very least to make them want to read your paper.
+For students, the most basic (and most limiting) reason is simply to defend their work. This is partly why I dislike the term 'defense.' It easily leads to a talk focused on proving knowledge rather than communicating it. The audience probably doesn't want to be impressed, but rather  to understand and learn. A better goal is to motivate people, to share something you find interesting and make them feel the same way, or at the very least to make them want to read your paper.
 
 Beyond that, there are less visible motivations to give a talk, the preparation is being one of them. I often accept invitations simply to force myself to read and understand something I've been putting off. Preparing a talk is one of the best ways to learn, and that alone is often reason enough.
 
