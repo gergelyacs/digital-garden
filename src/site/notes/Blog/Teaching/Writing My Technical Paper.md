@@ -1,74 +1,25 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Writing My Technical Paper.md","permalink":"/teaching/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2025-03-25T16:55:04.987+01:00"}
+{"dg-publish":true,"dg-path":"Teaching/Writing My Technical Paper.md","permalink":"/teaching/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2026-10-06T15:34:08.134+02:00"}
 ---
 
 Below are some general writing guidelines and a suggested structure for technical documentation, including project lab reports, theses, and research papers. This guideline is not comprehensive and does not replace your advisor’s guidance. Writing is a skill you learn through practice, and feedback is essential for improvement. (Feedback _should_ be seen as a sign of caring, even if it is critical. Only worry if you don't receive any feedback at all.)
 
+---
 # Why is writing important?
 
 Writing is not only a soft skill, it also [improves critical thinking](http://www.paulgraham.com/words.html): when you write, you may find fallacies in your solution. Writing is an iterative process and takes time; you may re-write some parts of your work several times until you find its most accessible form. Because of that, use AI-assisted writing tools wisely! While LLM can help with language and clarity they will not improve your critical thinking. As Feynman famously said: *"What I cannot create, I do not understand!”* 
 
+---
 # What happens if I get negative results? 
 
 Step back and start summarizing what you are trying to solve (focus on [[Blog/Teaching/Writing My Technical Paper#4. Model\|Model]] and [[Blog/Teaching/Writing My Technical Paper#5. Solution\|Solution]] sections below). You can also put your problem aside for a while, which can help discover totally new approaches when you return to it later. If your results eventually turn out to be negative, then write this and recalibrate your work! Thesis reviewers (especially for master’s and bachelor’s levels) value the effort you put in, not just the results! Negative findings can be very valuable—they might save others precious time by showing what doesn’t work. But this is only possible if you document and share them! 
 
+---
 # When to start writing?
  
 Start writing once you've demonstrated that your solution works (or you know that it won't) and obtained the first results/proofs of that. However, be sure to allocate enough time for writing! The best way to fail is to start writing too late. Students often focus on the code and results while ignoring writing the thesis. Committees and reviewers do not accept results. They accept papers.
 
-# How to write?
-
-There are no strict rules, but here are 10 self-curated hints from several [[Blog/Teaching/Writing My Technical Paper#References\|sources]].
-## #1 Keep it simple!
-
-Keep your explanations short and simple. [Tighten your arguments](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper), cut unnecessary words, and get straight to the point! If you start doubting your work’s worth because it seems so straightforward that anyone could have done it, you’re likely on the right track.
- 
-*"The easier something is to read, the more deeply readers will engage with it. The less energy they expend on your prose, the more they'll have left for your ideas. ... fancy writing doesn't just conceal ideas. It can also conceal the lack of them. That's why some people write that way, to conceal the fact that they have nothing to say. Whereas writing simply keeps you honest. If you say nothing simply, it will be obvious to everyone, including you." by [P. Graham](http://www.paulgraham.com/simply.html)*  
-
-[Technical writing](https://ohiostate.pressbooks.pub/feptechcomm/chapter/3-writing-style/) is quite different from “High school writing” that you might have used so far. A technical document is not a descriptive expository essay. To make your message unambiguous, use short and simple sentences and communicate only one concept per sentence. Writing clearly and concisely is difficult and a highly valuable skill! In a world full of papers, blogs, and books, no one wants to spend extra time reading something that could be explained in one page instead of ten. Time is precious—respect others by being brief (and comprehensible)!
-
-## #2 Make your talk first!
-
-The best way to write a clear paper is to [start by preparing a talk](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper). This helps you focus on keeping your message simple and clear. Once the core idea is clear, writing becomes easier because you can work from the top-down rather than bottom-up. If you don’t have a talk ready, explain your work to a friend instead—it works just as well!
-
-## #3 First impressions matter! 
-
-By the time a reviewer finishes your introduction, [they’ve likely already formed an opinion about your paper](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper) - often even deciding whether to accept it. The rest of their reading typically focuses on gathering arguments to support that initial judgment. Most readers focus on the Abstract, Introduction, and Conclusion, with only a few reading the rest. That’s why it’s essential to put extra effort into these sections, especially the Introduction - it’s your chance to make a strong and positive first impression!
-
-Because of that, it's often better not to start with writing the Introduction! You can only convince the reader if you already know your work's limitations and strong points, that is, you have finished other parts of your work. Some people start with the abstract or conclusion which helps with clarifying the goals before writing, others start describing their work directly.  
-
-## #4 Think like a teacher, and not a student!
-
-The goal is *not* to show that you’ve read or understood something but to *explain* it as clearly and simply as possible. 
-
-## #5 Make a story!
-
-People are naturally drawn to stories, and the rhythm of [problem-solution-problem-solution](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper) is a powerful way to present scientific ideas. This structure helps guide the reader through layers of understanding, from identifying the problem to revealing insights.
-
-Describe the shortest and most straightforward path to your solution, step-by-step, even if this path may differ from the actual, potentially messy process you followed.
-
-## #6 Use text, equations, and figures for important concepts!
-
-People grasp ideas in diverse ways, so it’s helpful to present important concepts [in three forms](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper): text, equations, and figures. This approach isn’t redundant - it provides multiple entry points for understanding. A paper flows effectively when it alternates between these elements in a clear and consistent pattern.
-
-## #7 Make your plots!
-
-Avoid using copy-pasted plots or text - create them yourself, especially the overview plot in the introduction. Ownership brings confidence and enthusiasm, making you more comfortable and engaging when presenting your work. Everyone has a unique background and way of thinking, so follow your own approach but always tailor your presentation to the audience!   
-
-## #8 Do not oversell!
-
-A paper is not an advertisement. [Overclaiming can frustrate reviewers](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper). Be sure to clearly state what’s new and unique about your work (i.e., your contribution). Be convincing!
-
-## #9 Stop in time!
-
-When you are close to the deadline, *[don’t focus on what you don’t have; focus on what you do have.](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper)* Be realistic and find the key insight in what you have, then tell that story. [You might be surprised to find that a smaller, more focused story could actually be a better one](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper).
-
-## #10 Don't care about the minimum size limits! 
-
-This is quite obvious if you've read everything above: **Don’t worry about any recommended minimum size limits**—they are meaningless! Instead, set a (reasonably small) maximum for yourself. This will help you focus on the main points and keep your work concise and clear. Explaining something shortly but also clearly is challenging and has a positive impact on [[Blog/Teaching/Writing My Technical Paper#1 Keep it simple!\|thinking]] and communication: you learn to be more direct and intelligible.
-
-I don’t like giving exact numbers because it depends on the topic and purpose of the thesis. But in my experience, a master’s or bachelor’s thesis should fit into less than 30-35 pages[^1], not counting the appendix and references.
-
+---
 # A recommended structure
 
 This is not meant to be a one-size-fits-all structure. Some works, like surveys or literature reviews, may require a different structure. 
@@ -140,6 +91,60 @@ This is not meant to be a one-size-fits-all structure. Some works, like surveys 
 
 - Proofs, extra evaluations, dataset descriptions (if there are many), etc.
 - Most people will not read this, so put things here accordingly
+
+---
+# How to write?
+
+There are no strict rules, but here are 10 self-curated hints from several [[Blog/Teaching/Writing My Technical Paper#References\|sources]].
+## #1 Keep it simple!
+
+Keep your explanations short and simple. [Tighten your arguments](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper), cut unnecessary words, and get straight to the point! If you start doubting your work’s worth because it seems so straightforward that anyone could have done it, you’re likely on the right track.
+ 
+*"The easier something is to read, the more deeply readers will engage with it. The less energy they expend on your prose, the more they'll have left for your ideas. ... fancy writing doesn't just conceal ideas. It can also conceal the lack of them. That's why some people write that way, to conceal the fact that they have nothing to say. Whereas writing simply keeps you honest. If you say nothing simply, it will be obvious to everyone, including you." by [P. Graham](http://www.paulgraham.com/simply.html)*  
+
+[Technical writing](https://ohiostate.pressbooks.pub/feptechcomm/chapter/3-writing-style/) is quite different from “High school writing” that you might have used so far. A technical document is not a descriptive expository essay. To make your message unambiguous, use short and simple sentences and communicate only one concept per sentence. Writing clearly and concisely is difficult and a highly valuable skill! In a world full of papers, blogs, and books, no one wants to spend extra time reading something that could be explained in one page instead of ten. Time is precious—respect others by being brief (and comprehensible)!
+
+## #2 Make your talk first!
+
+The best way to write a clear paper is to [start by preparing a talk](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper). This helps you focus on keeping your message simple and clear. Once the core idea is clear, writing becomes easier because you can work from the top-down rather than bottom-up. If you don’t have a talk ready, explain your work to a friend instead—it works just as well!
+
+## #3 First impressions matter! 
+
+By the time a reviewer finishes your introduction, [they’ve likely already formed an opinion about your paper](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper) - often even deciding whether to accept it. The rest of their reading typically focuses on gathering arguments to support that initial judgment. Most readers focus on the Abstract, Introduction, and Conclusion, with only a few reading the rest. That’s why it’s essential to put extra effort into these sections, especially the Introduction - it’s your chance to make a strong and positive first impression!
+
+Because of that, it's often better not to start with writing the Introduction! You can only convince the reader if you already know your work's limitations and strong points, that is, you have finished other parts of your work. Some people start with the abstract or conclusion which helps with clarifying the goals before writing, others start describing their work directly.  
+
+## #4 Think like a teacher, and not a student!
+
+The goal is *not* to show that you’ve read or understood something but to *explain* it as clearly and simply as possible. 
+
+## #5 Make a story!
+
+People are naturally drawn to stories, and the rhythm of [problem-solution-problem-solution](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper) is a powerful way to present scientific ideas. This structure helps guide the reader through layers of understanding, from identifying the problem to revealing insights.
+
+Describe the shortest and most straightforward path to your solution, step-by-step, even if this path may differ from the actual, potentially messy process you followed.
+
+## #6 Use text, equations, and figures for important concepts!
+
+People grasp ideas in diverse ways, so it’s helpful to present important concepts [in three forms](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper): text, equations, and figures. This approach isn’t redundant - it provides multiple entry points for understanding. A paper flows effectively when it alternates between these elements in a clear and consistent pattern.
+
+## #7 Make your plots!
+
+Avoid using copy-pasted plots or text - create them yourself, especially the overview plot in the introduction. Ownership brings confidence and enthusiasm, making you more comfortable and engaging when presenting your work. Everyone has a unique background and way of thinking, so follow your own approach but always tailor your presentation to the audience!   
+
+## #8 Do not oversell!
+
+A paper is not an advertisement. [Overclaiming can frustrate reviewers](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper). Be sure to clearly state what’s new and unique about your work (i.e., your contribution). Be convincing!
+
+## #9 Stop in time!
+
+When you are close to the deadline, *[don’t focus on what you don’t have; focus on what you do have.](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper)* Be realistic and find the key insight in what you have, then tell that story. [You might be surprised to find that a smaller, more focused story could actually be a better one](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper).
+
+## #10 Don't care about the minimum size limits! 
+
+This is quite obvious if you've read everything above: **Don’t worry about any recommended minimum size limits**—they are meaningless! Instead, set a (reasonably small) maximum for yourself. This will help you focus on the main points and keep your work concise and clear. Explaining something shortly but also clearly is challenging and has a positive impact on [[Blog/Teaching/Writing My Technical Paper#1 Keep it simple!\|thinking]] and communication: you learn to be more direct and intelligible.
+
+I don’t like giving exact numbers because it depends on the topic and purpose of the thesis. But in my experience, a master’s or bachelor’s thesis should fit into less than 30-35 pages[^1], not counting the appendix and references.
 
 ---
 # References
