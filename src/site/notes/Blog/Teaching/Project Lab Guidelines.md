@@ -1,14 +1,12 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-10-05T12:26:37.228+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Project Lab Guidelines.md","permalink":"/teaching/project-lab-guidelines/","created":"2026-06-13T10:40:30.840+02:00","updated":"2026-10-06T15:45:20.752+02:00"}
 ---
 
 # Overall
 
 In English this course is called "Project Lab." In Hungarian it is "Önálló Labor": independent lab work. The Hungarian framing is closer to what I am hoping for.
 
-Ideally, I should be regarded as your compass, not your manager. I can point you in a direction, explain a paper you are stuck on, suggest when an approach seems unlikely to work. What I cannot do, and should not have to do in my opinion, is provide your motivation from scratch. I don't want to be your source of motivation in any sense.
-
-Self-motivation here means arriving with a true interest in the topic before we even meet. For example: if you want to work on deepfake detection, I do not expect you to already know why detectors fail under distribution shift or why they are easy to evade. But I do expect you to know why the problem matters: legally, technically, socially. You should have formed a view before asking me to help you refine it.
+Ideally, I should be regarded as your compass, _not_ your manager. I can point you in a direction, explain a paper you are stuck on, suggest when an approach seems unlikely to work. You should arrive with a true interest in the topic. For example: if you want to work on deepfake detection, I do not expect you to already know why detectors fail under distribution shift or why they are easy to evade. But I do expect you to know why the problem matters in practice. If it turns out to be too difficult, I can give you references. This is how it becomes _your_ problem and not mine.
 
 Many students find this harder than it seems at first glance due to many cultural reasons. In any case, be enthusiastic! It makes the work better for both of us.
 
@@ -61,7 +59,7 @@ Asking questions is how I engage, and it is also how I learn. That said, questio
 - I expect weekly meetings; tolerable cancellations include midterms, sick leave, and occasional personal issues. We can have meetings online if that fits better for either of us.
 - If you have not made progress on your project by the end of the day before a meeting (EOB), please cancel it on time. I will also try to respect you by not canceling a few hours before; I expect the same from you.
 - Don't use AI to write me messages or emails; I won't either. Typos and stylistic problems are part of being human and will not affect your final grade.
-- I'm not a professor, and my first name is [Gergely](https://en.wiktionary.org/wiki/Gergely) \[ˈɡɛrɡɛj\] (Gregory in English).
+- My first name is [Gergely](https://en.wiktionary.org/wiki/Gergely) \[ˈɡɛrɡɛj\] (Gregory in English)
 
 ---
 # Grading
