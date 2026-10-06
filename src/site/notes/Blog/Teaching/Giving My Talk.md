@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-10-06T15:26:15.130+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-10-06T15:27:30.225+02:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial in practice. This post is a collection of a few observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -9,7 +9,7 @@ Mass education in universities has many drawbacks, and one of the most significa
 
 Before thinking about how to give a good talk, it's worth asking why you're giving one. 
 
-For students, the most basic (and most limiting) reason is simply to defend their work. This is partly why I dislike the term 'defense.' It easily leads to a talk focused on proving knowledge rather than communicating it, which is the wrong instinct entirely. The audience doesn't want to be impressed; they want to understand and learn. A better goal is to motivate people, to share something you find interesting and make them feel the same way, or at the very least to make them want to read your paper.
+For students, the most basic (and most limiting) reason is simply to defend their work. This is partly why I dislike the term 'defense.' It easily leads to a talk focused on proving knowledge rather than communicating it. The audience doesn't want to be impressed; they want to understand and learn. A better goal is to motivate people, to share something you find interesting and make them feel the same way, or at the very least to make them want to read your paper.
 
 Beyond that, there are less visible motivations to give a talk, the preparation is being one of them. I often accept invitations simply to force myself to read and understand something I've been putting off. Preparing a talk is one of the best ways to learn, and that alone is often reason enough.
 
@@ -18,7 +18,6 @@ This is because giving a talk deepens your understanding. There are roughly four
 Finally, giving talks improves your general ability to communicate. If you can explain something clearly to a hundred people, you'll explain it more clearly to one.
 
 ---
-
 # It Starts with You, Not the Audience
 
 The talk is more about you than the audience. You have to enjoy your own talk first. If you don't, the audience won't either. So the first question to ask yourself is not "what does the audience want to hear?" but "what am I enthusiastic about?"
@@ -28,7 +27,6 @@ Enthusiasm is contagious. People tend to be more enthusiastic when they feel own
 This also means acting like a teacher, not a student. Many students have been conditioned by oral exams and unconsciously treat the audience as a committee that already knows the material and is judging them. That's usually wrong. You are the one who knows your talk best. The audience is there to learn from you, not to evaluate you. Your job is to _explain_, not to demonstrate how much you know. 
 
 ---
-
 # Build your talk around your curiosity
 
 Most advice about public speaking focuses on technique; slow down, speak up, make eye contact, don't read off your slides. All of that is useful. But there's a deeper issue that technique alone won't fix: how you relate to the talk itself, and what you think it says about you.
@@ -38,7 +36,6 @@ _Self-confidence_ is crucial for a good talk, and it can be earned through exper
 This also requires accepting your weaknesses honestly. Every presenter has specific ones - rushing through slides, over-explaining, avoiding eye contact. Some of them can be changed with effort, and some things may never be fully fixed. I've attended brilliant talks given by people who were shy, soft-spoken, fast-talking, or slow. Style matters far less than substance and engagement.
 
 ---
-
 # Know Your Audience
 
 A talk that works well for experts can fail completely for a general audience, and vice versa. This is one of the most common mistakes.
