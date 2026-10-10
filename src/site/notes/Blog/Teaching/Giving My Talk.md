@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-10-06T15:35:44.097+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-10-10T08:52:11.896+02:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial in practice. This post is a collection of a few observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -20,11 +20,11 @@ Finally, giving talks improves your general ability to communicate. If you can e
 ---
 # It Starts with You, Not the Audience
 
-The talk is more about you than the audience. You have to enjoy your own talk first. If you don't, the audience won't either. So the first question to ask yourself is not "what does the audience want to hear?" but "what am I enthusiastic about?"
+The talk is more about you than the audience. You have to enjoy your own talk first. If you don't, the audience won't either. So the first question to ask yourself is not "what does the audience want to hear?" but "what am I enthusiastic about?". Enthusiasm is contagious.  
 
-Enthusiasm is contagious. People tend to be more enthusiastic when they feel ownership over some part of what they're presenting - the problem, the motivation, or the solution - or when they just find the work really interesting. If you're presenting someone else's work without caring much about it, that will show. Spend more time on the parts that you find more interesting.
+People tend to be more enthusiastic when they feel ownership over some part of what they're presenting - the problem, the motivation, or the solution - or when they just find the work really interesting. If you're presenting someone else's work without caring much about it, that will show. Spend more time on the parts that you find more interesting.
 
-This also means acting like a teacher, not a student. Many students have been conditioned by oral exams and unconsciously treat the audience as a committee that already knows the material and is judging them. That's usually wrong. You are the one who knows your talk best. The audience is there to learn from you, not to evaluate you. Your job is to _explain_, not to demonstrate how much you know. 
+This also means acting like a teacher, not a student. Many students have been conditioned by oral exams and unconsciously treat the audience as a committee that already knows the material and is judging them, but that's usually wrong. You are the one who knows your talk best. The audience is there to learn from you, and your job is to _explain_ and not to demonstrate how much you know. 
 
 ---
 # Build your talk around your curiosity
@@ -33,16 +33,14 @@ Most advice about public speaking focuses on technique; slow down, speak up, mak
 
 _Self-confidence_ is crucial for a good talk, and it can be earned through experience. Accept that you cannot fully control the audience - people might be exhausted from previous talks, distracted, or asking tough questions - and tying your self-worth to things outside your control means living under a constant threat, one that quietly kills your confidence and eventually the talk itself. Although the role of 'expert presenter' can be taken away at any time, your curiosity and your real interest in the problem cannot. Build your talk around those safer things than around being impressive.
 
-This also requires accepting your weaknesses honestly. Every presenter has specific ones - rushing through slides, over-explaining, avoiding eye contact. Some of them can be changed with effort, and some things may never be fully fixed. I've attended brilliant talks given by people who were shy, soft-spoken, fast-talking, or slow. Style matters far less than substance and engagement.
+This also requires accepting your weaknesses honestly. Every presenter has specific ones (e.g., rushing through slides, over-explaining, avoiding eye contact). Some of them can be changed with effort, and some things may never be fully fixed. I've attended brilliant talks given by people who were shy, soft-spoken, fast-talking, or slow. Style matters far less than substance and engagement.
 
 ---
 # Know Your Audience
 
-A talk that works well for experts can fail completely for a general audience, and vice versa. This is one of the most common mistakes.
+A talk that works well for experts can fail completely for a general audience, and vice versa. The key concept here is _intuition_, which is finding the shortest explanation of the key idea that everyone in the audience can follow, and that connects most naturally to their existing knowledge. If the audience is diverse, that explanation needs to be universally accessible. If you can explain it so that a layman understands, you can adapt to any audience. And if you can't, then perhaps even you don't fully understand it yourself.
 
-The key concept here is _intuition_, which is finding the shortest explanation of the key idea that everyone in the audience can follow, and that connects most naturally to their existing knowledge. If the audience is diverse, that explanation needs to be universally accessible. If you can explain it so that a layman understands, you can adapt to any audience. And if you can't, then perhaps even you don't fully understand it yourself.
-
-One thing is always true regardless of audience: people are lazy. Not in a bad way - they've attended many talks before yours, they're tired, and they have limited attention. You have to make your message simple and intuitive, especially if you're speaking late in the day or last in a long session. Assume less prior knowledge than you think is necessary.
+One thing is always true regardless of audience: people are lazy; they've attended many talks before yours, they're tired, and they have limited attention. You have to make your message simple and intuitive, especially if you're speaking late in the day or last in a long session. Assume less prior knowledge than you think is necessary.
 
 ---
 
@@ -57,7 +55,7 @@ This geometric viewpoint also makes more advanced topics that build on linear al
 ---
 # Communication comes first, correctness follows
 
-Time constraints require simplification, and simplification has a cost: the talk will not be fully precise. But that is the wrong thing to optimize for. Analogies and intuitions are never completely faithful, they deliberately sacrifice detail in order to keep the problem accessible. But it's better to draw in as many people as possible than to lose them by sacrificing clarity on the altar of precision.
+Time constraints require simplification which has a cost: the talk will not be fully precise.  Analogies and intuitions are never completely faithful, they deliberately sacrifice detail in order to keep the problem accessible. But it's better to draw in as many people as possible than to lose them by sacrificing clarity on the altar of precision.
 
 The purpose is not completeness but to motivate the audience to discover the full details themselves. So the practical question when preparing a talk is not 'how do I explain this correctly?' but rather: what does this audience's knowledge graph already look like, and which path through it leads most naturally to what I want them to understand? A good talk is not about technical soundness, it's about communication in the first place. The speaker's job is to simplify in order to hold attention and motivate the audience to go and read the actual paper.
 
@@ -85,7 +83,7 @@ Together, motivation and problem definition set up the goal of your talk, and th
 
 Equations are a particular danger. Many people automatically switch off the moment they see a formula, without even giving the presenter a chance. If you must include one, don't spend time on derivation, just explain what it says. What is the intuition? A well-placed illustration is usually worth more than introducing useless notation that nobody will remember by the next slide.
 
-Finally, don't confuse a summary with a takeaway. A summary recaps what you said. A takeaway tells the audience what to do with it; the potential impact, the open question, the thing worth remembering. After a ten-minute talk, a summary may be unnecessary. A good takeaway never is.
+Finally, don't confuse a summary with a takeaway. A summary recaps what you said. A takeaway tells the audience what to do with it; the potential impact, the open question, the thing worth remembering. After a ten-minute talk, a summary may be unnecessary, but a good takeaway never is.
 
 ---
 # Format
@@ -110,7 +108,7 @@ As a presenter, creating an environment where questions feel safe is part of the
 
 The importance of practicing out loud is crucial if you are an unexperienced presenter, and it is completely different from practicing in your head. In high school I used to summarize lectures out loud to myself, and it worked surprisingly well. You are literally tuning your brain to speak.
 
-A useful mindset shift: giving a talk to a hundred people is not fundamentally different from explaining something to one person face to face. You don't need to be more careful, more formal, or more perfect. People actually like causal presenters; it signals honesty and confidence. Think about how you'd explain it to a colleague over coffee, that's roughly what you should do in front of an audience. 
+A useful mindset shift: giving a talk to a hundred people is not very different from explaining something to one person face to face. You don't need to be more careful, more formal, or more perfect. People actually like causal presenters; it signals honesty and confidence. Think about how you'd explain it to a colleague over coffee, that's roughly what you should do in front of an audience. 
 
 But no matter how many rehearsals you do, real confidence only comes from real experience. You become a confident presenter by presenting repeatedly, out loud, in front of real people. 
 
@@ -126,16 +124,16 @@ Equally important: record yourself and watch it back. It's uncomfortable because
 
 People often say you can't lose with a bad talk. That's mostly true for a single talk, since audiences forget quickly, and in a conference setting, your paper matters far more than your presentation. Even in a thesis defense, the reviewers' judgment of the written work is what counts.
 
-What you can lose is being remembered. A bad talk only makes people forget you faster. What really matters is consistency - if you consistently deliver poor talks as a teacher, that accumulates. A single bad talk is nothing to worry about; the variance in quality is part of being human. As Maxwell Maltz put it: _"We make mistakes, mistakes don't make us."_ The goal is simply to notice when you're consistently underperforming and do something about it.
+What you can lose is being remembered. A bad talk only makes people forget you faster. What really matters is consistency: if you consistently deliver poor talks as a teacher for example, that accumulates. A single bad talk is nothing to worry about; the variance in quality is part of being human. As Maxwell Maltz put it: _"We make mistakes, mistakes don't make us."_ 
 
 Giving a talk is a lot like cooking. Sometimes it comes out well, sometimes it doesn't, and some reasons may be beyond your control. But most food is enjoyable enough when people are hungry, and most talks land well enough when the audience really wants to learn something. 
 
 ---
 # Final Note
 
-Don't get too caught up in the nuances - the balance of text and figures, eye contact, timing, font sizes, slide layouts. These details can help at the margin, but none of them is what makes or breaks a talk.
+Don't get too caught up in the nuances - the balance of text and figures, eye contact, timing, font sizes, slide layouts. These details can help, but none of them is what makes or breaks a talk.
 
-What matters is what you say, and whether you care about it. Focus on the intuition. Simplify the message as much as possible. And remember: enjoy your own talk first. Only then can the audience enjoy it too.
+What matters is what you say. Focus on the intuition, and simplify the message as much as possible. And remember: enjoy your own talk first. Only then can the audience enjoy it too.
 
 ---
 # An Example
