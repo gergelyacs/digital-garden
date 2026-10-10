@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Writing My Technical Paper.md","permalink":"/teaching/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2026-10-06T15:34:08.134+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Writing My Technical Paper.md","permalink":"/teaching/writing-my-technical-paper/","created":"2025-01-03T00:09:10.545+01:00","updated":"2026-10-10T08:54:06.943+02:00"}
 ---
 
 Below are some general writing guidelines and a suggested structure for technical documentation, including project lab reports, theses, and research papers. This guideline is not comprehensive and does not replace your advisor’s guidance. Writing is a skill you learn through practice, and feedback is essential for improvement. (Feedback _should_ be seen as a sign of caring, even if it is critical. Only worry if you don't receive any feedback at all.)
@@ -12,12 +12,12 @@ Writing is not only a soft skill, it also [improves critical thinking](http://w
 ---
 # What happens if I get negative results? 
 
-Step back and start summarizing what you are trying to solve (focus on [[Blog/Teaching/Writing My Technical Paper#4. Model\|Model]] and [[Blog/Teaching/Writing My Technical Paper#5. Solution\|Solution]] sections below). You can also put your problem aside for a while, which can help discover totally new approaches when you return to it later. If your results eventually turn out to be negative, then write this and recalibrate your work! Thesis reviewers (especially for master’s and bachelor’s levels) value the effort you put in, not just the results! Negative findings can be very valuable—they might save others precious time by showing what doesn’t work. But this is only possible if you document and share them! 
+Step back and start summarizing what you are trying to solve (focus on [[Blog/Teaching/Writing My Technical Paper#4. Model\|Model]] and [[Blog/Teaching/Writing My Technical Paper#5. Solution\|Solution]] sections below). You can also put your problem aside for a while, which can help discover totally new approaches when you return to it later. If your results eventually turn out to be negative, then write this and recalibrate your work! Thesis reviewers (especially for master’s and bachelor’s levels) value the effort you put in, not just the results! Negative findings can be very valuable, as they might save others precious time by showing what doesn’t work. But this is only possible if you document and share them! 
 
 ---
 # When to start writing?
  
-Start writing once you've demonstrated that your solution works (or you know that it won't) and obtained the first results/proofs of that. However, be sure to allocate enough time for writing! The best way to fail is to start writing too late. Students often focus on the code and results while ignoring writing the thesis. Committees and reviewers do not accept results. They accept papers.
+Start writing once you've demonstrated that your solution works (or you know that it won't) and obtained the first results/proofs of that. However, be sure to allocate enough time for writing! The best way to fail is to start writing too late. Students often focus on the code and results while ignoring writing the thesis. Committees and reviewers [do not accept results, they accept papers](https://perceiving-systems.blog/en/post/writing-a-good-scientific-paper).
 
 ---
 # A recommended structure
