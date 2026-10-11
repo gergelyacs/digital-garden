@@ -77,21 +77,12 @@ body {
 }
 
 /* Completely hide the right pane on your public site */
-
 .g-right {
     display: none !important;
 }
 
-
-/* Completely hide the right pane on your public site */
-/*
-.g-right {
-    display: none !important;
-}
-*/
 
 /* Redefine the website's grid layout to only use two columns (Sidebar & Content) */
-/*
 @media screen and (min-width: 1024px) {
     .g-layout {
         display: grid;
@@ -99,4 +90,4 @@ body {
         gap: 20px;
     }
 }
-*/
+
