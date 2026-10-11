@@ -63,6 +63,15 @@ body {
     /* Sets the middle content to a balanced, comfortable wide reading width */
      --dg-content-max-width: 850px; 
 
+     main,
+     .content-wrapper,
+     .content-container,
+     .content,
+     .markdown-rendered {
+       max-width: var(--dg-content-max-width) !important;
+       width: 100% !important;
+     }
+     
    /* 
    Prevents the middle text from blowing up on huge monitors 
    while allowing it to fill up nicely on standard laptops.
