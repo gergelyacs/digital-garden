@@ -69,7 +69,23 @@ body {
    Prevents the middle text from blowing up on huge monitors 
    while allowing it to fill up nicely on standard laptops.
 */
+/*
 .content {
-    width: 95% !important;
+    width: 100% !important;
     max-width: var(--dg-content-max-width) !important;
+}
+*/
+css
+/* Completely hide the right pane on your public site */
+.g-right {
+    display: none !important;
+}
+
+/* Redefine the website's grid layout to only use two columns (Sidebar & Content) */
+@media screen and (min-width: 1024px) {
+    .g-layout {
+        display: grid;
+        grid-template-columns: var(--sidebar-width, 250px) 1fr !important;
+        gap: 20px;
+    }
 }
