@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-09-26T12:19:44.992+02:00"}
+{"dg-publish":true,"dg-path":"Data Protection/Extracting Sensitive Information from Aggregated Data - Part 2.md","permalink":"/data-protection/extracting-sensitive-information-from-aggregated-data-part-2/","created":"2025-01-11T08:34:35.603+01:00","updated":"2026-10-11T11:21:59.872+02:00"}
 ---
 
 Consider a hospital dataset with 100,000 patients, where only one patient has a rare genetic disease. To protect privacy, the hospital enforces _50,000-anonymity_: it only answers aggregate queries that cover at least half of the records. Can the record of this patient still be isolated? And if so, how many queries does it take? In this post, I show that, perhaps surprisingly, fewer than 20 queries, each covering about 50,000 patients, are enough to find the single patient with the rare disease.
@@ -69,7 +69,11 @@ H’_{i,j} = \begin{cases} 1, & \text{if } H_{i,j} = 1, \\ 0, & \text{if } H_{i,
 $$
 Then, for any row $i$,
 $$
-\langle H_{i,:}, x \rangle = \langle H’_{i,:}, x \rangle - \left(\sum_i x_i - \langle H’_{i,:}, x \rangle \right)= \langle H’_{i,:}, x \rangle - \big(\langle H’_{1,:}, x \rangle - \langle H’_{i,:}, x \rangle \big) = 2 \langle H’_{i,:}, x \rangle - \langle H’_{1,:}, x \rangle.
+\begin{align}
+\langle H_{i,:}, x \rangle &= \langle H’_{i,:}, x \rangle - \left(\sum_i x_i - \langle H’_{i,:}, x \rangle \right)\\
+&= \langle H’_{i,:}, x \rangle - \big(\langle H’_{1,:}, x \rangle - \langle H’_{i,:}, x \rangle \big) \\
+&= 2 \langle H’_{i,:}, x \rangle - \langle H’_{1,:}, x \rangle.
+\end{align}
 $$
 where $H’_{1,:} = H_{1,:}$ is the vector of all-ones, hence $\sum_i x_i = \langle H’_{1,:}, x \rangle$. This means the adversary can request the database to evaluate all binary queries in $H’$, obtaining $b’ = H’ x$. From these query results, the adversary can reconstruct the original Hadamard query responses $b = Hx$, and then solve the resulting system of equations to recover $x$. The Hadamard matrix is particularly appealing since each query (row) covers half of the records (so it appears "highly aggregated" and compliant with $k$-anonymity type privacy rules), and the resulting system can be inverted efficiently using the fast Walsh–Hadamard transform in $\mathcal{O}(n\log n)$ time.
 
