@@ -48,6 +48,11 @@ body {
       max-width: none !important;
     }
 
+     /* 6. Shrink formulas */
+    .content mjx-container {
+      font-size: 85% !important;
+    }
+
      /* Hide the right pane (graph, backlinks, TOC) */
      .sidebar,
      .sidebar-container,
