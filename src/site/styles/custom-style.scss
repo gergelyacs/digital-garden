@@ -54,7 +54,7 @@ body {
     }
 
      /* Hide the right pane (graph, backlinks, TOC) */
-     /*
+     
      .sidebar,
      .sidebar-container,
      .graph,
@@ -65,19 +65,13 @@ body {
      .filetree-sidebar-right {
        display: none !important;
      }
-     */
+     
 
-     .content,
-     .content-wrapper,
-     .content-container {
-          margin-left: 0.5rem !important;
-          padding-left: 0.5rem !important;
-     }
 
     /* Sets the middle content to a balanced, comfortable wide reading width */
      --dg-content-max-width: 750px; 
 
-     /*
+     
      main,
      .content-wrapper,
      .content-container,
@@ -86,17 +80,7 @@ body {
        max-width: var(--dg-content-max-width) !important;
        width: 100% !important;
      }
-     */
-
-     main,
-    .content-wrapper,
-    .content-container,
-    .content,
-    .markdown-rendered {
-      min-width: 0 !important;
-      max-width: min(var(--dg-content-max-width), 100%) !important;
-      /* no width: 100% here, it fights the sidebar for space */
-    }
+     
      
    /* 
    Prevents the middle text from blowing up on huge monitors 
