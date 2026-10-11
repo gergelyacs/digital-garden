@@ -67,6 +67,13 @@ body {
      }
      */
 
+     .content,
+     .content-wrapper,
+     .content-container {
+          margin-left: 0.5rem !important;
+          padding-left: 0.5rem !important;
+     }
+
     /* Sets the middle content to a balanced, comfortable wide reading width */
      --dg-content-max-width: 750px; 
 
