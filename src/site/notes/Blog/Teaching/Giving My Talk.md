@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-10-10T08:52:11.896+02:00"}
+{"dg-publish":true,"dg-path":"Teaching/Giving My Talk.md","permalink":"/teaching/giving-my-talk/","created":"2026-02-20T13:28:29.632+01:00","updated":"2026-11-02T14:28:31.642+01:00"}
 ---
 
 Mass education in universities has many drawbacks, and one of the most significant is that students rarely get enough opportunities to develop soft skills - writing, speaking, and collaborating - even though these are crucial in practice. This post is a collection of a few observations from the past years. Just as with [[Blog/Teaching/Writing My Technical Paper\|writing hints]], these are subjective guidelines, not hard rules, and the only way to improve is to practice.
@@ -46,7 +46,7 @@ One thing is always true regardless of audience: people are lazy; they've attend
 
 # What is the Intuition?
 
-A useful way to think about intuition is through the lens of a knowledge graph. Imagine that everything a person understands is a node in a graph, and understanding means being well-connected; the more links a concept has to other concepts, the more robustly it is understood. By this view, intuition is the simplest explanation that maximizes connectivity. A formal definition or an equation may be technically precise, but it often connects to few central nodes in most audiences' graphs, and what is weakly linked is quickly forgotten. A good intuition, by contrast, borrows the connectivity of something the audience already knows well, showing that the new concept is really just a familiar idea in disguise.
+A useful way to think about intuition is through a knowledge graph. Imagine that everything a person understands is a node in a graph, and understanding means being well-connected; the more links a concept has to other concepts, the more robustly it is understood. By this view, intuition is the simplest explanation that maximizes connectivity. A formal definition or an equation may be technically precise, but it often connects to few central nodes in most audiences' graphs, and what is weakly linked is quickly forgotten. A good intuition, by contrast, borrows the connectivity of something the audience already knows well, showing that the new concept is really just a familiar idea in disguise.
 
 Take linear algebra as an example. Almost every concept in it has a clean geometric interpretation accessible to nearly anyone. A matrix is not just a grid of numbers; it is a transformation of space, and matrix multiplication is simply applying two such transformations in sequence. In fact, any linear transformation can be decomposed into just three steps: a rotation, a scaling, and another rotation, much like prime factorization reduces any integer to its simplest components. This is what SVD tells us. The determinant measures how much the transformation stretches or squashes space; it is the area of the parallelogram formed by the column vectors in 2D. A determinant of zero means the parallelogram has collapsed to a line: the vectors are linearly dependent, information is lost, and the matrix cannot be inverted. The null space is the set of directions that get squashed to zero, and the rank is how many dimensions survive. The dot product measures the shadow of one vector onto another, capturing how much they point in the same direction, which is why it appears everywhere from similarity measures to covariance in probability. And so on.
 
@@ -101,14 +101,14 @@ Questions are the best implicit feedback a talk can receive. If people ask, it m
 
 That said, the absence of questions does not always mean the talk was bad. Some audiences don't ask out of respect; others because they fear looking stupid; others simply because they never got positive reinforcement for asking. Questions vary culturally too. 
 
-As a presenter, creating an environment where questions feel safe is part of the job. A good starting point is to remember that there are no stupid questions; if someone is confused, it is almost always because something wasn't explained clearly enough, not because the person is slow. When you get a question, answer it directly. Sometimes the honest answer is "I don't know," and that is perfectly fine. Sometimes it's simply "yes" or "no," and that is fine too. 
+As a presenter, creating an environment where questions feel safe is part of the job. A good starting point is to remember that there are no stupid questions; if someone is confused, it is almost always because something wasn't explained clearly enough. When you get a question, answer it directly. Sometimes the honest answer is "I don't know," and that is perfectly fine. Sometimes it's simply "yes" or "no," and that is fine too. 
 
 ---
 # Practice
 
 The importance of practicing out loud is crucial if you are an unexperienced presenter, and it is completely different from practicing in your head. In high school I used to summarize lectures out loud to myself, and it worked surprisingly well. You are literally tuning your brain to speak.
 
-A useful mindset shift: giving a talk to a hundred people is not very different from explaining something to one person face to face. You don't need to be more careful, more formal, or more perfect. People actually like causal presenters; it signals honesty and confidence. Think about how you'd explain it to a colleague over coffee, that's roughly what you should do in front of an audience. 
+Giving a talk to a hundred people is not very different from explaining something to one person face to face. You don't need to be more careful, more formal, or more perfect. People actually like causal presenters. Think about how you'd explain it to a colleague over coffee, that's roughly what you should do in front of an audience. 
 
 But no matter how many rehearsals you do, real confidence only comes from real experience. You become a confident presenter by presenting repeatedly, out loud, in front of real people. 
 
@@ -126,7 +126,7 @@ People often say you can't lose with a bad talk. That's mostly true for a single
 
 What you can lose is being remembered. A bad talk only makes people forget you faster. What really matters is consistency: if you consistently deliver poor talks as a teacher for example, that accumulates. A single bad talk is nothing to worry about; the variance in quality is part of being human. As Maxwell Maltz put it: _"We make mistakes, mistakes don't make us."_ 
 
-Giving a talk is a lot like cooking. Sometimes it comes out well, sometimes it doesn't, and some reasons may be beyond your control. But most food is enjoyable enough when people are hungry, and most talks land well enough when the audience really wants to learn something. 
+Giving a talk is a lot like cooking. Sometimes it comes out well, sometimes it doesn't, and some reasons may be beyond your control. But most food is enjoyable enough when people are hungry. 
 
 ---
 # Final Note
